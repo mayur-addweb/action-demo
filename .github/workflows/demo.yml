@@ -19,4 +19,4 @@ jobs:
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.HOSTNAME  }}
           REMOTE_USER: ${{ secrets.USER_NAME  }}
-          TARGET: "/home/ubuntu/magento/sts1"
+          TARGET: "/home/ubuntu/"
