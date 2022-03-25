@@ -20,6 +20,11 @@ jobs:
           script: whoami
 
       - name: Checkout the code
-      #  uses: actions/checkout@v2
-        run:  git pull origin main
-        working-directory: /home/ubuntu/action
+        uses: actions/checkout@v2
+        with:
+         # repository: ${{org}}/repositoryA
+        #  ref: main
+      #    token: ${{ secrets.token }}
+          persist-credentials: false
+       #   path: ./github-app-jwt-action
+          dir: /home/ubuntu/action
