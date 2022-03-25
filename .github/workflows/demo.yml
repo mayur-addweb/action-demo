@@ -20,6 +20,6 @@ jobs:
           script: whoami
 
       - name: Checkout the code
-        uses: actions/checkout@v2
-        run:  git pull origin branchYY
+      #  uses: actions/checkout@v2
+        run:  git pull origin main
         working-directory: /home/ubuntu/magento/sts1
