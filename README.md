@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
     <a href="https://wordpress.org" target="_blank">
         <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" height="100px">
@@ -70,3 +71,7 @@ Environment specific configuration files and environment variables with Dotenv.
 ## Contributing
 
 Contributions are welcome from everyone.
+=======
+# action-demo
+test
+>>>>>>> b8faa7bf26e1a3352a258584eaf7d52d628a45bf
