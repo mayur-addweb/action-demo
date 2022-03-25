@@ -1,0 +1,22 @@
+name: CI/CD counter app
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+#First we will see the application build or not , then we will deploy in EC2
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v1
+
+      - name: Deploy to my EC2 instance
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+          SOURCE: "./"
+          REMOTE_HOST: ${{ secrets.HOSTNAME  }}
+          REMOTE_USER: ${{ secrets.USER_NAME  }}
+          TARGET: "/home/ubuntu/magento/sts1"
