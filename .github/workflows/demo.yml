@@ -21,4 +21,3 @@ jobs:
 
       - name: Checkout the code
         uses: actions/checkout@v2
-        target: '/home/ubuntu/magento/sts1'
