@@ -22,4 +22,4 @@ jobs:
       - name: Checkout the code
       #  uses: actions/checkout@v2
         run:  git pull origin main
-        working-directory: /home/ubuntu/magento/sts1
+        working-directory: /home/ubuntu/action
