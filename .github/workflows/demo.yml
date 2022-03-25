@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v1
+
 
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
@@ -19,3 +18,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: whoami
+
+      - name: Checkout the code
+        uses: actions/checkout@v2
+        target: '/home/ubuntu/magento/sts1'
