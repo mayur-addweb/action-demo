@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu/action
+            cd /home/ubuntu/action-demo
             git pull origin main
 
       # - name: Checkout the code
