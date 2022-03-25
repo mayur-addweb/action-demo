@@ -12,11 +12,10 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v1
 
-      - name: Deploy to my EC2 instance
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
-          SOURCE: "./"
-          REMOTE_HOST: ${{ secrets.HOSTNAME  }}
-          REMOTE_USER: ${{ secrets.USER_NAME  }}
-          TARGET: "/home/ubuntu/"
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: whoami
