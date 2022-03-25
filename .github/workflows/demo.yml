@@ -17,14 +17,16 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: whoami
+          script: |
+            cd /home/ubuntu/action
+            git pull origin main
 
-      - name: Checkout the code
-        uses: actions/checkout@v2
-        with:
-         # repository: ${{org}}/repositoryA
-        #  ref: main
-      #    token: ${{ secrets.token }}
-          persist-credentials: false
-       #   path: ./github-app-jwt-action
-          dir: /home/ubuntu/action
+      # - name: Checkout the code
+      #   uses: actions/checkout@v2
+      #   with:
+      #    # repository: ${{org}}/repositoryA
+      #     ref: main
+      # #    token: ${{ secrets.token }}
+      #   #  persist-credentials: false
+      #  #   path: ./github-app-jwt-action
+      #     dir: /home/ubuntu/action
