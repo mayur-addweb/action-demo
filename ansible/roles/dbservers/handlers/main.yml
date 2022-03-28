@@ -1,7 +1,0 @@
----
-
-- name: restart mariadb
-  service:
-    name: ut.mariadb
-    state: restarted
-  become: yes

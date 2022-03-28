@@ -1,9 +1,0 @@
----
-
-- hosts: dbservers
-  roles:
-    - dbservers
-  vars_files:
-    - vars/auth.yml
-    - vars/newrelic.yml
-    - vars/sql.yml

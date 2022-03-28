@@ -1,8 +1,0 @@
----
-
-- hosts: redisservers
-  roles:
-    - redisservers
-  vars_files:
-    - vars/auth.yml
-    - vars/newrelic.yml

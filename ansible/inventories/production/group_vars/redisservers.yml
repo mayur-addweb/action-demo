@@ -1,9 +1,0 @@
----
-
-## Redis
-# Details: https://github.com/geerlingguy/ansible-role-redis
-redis_bind_interface: 0.0.0.0
-# Use 75% of RAM for Redis (defaults to 3GB)
-redis_maxmemory: "{{ ((ansible_memtotal_mb|default(4096)) * 0.75)|round|int }}mb"
-redis_maxmemory_policy: "allkeys-lru"
-redis_maxmemory_samples: 3

@@ -1,8 +1,0 @@
----
-
-- import_role:
-    name: geerlingguy.nginx
-  become: yes
-  tags:
-    - nginx
-    - vhost
