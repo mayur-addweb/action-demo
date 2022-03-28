@@ -11,7 +11,7 @@ Disallow: /tag
 Disallow: /category
 Disallow: /archive
 Disallow: */trackback/
-Disallow: */feed/
+Disallow: */feed/;
 Disallow: */comments/
-Disallow: /?feed=
+Disallow: /?feed=;
 Disallow: /?s=
