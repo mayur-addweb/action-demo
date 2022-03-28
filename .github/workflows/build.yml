@@ -1,20 +1,20 @@
+
 name: Build
 on:
   push:
     branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+      - main # or the name of your main branch
+
 jobs:
-  sonarcloud:
-    name: SonarCloud
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+          fetch-depth: 0
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
         env:
-          GTOKEN: ${{ secrets.GTOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
