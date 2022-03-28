@@ -1,0 +1,8 @@
+uuid: 7b5d85e5-0097-41e8-9b88-fea88cb2f46a
+langcode: en
+status: true
+dependencies: {  }
+id: quicklinks
+label: Quicklinks
+description: 'Displays within the Search block.'
+locked: false

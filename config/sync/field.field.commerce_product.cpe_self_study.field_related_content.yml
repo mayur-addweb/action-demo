@@ -1,0 +1,35 @@
+uuid: 133732ca-a77d-4740-88ce-853a1f5571ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_related_content
+    - commerce_product.commerce_product_type.cpe_self_study
+    - node.type.location
+    - node.type.page
+    - node.type.person
+    - node.type.publication
+id: commerce_product.cpe_self_study.field_related_content
+field_name: field_related_content
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      event: event
+      location: location
+      person: person
+      publication: publication
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: event
+field_type: entity_reference

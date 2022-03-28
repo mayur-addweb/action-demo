@@ -1,0 +1,19 @@
+uuid: 3a5872e7-f929-4705-a225-8eed9e0d306f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pol_district
+    - node.type.person
+id: node.person.field_pol_district
+field_name: field_pol_district
+entity_type: node
+bundle: person
+label: District
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

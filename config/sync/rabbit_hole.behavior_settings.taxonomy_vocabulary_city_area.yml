@@ -1,0 +1,9 @@
+uuid: 740be64e-10cf-4d88-bd7b-62b124731b5b
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_city_area
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

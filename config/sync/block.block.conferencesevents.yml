@@ -1,0 +1,44 @@
+uuid: b3ad0f0a-0590-4f34-b3b4-5c4f08202b77
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_half_width:733a1318-8db5-4c8a-a58c-a11093d6ffbc'
+  module:
+    - block_content
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: conferencesevents
+theme: vscpa_bootstrap
+region: homepage
+weight: -27
+provider: null
+plugin: 'block_content:733a1318-8db5-4c8a-a58c-a11093d6ffbc'
+settings:
+  id: 'block_content:733a1318-8db5-4c8a-a58c-a11093d6ffbc'
+  label: 'Signature Conferences & Events'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1531405658'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1531405658'
+    negate: false
+    context_mapping: {  }

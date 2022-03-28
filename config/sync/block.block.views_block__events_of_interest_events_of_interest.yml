@@ -1,0 +1,47 @@
+uuid: 198012ac-33dd-4643-a6a4-a766332a4059
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events_of_interest
+  module:
+    - ctools
+    - rng
+    - views
+  theme:
+    - vscpa_bootstrap
+id: views_block__events_of_interest_events_of_interest
+theme: vscpa_bootstrap
+region: bottom_full_width
+weight: -31
+provider: null
+plugin: 'views_block:events_of_interest-events_of_interest'
+settings:
+  id: 'views_block:events_of_interest-events_of_interest'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1524620318'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1524620318'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,14 @@
+uuid: be6e1044-a454-44c3-87fc-d87086cafceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.amnet_agent
+  module:
+    - user
+id: user_add_role_action.amnet_agent
+label: 'Add the AMnet agent role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: amnet_agent

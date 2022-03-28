@@ -1,0 +1,19 @@
+uuid: 3a464ec8-77be-4834-9939-7e12f349b2c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_main_office
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_amnet_main_office
+field_name: field_amnet_main_office
+entity_type: taxonomy_term
+bundle: firm
+label: 'AM.net Main Office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

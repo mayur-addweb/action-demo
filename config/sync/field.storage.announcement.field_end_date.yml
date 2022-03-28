@@ -1,0 +1,20 @@
+uuid: ff16393b-cbd7-406e-bb0e-a9d32c51dfae
+langcode: en
+status: true
+dependencies:
+  module:
+    - announcement_pop_up
+    - datetime
+id: announcement.field_end_date
+field_name: field_end_date
+entity_type: announcement
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

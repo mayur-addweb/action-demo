@@ -1,0 +1,21 @@
+uuid: e5b77bac-5d64-4ab8-afa3-8fc2415f6944
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_digital_rewind_event_id
+    - node.type.digital_rewind_page
+  module:
+    - am_net
+id: node.digital_rewind_page.field_digital_rewind_event_id
+field_name: field_digital_rewind_event_id
+entity_type: node
+bundle: digital_rewind_page
+label: 'Digital Rewind - Event ID'
+description: 'Digital Rewind — Event ID'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amnet_event_id

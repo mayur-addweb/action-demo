@@ -1,0 +1,22 @@
+uuid: b5a28d70-7e14-48fe-88df-70fc89efe355
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+third_party_settings:
+  commerce_cart:
+    cart_form_view: event_registration_cart_form
+    cart_block_view: commerce_cart_block
+  commerce_checkout:
+    checkout_flow: default
+label: Registration
+id: registration
+workflow: order_default
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: false
+receiptBcc: vscpa@vscpa.com
+traits: {  }
+locked: false

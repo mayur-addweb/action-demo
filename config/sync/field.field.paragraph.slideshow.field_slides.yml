@@ -1,0 +1,64 @@
+uuid: 83007319-c94f-46b7-8e85-d7faaf4d6352
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slides
+    - paragraphs.paragraphs_type.slide
+    - paragraphs.paragraphs_type.slideshow
+  module:
+    - entity_reference_revisions
+id: paragraph.slideshow.field_slides
+field_name: field_slides
+entity_type: paragraph
+bundle: slideshow
+label: Slides
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slide: slide
+    target_bundles_drag_drop:
+      slide:
+        enabled: true
+        weight: 13
+      bp_columns:
+        weight: 14
+        enabled: false
+      column:
+        weight: 15
+        enabled: false
+      cpe_credit:
+        weight: 16
+        enabled: false
+      feat_media:
+        weight: 17
+        enabled: false
+      feat_people:
+        weight: 18
+        enabled: false
+      feat_tabs:
+        weight: 19
+        enabled: false
+      feat_textarea:
+        weight: 20
+        enabled: false
+      item:
+        weight: 21
+        enabled: false
+      pol_contact:
+        weight: 22
+        enabled: false
+      session:
+        weight: 23
+        enabled: false
+      slideshow:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

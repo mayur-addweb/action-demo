@@ -1,0 +1,8 @@
+uuid: 57b2e030-0273-4c37-ae9b-56a443488058
+langcode: en
+status: true
+dependencies: {  }
+name: 'CPE Type'
+vid: cpe_type
+description: ''
+weight: 0

@@ -1,0 +1,10 @@
+uuid: b14c8d33-c9b0-4e75-943e-dbc1c853b728
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile
+label: 'Update Profile'
+targetEntityType: user
+cache: true

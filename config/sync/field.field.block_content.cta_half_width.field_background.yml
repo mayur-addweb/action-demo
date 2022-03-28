@@ -1,0 +1,23 @@
+uuid: 282511eb-fcc2-4c51-b925-3e55388f2767
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_half_width
+    - field.storage.block_content.field_background
+  module:
+    - options
+id: block_content.cta_half_width.field_background
+field_name: field_background
+entity_type: block_content
+bundle: cta_half_width
+label: Background
+description: 'What color should this block be styled with?'
+required: true
+translatable: true
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

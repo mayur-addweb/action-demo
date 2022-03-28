@@ -1,0 +1,10 @@
+uuid: 5445bb07-f997-4bd8-9208-326e16096069
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.restricted_content_full_width
+label: 'Restricted Content Full Width'
+targetEntityType: commerce_product
+cache: true

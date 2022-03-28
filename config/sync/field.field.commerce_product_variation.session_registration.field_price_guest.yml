@@ -1,0 +1,23 @@
+uuid: 94cd239a-7a91-4722-adde-0197483d46db
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.session_registration
+    - field.storage.commerce_product_variation.field_price_guest
+  module:
+    - commerce_price
+id: commerce_product_variation.session_registration.field_price_guest
+field_name: field_price_guest
+entity_type: commerce_product_variation
+bundle: session_registration
+label: 'Guest price'
+description: 'The price for a guest to attend this session.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+field_type: commerce_price

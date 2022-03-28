@@ -1,0 +1,28 @@
+uuid: 1c8db33d-dafb-45fc-9dff-d7b32f6c32ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_sidebar
+    - field.storage.block_content.field_block_image
+    - media.type.image
+id: block_content.cta_sidebar.field_block_image
+field_name: field_block_image
+entity_type: block_content
+bundle: cta_sidebar
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

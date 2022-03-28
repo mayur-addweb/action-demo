@@ -1,0 +1,24 @@
+uuid: ec3d7b21-0fee-4ef3-9cdf-2987847cd5de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_event_expiry
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - datetime
+id: commerce_product.cpe_event.field_event_expiry
+field_name: field_event_expiry
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Expiration Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+30 Days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

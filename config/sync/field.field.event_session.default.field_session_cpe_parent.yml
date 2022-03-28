@@ -1,0 +1,30 @@
+uuid: 7378e781-24fc-4c99-99f1-e2a03cf1db65
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - commerce_product.commerce_product_type.cpe_self_study
+    - field.storage.event_session.field_session_cpe_parent
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_cpe_parent
+field_name: field_session_cpe_parent
+entity_type: event_session
+bundle: default
+label: 'Session CPE parent'
+description: 'The event product parent of this session.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product'
+  handler_settings:
+    target_bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: cpe_event
+field_type: entity_reference

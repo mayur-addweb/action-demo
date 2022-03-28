@@ -1,0 +1,25 @@
+uuid: fc47ff58-a304-4123-bb7b-494980eda180
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fe505f4f-83ce-450b-91a5-c603f85476d8'
+  module:
+    - block_content
+  theme:
+    - vscpa_bootstrap
+id: vscpainfo
+theme: vscpa_bootstrap
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:fe505f4f-83ce-450b-91a5-c603f85476d8'
+settings:
+  id: 'block_content:fe505f4f-83ce-450b-91a5-c603f85476d8'
+  label: 'VSCPA Info'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

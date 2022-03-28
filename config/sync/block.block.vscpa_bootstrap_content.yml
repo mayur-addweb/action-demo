@@ -1,0 +1,22 @@
+uuid: b5852696-0863-4be1-a90d-c58367b40b23
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vscpa_bootstrap
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: vscpa_bootstrap_content
+theme: vscpa_bootstrap
+region: content
+weight: -26
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

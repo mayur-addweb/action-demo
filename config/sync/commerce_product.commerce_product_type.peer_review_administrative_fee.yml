@@ -1,0 +1,12 @@
+uuid: aa1b8bf4-01a7-46be-903c-2c699c32be44
+langcode: en
+status: true
+dependencies: {  }
+id: peer_review_administrative_fee
+label: 'Peer Review Administrative Fee'
+description: 'A product that allows collecting Peer Review Administrative Fee Payments.'
+variationType: peer_review_administrative_fee
+multipleVariations: true
+injectVariationFields: false
+traits: {  }
+locked: false

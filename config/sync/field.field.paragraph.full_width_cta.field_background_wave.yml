@@ -1,0 +1,23 @@
+uuid: 6e063999-2720-4e65-9a46-f2ff89f63c9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_wave
+    - paragraphs.paragraphs_type.full_width_cta
+  module:
+    - options
+id: paragraph.full_width_cta.field_background_wave
+field_name: field_background_wave
+entity_type: paragraph
+bundle: full_width_cta
+label: 'Background Wave'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: no-wave
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: ac39b96f-4d0e-4c91-bbce-e927a9760518
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_status
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_status
+field_name: rng_status
+entity_type: event_session
+bundle: default
+label: 'Accept new registrations'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Accepting new registrations'
+  off_label: 'Not accepting new registrations'
+field_type: boolean

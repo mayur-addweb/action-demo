@@ -1,0 +1,23 @@
+uuid: 8c5459cf-6046-4ab0-bf01-a7c7c645df7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: event_type
+label: 'CPE Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/cpe-types/[term:name]'
+selection_criteria:
+  e66b6f68-5efc-4b09-9a29-e74e5773bc67:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      cpe_type: cpe_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: e66b6f68-5efc-4b09-9a29-e74e5773bc67
+selection_logic: and
+weight: -5
+relationships: {  }

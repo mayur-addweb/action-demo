@@ -1,0 +1,23 @@
+uuid: 0488ed08-86e0-4a7b-9264-8dd3815e3064
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_general
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_general
+field_name: field_session_general
+entity_type: event_session
+bundle: default
+label: 'General session?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

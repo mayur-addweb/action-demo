@@ -1,0 +1,19 @@
+uuid: ddef0f19-e0ca-40b7-a0b8-35fa38811379
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_interest_code
+    - taxonomy.vocabulary.interest
+id: taxonomy_term.interest.field_amnet_interest_code
+field_name: field_amnet_interest_code
+entity_type: taxonomy_term
+bundle: interest
+label: 'Interest Code'
+description: 'Provide AM.net Interest Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

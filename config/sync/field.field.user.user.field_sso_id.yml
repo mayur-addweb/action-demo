@@ -1,0 +1,20 @@
+uuid: 7510110d-305f-47a7-bdf5-4d843a9232b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_sso_id
+  module:
+    - user
+id: user.user.field_sso_id
+field_name: field_sso_id
+entity_type: user
+bundle: user
+label: 'Single Sign-On ID'
+description: 'The ID of the name record in the SSO Identity Provider.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

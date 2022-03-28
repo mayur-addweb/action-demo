@@ -1,0 +1,30 @@
+uuid: 39c10bd2-bf84-4dac-9b91-ea698a3bb634
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.rss_page.field_filter_custom
+    - taxonomy.vocabulary.web_experience_custom
+  module:
+    - rss_list
+id: rss_page.rss_page.field_filter_custom
+field_name: field_filter_custom
+entity_type: rss_page
+bundle: rss_page
+label: Custom
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:firm_by_address'
+  handler_settings:
+    target_bundles:
+      web_experience_custom: web_experience_custom
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

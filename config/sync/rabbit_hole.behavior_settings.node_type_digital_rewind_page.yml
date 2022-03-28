@@ -1,0 +1,11 @@
+uuid: 74436d1e-e632-4377-9991-2fda3fd79643
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.digital_rewind_page
+id: node_type_digital_rewind_page
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

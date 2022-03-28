@@ -1,0 +1,13 @@
+uuid: 0e8d8843-cb28-4b80-a858-53fde340c0a8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Da5YWhJdKLxaJ9gDRI1u5oCbm5WBxiiDgA4M1QrOEPQ
+id: '403'
+label: '403 access denied'
+tags:
+  canonical_url: '[site:url]'
+  description: 'Sorry, the requested page can''t be accessed.'
+  shortlink: '[site:url]'
+  title: 'Access Denied | [site:name]'

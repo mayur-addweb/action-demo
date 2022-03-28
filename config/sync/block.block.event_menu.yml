@@ -1,0 +1,47 @@
+uuid: 515ca865-1408-4d6d-a9f9-587a2b365bfe
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a91d81e7-6e83-4774-b2f6-63d18b518167'
+  module:
+    - block_content
+    - ctools
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: event_menu
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -30
+provider: null
+plugin: 'block_content:a91d81e7-6e83-4774-b2f6-63d18b518167'
+settings:
+  id: 'block_content:a91d81e7-6e83-4774-b2f6-63d18b518167'
+  label: 'Event Menu'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1529600986'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1529600986'
+    negate: false
+    context_mapping: {  }

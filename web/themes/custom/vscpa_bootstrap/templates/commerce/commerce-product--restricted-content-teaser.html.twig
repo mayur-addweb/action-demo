@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set type = product.field_cpe_type.0 %}
+
+<article class="item">
+    <div class="event-image">
+        {{ product.field_cover_image }}
+    </div>
+    <div class="overlay">
+        {% if product.field_cpe_type['#title'] is defined %}
+            <div class="type"><span class="icon {{ type|render|clean_class }}">&nbsp;</span>{{ product.field_cpe_type }}</div>
+        {% endif %}
+        <h4 class="title">
+            <a href="{{ product_url }}" class="view-title" rel="bookmark">{{ product.title.0 }}</a>
+        </h4>
+    </div>
+    <div class="event-details">
+        <div class="members-only">
+            <span class="icon-lock">&nbsp;</span>Members Only
+        </div>
+        {{ dates }}
+        {{ product.field_city_area }}
+        {{ product.field_credit_hours }}
+        {{ product_prices }}
+        {{ product.body }}
+    </div>
+    <div class="register-now"><a class="btn btn-gold" href="{{ product_url }}">Register Now</a></div>
+</article>

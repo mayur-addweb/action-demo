@@ -1,0 +1,24 @@
+uuid: 55d165da-fe21-46fc-a55f-f3b703096904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_capacity
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_capacity
+field_name: rng_capacity
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Maximum registrations'
+description: 'Maximum amount of registrations for this event.'
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,42 @@
+uuid: 5e079de6-6c75-402f-a2c9-a99f48c2857e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_memberonly
+    - node.type.publication
+    - taxonomy.vocabulary.memberonly
+  content:
+    - 'taxonomy_term:memberonly:8f0b4e8e-efd4-4c89-b96d-11330280badb'
+    - 'taxonomy_term:memberonly:cb089c5d-e942-4b3b-84c2-7b4dd9d3052e'
+    - 'taxonomy_term:memberonly:cc53f362-50b2-4e39-a944-94f6c0d35a3b'
+    - 'taxonomy_term:memberonly:d25495f2-1e85-42bd-b73a-709ce47e9d9e'
+id: node.publication.field_memberonly
+field_name: field_memberonly
+entity_type: node
+bundle: publication
+label: 'Member Only Content'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 8f0b4e8e-efd4-4c89-b96d-11330280badb
+  -
+    target_uuid: cc53f362-50b2-4e39-a944-94f6c0d35a3b
+  -
+    target_uuid: cb089c5d-e942-4b3b-84c2-7b4dd9d3052e
+  -
+    target_uuid: d25495f2-1e85-42bd-b73a-709ce47e9d9e
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      memberonly: memberonly
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

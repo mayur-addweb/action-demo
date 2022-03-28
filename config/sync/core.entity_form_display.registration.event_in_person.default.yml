@@ -1,0 +1,21 @@
+uuid: 777c6ff2-17b0-4757-bb6e-a0f9e9b36f7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.registration.event_in_person.field_order_item
+    - field.field.registration.event_in_person.field_registration_status
+    - rng.registration_type.event_in_person
+id: registration.event_in_person.default
+targetEntityType: registration
+bundle: event_in_person
+mode: default
+content:
+  field_registration_status:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+hidden:
+  field_order_item: true

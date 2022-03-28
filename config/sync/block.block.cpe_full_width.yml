@@ -1,0 +1,59 @@
+uuid: fb48399f-369b-4b39-b847-5b8f4afea4d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_membership
+    - content_paywall
+    - ctools
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: cpe_full_width
+theme: vscpa_bootstrap
+region: top_full_width
+weight: -17
+provider: null
+plugin: 'entity_view:commerce_product'
+settings:
+  id: 'entity_view:commerce_product'
+  label: 'CPE Full Width'
+  provider: ctools
+  label_display: '0'
+  view_mode: full_width
+  context_mapping:
+    entity: '@commerce_product.product_route_context:commerce_product'
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1524689225'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1524689225'
+    negate: false
+    context_mapping: {  }
+  user_my_account:
+    id: user_my_account
+    my_account: '0'
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  check_content_paywall_access:
+    id: check_content_paywall_access
+    check_content_paywall_access: '1'
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+      node: '@node.node_route_context:node'

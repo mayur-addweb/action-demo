@@ -1,0 +1,82 @@
+uuid: 431b4b85-438f-4ae9-8096-e9ff6a591f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_event_timeslot_groups
+    - commerce_product.commerce_product_type.cpe_event
+    - paragraphs.paragraphs_type.timeslot_group
+  module:
+    - entity_reference_revisions
+id: commerce_product.cpe_event.field_event_timeslot_groups
+field_name: field_event_timeslot_groups
+entity_type: commerce_product
+bundle: cpe_event
+label: Schedule
+description: 'Arrange the schedule in "timeslot groups", e.g. one for each day of a conference schedule.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      timeslot_group: timeslot_group
+    target_bundles_drag_drop:
+      timeslot_group:
+        enabled: true
+        weight: 19
+      accordions:
+        weight: 20
+        enabled: false
+      accordion_item:
+        weight: 21
+        enabled: false
+      bp_columns:
+        weight: 22
+        enabled: false
+      column:
+        weight: 23
+        enabled: false
+      cpe_credit:
+        weight: 24
+        enabled: false
+      feat_media:
+        weight: 25
+        enabled: false
+      feat_people:
+        weight: 26
+        enabled: false
+      feat_tabs:
+        weight: 27
+        enabled: false
+      feat_textarea:
+        weight: 28
+        enabled: false
+      item:
+        weight: 29
+        enabled: false
+      pol_contact:
+        weight: 30
+        enabled: false
+      slide:
+        weight: 31
+        enabled: false
+      slideshow:
+        weight: 32
+        enabled: false
+      tabs:
+        weight: 33
+        enabled: false
+      tab_item:
+        weight: 34
+        enabled: false
+      text_area:
+        weight: 35
+        enabled: false
+      timeslot:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

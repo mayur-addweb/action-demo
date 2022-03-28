@@ -1,0 +1,19 @@
+uuid: 7ab0c72f-a2d1-488a-989b-981c193c96ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - ad_entity.ad_entity.ad_sidebar_region
+id: ad_sidebar_region
+label: 'Ad Sidebar Region'
+theme_canonical: vscpa_bootstrap
+variants:
+  vscpa_bootstrap:
+    ad_sidebar_region: '["any"]'
+  stable: {  }
+  classy: {  }
+  seven: {  }
+  bootstrap: {  }
+fallback:
+  use_base_theme: true
+  use_settings_from: vscpa_bootstrap

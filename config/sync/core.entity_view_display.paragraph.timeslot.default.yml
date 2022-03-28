@@ -1,0 +1,28 @@
+uuid: 275b5546-9de3-413c-9de8-a2f15d9ba7bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.timeslot.field_label
+    - field.field.paragraph.timeslot.field_sessions
+    - field.field.paragraph.timeslot.field_timeslot_group_key
+    - field.field.paragraph.timeslot.field_timeslot_time
+    - paragraphs.paragraphs_type.timeslot
+id: paragraph.timeslot.default
+targetEntityType: paragraph
+bundle: timeslot
+mode: default
+content:
+  field_sessions:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_label: true
+  field_timeslot_group_key: true
+  field_timeslot_time: true

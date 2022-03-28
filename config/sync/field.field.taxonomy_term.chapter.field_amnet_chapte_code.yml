@@ -1,0 +1,19 @@
+uuid: 683b7299-956f-4e2d-91d7-c9be3dff2b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_chapte_code
+    - taxonomy.vocabulary.chapter
+id: taxonomy_term.chapter.field_amnet_chapte_code
+field_name: field_amnet_chapte_code
+entity_type: taxonomy_term
+bundle: chapter
+label: 'Preferred Chapter Code'
+description: 'Provide AM.net Preferred Chapter Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 967e9edd-2f30-4cbd-bd31-cb2796914595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_peer_review_information
+  module:
+    - options
+    - user
+id: user.user.field_peer_review_information
+field_name: field_peer_review_information
+entity_type: user
+bundle: user
+label: 'Peer Review Information'
+description: 'VSCPA members working in public accounting firms that perform accounting and/or auditing engagement(s) covered by SASs; SSARS; SSAEs and the Government Auditing Standards (the Yellow Book) issued by the GAO must be enrolled in an approved practice-monitoring program (e.g., the AICPA or VSCPA Peer Review Program). Is your firm currently enrolled in an approved practice-monitoring program?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,30 @@
+uuid: 150aed96-e54c-44d1-867b-af907c76904c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_people.field_people
+    - field.field.paragraph.feat_people.field_title
+    - paragraphs.paragraphs_type.feat_people
+id: paragraph.feat_people.default
+targetEntityType: paragraph
+bundle: feat_people
+mode: default
+content:
+  field_people:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

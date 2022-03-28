@@ -1,0 +1,10 @@
+uuid: 284655e0-caca-4f5c-ab9e-40b041bd1c61
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wide_small
+label: 'Wide (Small)'
+targetEntityType: media
+cache: true

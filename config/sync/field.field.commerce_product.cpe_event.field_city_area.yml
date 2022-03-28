@@ -1,0 +1,29 @@
+uuid: 0e180995-4adb-4e1c-81f9-af84542fefb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_city_area
+    - commerce_product.commerce_product_type.cpe_event
+    - taxonomy.vocabulary.city_area
+id: commerce_product.cpe_event.field_city_area
+field_name: field_city_area
+entity_type: commerce_product
+bundle: cpe_event
+label: 'City or Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city_area: city_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

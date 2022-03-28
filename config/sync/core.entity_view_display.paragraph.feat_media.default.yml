@@ -1,0 +1,40 @@
+uuid: 58d10b5f-e093-420f-9ad1-89d745f67884
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_media.field_body
+    - field.field.paragraph.feat_media.field_subtitle
+    - field.field.paragraph.feat_media.field_title
+    - paragraphs.paragraphs_type.feat_media
+  module:
+    - text
+id: paragraph.feat_media.default
+targetEntityType: paragraph
+bundle: feat_media
+mode: default
+content:
+  field_body:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_subtitle:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

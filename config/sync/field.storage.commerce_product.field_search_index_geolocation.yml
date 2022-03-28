@@ -1,0 +1,19 @@
+uuid: f0741abb-0cb4-4d85-a4d3-573cb5bf6788
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - geolocation
+id: commerce_product.field_search_index_geolocation
+field_name: field_search_index_geolocation
+entity_type: commerce_product
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

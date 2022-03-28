@@ -1,0 +1,23 @@
+{#
+/**
+ * Default template for [VSCPA Commerce] 'Current price formatted' field display
+ * for Self-study courses.
+ *
+ * Available variables:
+ * - pricing_options: An array with the following properties:
+ *   - price: The non-member price.
+ *   - member_price: The members price.
+ */
+#}
+
+<dl>
+  <div class="registration"><span class="icon-check"></span>Registration is Open</div>
+  <div class="members">
+    <dt>{% if current_option.is_member == true %}Your {% endif %}{{ 'Member Price' }}</dt>
+    <dd>{{ pricing_options.member_price }} Regular Registration</dd>
+  </div>
+  <div class="non-members">
+    <dt>{% if current_option.is_member == false %}Your {% endif %}{{ 'Nonmember Price' }}</dt>
+    <dd>{{ pricing_options.price }} Regular Registration</dd>
+  </div>
+</dl>

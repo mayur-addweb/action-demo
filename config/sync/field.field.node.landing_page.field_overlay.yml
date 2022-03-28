@@ -1,0 +1,21 @@
+uuid: d5c393f6-2874-4731-9216-065905bcc81e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overlay
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_overlay
+field_name: field_overlay
+entity_type: node
+bundle: landing_page
+label: Overlay
+description: 'What color should the Cover be overlaid with (<i>-none-</i> is transparent)?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

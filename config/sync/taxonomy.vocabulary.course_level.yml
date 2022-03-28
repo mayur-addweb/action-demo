@@ -1,0 +1,8 @@
+uuid: a09d9a97-a72e-4a07-971a-2d61dfda0215
+langcode: en
+status: true
+dependencies: {  }
+name: 'Course Level'
+vid: course_level
+description: ''
+weight: 0

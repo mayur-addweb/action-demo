@@ -1,0 +1,16 @@
+enable_responsive_behavior: true
+behavior_on_context_reset:
+  include_entity_info: true
+  collect_default_data: true
+_core:
+  default_config_hash: sxbH7C4jQbEjHIwxwy1u2B4ZvDh2KU9RNLvgZPirK0Q
+site_wide_context: {  }
+process_targeting_output: null
+personalization:
+  enabled: false
+tweaks:
+  force_backend_appliance: false
+  include_preload_tags: true
+  use_inline_js: false
+dfp:
+  order_info: true

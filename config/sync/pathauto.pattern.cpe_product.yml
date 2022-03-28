@@ -1,0 +1,24 @@
+uuid: 9699c365-f1da-4005-a490-6f1d29beee24
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - ctools
+id: cpe_product
+label: 'CPE Product'
+type: 'canonical_entities:commerce_product'
+pattern: '/events/[commerce_product:field_cpe_type]/[commerce_product:title]'
+selection_criteria:
+  c6ae72eb-ddd9-441d-a612-cdbd9431f4ee:
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: commerce_product
+    uuid: c6ae72eb-ddd9-441d-a612-cdbd9431f4ee
+selection_logic: and
+weight: -5
+relationships: {  }

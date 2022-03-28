@@ -1,0 +1,19 @@
+uuid: a0c6b368-d887-4996-8b93-bb2edf5dc638
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_amnet_document_id
+    - media.type.document
+id: media.document.field_amnet_document_id
+field_name: field_amnet_document_id
+entity_type: media
+bundle: document
+label: 'AMnet Document id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

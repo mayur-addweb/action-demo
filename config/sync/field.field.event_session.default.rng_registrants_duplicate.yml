@@ -1,0 +1,23 @@
+uuid: 0e629298-237a-4695-ac61-ea778b88d34c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_registrants_duplicate
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_registrants_duplicate
+field_name: rng_registrants_duplicate
+entity_type: event_session
+bundle: default
+label: 'Allow duplicate registrants'
+description: 'Allows a registrant to create more than one registration for this session.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Allow duplicate registrants for this session'
+  off_label: 'Do not allow duplicate registrants for this session'
+field_type: boolean

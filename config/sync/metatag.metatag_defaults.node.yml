@@ -1,0 +1,23 @@
+uuid: 5ee2e21c-0ebd-48ca-beeb-c36ae60bfc09
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  canonical_url: '[node:url]'
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'
+  og_description: '[node:summary]'
+  og_image: /themes/custom/vscpa_bootstrap/images/social-1200x630.png
+  og_title: '[node:title]'
+  og_site_name: '[site:name]'
+  og_url: '[node:url]'
+  twitter_cards_site: '@VSCPANews'
+  twitter_cards_type: summary_large_image
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: /themes/custom/vscpa_bootstrap/images/social-1200x630.png
+  twitter_cards_title: '[current-page:title] | [site:name]'
+  twitter_cards_page_url: '[node:url]'

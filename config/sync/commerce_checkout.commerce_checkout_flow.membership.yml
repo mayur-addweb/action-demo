@@ -1,0 +1,53 @@
+uuid: 53c3d2a8-61cd-455b-9530-35361d5a1290
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net
+    - am_net_donations
+    - commerce_payment
+    - commerce_promotion
+id: membership
+label: Membership
+plugin: multistep_default
+configuration:
+  display_checkout_progress: true
+  panes:
+    login:
+      allow_guest_checkout: false
+      allow_registration: true
+      step: login
+      weight: 0
+    contact_information:
+      double_entry: false
+      step: order_information
+      weight: 1
+    payment_information:
+      step: order_information
+      weight: 2
+    am_net_recurring_order_optin:
+      text: 'You will be enrolled to pay future membership dues (as well as any voluntary Educational Foundation or VSCPA PAC contributions) automatically. Payments will be processed between May 1 - 5 each year, and you may update/cancel at any time by contacting VSCPA at <a href="tel:8007338272">(800) 733-8272</a>. If you do not wish to enroll, uncheck the box beside this message.'
+      step: order_information
+      weight: 3
+    review:
+      step: review
+      weight: 4
+    payment_process:
+      capture: true
+      step: payment
+      weight: 5
+    completion_message:
+      step: complete
+      weight: 6
+    order_summary:
+      view: ''
+      step: _sidebar
+      weight: 7
+    coupon_redemption:
+      allow_multiple: false
+      step: _sidebar
+      weight: 8
+    donations:
+      display_submit_button: true
+      step: _disabled
+      weight: 9

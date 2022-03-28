@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.event_registration
+    - field.storage.commerce_order_item.field_user
+id: commerce_order_item.event_registration.field_user
+field_name: field_user
+entity_type: commerce_order_item
+bundle: event_registration
+label: User
+description: 'The user to register for this event.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        member: member
+        administrator: '0'
+        content_manager: '0'
+        content_author: '0'
+        store_manager: '0'
+        firm_administrator: '0'
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

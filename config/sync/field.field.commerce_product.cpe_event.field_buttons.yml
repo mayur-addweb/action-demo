@@ -1,0 +1,23 @@
+uuid: 8acaa50c-593f-4b5a-b608-af31b71d1ac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_buttons
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - link
+id: commerce_product.cpe_event.field_buttons
+field_name: field_buttons
+entity_type: commerce_product
+bundle: cpe_event
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

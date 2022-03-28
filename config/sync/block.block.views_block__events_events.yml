@@ -1,0 +1,43 @@
+uuid: f1874237-2c5e-47a6-b6b6-abeefc33d871
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+id: views_block__events_events
+theme: vscpa_bootstrap
+region: content
+weight: -20
+provider: null
+plugin: 'views_block:events-events'
+settings:
+  id: 'views_block:events-events'
+  label: 'CPE & Event Search'
+  provider: views
+  label_display: '0'
+  views_label: 'CPE & Event Search'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/events\r\n/cpe-event-search\r\n/continuing-professional-education/cpe-event-search"
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1520016628'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1520016628'
+    negate: false
+    context_mapping: {  }

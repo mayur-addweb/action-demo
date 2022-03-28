@@ -1,0 +1,29 @@
+uuid: 3db47f88-371c-4443-964a-ff59a3300146
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.donation
+    - field.storage.commerce_order_item.field_user
+id: commerce_order_item.donation.field_user
+field_name: field_user
+entity_type: commerce_order_item
+bundle: donation
+label: User
+description: 'The user making this donation.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

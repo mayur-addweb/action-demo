@@ -1,0 +1,21 @@
+uuid: f89b0b64-facd-450e-8d6e-e6b7a3cef8ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_party_affiliation
+  module:
+    - options
+    - user
+id: user.user.field_party_affiliation
+field_name: field_party_affiliation
+entity_type: user
+bundle: user
+label: 'Political Party Affiliation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

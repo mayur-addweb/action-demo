@@ -1,0 +1,37 @@
+uuid: 5e57c5ef-2230-4058-a0c0-28f7ace9a50a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cover
+    - field.field.node.digital_rewind_page.field_additional_resources
+    - field.field.node.digital_rewind_page.field_digital_rewind_event_id
+    - field.field.node.digital_rewind_page.field_featurette_bottom
+    - field.field.node.digital_rewind_page.field_featurette_top
+    - field.field.node.digital_rewind_page.field_sidebar_content
+    - node.type.digital_rewind_page
+  module:
+    - user
+id: node.digital_rewind_page.cover
+targetEntityType: node
+bundle: digital_rewind_page
+mode: cover
+content:
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title_field:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_additional_resources: true
+  field_digital_rewind_event_id: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_sidebar_content: true
+  search_api_excerpt: true
+  title_teaser: true

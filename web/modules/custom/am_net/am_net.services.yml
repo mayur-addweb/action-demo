@@ -1,0 +1,24 @@
+services:
+  am_net.client:
+    class: Drupal\am_net\AssociationManagementClient
+    arguments: []
+
+  am_net.entity_manager:
+    class: Drupal\am_net\Entity\AMNetEntityManager
+    arguments: []
+
+  am_net.entity.repository:
+    class: Drupal\am_net\AMNetEntityRepository
+    arguments: ['@am_net.client', '@keyvalue.database']
+
+  am_net.person_manager:
+    class: Drupal\am_net\PersonManager
+    arguments: ['@am_net.client', '@entity_type.manager', '@logger.channel.am_net']
+
+  logger.channel.am_net:
+    parent: logger.channel_base
+    arguments: ['am_net_events']
+
+  amnet.expirable.store:
+    class: Drupal\am_net\AmNetExpirableDataStore
+    arguments: ['@keyvalue.expirable']

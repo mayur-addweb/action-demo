@@ -1,0 +1,23 @@
+uuid: 8af73957-0982-4ebc-ad22-67832328987a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.membership_donation
+    - field.storage.commerce_order_item.field_donation_source
+  module:
+    - options
+id: commerce_order_item.membership_donation.field_donation_source
+field_name: field_donation_source
+entity_type: commerce_order_item
+bundle: membership_donation
+label: Source
+description: 'The source of this donation.'
+required: false
+translatable: true
+default_value:
+  -
+    value: I
+default_value_callback: ''
+settings: {  }
+field_type: list_string

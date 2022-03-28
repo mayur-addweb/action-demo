@@ -1,0 +1,37 @@
+langcode: en
+activate: true
+mail_attr: mail
+unique_id: mail
+user_name: user_name
+auth_source: default-sp
+login_link_display_name: 'Use VSCPA SSO Authentication with Gluu Server Here.'
+header_no_cache: true
+role:
+  population: ''
+  eval_every_time: false
+register_users: true
+allow:
+  set_drupal_pwd: true
+  default_login: true
+  default_login_roles:
+    administrator: administrator
+    content_manager: content_manager
+    content_author: content_author
+    store_manager: store_manager
+    vscpa_administrator: vscpa_administrator
+    authenticated: '0'
+    firm_administrator: '0'
+    member: '0'
+  default_login_users: '1'
+logout_goto_url: 'https://vscpa.utstaging.com/'
+user_register_original: visitors
+sync:
+  mail: true
+  user_name: false
+autoenablesaml: true
+debug: true
+secure: true
+httponly: true
+_core:
+  default_config_hash: BuLah1nwoT5oUjn6XIuKnXkjcvdt5tDIGQ6gAflOY0s
+login_link_show: true

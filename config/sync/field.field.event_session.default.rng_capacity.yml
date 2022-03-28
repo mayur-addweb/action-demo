@@ -1,0 +1,23 @@
+uuid: 3e3f2236-9cf9-422e-9fd8-c6a154ee18fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_capacity
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_capacity
+field_name: rng_capacity
+entity_type: event_session
+bundle: default
+label: 'Maximum registrations'
+description: 'Maximum amount of registrations for this session(-1 for unlimited max number of registrations).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: -1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,46 @@
+uuid: c894c9b6-5b25-4612-89f7-cb26d2949862
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.web_experience_custom.field_amnet_code
+    - taxonomy.vocabulary.web_experience_custom
+  module:
+    - path
+    - text
+id: taxonomy_term.web_experience_custom.default
+targetEntityType: taxonomy_term
+bundle: web_experience_custom
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_amnet_code:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

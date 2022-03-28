@@ -1,0 +1,11 @@
+vscpa_sso.admin_settings:
+  title: 'Gluu Server Connection settings'
+  parent: am_net.vscpa_config
+  description: 'Gluu Server Connection settings.'
+  route_name: vscpa_sso.admin_settings
+
+vscpa_sso.sync_accounts:
+  title: 'Sync Accounts AM.net/Gluu'
+  parent: vscpa_sso.admin_settings
+  description: 'Sync Accounts AM.net/Gluu.'
+  route_name: vscpa_sso.sync_accounts

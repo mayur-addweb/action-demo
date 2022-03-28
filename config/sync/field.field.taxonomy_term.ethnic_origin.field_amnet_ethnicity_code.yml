@@ -1,0 +1,19 @@
+uuid: 3b236dce-1c71-4513-80a6-21fbd53e210e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_ethnicity_code
+    - taxonomy.vocabulary.ethnic_origin
+id: taxonomy_term.ethnic_origin.field_amnet_ethnicity_code
+field_name: field_amnet_ethnicity_code
+entity_type: taxonomy_term
+bundle: ethnic_origin
+label: 'Ethnicity Code'
+description: 'Provide AM.net Ethnicity Code.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

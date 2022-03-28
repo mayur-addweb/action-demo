@@ -1,0 +1,102 @@
+uuid: f6589859-7b76-4b11-9fb8-e8c5400494d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.event_session.default.field_amnet_sort_sequence
+    - field.field.event_session.default.field_credits
+    - field.field.event_session.default.field_electronic_materials
+    - field.field.event_session.default.field_leader_edit_desc
+    - field.field.event_session.default.field_leader_edit_title
+    - field.field.event_session.default.field_marketing_copy
+    - field.field.event_session.default.field_session_administrator
+    - field.field.event_session.default.field_session_code
+    - field.field.event_session.default.field_session_cpe_parent
+    - field.field.event_session.default.field_session_day
+    - field.field.event_session.default.field_session_excluded_catalog
+    - field.field.event_session.default.field_session_general
+    - field.field.event_session.default.field_session_guest_only
+    - field.field.event_session.default.field_session_product
+    - field.field.event_session.default.field_session_registrants_only
+    - field.field.event_session.default.field_session_status
+    - field.field.event_session.default.field_session_time
+    - field.field.event_session.default.field_session_track
+    - field.field.event_session.default.field_sessions_concurrent
+    - field.field.event_session.default.field_speakers
+    - field.field.event_session.default.rng_capacity
+    - field.field.event_session.default.rng_registrants_duplicate
+    - field.field.event_session.default.rng_registrants_maximum
+    - field.field.event_session.default.rng_registrants_minimum
+    - field.field.event_session.default.rng_registration_groups
+    - field.field.event_session.default.rng_registration_type
+    - field.field.event_session.default.rng_reply_to
+    - field.field.event_session.default.rng_status
+    - vscpa_commerce.event_session_type.default
+  module:
+    - datetime_range
+    - text
+id: event_session.default.default
+targetEntityType: event_session
+bundle: default
+mode: default
+content:
+  field_marketing_copy:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_session_time:
+    weight: 1
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: date_and_time
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_speakers:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_amnet_sort_sequence: true
+  field_credits: true
+  field_electronic_materials: true
+  field_leader_edit_desc: true
+  field_leader_edit_title: true
+  field_session_administrator: true
+  field_session_code: true
+  field_session_cpe_parent: true
+  field_session_day: true
+  field_session_excluded_catalog: true
+  field_session_general: true
+  field_session_guest_only: true
+  field_session_product: true
+  field_session_registrants_only: true
+  field_session_status: true
+  field_session_track: true
+  field_sessions_concurrent: true
+  rng_capacity: true
+  rng_registrants_duplicate: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_registration_type: true
+  rng_reply_to: true
+  rng_status: true
+  user_id: true

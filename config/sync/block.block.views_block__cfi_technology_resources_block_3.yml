@@ -1,0 +1,43 @@
+uuid: e31f8637-da06-4d2b-a44f-66772f9fe280
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.cfi_technology_resources
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+id: views_block__cfi_technology_resources_block_3
+theme: vscpa_bootstrap
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:cfi_technology_resources-block_3'
+settings:
+  id: 'views_block:cfi_technology_resources-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1545081533'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1545081533'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /innovation/talent/workplace-of-the-future-resources
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,30 @@
+uuid: 840d6585-3ff9-4c20-ad5b-f2abf09534cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.vscpa_action.field_amnet_action_code
+    - taxonomy.vocabulary.vscpa_action
+  module:
+    - text
+id: taxonomy_term.vscpa_action.default
+targetEntityType: taxonomy_term
+bundle: vscpa_action
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_action_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

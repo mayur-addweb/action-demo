@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.event_registration
+    - field.field.commerce_product_variation.event_registration.field_applies_to_date_range
+    - field.field.commerce_product_variation.event_registration.field_early_bird_expiry
+    - field.field.commerce_product_variation.event_registration.field_price_early
+    - field.field.commerce_product_variation.event_registration.field_price_member
+    - field.field.commerce_product_variation.event_registration.field_price_member_early
+  module:
+    - commerce_price
+    - datetime
+    - datetime_range
+id: commerce_product_variation.event_registration.default
+targetEntityType: commerce_product_variation
+bundle: event_registration
+mode: default
+content:
+  field_applies_to_date_range:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_early_bird_expiry:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_price_early:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_member:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_member_early:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  price:
+    type: commerce_price_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

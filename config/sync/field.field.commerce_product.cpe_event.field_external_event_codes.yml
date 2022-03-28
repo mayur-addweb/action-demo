@@ -1,0 +1,19 @@
+uuid: d91f6a7d-72af-4d7a-8e12-3c5e7b2575ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_external_event_codes
+id: commerce_product.cpe_event.field_external_event_codes
+field_name: field_external_event_codes
+entity_type: commerce_product
+bundle: cpe_event
+label: 'External Event Codes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

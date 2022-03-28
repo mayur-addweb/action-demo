@@ -1,0 +1,21 @@
+uuid: 15deaeba-d8f9-4136-a988-85f17c06b450
+langcode: en
+status: true
+dependencies:
+  config:
+    - rng.event_type.commerce_product.cpe_event
+id: commerce_product.cpe_event.registrant
+entity_type: commerce_product
+bundle: cpe_event
+machine_name: registrant
+trigger: rng_event.register
+conditions:
+  identity:
+    id: rng_registration_identity
+actions:
+  registration_operations:
+    id: registration_operations
+    configuration:
+      operations:
+        view: true
+        update: true

@@ -1,0 +1,19 @@
+uuid: bf31596a-e8fc-4c4a-94df-47c7ef688ea5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_gb_code
+    - taxonomy.vocabulary.general_business
+id: taxonomy_term.general_business.field_amnet_gb_code
+field_name: field_amnet_gb_code
+entity_type: taxonomy_term
+bundle: general_business
+label: 'General Business Code'
+description: 'AM.net General Business Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

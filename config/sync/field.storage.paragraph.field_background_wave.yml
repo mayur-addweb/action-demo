@@ -1,0 +1,30 @@
+uuid: 28a342df-6a66-4f75-afbe-59550ce0c430
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background_wave
+field_name: field_background_wave
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: no-wave
+      label: 'No Wave'
+    -
+      value: wave-top-fade
+      label: 'Wave - Top Fade'
+    -
+      value: wave-bottom-fade
+      label: 'Wave - Bottom Fade'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

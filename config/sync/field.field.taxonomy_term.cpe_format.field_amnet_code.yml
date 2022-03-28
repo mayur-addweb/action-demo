@@ -1,0 +1,19 @@
+uuid: 5153eb66-d483-4177-ba97-473912f1c61f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_code
+    - taxonomy.vocabulary.cpe_format
+id: taxonomy_term.cpe_format.field_amnet_code
+field_name: field_amnet_code
+entity_type: taxonomy_term
+bundle: cpe_format
+label: 'AM.net format code'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

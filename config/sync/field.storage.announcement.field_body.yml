@@ -1,0 +1,19 @@
+uuid: 5b6a65da-c087-4e6b-94d3-624df36adb33
+langcode: en
+status: true
+dependencies:
+  module:
+    - announcement_pop_up
+    - text
+id: announcement.field_body
+field_name: field_body
+entity_type: announcement
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,68 @@
+uuid: 626e2919-4e76-4a65-933e-a79f21835a44
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.firm_summary
+    - field.field.taxonomy_term.firm.field_address
+    - field.field.taxonomy_term.firm.field_amnet_branch_offices
+    - field.field.taxonomy_term.firm.field_amnet_id
+    - field.field.taxonomy_term.firm.field_amnet_linked_persons
+    - field.field.taxonomy_term.firm.field_amnet_main_office
+    - field.field.taxonomy_term.firm.field_amnet_member_count
+    - field.field.taxonomy_term.firm.field_amnet_nonmember_count
+    - field.field.taxonomy_term.firm.field_fax
+    - field.field.taxonomy_term.firm.field_firm_contacts
+    - field.field.taxonomy_term.firm.field_firm_name2
+    - field.field.taxonomy_term.firm.field_general_business
+    - field.field.taxonomy_term.firm.field_phone
+    - field.field.taxonomy_term.firm.field_websites
+    - taxonomy.vocabulary.firm
+  module:
+    - address
+    - link
+    - telephone
+id: taxonomy_term.firm.firm_summary
+targetEntityType: taxonomy_term
+bundle: firm
+mode: firm_summary
+content:
+  field_address:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_phone:
+    weight: 1
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_websites:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  description: true
+  field_amnet_branch_offices: true
+  field_amnet_id: true
+  field_amnet_linked_persons: true
+  field_amnet_main_office: true
+  field_amnet_member_count: true
+  field_amnet_nonmember_count: true
+  field_fax: true
+  field_firm_contacts: true
+  field_firm_name2: true
+  field_general_business: true

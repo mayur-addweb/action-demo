@@ -1,0 +1,21 @@
+uuid: 1ec2ef06-fbdb-4d38-93d4-128c0f5138da
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_cert_other_no
+field_name: field_cert_other_no
+entity_type: user
+type: string
+settings:
+  max_length: 15
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

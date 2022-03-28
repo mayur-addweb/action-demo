@@ -1,0 +1,27 @@
+uuid: 88e0ca89-ed29-4e33-a8e3-56ce1f4373f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_nasba_optin
+field_name: field_nasba_optin
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Yes'
+    -
+      value: '0'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

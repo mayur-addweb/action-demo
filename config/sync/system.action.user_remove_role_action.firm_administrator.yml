@@ -1,0 +1,14 @@
+uuid: 1385c4fe-df83-4e5c-8f79-cd597d70b851
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.firm_administrator
+  module:
+    - user
+id: user_remove_role_action.firm_administrator
+label: 'Remove the Firm Administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: firm_administrator

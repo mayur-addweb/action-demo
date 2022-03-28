@@ -1,0 +1,8 @@
+uuid: 373f8d3a-3770-44ff-be2b-6c2252db651b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ethnic Origin'
+vid: ethnic_origin
+description: ''
+weight: 0

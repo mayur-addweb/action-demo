@@ -1,0 +1,23 @@
+uuid: 2e071649-8c38-4a56-b4de-425807fe6381
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_sidebar
+    - field.storage.block_content.field_background
+  module:
+    - options
+id: block_content.cta_sidebar.field_background
+field_name: field_background
+entity_type: block_content
+bundle: cta_sidebar
+label: Background
+description: 'What color should this block be styled with?'
+required: true
+translatable: false
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

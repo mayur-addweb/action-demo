@@ -1,0 +1,27 @@
+uuid: 08a5f143-ec26-4df6-a08b-cb7b2d1dcc21
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  description: 'Virginia''s 12,000+ member accounting community.'
+  google: '-UmuP510w2PowG3HMOYiMEfwy2YzhO6fpl1dVJ8xiZY'
+  apple_touch_icon_180x180: /themes/custom/vscpa_bootstrap/favicons/apple-touch-icon.png
+  msapplication_tilecolor: '#2d89ef'
+  theme_color: '#4d4d4f'
+  web_manifest: /themes/custom/vscpa_bootstrap/favicons/site.webmanifest
+  og_image: '/themes/custom/vscpa_bootstrap/images/social-1200x630.png?q123'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  og_url: '[current-page:url:absolute]'
+  og_description: 'Virginia''s 12,000+ member accounting community.'
+  twitter_cards_image: '/themes/custom/vscpa_bootstrap/images/social-1200x630.png?q123'
+  twitter_cards_site: '@VSCPANews'
+  twitter_cards_title: '[current-page:title] | [site:name]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_description: 'Virginia''s 12,000+ member accounting community.'

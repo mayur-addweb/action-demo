@@ -1,0 +1,21 @@
+uuid: 495dcf7e-c7a1-4e60-9940-4fbd9243b036
+langcode: en
+status: true
+dependencies:
+  config:
+    - rng.event_type.commerce_product.cpe_self_study
+id: commerce_product.cpe_self_study.user_role
+entity_type: commerce_product
+bundle: cpe_self_study
+machine_name: user_role
+trigger: rng_event.register
+conditions:
+  role:
+    id: rng_user_role
+    roles: {  }
+actions:
+  registration_operations:
+    id: registration_operations
+    configuration:
+      operations:
+        create: true

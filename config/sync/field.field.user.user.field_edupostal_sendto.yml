@@ -1,0 +1,21 @@
+uuid: e32c316b-9abe-4751-b2c9-868d790c8dec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_edupostal_sendto
+  module:
+    - options
+    - user
+id: user.user.field_edupostal_sendto
+field_name: field_edupostal_sendto
+entity_type: user
+bundle: user
+label: 'Where do you prefer to receive mail about VSCPA educational opportunities?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

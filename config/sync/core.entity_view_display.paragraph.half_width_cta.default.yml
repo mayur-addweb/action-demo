@@ -1,0 +1,64 @@
+uuid: 075ca861-932e-434e-ae9e-c2d445b47055
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.half_width_cta.field_alignment
+    - field.field.paragraph.half_width_cta.field_background
+    - field.field.paragraph.half_width_cta.field_body
+    - field.field.paragraph.half_width_cta.field_buttons
+    - field.field.paragraph.half_width_cta.field_image
+    - paragraphs.paragraphs_type.half_width_cta
+  module:
+    - image
+    - link
+    - options
+    - text
+id: paragraph.half_width_cta.default
+targetEntityType: paragraph
+bundle: half_width_cta
+mode: default
+content:
+  field_alignment:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_background:
+    type: list_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_buttons:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

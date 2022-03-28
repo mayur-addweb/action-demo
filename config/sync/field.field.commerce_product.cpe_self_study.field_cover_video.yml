@@ -1,0 +1,28 @@
+uuid: 1ceb27a4-4e7d-4beb-862c-8a7884ad3adf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_cover_video
+    - media.type.video
+    - commerce_product.commerce_product_type.cpe_self_study
+id: commerce_product.cpe_self_study.field_cover_video
+field_name: field_cover_video
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Cover Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

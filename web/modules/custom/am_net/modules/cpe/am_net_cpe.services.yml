@@ -1,0 +1,16 @@
+services:
+  am_net_cpe.document_manager:
+    class: Drupal\am_net_cpe\DocumentManager
+    arguments: ['@am_net.client', '@entity_type.manager', '@logger.channel.am_net_cpe', '@file.mime_type.guesser.extension']
+  am_net_cpe.product_manager:
+    class: Drupal\am_net_cpe\CpeProductManager
+    arguments: ['@am_net.client', '@entity_type.manager', '@logger.channel.am_net_cpe', '@am_net_cpe.document_manager', '@am_net.person_manager', '@am_net_firms.firm_manager', '@commerce_store.current_store']
+  am_net_cpe.registration_manager:
+    class: Drupal\am_net_cpe\CpeRegistrationManager
+    arguments: ['@am_net.client', '@entity_type.manager', '@logger.channel.am_net_cpe', '@am_net_cpe.product_manager', '@rng.event_manager', '@am_net_user_profile.manager']
+  am_net_cpe.virtual_conference_manager:
+    class: Drupal\am_net_cpe\VirtualConferenceManager
+    arguments: [ '@am_net_cpe.registration_manager' ]
+  logger.channel.am_net_cpe:
+    parent: logger.channel_base
+    arguments: ['am_net_cpe']

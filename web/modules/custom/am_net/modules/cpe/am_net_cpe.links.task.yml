@@ -1,0 +1,11 @@
+am_net_cpe.employee_cpe:
+  route_name: am_net_cpe.employee_cpe
+  base_route: entity.user.canonical
+  title: 'Employee CPE'
+  weight: 10
+
+am_net_cpe.event.virtual_conference:
+  route_name: am_net_cpe.event.virtual_conference
+  base_route: entity.commerce_product.canonical
+  title: 'Virtual Conference'
+  weight: 11

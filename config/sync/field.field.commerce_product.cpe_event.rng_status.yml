@@ -1,0 +1,21 @@
+uuid: 8dc210c7-dbfe-40ab-9f6f-36e752ec347b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_status
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_status
+field_name: rng_status
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Accept new registrations'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Accepting new registrations'
+  off_label: 'Not accepting new registrations'
+field_type: boolean

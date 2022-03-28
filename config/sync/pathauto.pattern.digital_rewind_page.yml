@@ -1,0 +1,22 @@
+uuid: 288cf168-ceb6-465c-8717-240c1f345c88
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: digital_rewind_page
+label: 'Digital Rewind Page'
+type: 'canonical_entities:node'
+pattern: 'digital-rewind/[node:title]'
+selection_criteria:
+  170aef53-1ada-43f1-ac17-e2bc0765d7a6:
+    id: node_type
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 170aef53-1ada-43f1-ac17-e2bc0765d7a6
+selection_logic: and
+weight: -5
+relationships: {  }

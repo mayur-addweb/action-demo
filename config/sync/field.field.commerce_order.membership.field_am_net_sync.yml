@@ -1,0 +1,25 @@
+uuid: 97dfa74b-b8dd-4bec-b678-34e8bed847eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.membership
+    - field.storage.commerce_order.field_am_net_sync
+  module:
+    - vscpa_commerce
+id: commerce_order.membership.field_am_net_sync
+field_name: field_am_net_sync
+entity_type: commerce_order
+bundle: membership
+label: 'AM.net Sync'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    order_items: {  }
+    sync_status: 0
+    items: {  }
+default_value_callback: ''
+settings: {  }
+field_type: am_net_order_items

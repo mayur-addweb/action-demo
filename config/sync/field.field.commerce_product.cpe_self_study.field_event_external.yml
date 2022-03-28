@@ -1,0 +1,23 @@
+uuid: 48795895-68ca-47ea-b690-cb6100da7033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_event_external
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - link
+id: commerce_product.cpe_self_study.field_event_external
+field_name: field_event_external
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'External Registration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

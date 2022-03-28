@@ -1,0 +1,20 @@
+uuid: e1bc8c6c-6f4e-473b-a53b-f951b3ea3557
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.rss_page.field_rss_channel_description
+  module:
+    - rss_list
+id: rss_page.rss_page.field_rss_channel_description
+field_name: field_rss_channel_description
+entity_type: rss_page
+bundle: rss_page
+label: 'RSS Channel Description'
+description: 'The description element holds character data that provides a human-readable characterization or summary of the feed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

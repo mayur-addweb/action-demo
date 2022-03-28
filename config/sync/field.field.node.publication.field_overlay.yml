@@ -1,0 +1,21 @@
+uuid: 70c5c425-5bae-4252-bf0f-348d9bb62ba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overlay
+    - node.type.publication
+  module:
+    - options
+id: node.publication.field_overlay
+field_name: field_overlay
+entity_type: node
+bundle: publication
+label: Overlay
+description: 'What color should the Cover be overlaid with (<i>-none-</i> is transparent)?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

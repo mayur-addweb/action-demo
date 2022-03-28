@@ -1,0 +1,47 @@
+uuid: 0142f81a-8374-4b5e-aa03-45b433758a39
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vscpa
+  module:
+    - block_class
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: vscpa-view-title
+id: views_block__vscpa_government_contracting_resources
+theme: vscpa_bootstrap
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:vscpa-government_contracting_resources'
+settings:
+  id: 'views_block:vscpa-government_contracting_resources'
+  label: 'Government Contracting Resources'
+  provider: views
+  label_display: visible
+  views_label: 'Government Contracting Resources'
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1539629263'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1539629263'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /government-contracting-resources
+    negate: false
+    context_mapping: {  }

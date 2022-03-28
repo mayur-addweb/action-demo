@@ -1,0 +1,23 @@
+uuid: ea3e9bda-a040-4b58-bbe7-d81e572a7195
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - user
+    - vscpa_commerce
+id: event_session.field_session_administrator
+field_name: field_session_administrator
+entity_type: event_session
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    user: user
+module: dynamic_entity_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

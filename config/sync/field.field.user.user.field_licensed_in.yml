@@ -1,0 +1,21 @@
+uuid: a3e2141d-c898-47a7-a945-2592f1c3ac95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_licensed_in
+  module:
+    - options
+    - user
+id: user.user.field_licensed_in
+field_name: field_licensed_in
+entity_type: user
+bundle: user
+label: 'Are you a licensed Certified Public Accountant of any state or territory of the United States or the District of Columbia?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

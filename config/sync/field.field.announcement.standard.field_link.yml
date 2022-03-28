@@ -1,0 +1,23 @@
+uuid: 6b695895-a228-4270-8b69-14eae00d6f80
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.storage.announcement.field_link
+  module:
+    - link
+id: announcement.standard.field_link
+field_name: field_link
+entity_type: announcement
+bundle: standard
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,20 @@
+uuid: 0c1ee0da-da95-4269-9920-f2b1de0913eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - commerce_product
+id: commerce_product.field_dates_times
+field_name: field_dates_times
+entity_type: commerce_product
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+---
+
+- import_tasks: ufw.yml
+- import_tasks: nfs-server.yml
+- import_role:
+    name: newrelic.newrelic-infra
+  become: yes
+  tags:
+    - newrelic

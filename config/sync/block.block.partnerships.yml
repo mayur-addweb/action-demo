@@ -1,0 +1,31 @@
+uuid: 2d537cad-fe33-42e7-a695-783d3bedc84b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_half_width:39889046-d083-45ff-b72f-6eefe8476606'
+  module:
+    - block_content
+    - system
+  theme:
+    - vscpa_bootstrap
+id: partnerships
+theme: vscpa_bootstrap
+region: homepage
+weight: -25
+provider: null
+plugin: 'block_content:39889046-d083-45ff-b72f-6eefe8476606'
+settings:
+  id: 'block_content:39889046-d083-45ff-b72f-6eefe8476606'
+  label: Partnerships
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

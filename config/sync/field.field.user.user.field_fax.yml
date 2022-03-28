@@ -1,0 +1,21 @@
+uuid: e5db1736-2a31-4051-9646-58741c922014
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_fax
+  module:
+    - telephone
+    - user
+id: user.user.field_fax
+field_name: field_fax
+entity_type: user
+bundle: user
+label: Fax
+description: 'Format: XXX-XXX-XXXX'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

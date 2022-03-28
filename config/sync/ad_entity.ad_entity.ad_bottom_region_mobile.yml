@@ -1,0 +1,18 @@
+uuid: 8e5322b1-f2c6-4569-a487-2c062a93fd8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ad_entity_dfp
+third_party_settings:
+  ad_entity_dfp:
+    network_id: '21756634409'
+    unit_id: ad_bottom_region
+    out_of_page: false
+    sizes: '[[320,50]]'
+    targeting: null
+id: ad_bottom_region_mobile
+label: 'Ad Bottom Region (Mobile)'
+type_plugin_id: dfp
+view_plugin_id: dfp_default
+disable_initialization: true

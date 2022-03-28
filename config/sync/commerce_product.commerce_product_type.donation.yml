@@ -1,0 +1,11 @@
+uuid: 02e335e7-b05a-49ff-927b-70b7f9a74e25
+langcode: en
+status: true
+dependencies: {  }
+id: donation
+label: Donation
+description: 'A standalone donation, not accompanying any other specific type of product.'
+variationType: donation
+injectVariationFields: true
+traits: {  }
+locked: false

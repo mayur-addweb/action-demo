@@ -1,0 +1,21 @@
+uuid: b851a035-5bae-4ac1-8b05-c2db0f512a0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_nickname
+field_name: field_nickname
+entity_type: user
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

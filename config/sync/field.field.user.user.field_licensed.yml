@@ -1,0 +1,21 @@
+uuid: a60fff01-d49b-464b-be72-fbe252cffbbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_licensed
+  module:
+    - options
+    - user
+id: user.user.field_licensed
+field_name: field_licensed
+entity_type: user
+bundle: user
+label: Licensed
+description: 'Admin Field to Storage the AM.net LicensedCode.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

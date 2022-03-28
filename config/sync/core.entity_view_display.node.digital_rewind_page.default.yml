@@ -1,0 +1,49 @@
+uuid: 89bdd9ff-06c7-4d8d-9be0-9ec5f4673102
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.digital_rewind_page.field_additional_resources
+    - field.field.node.digital_rewind_page.field_digital_rewind_event_id
+    - field.field.node.digital_rewind_page.field_featurette_bottom
+    - field.field.node.digital_rewind_page.field_featurette_top
+    - field.field.node.digital_rewind_page.field_sidebar_content
+    - node.type.digital_rewind_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.digital_rewind_page.default
+targetEntityType: node
+bundle: digital_rewind_page
+mode: default
+content:
+  field_featurette_bottom:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_featurette_top:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_additional_resources: true
+  field_digital_rewind_event_id: true
+  field_sidebar_content: true
+  search_api_excerpt: true
+  title_field: true
+  title_teaser: true

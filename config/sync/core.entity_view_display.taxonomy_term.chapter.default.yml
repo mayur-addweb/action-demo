@@ -1,0 +1,25 @@
+uuid: 7d79807d-0677-4394-9b73-930fa012fd5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.chapter.field_amnet_chapte_code
+    - field.field.taxonomy_term.chapter.field_chapter_link
+    - taxonomy.vocabulary.chapter
+  module:
+    - text
+id: taxonomy_term.chapter.default
+targetEntityType: taxonomy_term
+bundle: chapter
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_chapte_code: true
+  field_chapter_link: true

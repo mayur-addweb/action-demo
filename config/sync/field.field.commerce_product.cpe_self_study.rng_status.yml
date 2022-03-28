@@ -1,0 +1,21 @@
+uuid: a4a4fbaf-23ce-4963-9e41-59de91df37d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_self_study
+    - field.storage.commerce_product.rng_status
+id: commerce_product.cpe_self_study.rng_status
+field_name: rng_status
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Accept new registrations'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Accepting new registrations'
+  off_label: 'Not accepting new registrations'
+field_type: boolean

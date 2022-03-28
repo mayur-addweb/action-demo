@@ -1,0 +1,33 @@
+uuid: ce41f124-294a-4981-aebf-001a5304a50a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order_item.field_fund
+field_name: field_fund
+entity_type: commerce_order_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: AF
+      label: 'Annual Fund - this would really help!*'
+    -
+      value: VS
+      label: 'Samuel A. Derieux Memorial Scholarship'
+    -
+      value: WM
+      label: 'Mares Scholars Fund'
+    -
+      value: MJ
+      label: 'Murray, Jonson, White & Associates Fund'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

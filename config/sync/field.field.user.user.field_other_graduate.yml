@@ -1,0 +1,20 @@
+uuid: fb38d824-636f-4982-b41d-1d56b050e383
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_other_graduate
+  module:
+    - user
+id: user.user.field_other_graduate
+field_name: field_other_graduate
+entity_type: user
+bundle: user
+label: 'Other, please list'
+description: 'What was the name of your graduate institution?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

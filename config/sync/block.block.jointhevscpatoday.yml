@@ -1,0 +1,53 @@
+uuid: 1e92e0ed-bc9d-4449-b6b9-b99436f06fb4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:197c12f3-9851-40b9-8899-009722a59428'
+  module:
+    - am_net_membership
+    - block_content
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: jointhevscpatoday
+theme: vscpa_bootstrap
+region: content
+weight: -23
+provider: null
+plugin: 'block_content:197c12f3-9851-40b9-8899-009722a59428'
+settings:
+  id: 'block_content:197c12f3-9851-40b9-8899-009722a59428'
+  label: 'Join the VSCPA Today!'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1521845284'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1521845284'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/join-vscpa-today\r\n/join"
+    negate: false
+    context_mapping: {  }
+  user_member_status:
+    id: user_member_status
+    member_status:
+      M: M
+      L: L
+    negate: true
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -1,0 +1,19 @@
+uuid: 38c2a3db-39ac-482c-ad8d-00833b2aad2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_search_keywords
+field_name: field_search_keywords
+entity_type: commerce_product
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

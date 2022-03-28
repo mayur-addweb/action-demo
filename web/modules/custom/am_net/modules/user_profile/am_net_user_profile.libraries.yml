@@ -1,0 +1,5 @@
+elected_officials:
+  version: VERSION
+  css:
+    layout:
+      css/elected-officials.css: {}

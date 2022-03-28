@@ -1,0 +1,24 @@
+uuid: 7370c266-9c09-4233-8d3b-d75baa1439c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.half_width_cta_container.field_hw_cta
+    - paragraphs.paragraphs_type.half_width_cta_container
+  module:
+    - entity_reference_revisions
+id: paragraph.half_width_cta_container.default
+targetEntityType: paragraph
+bundle: half_width_cta_container
+mode: default
+content:
+  field_hw_cta:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

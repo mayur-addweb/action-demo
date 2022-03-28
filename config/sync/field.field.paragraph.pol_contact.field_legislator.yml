@@ -1,0 +1,28 @@
+uuid: 4e25b516-e597-42bb-8bc4-f4795385b22c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_legislator
+    - node.type.person
+    - paragraphs.paragraphs_type.pol_contact
+id: paragraph.pol_contact.field_legislator
+field_name: field_legislator
+entity_type: paragraph
+bundle: pol_contact
+label: Legislator
+description: 'Enter the first few characters of your Legislator''s name (being too specific may unnecessarily exclude your company from the results).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

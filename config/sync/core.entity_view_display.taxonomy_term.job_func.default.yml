@@ -1,0 +1,23 @@
+uuid: 4266162b-8040-4e9a-af21-3cdcda56eec6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.job_func.field_amnet_job_function_code
+    - taxonomy.vocabulary.job_func
+  module:
+    - text
+id: taxonomy_term.job_func.default
+targetEntityType: taxonomy_term
+bundle: job_func
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_job_function_code: true

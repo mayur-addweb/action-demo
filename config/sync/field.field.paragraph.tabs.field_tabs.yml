@@ -1,0 +1,70 @@
+uuid: f778bd9e-ff3d-4d32-b0b3-e9e9b70688c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tabs
+    - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.tabs
+  module:
+    - entity_reference_revisions
+id: paragraph.tabs.field_tabs
+field_name: field_tabs
+entity_type: paragraph
+bundle: tabs
+label: Tabs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tab_item: tab_item
+    target_bundles_drag_drop:
+      tab_item:
+        enabled: true
+        weight: 15
+      bp_columns:
+        weight: 16
+        enabled: false
+      column:
+        weight: 17
+        enabled: false
+      cpe_credit:
+        weight: 18
+        enabled: false
+      feat_media:
+        weight: 19
+        enabled: false
+      feat_people:
+        weight: 20
+        enabled: false
+      feat_tabs:
+        weight: 21
+        enabled: false
+      feat_textarea:
+        weight: 22
+        enabled: false
+      item:
+        weight: 23
+        enabled: false
+      pol_contact:
+        weight: 24
+        enabled: false
+      session:
+        weight: 25
+        enabled: false
+      slide:
+        weight: 26
+        enabled: false
+      slideshow:
+        weight: 27
+        enabled: false
+      tabs:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

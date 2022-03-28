@@ -1,0 +1,14 @@
+uuid: 5f15f692-1437-4d4e-9963-b1aefde4b4c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.firm_administrator
+  module:
+    - user
+id: user_add_role_action.firm_administrator
+label: 'Add the Firm Administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: firm_administrator

@@ -1,0 +1,23 @@
+uuid: 44faf2c4-d0e9-4f2b-8f5e-e7f2396da2c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_guest_only
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_guest_only
+field_name: field_session_guest_only
+entity_type: event_session
+bundle: default
+label: 'Guest only?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

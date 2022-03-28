@@ -1,0 +1,102 @@
+uuid: 6faaff3d-b063-419a-ba45-049481c6225d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.firm.field_address
+    - field.field.taxonomy_term.firm.field_amnet_branch_offices
+    - field.field.taxonomy_term.firm.field_amnet_id
+    - field.field.taxonomy_term.firm.field_amnet_linked_persons
+    - field.field.taxonomy_term.firm.field_amnet_main_office
+    - field.field.taxonomy_term.firm.field_amnet_member_count
+    - field.field.taxonomy_term.firm.field_amnet_nonmember_count
+    - field.field.taxonomy_term.firm.field_fax
+    - field.field.taxonomy_term.firm.field_firm_contacts
+    - field.field.taxonomy_term.firm.field_firm_name2
+    - field.field.taxonomy_term.firm.field_general_business
+    - field.field.taxonomy_term.firm.field_phone
+    - field.field.taxonomy_term.firm.field_websites
+    - taxonomy.vocabulary.firm
+  module:
+    - address
+    - link
+    - telephone
+    - text
+id: taxonomy_term.firm.default
+targetEntityType: taxonomy_term
+bundle: firm
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_fax:
+    weight: 5
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_firm_contacts:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_firm_name2:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_general_business:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_phone:
+    weight: 4
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_websites:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_amnet_branch_offices: true
+  field_amnet_id: true
+  field_amnet_linked_persons: true
+  field_amnet_main_office: true
+  field_amnet_member_count: true
+  field_amnet_nonmember_count: true

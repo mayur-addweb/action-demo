@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ *
+ * CPE Event product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+  product_entity.bundle|clean_class,
+  not product_entity.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  event_registration_status ? event_registration_status|clean_class,
+  'col-xs-12 col-md-6 col-lg-6'
+]
+%}
+{# Check if field_firm has content #}
+{% set location_link = product.field_firm|render %}
+<article{{ attributes.addClass(classes) }}>
+  <div class="bundle-content">
+    <a href="JavaScript:Void(0);" class="modal-bundle-event-details" data-content-selector=".modal-content-{{ product_entity.id() }}">{{ product_entity.label() }}</a>
+    {{ dates_full }}
+    {{ product.field_city_area }}
+    {{ product.field_credit_hours }}
+  </div>
+  <div class="modal-content-{{ product_entity.id() }} hide" data-title="{{ product_entity.label() }}">
+    {{ product.field_courses_objectives }}
+    {{ product.field_course_designedfor }}
+    {{ product.field_course_prereqs }}
+    {{ product.Sponsors }}
+    {{ product.body }}
+    {% if location_link %}
+      <h3 class="accent-left blue" id="location">Facility</h3>
+      {{ product.field_firm }}
+    {% endif %}
+    {{ product.field_leaders }}
+    <a class="btn btn-primary" target="_blank" href="{{ product_url }}">Read More <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+  </div>
+</article>

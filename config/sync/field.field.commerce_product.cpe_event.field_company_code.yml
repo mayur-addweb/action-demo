@@ -1,0 +1,21 @@
+uuid: 3eb76567-3fcc-4277-a8ec-e5723ee2dd15
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_company_code
+  module:
+    - options
+id: commerce_product.cpe_event.field_company_code
+field_name: field_company_code
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Company Code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

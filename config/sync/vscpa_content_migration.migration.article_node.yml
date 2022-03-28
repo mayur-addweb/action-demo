@@ -1,0 +1,53 @@
+id: article_node
+label: 'CSV Articles Content'
+migration_group: vscpa
+source:
+  plugin: csv
+  path: 'public://resources/articles.csv'
+  delimiter: ','
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: 'Unique Id PageID'
+    13:
+      name: Name
+    14:
+      description: Description
+    15:
+      enabled: Enabled
+    22:
+      isparent: 'Is Parent'
+    26:
+      modified_date_time: 'Modified Date Time'
+    27:
+      created_date_time: 'Created Date Time'
+    31:
+      friendly_url: 'Friendly Url'
+    32:
+      alternative_text: 'Alternative Text'
+    33:
+      title: Title
+    40:
+      link_url: LinkUrl
+    41:
+      summary: Summary
+    42:
+      keywords: Keywords
+    43:
+      body: Content
+    44:
+      status_id: StatusID
+destination:
+  plugin: 'entity:node'
+process:
+  type:
+    plugin: default_value
+    default_value: publication
+  title: title
+  nid: id
+  body/value: body
+  body/summary: summary
+_core:
+  default_config_hash: WhzdA-b8HJvpeoMFcSNUZ6xN77TsLvXWHC6pP1RZk9A

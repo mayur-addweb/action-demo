@@ -1,0 +1,30 @@
+uuid: 93e64492-041a-4713-9cf6-28ba7e48f03e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_edupostal_sendto
+field_name: field_edupostal_sendto
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: O
+      label: 'Office address'
+    -
+      value: H
+      label: 'Home address'
+    -
+      value: 'NULL'
+      label: 'Do not send general mail'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

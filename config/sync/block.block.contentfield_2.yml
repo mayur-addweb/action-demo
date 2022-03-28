@@ -1,0 +1,53 @@
+uuid: f89e10c2-3d82-4387-a2f5-2634b236e327
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_resources
+  module:
+    - block_class
+    - ctools
+    - entity_reference_revisions
+    - fieldblock
+    - rng
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: block-additional-resources
+id: contentfield_2
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -32
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Additional Resources'
+  provider: fieldblock
+  label_display: visible
+  label_from_field: false
+  field_name: field_additional_resources
+  formatter_id: entity_reference_revisions_entity_view
+  formatter_settings:
+    view_mode: default
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rng_current_time:
+    id: rng_current_time
+    date: '1597350978'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1597350978'
+    negate: false
+    context_mapping: {  }

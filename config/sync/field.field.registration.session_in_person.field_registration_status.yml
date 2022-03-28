@@ -1,0 +1,23 @@
+uuid: 2080e689-c6d2-41fd-b1b1-66b99ecdb83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.registration.field_registration_status
+    - rng.registration_type.session_in_person
+  module:
+    - options
+id: registration.session_in_person.field_registration_status
+field_name: field_registration_status
+entity_type: registration
+bundle: session_in_person
+label: 'Registration status'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: active
+default_value_callback: ''
+settings: {  }
+field_type: list_string

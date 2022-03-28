@@ -1,0 +1,27 @@
+---
+# External dependencies used by this project
+
+- src: geerlingguy.composer
+- src: geerlingguy.java
+- src: geerlingguy.nginx
+- src: geerlingguy.nodejs
+- src: geerlingguy.php
+- src: geerlingguy.php-versions
+- src: geerlingguy.postfix
+- src: geerlingguy.redis
+- src: geerlingguy.solr
+- src: newrelic.newrelic-infra
+- src: weareinteractive.php5_newrelic
+
+- name: ut.common
+  src: git@gitlab.utdev.com:DevOps/ansible/common.git
+  scm: git
+  version: master
+
+- name: ut.mariadb
+  src: git@gitlab.utdev.com:DevOps/ansible/mariadb.git
+  scm: git
+  version: master
+
+- src: https://github.com/nickhammond/ansible-logrotate
+  name: nickhammond.logrotate

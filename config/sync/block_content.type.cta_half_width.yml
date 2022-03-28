@@ -1,0 +1,8 @@
+uuid: a91682dc-c641-43ca-b502-ec437f27e2a8
+langcode: en
+status: true
+dependencies: {  }
+id: cta_half_width
+label: 'CTA (Half-Width)'
+revision: 1
+description: ''

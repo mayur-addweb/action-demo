@@ -1,0 +1,77 @@
+uuid: 38b8441b-d583-489a-a46a-29a1085de8db
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.membership_donation
+    - field.field.commerce_order_item.membership_donation.field_donation_anonymous
+    - field.field.commerce_order_item.membership_donation.field_donation_source
+    - field.field.commerce_order_item.membership_donation.field_order_item
+    - field.field.commerce_order_item.membership_donation.field_user
+  module:
+    - commerce_order
+id: commerce_order_item.membership_donation.default
+targetEntityType: commerce_order_item
+bundle: membership_donation
+mode: default
+content:
+  field_donation_anonymous:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_donation_source:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_order_item:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_user:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  purchased_entity:
+    type: entity_reference_autocomplete
+    weight: -1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  quantity:
+    type: commerce_quantity
+    weight: 1
+    region: content
+    settings:
+      step: '1'
+      placeholder: ''
+    third_party_settings: {  }
+  unit_price:
+    type: commerce_unit_price
+    weight: 2
+    settings:
+      require_confirmation: true
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true

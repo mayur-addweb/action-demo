@@ -1,0 +1,23 @@
+uuid: 3c43bff4-7ed4-4814-9c45-93c8238735d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.credit_type.field_amnet_credit_category_code
+    - taxonomy.vocabulary.credit_type
+  module:
+    - text
+id: taxonomy_term.credit_type.default
+targetEntityType: taxonomy_term
+bundle: credit_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_credit_category_code: true

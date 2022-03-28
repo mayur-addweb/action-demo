@@ -1,0 +1,9 @@
+uuid: 090b0871-412b-424e-9d06-af82efa37839
+langcode: en
+status: true
+dependencies: {  }
+id: node_type_conference
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

@@ -1,0 +1,13 @@
+uuid: bc5abf2c-fa7a-4deb-9cb6-f0e7c5fab07e
+langcode: en
+status: true
+dependencies: {  }
+id: amnet_agent
+label: 'AM.net Agent'
+weight: 9
+is_admin: null
+permissions:
+  - 'restful post am_net_trigger_sync_event'
+  - 'restful post am_net_trigger_sync_name'
+  - 'restful post am_net_trigger_sync_product'
+  - 'restful post am_net_trigger_sync_registration'

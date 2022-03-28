@@ -1,0 +1,39 @@
+uuid: bbd91a2a-a49b-4268-bc3a-ac871df86cfc
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_company_code
+field_name: field_company_code
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ETHIC
+      label: Ethics
+    -
+      value: GROUP
+      label: 'Group Dues'
+    -
+      value: NORTH
+      label: 'Northern Virginia'
+    -
+      value: ONLIN
+      label: Online
+    -
+      value: VSCPA
+      label: VSCPA
+    -
+      value: VSCP-
+      label: VSCPA-CPE
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: 50addaae-d58c-4f35-a097-8f46189b8ee9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.connect_comm.field_amnet_email_codes
+    - taxonomy.vocabulary.connect_comm
+  module:
+    - text
+id: taxonomy_term.connect_comm.default
+targetEntityType: taxonomy_term
+bundle: connect_comm
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_email_codes:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

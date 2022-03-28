@@ -1,0 +1,21 @@
+uuid: 406b9c89-cff5-40f5-9e4d-90ff56cdbe7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_summary
+    - paragraphs.paragraphs_type.view_embed
+  module:
+    - text
+id: paragraph.view_embed.field_view_summary
+field_name: field_view_summary
+entity_type: paragraph
+bundle: view_embed
+label: 'View Summary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 6cf33eb5-e91e-4c3b-b345-e1fbb79c08c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_nonmember_count
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_amnet_nonmember_count
+field_name: field_amnet_nonmember_count
+entity_type: taxonomy_term
+bundle: firm
+label: 'AM.net Nonmember Count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

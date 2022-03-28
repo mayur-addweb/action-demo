@@ -1,0 +1,19 @@
+uuid: 8ef9856b-0f16-440b-8eca-befd332f6a26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_job_function_code
+    - taxonomy.vocabulary.job_func
+id: taxonomy_term.job_func.field_amnet_job_function_code
+field_name: field_amnet_job_function_code
+entity_type: taxonomy_term
+bundle: job_func
+label: 'Job Function Code'
+description: 'Please Provide AM.net Job Function Code.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

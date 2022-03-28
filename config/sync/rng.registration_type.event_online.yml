@@ -1,0 +1,7 @@
+uuid: 21994ba5-a0b8-41b1-b0e3-a842b412eb0e
+langcode: en
+status: true
+dependencies: {  }
+label: 'Online event'
+id: event_online
+description: 'A registration for an online event.'

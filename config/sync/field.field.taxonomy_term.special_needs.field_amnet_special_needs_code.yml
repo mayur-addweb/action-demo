@@ -1,0 +1,19 @@
+uuid: 54fa4f08-26a3-4198-b2f5-95cd07c587ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_special_needs_code
+    - taxonomy.vocabulary.special_needs
+id: taxonomy_term.special_needs.field_amnet_special_needs_code
+field_name: field_amnet_special_needs_code
+entity_type: taxonomy_term
+bundle: special_needs
+label: 'Special Needs Code'
+description: 'Provide AM.net Special Needs Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

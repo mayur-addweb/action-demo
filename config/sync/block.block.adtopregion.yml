@@ -1,0 +1,41 @@
+uuid: c8e6c278-6515-4727-b52c-e27156f7dbdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - ad_entity.display.ad_top_region
+  module:
+    - ad_entity
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: adtopregion
+theme: vscpa_bootstrap
+region: top_full_width
+weight: -15
+provider: null
+plugin: 'ad_display:ad_top_region'
+settings:
+  id: 'ad_display:ad_top_region'
+  label: 'Ad Top Region'
+  provider: ad_entity
+  label_display: '0'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1520264205'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1520264205'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,30 @@
+uuid: 510f014e-6ba2-41e5-a14e-4c49c6177f80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.general_business.field_amnet_gb_code
+    - taxonomy.vocabulary.general_business
+  module:
+    - text
+id: taxonomy_term.general_business.default
+targetEntityType: taxonomy_term
+bundle: general_business
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_gb_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

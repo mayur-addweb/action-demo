@@ -1,0 +1,19 @@
+uuid: 1d9cf4bc-21ac-4405-af4c-c8d92f075245
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_course_syllabus
+field_name: field_course_syllabus
+entity_type: commerce_product
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,41 @@
+am_net_cpe.update_drupal_events:
+  title: 'Fetch Event Records'
+  parent: am_net.admin_settings
+  description: 'Fetch Event Records.'
+  route_name: am_net_cpe.update_drupal_events
+
+am_net_cpe.sync_events:
+  title: 'Sync CPE events from AM.net'
+  parent: am_net.admin_settings
+  description: 'Sync CPE events from AM.net'
+  route_name: am_net_cpe.sync_events
+
+am_net_cpe.sync:
+  title: 'Sync Events & Products'
+  parent: am_net.vscpa_config
+  description: 'Sync Events & Products.'
+  route_name: am_net_cpe.sync_events
+
+am_net_cpe.sync_events_from_amnet:
+  title: 'Sync CPE events from AM.net'
+  parent: am_net_cpe.sync
+  description: 'Sync CPE events from AM.net'
+  route_name: am_net_cpe.sync_events
+
+am_net_cpe.sync_products_from_amnet:
+  title: 'Sync CPE products from AM.net'
+  parent: am_net_cpe.sync
+  description: 'Sync CPE products from AM.net'
+  route_name: am_net_cpe.sync_products
+
+am_net_cpe.event.multi_event_config:
+  title: 'Multi-Event Settings'
+  parent: am_net.vscpa_config
+  description: 'Multi-event acronym exclusions.'
+  route_name: am_net_cpe.event.multi_event_config
+
+am_net_cpe.event.sso_downtime:
+  title: 'SSO-Downtime Settings'
+  parent: am_net.vscpa_config
+  description: 'SSO-Downtime Settings.'
+  route_name: am_net_cpe.event.sso_downtime

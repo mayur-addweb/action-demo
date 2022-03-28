@@ -1,0 +1,10 @@
+uuid: 42734a07-f902-4b49-ac60-ae2f5de2c702
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.rng_event
+label: 'Event Settings'
+targetEntityType: commerce_product
+cache: true

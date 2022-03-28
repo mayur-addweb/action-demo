@@ -1,0 +1,25 @@
+uuid: 51a193f0-390f-40f2-a3a2-107423b8263f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.quicklinks
+  module:
+    - system
+  theme:
+    - vscpa_bootstrap
+id: quicklinks
+theme: vscpa_bootstrap
+region: search_flyout
+weight: -19
+provider: null
+plugin: 'system_menu_block:quicklinks'
+settings:
+  id: 'system_menu_block:quicklinks'
+  label: 'Quick Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

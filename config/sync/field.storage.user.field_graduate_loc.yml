@@ -1,0 +1,20 @@
+uuid: b19e16a2-90cb-4cc4-ad0a-4219ac2390c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: user.field_graduate_loc
+field_name: field_graduate_loc
+entity_type: user
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

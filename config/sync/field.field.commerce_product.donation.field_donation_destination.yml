@@ -1,0 +1,23 @@
+uuid: c60e1a0f-a9e5-42bf-a567-91b9ecfd0e00
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.donation
+    - field.storage.commerce_product.field_donation_destination
+  module:
+    - options
+id: commerce_product.donation.field_donation_destination
+field_name: field_donation_destination
+entity_type: commerce_product
+bundle: donation
+label: Destination
+description: 'The destination for the funds of this donation.'
+required: true
+translatable: true
+default_value:
+  -
+    value: PAC
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+uuid: 0aada3fa-fc3d-45f9-b15f-604c8c623000
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_dues_adjs
+  module:
+    - user
+id: user.user.field_amnet_dues_adjs
+field_name: field_amnet_dues_adjs
+entity_type: user
+bundle: user
+label: 'Dues Adjustments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

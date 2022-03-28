@@ -1,0 +1,48 @@
+uuid: e3b563ed-cc95-4f79-8e39-17181aed4da1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background
+field_name: field_background
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: black
+      label: Black
+    -
+      value: blue
+      label: Blue
+    -
+      value: gold
+      label: Gold
+    -
+      value: green
+      label: Green
+    -
+      value: purple
+      label: Purple
+    -
+      value: slate
+      label: Slate
+    -
+      value: none
+      label: None
+    -
+      value: wave_top
+      label: 'Wave - Top Fade'
+    -
+      value: wave_bottom
+      label: 'Wave - Bottom Fade'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

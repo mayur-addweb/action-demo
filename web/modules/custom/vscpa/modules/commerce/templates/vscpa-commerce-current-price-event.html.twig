@@ -1,0 +1,74 @@
+{#
+/**
+ * Default template for [VSCPA Commerce] 'Current price formatted' field display.
+ *
+ * Available variables:
+ * - current_option: An array with the following properties:
+ *   - type: Either 'regular' or 'earlybird'.
+ *   - price: The current price.
+ *   - end_date: The date until.
+     - user_status: user role.
+ * - next_option: An array with the same property keys as current_option.
+ * - status: event-close or event-open:
+ */
+#}
+
+<dl>
+  {% if badge_class %}
+    {% if badge_class == 'trending' %}
+      <div class="badge badge-flag badge-{{ badge_class }}">Trending Event</div>
+    {% endif %}
+    {% if badge_class == 'hot' %}
+      <div class="badge badge-flag badge-{{ badge_class }}">Hot Event</div>
+    {% endif %}
+  {% endif %}
+  {% if status == 'event-close' %}
+    <div class="registration"><span class="icon icon-close"></span>Registration Status: CLOSED -- Please contact the VSCPA at <a href="mailto:cpe@vscpa.com">cpe@vscpa.com</a> or <a href="tel:8007338272">(800) 733-8272</a> for availability.</div>
+  {% else %}
+    <div class="registration"><span class="icon icon-check"></span>Registration is Open</div>
+  {% endif %}
+  <div class="event-prices">
+    {% if current_option.show_single_price %}
+      <div class="members">
+        <dt>Price</dt>
+        {% if current_option.type == 'earlybird' %}
+          <dd class="earlybird">{{ current_option.member_price }} Early Registration <i>(through {{ current_option.end_date|date('m/d/Y') }})</i></dd>
+        {% else %}
+          <dd>{{ current_option.member_price }} Regular Registration</dd>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="members">
+        <dt>
+          {% if current_option.is_member == true %}
+            {{ 'Your Member Price' }}
+          {% else %}
+            {{ 'Member Price' }}
+          {% endif %}
+        </dt>
+        {% if current_option.type == 'earlybird' %}
+          <dd class="earlybird">{{ current_option.member_price }} Early Registration <i>(through {{ current_option.end_date|date('m/d/Y') }})</i></dd>
+        {% else %}
+          <dd>{{ current_option.member_price }} Regular Registration</dd>
+        {% endif %}
+      </div>
+      <div class="non-members">
+        <dt>
+          {% if current_option.is_member == false %}
+            {{ 'Your Price' }}
+          {% else %}
+            {{ 'Nonmember Price' }}
+          {% endif %}
+        </dt>
+        {% if current_option.type == 'earlybird' %}
+          <dd class="earlybird">{{ current_option.price }} Early Registration <i>(through {{ current_option.end_date|date('m/d/Y') }})</i></dd>
+        {% else %}
+          <dd>{{ current_option.price }} Regular Registration</dd>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if discount_off_label %}
+      {{ discount_off_label }}
+    {% endif %}
+  </div>
+</dl>

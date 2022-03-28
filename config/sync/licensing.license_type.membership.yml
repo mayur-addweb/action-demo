@@ -1,0 +1,24 @@
+uuid: a6c34f2b-f780-489d-b5af-d97c61749bd4
+langcode: en
+status: true
+dependencies: {  }
+id: membership
+label: Membership
+target_bundles: null
+target_entity_type: node
+roles:
+  member: member
+  authenticated: 0
+  administrator: 0
+  content_manager: 0
+  content_author: 0
+  store_manager: 0
+  firm_administrator: 0
+exempt_roles:
+  authenticated: 0
+  administrator: 0
+  content_manager: 0
+  content_author: 0
+  store_manager: 0
+  firm_administrator: 0
+  member: 0

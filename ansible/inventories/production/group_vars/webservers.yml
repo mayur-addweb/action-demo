@@ -1,0 +1,210 @@
+---
+# Web server configuration is handled in this file. All of the variables used
+# to configure the services run on the web servers (primarily NGINX and PHP, as
+# well as supporting tools like Composer if needed) are specified here.
+#
+# Each service should have a link with it for reference when setting variable
+# values. You should continue this practice when adding any additional services.
+
+# NGINX
+# Details: https://github.com/geerlingguy/ansible-role-nginx
+nginx_client_max_body_size: "200m"
+nginx_ppa_use: true
+nginx_ppa_version: development
+
+nginx_worker_connections: "{{ (ansible_processor_vcpus|default(ansible_processor_count)) * 1024 }}"
+nginx_multi_accept: "on"
+
+nginx_extra_conf_options: |
+  worker_rlimit_nofile 65532;
+
+nginx_remove_default_vhost: true
+
+# Hide the nginx version from the Server header
+nginx_server_tokens: "off"
+
+nginx_vhosts:
+  - listen: "80 default_server"
+    server_name: "vscpa.com www.vscpa.com"
+    root: "/srv/vscpa.com/current/web"
+    index: "index.php index.html index.htm"
+    access_log: "/var/log/nginx/vscpa.com_access.log"
+    error_log: "/var/log/nginx/vscpa.com_error.log"
+    filename: "vscpa.com.80.conf"
+    extra_parameters: |
+      # Security headers
+      add_header X-Content-Type-Options "nosniff" always;
+      add_header Upgrade-Insecure-Requests "1" always;
+      add_header Vary Upgrade-Insecure-Requests always;
+      add_header Referrer-Policy 'no-referrer-when-downgrade' always;
+      add_header X-XSS-Protection "1; mode=block" always;
+      add_header Content-Security-Policy "frame-ancestors 'self' *.onlinexperiences.com ; default-src 'self' 'unsafe-inline' https: ; img-src 'self' 'unsafe-inline' data: https: ; font-src 'self' data: https: ; connect-src 'self' *.vscpa.com *.youtube.com *.doubleclick.net *.googlesyndication.com *.google.com *.gstatic.com *.google-analytics.com *.disqus.com *.addtoany.com *.quiz-maker.com sentry.utdev.com ; media-src https: ; object-src 'self' ; child-src 'self' *.vscpa.com *.hotjar.com *.googlesyndication.com *.addtoany.com *.google.com disqus.com *.disqus.com *.opinionstage.com *.youtube.com api.connectedcommunity.org www.votervoice.net *.doubleclick.net ; form-action 'self' *.vscpa.com; upgrade-insecure-requests; report-uri https://sentry.utdev.com/api/9/security/?sentry_key=29b81994715f4157999bea5f68359b3f;" always;
+
+      location = /favicon.ico {
+          log_not_found off;
+          access_log off;
+      }
+      location = /robots.txt {
+          allow all;
+          expires 1h;
+          log_not_found off;
+          access_log off;
+      }
+      location ~* \.(txt|log)$ {
+          allow 192.168.0.0/16;
+          deny all;
+      }
+      location ~ \..*/.*\.php$ {
+          return 403;
+      }
+      location ~ ^/sites/.*/private/ {
+          return 403;
+      }
+      location ~* /(files|private|temp)/.*\.php$ {
+        deny all;
+      }
+      location ~* ^/.well-known/ {
+          allow all;
+      }
+      location ~ (^|/)\. {
+          return 403;
+      }
+      location / {
+          try_files $uri /index.php?$query_string;
+      }
+      location @rewrite {
+          rewrite ^/(.*)$ /index.php?q=$1;
+      }
+      location ~ /vendor/.*\.php$ {
+          deny all;
+          return 404;
+      }
+
+      rewrite ^/Content/Files/vscpa/E-mails/CPEAutoEmails/(.+)$ /sites/default/files/cpeautoemails/$1 last;
+
+      location /simplesaml {
+         alias /srv/vscpa.com/current/vendor/simplesamlphp/simplesamlphp/www;
+         location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+            fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
+            include fastcgi_params;
+            fastcgi_param HTTP_PROXY "";
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_param PATH_INFO $fastcgi_path_info;
+            fastcgi_param QUERY_STRING $query_string;
+            fastcgi_intercept_errors on;
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+            fastcgi_param SCRIPT_NAME /simplesaml$phpfile;
+            fastcgi_param PATH_INFO $pathinfo if_not_empty;
+            fastcgi_buffers 16 16k;
+            fastcgi_buffer_size 32k;
+          }
+          location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+            expires max;
+            log_not_found off;
+        }
+      }
+      location ~ \.php(/|$) {
+          fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
+          include fastcgi_params;
+          fastcgi_param HTTP_PROXY "";
+          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+          fastcgi_param PATH_INFO $fastcgi_path_info;
+          fastcgi_param QUERY_STRING $query_string;
+          fastcgi_intercept_errors on;
+          fastcgi_pass 127.0.0.1:9000;
+          fastcgi_hide_header X-Powered-By;
+          fastcgi_hide_header X-Generator;
+          fastcgi_hide_header X-Content-Type-Options;
+          fastcgi_hide_header X-Frame-Options;
+          fastcgi_hide_header X-Drupal-Dynamic-Cache;
+          fastcgi_hide_header X-Drupal-Cache;
+          fastcgi_hide_header ETag;
+          fastcgi_hide_header Last-Modified;
+          fastcgi_buffers 16 16k;
+          fastcgi_buffer_size 32k;
+      }
+      location ~ ^/sites/.*/files/styles/ {
+          expires 1M;
+          add_header Cache-Control "public";
+          try_files $uri @rewrite;
+      }
+      location ~ ^(/[a-z\-]+)?/system/files/ {
+          try_files $uri /index.php?$query_string;
+      }
+      # Media: images, icons, video, audio, and fonts
+      location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc|woff2?)$ {
+          expires 1M;
+          access_log off;
+          log_not_found off;
+          add_header Cache-Control "public";
+      }
+      # CSS and Javascript
+      location ~* \.(?:css|js)$ {
+          expires 1M;
+          access_log off;
+          add_header Cache-Control "public";
+      }
+
+# PHP
+# Details: https://github.com/geerlingguy/ansible-role-php
+php_version: "7.3"
+php_install_recommends: true
+php_packages_extra:
+  - php-pear
+  - php{{ php_version }}-bcmath
+  - php{{ php_version }}-curl
+  - php{{ php_version }}-gd
+  - php{{ php_version }}-intl
+  - php{{ php_version }}-json
+  - php{{ php_version }}-mbstring
+  - php{{ php_version }}-mysql
+  - php{{ php_version }}-opcache
+  - php{{ php_version }}-readline
+  - php{{ php_version }}-redis
+  - php{{ php_version }}-soap
+  - php{{ php_version }}-tidy
+  - php{{ php_version }}-xml
+  - php{{ php_version }}-xsl
+  - php{{ php_version }}-zip
+
+php_enable_php_fpm: true
+php_fpm_listen: "127.0.0.1:9000"
+php_webserver_daemon: "nginx"
+
+php_date_timezone: "America/New_York"
+
+# Composer
+# Details: https://github.com/geerlingguy/ansible-role-composer
+composer_keep_updated: true
+composer_home_owner: "utadmin"
+composer_home_group: "utadmin"
+
+# Node.js
+# Details: https://github.com/geerlingguy/ansible-role-nodejs
+nodejs_version: "6.x"
+nodejs_install_npm_user: utadmin
+nodejs_npm_global_packages:
+  - yarn
+
+# Postfix
+# Details: https://github.com/geerlingguy/ansible-role-postfix
+postfix_install: true
+
+# Crontab
+# Details: https://docs.ansible.com/ansible/2.6/modules/cron_module.html
+cronjobs:
+  - name: Drupal Cron
+    minute: "*/15"
+    user: "www-data"
+    job: "cd /srv/vscpa.com/current/web; ../vendor/bin/drush cron"
+  - name: Drupal Sitemap Generation
+    minute: "7"
+    hour: "*/2"
+    user: "www-data"
+    job: "cd /srv/vscpa.com/current/web; ../vendor/bin/drush simple_sitemap:generate"
+
+# New Relic APM
+# Details: https://github.com/weareinteractive/ansible-php5-newrelic#variables
+php5_newrelic_appname: VSCPA
+php5_newrelic_config_dest: /etc/php/7.1/mods-available

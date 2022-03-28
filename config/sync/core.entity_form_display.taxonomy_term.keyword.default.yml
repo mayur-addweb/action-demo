@@ -1,0 +1,46 @@
+uuid: ca487f73-baae-4953-828d-59057f517c20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.keyword.field_misspellings
+    - taxonomy.vocabulary.keyword
+  module:
+    - path
+    - text
+id: taxonomy_term.keyword.default
+targetEntityType: taxonomy_term
+bundle: keyword
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_misspellings:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

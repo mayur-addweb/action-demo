@@ -1,0 +1,13 @@
+---
+
+- name: Allow inbound HTTP traffic from load balancers
+  ufw:
+    rule: allow
+    port: 80
+    from_ip: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+    state: enabled
+  with_items: "{{ groups['web-loadbalancers'] }}"
+  become: yes
+  tags:
+    - nginx
+    - ufw

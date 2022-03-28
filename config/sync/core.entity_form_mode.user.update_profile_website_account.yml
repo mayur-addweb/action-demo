@@ -1,0 +1,10 @@
+uuid: 34ae93b7-a232-41a8-9b2f-925abd1ce1a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile_website_account
+label: 'Update Profile - Website Account'
+targetEntityType: user
+cache: true

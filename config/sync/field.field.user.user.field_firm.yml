@@ -1,0 +1,26 @@
+uuid: 24a1e64b-c116-4864-bec3-578faab8af39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_firm
+  module:
+    - user
+id: user.user.field_firm
+field_name: field_firm
+entity_type: user
+bundle: user
+label: 'Firm Name'
+description: 'Please select "Other" if your firm is not available.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: firm_name
+      display_name: firms_by_name
+      arguments: {  }
+field_type: entity_reference

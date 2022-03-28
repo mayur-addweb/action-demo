@@ -1,0 +1,38 @@
+uuid: c74f847e-3fa6-4737-bab1-0c61b0fcb771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordions.field_accordions
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - paragraphs
+id: paragraph.accordions.default
+targetEntityType: paragraph
+bundle: accordions
+mode: default
+content:
+  field_accordions:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

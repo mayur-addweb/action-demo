@@ -1,0 +1,39 @@
+uuid: f160e067-3592-4011-a6cb-06a153be0786
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_overlay
+field_name: field_overlay
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: black
+      label: Black
+    -
+      value: blue
+      label: Blue
+    -
+      value: gold
+      label: Gold
+    -
+      value: green
+      label: Green
+    -
+      value: purple
+      label: Purple
+    -
+      value: slate
+      label: Slate
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

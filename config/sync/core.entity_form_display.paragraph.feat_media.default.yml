@@ -1,0 +1,52 @@
+uuid: f1daa16e-f3d8-4806-8bc8-b94a30056b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_media.field_body
+    - field.field.paragraph.feat_media.field_subtitle
+    - field.field.paragraph.feat_media.field_title
+    - paragraphs.paragraphs_type.feat_media
+  module:
+    - text
+id: paragraph.feat_media.default
+targetEntityType: paragraph
+bundle: feat_media
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

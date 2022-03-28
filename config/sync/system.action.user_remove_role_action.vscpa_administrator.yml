@@ -1,0 +1,14 @@
+uuid: 93843ffb-8f81-4162-8d19-7d6038fd76fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vscpa_administrator
+  module:
+    - user
+id: user_remove_role_action.vscpa_administrator
+label: 'Remove the VSCPA Administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vscpa_administrator

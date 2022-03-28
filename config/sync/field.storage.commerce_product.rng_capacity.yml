@@ -1,0 +1,20 @@
+uuid: 70ca02df-d9b5-41aa-86bd-659c707be812
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.rng_capacity
+field_name: rng_capacity
+entity_type: commerce_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

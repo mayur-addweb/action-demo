@@ -1,0 +1,19 @@
+uuid: 3b7d7e44-0d79-490e-9ccb-6aa91e6404b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - commerce_product
+id: commerce_product.field_course_link
+field_name: field_course_link
+entity_type: commerce_product
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,93 @@
+uuid: 0a32f53f-a739-41f3-b240-cf0da15fb6a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.publication.body
+    - field.field.node.publication.field_active_voting_rating
+    - field.field.node.publication.field_alt_description
+    - field.field.node.publication.field_alt_title
+    - field.field.node.publication.field_amnet_id
+    - field.field.node.publication.field_buttons
+    - field.field.node.publication.field_categories
+    - field.field.node.publication.field_cover_image
+    - field.field.node.publication.field_cover_video
+    - field.field.node.publication.field_custom
+    - field.field.node.publication.field_disqus
+    - field.field.node.publication.field_featurette_bottom
+    - field.field.node.publication.field_featurette_top
+    - field.field.node.publication.field_field_of_interest
+    - field.field.node.publication.field_general_business
+    - field.field.node.publication.field_keywords
+    - field.field.node.publication.field_memberonly
+    - field.field.node.publication.field_meta_tags
+    - field.field.node.publication.field_oldpath
+    - field.field.node.publication.field_overlay
+    - field.field.node.publication.field_position
+    - field.field.node.publication.field_pub_type
+    - field.field.node.publication.field_rating
+    - field.field.node.publication.field_related_content
+    - field.field.node.publication.field_vscpa_action
+    - node.type.publication
+  module:
+    - smart_trim
+    - user
+id: node.publication.teaser
+targetEntityType: node
+bundle: publication
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: 50
+      trim_type: chars
+      trim_suffix: ''
+      more_link: true
+      more_text: 'Read More'
+      summary_handler: trim
+      trim_options:
+        text: true
+      more_class: more-link
+      wrap_output: false
+      wrap_class: trimmed
+    third_party_settings: {  }
+    region: content
+  title_teaser:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_active_voting_rating: true
+  field_alt_description: true
+  field_alt_title: true
+  field_amnet_id: true
+  field_article_teaser: true
+  field_buttons: true
+  field_categories: true
+  field_cover_image: true
+  field_cover_video: true
+  field_custom: true
+  field_disqus: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_general_business: true
+  field_keywords: true
+  field_memberonly: true
+  field_meta_tags: true
+  field_oldpath: true
+  field_overlay: true
+  field_position: true
+  field_pub_type: true
+  field_rating: true
+  field_related_content: true
+  field_vscpa_action: true
+  links: true
+  title_field: true

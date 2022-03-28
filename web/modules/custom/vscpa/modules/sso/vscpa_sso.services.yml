@@ -1,0 +1,20 @@
+services:
+  gluu.client:
+    class: Drupal\vscpa_sso\GluuClient
+    arguments: []
+  logger.channel.vscpa_sso:
+    parent: logger.channel_base
+    arguments: ['vscpa_sso']
+  vscpa_sso_event_subscriber:
+    class: Drupal\vscpa_sso\EventSubscriber\SimplesamlSubscriber
+    arguments: ['@simplesamlphp_auth.manager', '@current_user', '@config.factory', '@logger.channel.simplesamlphp_auth']
+    tags:
+      - {name: event_subscriber}
+  vscpa_sso.route_subscriber:
+    class: Drupal\vscpa_sso\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  vscpa_sso.external_auth_map:
+    class: Drupal\vscpa_sso\EventSubscriber\ExternalAuthMap
+    tags:
+      - { name: event_subscriber }

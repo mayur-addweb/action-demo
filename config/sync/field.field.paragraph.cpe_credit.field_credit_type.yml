@@ -1,0 +1,29 @@
+uuid: 9123c3e5-f930-467c-ba14-561a6a39f301
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_credit_type
+    - paragraphs.paragraphs_type.cpe_credit
+    - taxonomy.vocabulary.credit_type
+id: paragraph.cpe_credit.field_credit_type
+field_name: field_credit_type
+entity_type: paragraph
+bundle: cpe_credit
+label: 'Credit Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      credit_type: credit_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

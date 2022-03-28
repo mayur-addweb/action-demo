@@ -1,0 +1,52 @@
+{% for sessions_times in session_group.sessions %}
+  {% if sessions_times.time %}
+    <h4>{% if show_date %}{{ sessions_times.date }}, {% endif %}{{ sessions_times.time }} Sessions</h4>
+  {% endif %}
+  {% for session in sessions_times.items %}
+    <div class="session-panel views-field views-field-field-event-link views-field-field-electronic-material">
+      <div class="field-content">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="header-in-person">
+            <span class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ session['session_code'] }}" aria-expanded="false" aria-controls="collapse-{{ session['session_code'] }}">
+                  <span class="session_title">{{ session['title'] }}</span>
+                </a>
+                {% if session['launch'] and show_launch_button %}
+                  <a class="launch-session btn" target="_blank" href="{{ session['launch'] }}" hreflang="en">Launch <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+                {% endif %}
+            </span>
+          </div>
+          <div id="collapse-{{ session['session_code'] }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="header-{{ session['session_code'] }}">
+            <div class="panel-body">
+              {% if session['description'] %}
+                <label>Description</label>
+                <div class="description">{{ session['description']|raw }}</div>
+              {% endif %}
+              {% if session['speakers'] %}
+                <label>Speakers</label>
+                <ul>
+                  {% for speaker in session['speakers'] %}
+                    <li class="description">
+                      <h5>{{ speaker['name'] }}</h5>
+                      <div>{{ speaker['bio'] }}</div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if session['electronic_materials'] %}
+                <div class="electronic-materials">
+                  <label>Electronic Materials</label>
+                  <ul>
+                    {% for electronic_material in session['electronic_materials'] %}
+                      <li class="list-group-item">{{ electronic_material }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endfor %}

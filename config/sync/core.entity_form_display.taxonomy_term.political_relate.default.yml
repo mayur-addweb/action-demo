@@ -1,0 +1,46 @@
+uuid: 6f5b41e3-3f2d-400a-b26b-854e2b590bc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.political_relate.field_amnet_id
+    - taxonomy.vocabulary.political_relate
+  module:
+    - path
+    - text
+id: taxonomy_term.political_relate.default
+targetEntityType: taxonomy_term
+bundle: political_relate
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_amnet_id:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,11 @@
+uuid: 26c92d2e-e736-479f-a85a-4e3854e66186
+langcode: en
+status: true
+dependencies: {  }
+id: membership_donation
+label: 'Membership donation'
+description: 'A donation accompanying a membership product purchase.'
+variationType: membership_donation
+injectVariationFields: true
+traits: {  }
+locked: false

@@ -1,0 +1,12 @@
+name: AM.net Membership Sync Module
+type: module
+description: Defines common functionality for VSCPA Membership Application/Renewal workflow.
+core: 8.x
+package: VSCPA
+dependencies:
+  - am_net
+  - am_net_donations
+  - am_net_user_profile
+  - commerce
+  - commerce_cart
+  - licensing

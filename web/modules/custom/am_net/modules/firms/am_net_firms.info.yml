@@ -1,0 +1,7 @@
+name: AM.net firm sync and management module
+type: module
+description: A Drupal module that handle the sync of firms data with AM.net and provide the Firm Employee management tool.
+core: 8.x
+package: VSCPA
+dependencies:
+  - am_net

@@ -1,0 +1,8 @@
+uuid: bf92e323-095f-4caf-ad11-66486ce6a4ee
+langcode: en
+status: true
+dependencies: {  }
+name: 'General Business'
+vid: general_business
+description: ''
+weight: 0

@@ -1,0 +1,19 @@
+uuid: c9e159bd-e9f2-4f68-b95f-18574d177dfb
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_buttons
+field_name: field_buttons
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 06ddcf26-c712-4ac0-a45c-ca5a69cc871e
+langcode: en
+status: true
+dependencies:
+  module:
+    - announcement_pop_up
+    - link
+id: announcement.field_link
+field_name: field_link
+entity_type: announcement
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

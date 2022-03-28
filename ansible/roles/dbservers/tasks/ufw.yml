@@ -1,0 +1,40 @@
+---
+
+- name: Open the standard MySQL port on the firewall to web servers
+  ufw:
+    rule=allow
+    port=3306
+    from_ip="{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+    proto=tcp
+    state=enabled
+  with_items: "{{ groups['webservers'] }}"
+  become: yes
+  tags:
+    - mariadb
+    - mariadb-server
+    - ufw
+- name: Open the standard Solr port on the firewall to web servers
+  ufw:
+    rule=allow
+    port=8983
+    from_ip="{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+    proto=tcp
+    state=enabled
+  with_items: "{{ groups['webservers'] }}"
+  become: yes
+  tags:
+    - solr
+    - ufw
+- name: Open the Solr port to the UT private subnets
+  ufw:
+    rule=allow
+    port=8983
+    from_ip="{{ item }}"
+    proto=tcp
+  with_items:
+    - "192.168.80.0/24"
+    - "192.168.150.0/24"
+  become: yes
+  tags:
+    - solr
+    - ufw

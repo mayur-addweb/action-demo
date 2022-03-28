@@ -1,0 +1,44 @@
+uuid: f7fda239-23a6-419a-a02c-8a0b845b6e19
+langcode: en
+status: false
+dependencies:
+  config:
+    - webform.webform.ask_a_cpa_email_program
+  module:
+    - rng
+    - system
+    - webform
+  theme:
+    - vscpa_bootstrap
+id: webform
+theme: vscpa_bootstrap
+region: content
+weight: -19
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: '0'
+  webform_id: ask_a_cpa_email_program
+  default_data: ''
+  redirect: false
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1530817078'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1530817078'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /ask-cpa-email-program
+    negate: false
+    context_mapping: {  }

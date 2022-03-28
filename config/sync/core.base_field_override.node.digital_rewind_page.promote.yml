@@ -1,0 +1,22 @@
+uuid: e465b552-fc47-4895-af5b-7adc5586d3d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.digital_rewind_page
+id: node.digital_rewind_page.promote
+field_name: promote
+entity_type: node
+bundle: digital_rewind_page
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

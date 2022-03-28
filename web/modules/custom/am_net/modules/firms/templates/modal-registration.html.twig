@@ -1,0 +1,109 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the Modal registration form element.
+ *
+ * Available variables:
+ * - attributes: Attributes for the marguee tag.
+ * - employees: The list of employees.
+ */
+#}
+<section class="modal-registration-section">
+    <div class="registration-info hide" data-selected-employees=""
+         data-selected-variation-id="{{ selected_variation_id }}"
+         data-show-variation-selector="{{ show_variation_selector }}">
+    </div>
+    {% if show_variation_selector == '1' %}
+        <select class="form-select required form-control" name="purchased_entity[0][variation]" required="required" aria-required="true">
+            {% for variation in variations %}
+                <option value="{{ variation.id }}" {% if variation.id == selected_variation_id %}selected="selected"{% endif %}>{{ variation.label }}</option>
+            {% endfor %}
+        </select>
+    {% endif %}
+    <a class="btn btn-primary btn-lg modal-button">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Select Employees
+    </a>
+
+    <!-- Select Employee Modal -->
+    <div class="modal fade" id="modal-select-employees" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="modalLabel">Select Employees</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="portlet-body">
+                        <div class="messages-area hide">
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li><strong class="bold-red">If you are registering multiple employees for a multi-track conference, please call the VSCPA Learning Team at (800) 733-8272.</strong></li>
+                                <li><span>Select the employees you wish to register from the list (includes ALL employees [main and branch offices]).</span></li>
+                                <li><span>If electronic materials are provided for this event, registrants will automatically be signed up to receive them. </span></li>
+                            </ul>
+                        </div>
+                        <div class="employee-search">
+                            <label>Search by name or email:<input type="search" class="form-control input-small input-inline employee-search-input"
+                                                          placeholder=""></label>
+                        </div>
+                        <table class="table table-bordered table-condensed table-hover table-employee-listing"
+                               id="employee-listing">
+                            <thead>
+                            <tr>
+                                <th class="table-checkbox">
+                                    <input type="checkbox" class="group-checkable"
+                                           data-set="#employee-listing .checkboxes"/>
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Office
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for firm in employees %}
+                                {% for user in firm.employees %}
+                                    <tr class="odd gradeX">
+                                        <td class="table-checkbox">
+                                            <div class="cell-item">
+                                                <input type="checkbox" class="checkboxes" value="{{ user.uid }}"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="cell-item cell-search">
+                                                {{ user.first_name }}  {{ user.last_name }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="cell-item cell-search">
+                                                {{ user.mail }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="cell-item">
+                                                {{ firm.type }}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-secondary cta-register-employees">Register employees <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

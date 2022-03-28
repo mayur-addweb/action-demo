@@ -1,0 +1,41 @@
+uuid: ea4b6cd9-96f8-41ed-8d0a-6ceac01b85b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_cpe
+    - ctools
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: am.netrelatedevents
+theme: vscpa_bootstrap
+region: bottom_full_width
+weight: -33
+provider: null
+plugin: am_net_cpe_related_events_block
+settings:
+  id: am_net_cpe_related_events_block
+  label: 'AM.Net Related Events'
+  provider: am_net_cpe
+  label_display: '0'
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1561396870'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1561396870'
+    negate: false
+    context_mapping: {  }

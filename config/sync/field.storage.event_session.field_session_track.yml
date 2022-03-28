@@ -1,0 +1,39 @@
+uuid: 8865985d-d447-4745-9dfb-f1358ef51156
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - vscpa_commerce
+id: event_session.field_session_track
+field_name: field_session_track
+entity_type: event_session
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: AC
+      label: Accounting
+    -
+      value: AU
+      label: Auditing
+    -
+      value: GO
+      label: Government
+    -
+      value: IN
+      label: Industry
+    -
+      value: TA
+      label: Tax/Other
+    -
+      value: TE
+      label: Technology
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: 4867bdbb-b8cd-4e93-86bf-90f1b57f504d
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_general_business
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

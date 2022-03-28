@@ -1,0 +1,10 @@
+uuid: 2a93bdd5-8587-481c-bbeb-2826138318bb
+langcode: en
+status: true
+dependencies: {  }
+id: self_study_registration
+label: 'Self-study registration'
+orderItemType: self_study_registration
+generateTitle: false
+traits: {  }
+locked: false

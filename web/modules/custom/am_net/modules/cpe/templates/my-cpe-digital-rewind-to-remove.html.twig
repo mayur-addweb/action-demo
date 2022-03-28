@@ -1,0 +1,176 @@
+<div class="views-element-container form-group">
+    <div class="view view-my-events view-id-my_events">
+      <div class="group group-online">
+            {% if registrations is not empty %}
+
+                {% for event in registrations %}
+                    <div class="views-row" data-begin-date="{{ event.event_begin_date }}" data-end-date="{{ event.event_end_date }}" data-expiry-date="{{ event.expiry_date }}" data-product-id="{{ event.product_id }}" data-event-code="{{ event.event_code }}" data-event-year="{{ event.event_year }}" data-uid="{{ uid }}" data-name-id="{{ am_net_name_id }}" data-registration-date="{{ event.registration_date }}" data-registration-status-code="{{ event.registration_status_code }}" data-division="{{ event.division }}">
+                        <h3 class="accent-left group-title"><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> Click to view Past Sessions</a> </h3>
+                        <div class="collapse" id="collapseExample">
+
+                        {% if event.session_group %}
+
+                          {% for session_group in event.session_group %}
+                            {% set now_timestamp = date().timestamp %}
+                            {% set group_timestamp =  session_group.date | date("U")   %} {{ group_timestamp }}
+                            {% if (now_timestamp >= (group_timestamp+86400)) and group_timestamp > 631152000000 %}
+                            <div class="session-group card">
+                              <div class="session-group-header">
+                                <h4>{{ event.title }} Day {{ event.days[ loop.index0 ] }}
+                                  <br><small>{{ session_group.date }}</small></h4>
+                              </div>
+                              <div class="session-group-panels">
+
+                                {% for sessions_times in session_group.sessions %}
+                                  <h4>{{ sessions_times.time }} Sessions</h4>
+                                  {% for session in sessions_times.items %}
+                                  {% if date().timestamp - session.session_timestamp > 0  %}
+                                    <div class="session-panel views-field views-field-field-event-link views-field-field-electronic-material">
+                                      <div class="field-content">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading" role="tab" id="header-in-person">
+                                                        <span class="panel-title">
+                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ session['session_code'] }}" aria-expanded="false" aria-controls="collapse-{{ session['session_code'] }}">
+                                                              <span class="session_title">{{ session['title'] }}   </span>
+                                                            </a>
+                                                            {% if session['launch'] %}
+                                                              <a class="launch-session btn" target="_blank" href="{{ session['launch'] }}" hreflang="en">Launch <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+                                                            {% endif %}
+                                                        </span>
+                                          </div>
+                                          <div id="collapse-{{ session['session_code'] }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="header-{{ session['session_code'] }}">
+                                            <div class="panel-body">
+                                              <label>Description</label>
+                                              <div class="description">{{ session['description']|raw }}</div>
+                                              {% if session['speakers'] %}
+                                                <label>Speakers</label>
+                                                <ul>
+                                                  {% for speaker in session['speakers'] %}
+                                                    <li class="description">
+                                                      <h5>{{ speaker['name'] }}</h5>
+                                                      <div>{{ speaker['bio'] }}</div>
+                                                    </li>
+                                                  {% endfor %}
+                                                </ul>
+                                              {% endif %}
+                                              {% if session['electronic_materials'] %}
+                                                <div class="electronic-materials">
+                                                  <label>Electronic Materials</label>
+                                                  <ul>
+                                                    {% for electronic_material in session['electronic_materials'] %}
+                                                      <li class="list-group-item">{{ electronic_material }}</li>
+                                                    {% endfor %}
+                                                  </ul>
+                                                </div>
+                                              {% endif %}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                                  {% endfor %}
+                                {% endfor %}
+                                {% endif %}
+                              </div>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+</div>
+                    </div>
+                {% endfor %}
+
+
+                {% for event in registrations %}
+                    <div class="views-row" data-begin-date="{{ event.event_begin_date }}" data-end-date="{{ event.event_end_date }}" data-expiry-date="{{ event.expiry_date }}" data-product-id="{{ event.product_id }}" data-event-code="{{ event.event_code }}" data-event-year="{{ event.event_year }}" data-uid="{{ uid }}" data-name-id="{{ am_net_name_id }}" data-registration-date="{{ event.registration_date }}" data-registration-status-code="{{ event.registration_status_code }}" data-division="{{ event.division }}">
+                        <h3 class="accent-left group-title">Sessions</h3>
+                        {% if event.session_group %}
+
+                          {% for session_group in event.session_group %}
+                            {% set now_timestamp = date().timestamp %}
+                            {% set group_timestamp =  session_group.date | date("U")   %}
+                            {% if now_timestamp < (group_timestamp+86400) %}
+                            <div class="session-group card">
+                              <div class="session-group-header">
+                                <h4>{{ event.title }} Day {{ event.days[ loop.index0 ] }}
+                                  <br><small>{{ session_group.date }}</small></h4>
+                              </div>
+                              <div class="session-group-panels">
+
+                                {% for sessions_times in session_group.sessions %}
+                                  <h4>{{ sessions_times.time }} Sessions</h4>
+                                  {% for session in sessions_times.items %}
+                                  {% if date().timestamp - session.session_timestamp <= 0  %}
+                                    <div class="session-panel views-field views-field-field-event-link views-field-field-electronic-material">
+                                      <div class="field-content">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading" role="tab" id="header-in-person">
+                                                        <span class="panel-title">
+                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ session['session_code'] }}" aria-expanded="false" aria-controls="collapse-{{ session['session_code'] }}">
+                                                              <span class="session_title">{{ session['title'] }}   </span>
+                                                            </a>
+                                                            {% if session['launch'] %}
+                                                              <a class="launch-session btn" target="_blank" href="{{ session['launch'] }}" hreflang="en">Launch <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+                                                            {% endif %}
+                                                        </span>
+                                          </div>
+                                          <div id="collapse-{{ session['session_code'] }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="header-{{ session['session_code'] }}">
+                                            <div class="panel-body">
+                                              <label>Description</label>
+                                              <div class="description">{{ session['description']|raw }}</div>
+                                              {% if session['speakers'] %}
+                                                <label>Speakers</label>
+                                                <ul>
+                                                  {% for speaker in session['speakers'] %}
+                                                    <li class="description">
+                                                      <h5>{{ speaker['name'] }}</h5>
+                                                      <div>{{ speaker['bio'] }}</div>
+                                                    </li>
+                                                  {% endfor %}
+                                                </ul>
+                                              {% endif %}
+                                              {% if session['electronic_materials'] %}
+                                                <div class="electronic-materials">
+                                                  <label>Electronic Materials</label>
+                                                  <ul>
+                                                    {% for electronic_material in session['electronic_materials'] %}
+                                                      <li class="list-group-item">{{ electronic_material }}</li>
+                                                    {% endfor %}
+                                                  </ul>
+                                                </div>
+                                              {% endif %}
+                                            </div>
+                                          </div>
+                                       </div>
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                                  {% endfor %}
+                                {% endfor %}
+                                {% endif %}
+                              </div>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {% else %}
+                <p><strong>You are currently not registered for this event. {% if product_url %}<a href="{{ product_url }}" title="Digital-Rewind event">Click Here</a> to register.{% endif %}</strong></p>
+                <p><a href="/continuing-professional-education/cpe-event-search">Click Here to View our Full Event Catalog</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>

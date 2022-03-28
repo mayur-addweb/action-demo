@@ -1,0 +1,15 @@
+uuid: d32da9a3-3e04-420b-9a8a-c9ccdcb751f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: digital_goods
+label: 'Peer Review Administrative Fee'
+id: peer_review_administrative_fee
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

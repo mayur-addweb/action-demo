@@ -1,0 +1,28 @@
+uuid: 8d97422d-2bd3-4574-aa4e-57c33f16cc1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.session_registration
+    - field.storage.event_session.field_session_product
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_product
+field_name: field_session_product
+entity_type: event_session
+bundle: default
+label: 'Session registration product options'
+description: 'A product, if required for access to this session.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product'
+  handler_settings:
+    target_bundles:
+      session_registration: session_registration
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

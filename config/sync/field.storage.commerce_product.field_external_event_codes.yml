@@ -1,0 +1,21 @@
+uuid: 4cb9a4a9-3ef5-41d5-ab3e-46c61ba2d617
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_external_event_codes
+field_name: field_external_event_codes
+entity_type: commerce_product
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

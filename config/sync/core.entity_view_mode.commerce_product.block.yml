@@ -1,0 +1,10 @@
+uuid: 1eb921b9-e8fd-4d4a-b9ad-104ecac06b50
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.block
+label: Block
+targetEntityType: commerce_product
+cache: true

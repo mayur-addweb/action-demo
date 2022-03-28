@@ -1,0 +1,90 @@
+uuid: 5575123d-9f78-40b8-a30c-0b330eade498
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.field.announcement.standard.field_body
+    - field.field.announcement.standard.field_delay
+    - field.field.announcement.standard.field_end_date
+    - field.field.announcement.standard.field_link
+    - field.field.announcement.standard.field_opt_out_text
+    - field.field.announcement.standard.field_start_date
+  module:
+    - datetime
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_scheduling:
+      children:
+        - field_start_date
+        - field_end_date
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Scheduling
+id: announcement.standard.default
+targetEntityType: announcement
+bundle: standard
+mode: default
+content:
+  field_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_delay:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_end_date:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_opt_out_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_start_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

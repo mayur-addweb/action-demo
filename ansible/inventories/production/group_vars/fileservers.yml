@@ -1,0 +1,12 @@
+---
+
+# Whether to install NFS server
+nfs_server_install: true
+
+# User that owns web files
+web_file_owner: utadmin
+
+# Install MariaDB server
+# This is needed because the file server and the database server are the same
+# host, otherwise the fileservers group would uninstall MariaDB server.
+mariadb_server_install: true

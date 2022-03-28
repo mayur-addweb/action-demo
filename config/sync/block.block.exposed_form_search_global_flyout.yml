@@ -1,0 +1,36 @@
+uuid: b703acac-43d0-4589-a677-cc30fda27c9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - rng
+    - views
+  theme:
+    - vscpa_bootstrap
+id: exposed_form_search_global_flyout
+theme: vscpa_bootstrap
+region: search_flyout
+weight: -20
+provider: null
+plugin: 'views_exposed_filter_block:search-global_search'
+settings:
+  id: 'views_exposed_filter_block:search-global_search'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: 'Search Results'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1523912047'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1523912047'
+    negate: false
+    context_mapping: {  }

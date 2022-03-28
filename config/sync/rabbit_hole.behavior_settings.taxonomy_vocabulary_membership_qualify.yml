@@ -1,0 +1,9 @@
+uuid: 33f50dce-7cd7-4d85-9076-b7b9a3117e8d
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_membership_qualify
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

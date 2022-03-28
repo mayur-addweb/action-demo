@@ -1,0 +1,12 @@
+vscpa_commerce.event_session_type.*:
+  type: config_entity
+  label: 'Event session type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

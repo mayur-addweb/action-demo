@@ -1,0 +1,18 @@
+uuid: 45ae0ace-e6cb-4a44-af62-fe810de7230b
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.rng_reply_to
+field_name: rng_reply_to
+entity_type: event_session
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

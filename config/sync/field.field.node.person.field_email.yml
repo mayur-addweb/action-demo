@@ -1,0 +1,19 @@
+uuid: fc327235-c191-46c9-8f8c-6066d1c9aabc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.person
+id: node.person.field_email
+field_name: field_email
+entity_type: node
+bundle: person
+label: 'Email Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

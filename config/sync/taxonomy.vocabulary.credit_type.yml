@@ -1,0 +1,8 @@
+uuid: 6e056d08-d757-4596-ae27-8a7325b23bb5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Credit Type'
+vid: credit_type
+description: ''
+weight: 0

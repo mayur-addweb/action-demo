@@ -1,0 +1,10 @@
+uuid: b603d65b-97eb-4835-8a0d-b7679a4ceb81
+langcode: en
+status: true
+dependencies: {  }
+id: session_registration
+label: 'Session registration'
+description: 'A product that grants access to a session registration.'
+variationType: session_registration
+injectVariationFields: true
+traits: {  }

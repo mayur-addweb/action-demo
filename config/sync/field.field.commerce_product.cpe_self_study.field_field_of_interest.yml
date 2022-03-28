@@ -1,0 +1,29 @@
+uuid: 89eec52c-7417-4715-bbed-ec150a4471cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_field_of_interest
+    - commerce_product.commerce_product_type.cpe_self_study
+    - taxonomy.vocabulary.interest
+id: commerce_product.cpe_self_study.field_field_of_interest
+field_name: field_field_of_interest
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Field of Interest'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      interest: interest
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

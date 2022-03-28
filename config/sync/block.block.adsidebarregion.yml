@@ -1,0 +1,49 @@
+uuid: ffb1aac2-def4-46b3-b112-abcc790048d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - ad_entity.display.ad_sidebar_region
+  module:
+    - ad_entity
+    - ctools
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: adsidebarregion
+theme: vscpa_bootstrap
+region: sidebar_bottom
+weight: 0
+provider: null
+plugin: 'ad_display:ad_sidebar_region'
+settings:
+  id: 'ad_display:ad_sidebar_region'
+  label: 'Ad Sidebar Region'
+  provider: ad_entity
+  label_display: '0'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1520263748'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1520263748'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/cart\r\n/events\r\n/cpe-event-search\r\n/join-vscpa-today\r\n/join\r\n/search\r\n/continuing-professional-education/cpe-event-search\r\n/user\r\n/user/*\r\n/firm/*\r\n/checkout/*\r\n/media/*\r\n/membership/*\r\n/Membership-Benefits\r\n/topic/browse-cpe-options\r\n/topic/conferences\r\n/courses-and-education\r\n/topic/event-sponsorships\r\n/online-learning\r\n/CPE\r\n/education/cpe-requirements\r\n/peer-peer-learning\r\n/members/membership-benefits-discounts\r\n/get-involved/chapters\r\n/get-involved\r\n/resource-centers\r\n/news-publications\r\n/about\r\n/advocacy\r\n/topic/ethics\r\n/lead\r\n/continuing-professional-education\r\n/my-membership\r\n/topic/get-involved\r\n/resources-news\r\n/members/lead\r\n/VaBeachRetreat\r\n/Sponsor\r\n/2025\r\n/students\r\n/networking-opportunities\r\n/contact-us\r\n/voter-voice\r\n/leadership-signature-programs\r\n/center-for-innovation/*\r\n/benefits\r\n/showcase\r\n/getstarted\r\n/BillTracker"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

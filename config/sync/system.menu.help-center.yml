@@ -1,0 +1,8 @@
+uuid: b871d445-2a18-4239-9d47-d80a1672dbca
+langcode: en
+status: true
+dependencies: {  }
+id: help-center
+label: 'Help Center'
+description: ''
+locked: false

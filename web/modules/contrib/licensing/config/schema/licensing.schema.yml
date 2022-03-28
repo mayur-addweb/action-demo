@@ -1,0 +1,48 @@
+licensing.license_type.*:
+  type: config_entity
+  label: 'License type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    status:
+      type: boolean
+      label: 'Status'
+    expires:
+      type: int
+      label: 'Expiry'
+    expires_automatically:
+      type: int
+      label: 'Expires automatically'
+    target_bundles:
+      type: string
+      label: 'Target bundles'
+    target_bundles.*:
+      type: sequence
+      label: 'Target bundles'
+      sequence:
+        type: string
+    target_entity_type:
+      type: string
+      label: 'Target entity type'
+    roles:
+      type: string
+      label: 'Roles'
+    roles.*:
+      type: sequence
+      label: 'Roles'
+      sequence:
+        type: string
+    exempt_roles:
+      type: string
+      label: 'Exempt roles'
+    exempt_roles.*:
+      type: sequence
+      label: 'Exempt roles'
+      sequence:
+        type: string

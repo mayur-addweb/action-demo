@@ -1,0 +1,9 @@
+content_paywall.setting:
+  path: '/admin/config/vscpa/content-paywall'
+  defaults:
+    _form: '\Drupal\content_paywall\Form\ContentPaywallForm'
+    _title: "Content Paywall"
+  requirements:
+    _permission: 'administer nodes'
+  options:
+    _admin_route: TRUE

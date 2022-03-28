@@ -1,0 +1,29 @@
+uuid: bdbd4ef8-710a-414d-9816-1747a7d57bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_vendors
+    - commerce_product.commerce_product_type.cpe_self_study
+    - taxonomy.vocabulary.firm
+id: commerce_product.cpe_self_study.field_course_vendors
+field_name: field_course_vendors
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Vendors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      firm: firm
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

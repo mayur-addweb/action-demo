@@ -1,0 +1,10 @@
+services:
+  am_net_donations.donation_manager:
+    class: Drupal\am_net_donations\DonationManager
+    arguments: ['@current_user', '@config.factory', '@entity_type.manager']
+
+  am_net_donations.donation_event_subscriber:
+    class: Drupal\am_net_donations\EventSubscriber\DonationEventSubscriber
+    arguments: ['@am_net_donations.donation_manager', '@commerce_cart.cart_manager', '@commerce_cart.cart_provider', '@commerce_store.current_store']
+    tags:
+      - { name: event_subscriber }

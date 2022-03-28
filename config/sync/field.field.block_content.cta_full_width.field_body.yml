@@ -1,0 +1,21 @@
+uuid: abf83783-ce84-4ecb-ae33-442fba979522
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_full_width
+    - field.storage.block_content.field_body
+  module:
+    - text
+id: block_content.cta_full_width.field_body
+field_name: field_body
+entity_type: block_content
+bundle: cta_full_width
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,42 @@
+uuid: dc42f993-df3e-42db-8e5f-057a3b241fe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+id: exposed_form_global_search_front
+theme: vscpa_bootstrap
+region: homepage
+weight: -30
+provider: null
+plugin: 'views_exposed_filter_block:search-global_search'
+settings:
+  id: 'views_exposed_filter_block:search-global_search'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: 'Search Results Blcok'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1523911981'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1523911981'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

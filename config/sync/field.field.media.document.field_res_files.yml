@@ -1,0 +1,27 @@
+uuid: 2fd1f0ad-13b9-45ed-90a0-2aeefc8ff755
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_res_files
+    - media.type.document
+  module:
+    - file
+id: media.document.field_res_files
+field_name: field_res_files
+entity_type: media
+bundle: document
+label: Document
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: resources
+  file_extensions: 'csv doc docx pdf ppt pptx txt jpg jpeg gif'
+  max_filesize: 256MB
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

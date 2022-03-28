@@ -1,0 +1,166 @@
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+
+//== Colors
+//
+//## Custom VSCPA Colors
+
+$black:                 #000;
+$blue:                  #3ebfb9; //Teal: #3ebfb9 (replaces blue #5588c6)
+$blue-light:            #95dcd9; //96aee0
+$blue-lighter:          #bce9e7; //dae1f1
+$blue-lightest:         #e2f5f5; //f2f5fa
+$gold:                  #ffc907; //Yellow: #ffc907 (replaces gold #fbb71a)
+$gold-light:            #ffe177; //fcd162
+$gold-lighter:          #ffefb4; //fef2ce
+$green:                 #b3ca2d; //Green: #b3ca2d (replaces green #90c84e)
+$green-light:           #d9e496; //bcdd8c
+$green-lighter:         #ecf2ca; //e7f3d5
+$purple:                #751746; //Maroon: #751746 (replaces purple #7d226b)
+$purple-light:          #c196ac; //a56696
+$purple-lighter:        #e3d1da; //dec8d6
+$red:                   #bd2536;
+$orange-dark:           $red;
+$orange:                #f68933;
+$orange-light:          #f6b88f;
+$orange-lighter:        #fadcc7;
+$slate:                 #595655;
+$slate-light:           #a7a09d;
+$slate-lighter:         #dcd9d8;
+$slate-lightest:        #f2f1f0;
+$white:                 #fff;
+
+$brand-primary:         $purple;
+$brand-success:         $green;
+$brand-info:            $gold;
+$brand-warning:         $orange-dark;
+$brand-danger:          $orange-dark;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Global text color on `<body>`.
+$text-color:            $black;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif-heading:  'Josefin Sans', Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-serif:       'Times New Roman', Times, serif;
+
+$font-size-base:          16px;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-weight:    700;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$border-radius-base:        2rem;
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Default background color used for all tables.
+$table-bg:                      $white;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               $slate-lightest;
+//** Border color for table and cell borders.
+$table-border-color:            $slate-lighter;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-default-color:              $black;
+$btn-default-border:             $slate;
+
+//== Forms
+//
+//##
+
+//** Text color for `<input>`s
+$input-color:                    $slate;
+//** `<input>` border color
+$input-border:                   $slate;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$screen-xxs:                 0;
+
+// Extra small screen / phone
+$screen-xs:                  400px;
+
+// Small screen / phone
+$screen-sm:                  480px;
+
+// Medium screen / tablet
+$screen-md:                  768px;
+
+// Large screen / desktop
+$screen-lg:                  992px;
+
+// Extra Large screen / desktop
+$screen-xlg:                 1200px;
+
+// XXL screen / wide desktop
+$screen-xxlg:                 1400px;
+
+// XXXL screen / wide desktop
+$screen-xxxlg:                 1600px;
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $black;
+$pagination-bg:                        $white;
+$pagination-border:                    $slate-lighter;
+
+$pagination-hover-color:               $white;
+$pagination-hover-bg:                  $blue;
+$pagination-hover-border:              $blue;
+
+$pagination-active-color:              $white;
+$pagination-active-bg:                 $blue;
+$pagination-active-border:             $blue;
+
+
+//== Pager
+//
+//##
+
+$pager-active-bg:                      $blue-lighter;
+$pager-active-color:                   $blue;
+
+//== Tabs
+$nav-tabs-border-color:                $blue;
+
+$nav-tabs-link-hover-border-color:     $blue;
+
+$nav-tabs-active-link-hover-bg:        $blue-lighter;
+$nav-tabs-active-link-hover-color:     $blue;
+$pager-active-bg:                      $blue;
+$pager-active-color:                   $white;
+
+//== Breadcrumbs
+//
+//##
+
+$breadcrumb-bg:                        $white;
+$breadcrumb-color:                     $purple;
+$breadcrumb-active-color:              $slate-light;
+
+//== Panels
+//
+//##
+
+$panel-border-radius:                  0;
+$panel-body-padding:                   0;

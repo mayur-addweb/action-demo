@@ -1,0 +1,21 @@
+uuid: 65b5b271-a6d5-4f73-9de2-00b4fac0f52d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_registration_groups
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_registration_groups
+field_name: rng_registration_groups
+entity_type: event_session
+bundle: default
+label: 'Registration groups'
+description: 'New registrations will be added to these groups.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:registration_group'
+  handler_settings: {  }
+field_type: entity_reference

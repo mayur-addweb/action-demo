@@ -1,0 +1,67 @@
+uuid: null
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_membership
+    - content_paywall
+    - ctools
+    - licensing
+    - rng
+    - webform
+id: primary
+label: Primary
+weight: 0
+container_id: GTM-MCS7MJZ
+data_layer: dataLayer
+include_classes: false
+whitelist_classes: "google\nnonGooglePixels\nnonGoogleScripts\nnonGoogleIframes"
+blacklist_classes: "customScripts\ncustomPixels"
+include_environment: false
+environment_id: ''
+environment_token: ''
+path_toggle: 'exclude listed'
+path_list: "/admin*\n/batch*\n/node/add*\n/node/*/edit\n/node/*/delete\n/user/*/edit*\n/user/*/cancel*"
+role_toggle: 'exclude listed'
+role_list: {  }
+status_toggle: 'exclude listed'
+status_list: "403\n404"
+conditions:
+  check_content_paywall_access:
+    id: check_content_paywall_access
+    check_content_paywall_access: {  }
+    negate: 0
+    context_mapping: {  }
+  license:
+    id: license
+    bundles: {  }
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'
+  rng_current_time:
+    id: rng_current_time
+    date: '1588195589'
+    negate: '0'
+  rng_event_operation:
+    id: rng_event_operation
+    operations:
+      'manage event': true
+    negate: null
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1588195589'
+    negate: false
+  user_member_status:
+    id: user_member_status
+    member_status: {  }
+    negate: 0
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  user_my_account:
+    id: user_my_account
+    my_account: {  }
+    negate: 0
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: 2cb68821-86ef-47e8-9db8-5867021a46f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_oldpath
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - link
+id: commerce_product.cpe_self_study.field_oldpath
+field_name: field_oldpath
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

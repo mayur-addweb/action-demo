@@ -1,0 +1,73 @@
+uuid: e7b56245-23c8-4cbb-ad90-f2123e5f81c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pol_senator_relates
+    - paragraphs.paragraphs_type.pol_contact
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_pol_senator_relates
+field_name: field_pol_senator_relates
+entity_type: user
+bundle: user
+label: 'Senator Relationships'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pol_contact: pol_contact
+    target_bundles_drag_drop:
+      accordions:
+        weight: 16
+        enabled: false
+      accordion_item:
+        weight: 17
+        enabled: false
+      column:
+        weight: 18
+        enabled: false
+      cpe_credit:
+        weight: 19
+        enabled: false
+      feat_media:
+        weight: 20
+        enabled: false
+      feat_people:
+        weight: 21
+        enabled: false
+      item:
+        weight: 22
+        enabled: false
+      pol_contact:
+        enabled: true
+        weight: 23
+      slide:
+        weight: 24
+        enabled: false
+      slideshow:
+        weight: 25
+        enabled: false
+      tabs:
+        weight: 26
+        enabled: false
+      tab_item:
+        weight: 27
+        enabled: false
+      text_area:
+        weight: 28
+        enabled: false
+      timeslot:
+        weight: 29
+        enabled: false
+      timeslot_group:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

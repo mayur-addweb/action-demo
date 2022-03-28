@@ -1,0 +1,31 @@
+uuid: 023a690a-c5e2-4d0b-ac22-c548a8c5621f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.registration.self_study_online.field_order_item
+    - field.field.registration.self_study_online.field_registration_status
+    - rng.registration_type.self_study_online
+  module:
+    - options
+id: registration.self_study_online.default
+targetEntityType: registration
+bundle: self_study_online
+mode: default
+content:
+  field_order_item:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_registration_status:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

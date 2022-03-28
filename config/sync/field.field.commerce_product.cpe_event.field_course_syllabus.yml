@@ -1,0 +1,21 @@
+uuid: 6a7f1ff1-a5a5-4e3a-ac8d-a1f7e80a6065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_syllabus
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - text
+id: commerce_product.cpe_event.field_course_syllabus
+field_name: field_course_syllabus
+entity_type: commerce_product
+bundle: cpe_event
+label: Syllabus
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

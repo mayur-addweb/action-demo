@@ -1,0 +1,28 @@
+uuid: 70dc009e-7c13-4294-ac8e-d80f15c25cc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.session_registration
+    - field.storage.registration.field_order_item
+    - rng.registration_type.session_in_person
+id: registration.session_in_person.field_order_item
+field_name: field_order_item
+entity_type: registration
+bundle: session_in_person
+label: 'Order item'
+description: 'The order item that generated this session registration.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order_item'
+  handler_settings:
+    target_bundles:
+      session_registration: session_registration
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

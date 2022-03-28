@@ -1,0 +1,21 @@
+uuid: 9872b9df-f686-48e5-8ad8-6d8b13da2ce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_member_select
+  module:
+    - options
+    - user
+id: user.user.field_member_select
+field_name: field_member_select
+entity_type: user
+bundle: user
+label: 'Membership Selection'
+description: '<i class=''text-decoration-underline''>New</i> VSCPA member applicants, which of the following best describes you?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

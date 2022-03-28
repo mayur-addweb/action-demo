@@ -1,0 +1,8 @@
+uuid: 8f6cc232-f8fb-46f3-87b2-a40a7af51168
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marketing Keywords'
+vid: marketing_keywords
+description: 'Terms from this vocabulary are coming from a UDF List in AM.net populated w/the same keywords used by the Marketing>Keywords tab'
+weight: 0

@@ -1,0 +1,21 @@
+uuid: d1847357-6bcd-4df4-bbcd-90bd71e02d19
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - commerce_product
+    - paragraphs
+id: commerce_product.field_featurette_bottom
+field_name: field_featurette_bottom
+entity_type: commerce_product
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

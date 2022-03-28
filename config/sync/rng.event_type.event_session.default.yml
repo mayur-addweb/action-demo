@@ -1,0 +1,20 @@
+uuid: 37bc5c35-032c-488d-92d7-fb8436f29168
+langcode: en
+status: true
+dependencies:
+  config:
+    - vscpa_commerce.event_session_type.default
+    - rng.registrant_type.registrant
+id: event_session.default
+entity_type: event_session
+bundle: default
+mirror_operation_to_event_manage: update
+custom_rules: true
+default_registrant: registrant
+people_types:
+  1:
+    entity_type: user
+    bundle: user
+    create: false
+    existing: true
+    entity_form_mode: default

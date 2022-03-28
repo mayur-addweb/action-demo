@@ -1,0 +1,23 @@
+uuid: 34c7aca0-ce4e-42dd-ab59-c64e80b7976f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_member_count
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_amnet_member_count
+field_name: field_amnet_member_count
+entity_type: taxonomy_term
+bundle: firm
+label: 'AM.net Member Count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

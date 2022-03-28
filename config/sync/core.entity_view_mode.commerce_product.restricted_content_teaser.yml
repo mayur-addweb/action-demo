@@ -1,0 +1,10 @@
+uuid: 1c83b62b-9134-4eec-8a04-9136105d1024
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.restricted_content_teaser
+label: 'Restricted Content Teaser'
+targetEntityType: commerce_product
+cache: true

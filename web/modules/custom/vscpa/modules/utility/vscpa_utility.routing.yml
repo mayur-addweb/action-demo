@@ -1,0 +1,6 @@
+vscpa_utility.one_time_login_link:
+  path: '/admin/people/generate-one-time-login-link/{user}'
+  defaults:
+    _controller: 'Drupal\vscpa_utility\Controller\OneTimeLoginLinkController::generate'
+  requirements:
+    _permission: 'administer users'

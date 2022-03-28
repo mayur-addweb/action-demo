@@ -1,0 +1,9 @@
+uuid: 1c7f1628-24c5-433c-b8c2-f656435f04bc
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_vscpa_action
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

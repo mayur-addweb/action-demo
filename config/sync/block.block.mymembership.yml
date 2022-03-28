@@ -1,0 +1,32 @@
+uuid: 820c1dbe-f605-4b00-9fea-c622513a4cd5
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_membership
+    - block_class
+    - user
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'col-xs-12 my-membership'
+id: mymembership
+theme: vscpa_bootstrap
+region: homepage
+weight: -29
+provider: null
+plugin: my_membership_block
+settings:
+  id: my_membership_block
+  label: 'My Membership'
+  provider: am_net_membership
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

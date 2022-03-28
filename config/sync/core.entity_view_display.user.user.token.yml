@@ -1,0 +1,500 @@
+uuid: a52fc543-a4a7-49bd-a558-2d3c006aac85
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.user.token
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_additionalname
+    - field.field.user.user.field_amnet_billing_class
+    - field.field.user.user.field_amnet_dues_adjs
+    - field.field.user.user.field_amnet_dues_billing
+    - field.field.user.user.field_amnet_dues_lookup
+    - field.field.user.user.field_amnet_dues_paid_through
+    - field.field.user.user.field_amnet_dues_payments
+    - field.field.user.user.field_amnet_dues_refunds
+    - field.field.user.user.field_amnet_id
+    - field.field.user.user.field_become_a_firm_admin
+    - field.field.user.user.field_cert_other
+    - field.field.user.user.field_cert_other_date
+    - field.field.user.user.field_cert_other_no
+    - field.field.user.user.field_cert_va_date
+    - field.field.user.user.field_cert_va_no
+    - field.field.user.user.field_connect_email_prefs
+    - field.field.user.user.field_contact_pref
+    - field.field.user.user.field_convicted_felon
+    - field.field.user.user.field_cpecatalog_sendto
+    - field.field.user.user.field_disclosures_sendto
+    - field.field.user.user.field_dob
+    - field.field.user.user.field_edupostal_sendto
+    - field.field.user.user.field_ethnic_origin
+    - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_familyname
+    - field.field.user.user.field_fax
+    - field.field.user.user.field_fields_of_interest
+    - field.field.user.user.field_firm
+    - field.field.user.user.field_firm_other
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_givenname
+    - field.field.user.user.field_grad_date
+    - field.field.user.user.field_graduate_loc
+    - field.field.user.user.field_home_address
+    - field.field.user.user.field_home_phone
+    - field.field.user.user.field_instagram_url
+    - field.field.user.user.field_is_aicpa_member
+    - field.field.user.user.field_job_function
+    - field.field.user.user.field_job_position
+    - field.field.user.user.field_job_status
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_join_date
+    - field.field.user.user.field_join_date_2
+    - field.field.user.user.field_licensed
+    - field.field.user.user.field_licensed_in
+    - field.field.user.user.field_linkedin_url
+    - field.field.user.user.field_links
+    - field.field.user.user.field_member_select
+    - field.field.user.user.field_member_status
+    - field.field.user.user.field_membership_qualify
+    - field.field.user.user.field_mobile_phone
+    - field.field.user.user.field_name_creds
+    - field.field.user.user.field_name_suffix
+    - field.field.user.user.field_nasba_id
+    - field.field.user.user.field_nasba_optin
+    - field.field.user.user.field_nickname
+    - field.field.user.user.field_other_graduate
+    - field.field.user.user.field_other_undergraduate
+    - field.field.user.user.field_party_affiliation
+    - field.field.user.user.field_peer_review_information
+    - field.field.user.user.field_pol_delegate_relates
+    - field.field.user.user.field_pol_district
+    - field.field.user.user.field_pol_other_relates
+    - field.field.user.user.field_pol_senator_relates
+    - field.field.user.user.field_postal_sendto
+    - field.field.user.user.field_preferred_chapter
+    - field.field.user.user.field_receive_calls
+    - field.field.user.user.field_receive_offers
+    - field.field.user.user.field_receive_sms
+    - field.field.user.user.field_revoked_license
+    - field.field.user.user.field_secondary_emails
+    - field.field.user.user.field_special_needs
+    - field.field.user.user.field_sso_id
+    - field.field.user.user.field_term_conditions
+    - field.field.user.user.field_twitter_url
+    - field.field.user.user.field_undergrad_date
+    - field.field.user.user.field_undergrad_loc
+    - field.field.user.user.field_user_image
+    - field.field.user.user.field_work_address
+    - field.field.user.user.field_work_phone
+    - image.style.thumbnail
+  module:
+    - datetime
+    - entity_reference_revisions
+    - image
+    - link
+    - options
+    - telephone
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.token
+targetEntityType: user
+bundle: user
+mode: token
+content:
+  field_additionalname:
+    type: string
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_cert_other:
+    weight: 29
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cert_other_date:
+    weight: 32
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cert_other_no:
+    weight: 31
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cert_va_date:
+    weight: 28
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cert_va_no:
+    weight: 27
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_convicted_felon:
+    weight: 40
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_cpecatalog_sendto:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_disclosures_sendto:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_edupostal_sendto:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_familyname:
+    type: string
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_fax:
+    weight: 12
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_firm:
+    weight: 33
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_firm_other:
+    weight: 34
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_givenname:
+    type: string
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_grad_date:
+    weight: 21
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_graduate_loc:
+    weight: 23
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_home_phone:
+    weight: 9
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_job_function:
+    weight: 38
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_job_position:
+    weight: 36
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_job_status:
+    weight: 37
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_job_title:
+    weight: 35
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_licensed_in:
+    weight: 51
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_links:
+    type: link
+    weight: 8
+    region: content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+  field_member_status:
+    type: list_default
+    weight: 1
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_mobile_phone:
+    weight: 11
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_name_creds:
+    type: string
+    weight: 6
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_name_suffix:
+    type: string
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_nasba_optin:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_nickname:
+    type: string
+    weight: 7
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_other_graduate:
+    weight: 25
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_other_undergraduate:
+    weight: 24
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_party_affiliation:
+    weight: 42
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_pol_district:
+    weight: 41
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pol_other_relates:
+    type: entity_reference_revisions_entity_view
+    weight: 45
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_postal_sendto:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_receive_offers:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_receive_sms:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_revoked_license:
+    weight: 39
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_special_needs:
+    weight: 46
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_undergrad_date:
+    weight: 20
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_undergrad_loc:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_image:
+    type: image
+    weight: 0
+    region: content
+    label: above
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+  field_work_phone:
+    weight: 10
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  masquerade:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  field_amnet_billing_class: true
+  field_amnet_dues_adjs: true
+  field_amnet_dues_billing: true
+  field_amnet_dues_lookup: true
+  field_amnet_dues_paid_through: true
+  field_amnet_dues_payments: true
+  field_amnet_dues_refunds: true
+  field_amnet_id: true
+  field_become_a_firm_admin: true
+  field_connect_email_prefs: true
+  field_contact_pref: true
+  field_dob: true
+  field_ethnic_origin: true
+  field_facebook_url: true
+  field_fields_of_interest: true
+  field_gender: true
+  field_home_address: true
+  field_instagram_url: true
+  field_is_aicpa_member: true
+  field_join_date: true
+  field_join_date_2: true
+  field_licensed: true
+  field_linkedin_url: true
+  field_member_select: true
+  field_membership_qualify: true
+  field_nasba_id: true
+  field_peer_review_information: true
+  field_pol_delegate_relates: true
+  field_pol_senator_relates: true
+  field_preferred_chapter: true
+  field_receive_calls: true
+  field_secondary_emails: true
+  field_sso_id: true
+  field_term_conditions: true
+  field_twitter_url: true
+  field_work_address: true
+  member_for: true
+  profile_customer: true
+  search_api_excerpt: true

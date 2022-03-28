@@ -1,0 +1,10 @@
+uuid: 11fd60ec-1e55-45b7-9061-ec238755f951
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile_communications
+label: 'Update Profile - Communications'
+targetEntityType: user
+cache: true

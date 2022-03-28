@@ -1,0 +1,164 @@
+.btn {
+  border: 0 !important;
+  border-radius: 5px !important;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 10px 15px;
+  position: relative;
+
+  &.center {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  &.full {
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 400px;
+  }
+
+  &.half {
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      margin: 0 15px 15px 0;
+      max-width: 275px;
+      width: calc(50% - 20px);
+    }
+  }
+
+  &.icon-before {
+    font-family: $font-family-sans-serif-heading !important;
+  }
+
+  &.large {
+    border-radius: 10px;
+    font-size: 2rem;
+    max-width: none;
+    padding: 20px;
+  }
+}
+
+.btn-black {
+  background-color: $black !important;
+  border: 0 !important;
+  color: $white !important;
+
+  &:hover {
+    background-color: lighten($black, 10%) !important;
+  }
+}
+
+.btn-blue {
+  background-color: $blue !important;
+  border: 0 !important;
+  color: $white !important;
+
+  &:hover {
+    background-color: darken($blue, 10%) !important;
+  }
+}
+
+.btn-clear-white {
+  background-color: transparent;
+  border: 0 !important;
+  color: $white !important;
+}
+
+.btn-gold {
+  background-color: $gold !important;
+  color: $black !important;
+
+  &:hover {
+    background-color: darken($gold, 10%) !important;
+  }
+}
+
+.btn-green {
+  background-color: $green !important;
+  border: 0 !important;
+  color: $white !important;
+
+  &:hover {
+    background-color: darken($green, 10%) !important;
+  }
+}
+
+.btn-purple {
+  background-color: $purple !important;
+  border: 0 !important;
+  color: $white !important;
+
+  &:hover {
+    background-color: darken($purple, 10%) !important;
+  }
+}
+
+.btn-red {
+  background-color: $red !important;
+  border: 0 !important;
+  color: $white !important;
+
+  &:hover {
+    background-color: lighten($red, 10%) !important;
+  }
+}
+
+.btn-white {
+  background-color: $white !important;
+  border: 2px solid $slate-lighter !important;
+  color: $black !important;
+
+  &:hover {
+    background-color: darken($white, 5%) !important;
+  }
+
+  &.large::after {
+    color: $purple;
+  }
+}
+
+.back-to-top {
+  clear: both;
+  padding: 2rem 0 0;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  button {
+    background: darken($purple, 5%);
+    box-shadow: none !important;
+    color: $white !important;
+    display: inline-block;
+    margin: 0;
+    min-width: 150px;
+    padding: 10px;
+
+    &:hover {
+      background-color: darken($purple, 8%) !important;
+    }
+
+    &::before {
+      background: darken($purple, 10%);
+      border-radius: 5px;
+      color: $white;
+      content: '\e113';
+      font-family: 'Glyphicons Halflings';
+      left: -4px;
+      margin-right: 10px;
+      padding: 3px 5px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.add-to-cart-disable {
+  cursor: not-allowed;
+  opacity: .5;
+  text-decoration: none;
+}

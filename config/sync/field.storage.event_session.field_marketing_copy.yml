@@ -1,0 +1,19 @@
+uuid: c389f6fe-4f9b-4b40-9cdd-6aa828cfb492
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - vscpa_commerce
+id: event_session.field_marketing_copy
+field_name: field_marketing_copy
+entity_type: event_session
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

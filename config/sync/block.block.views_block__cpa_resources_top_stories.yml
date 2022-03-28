@@ -1,0 +1,47 @@
+uuid: 4e000fce-581b-459e-8f9d-c110acaa1093
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.cpa_resources
+  module:
+    - block_class
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'blue right'
+id: views_block__cpa_resources_top_stories
+theme: vscpa_bootstrap
+region: homepage
+weight: -24
+provider: null
+plugin: 'views_block:cpa_resources-top_stories'
+settings:
+  id: 'views_block:cpa_resources-top_stories'
+  label: 'News & Resources'
+  provider: views
+  label_display: visible
+  views_label: 'News & Resources'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1533146890'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1533146890'
+    negate: false
+    context_mapping: {  }

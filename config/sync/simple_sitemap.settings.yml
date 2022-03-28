@@ -1,0 +1,16 @@
+max_links: 10000
+cron_generate: false
+cron_generate_interval: 3
+remove_duplicates: true
+skip_untranslated: false
+base_url: 'https://www.vscpa.com'
+custom_links_include_images: false
+excluded_languages: {  }
+enabled_entity_types:
+  - node
+  - taxonomy_term
+  - menu_link_content
+  - commerce_product
+_core:
+  default_config_hash: vFARRSP9-YgEArfDNYmRSg0cNFOgZPxqziffIalgLbU
+default_variant: default

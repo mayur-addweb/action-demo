@@ -1,0 +1,102 @@
+# Migration configuration for Article content.
+id: article_node
+label: CSV Articles Content
+migration_group: vscpa
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'public://resources/articles.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will
+  # create an index in the migration table and too many columns
+  # may throw an index size error.
+  keys:
+    - id
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  column_names:
+    0:
+      id: 'Unique Id PageID'
+    2:
+      is_parent: 'Is Parent'
+    3:
+      title: 'Title'
+    4:
+      name: 'Name'
+    5:
+      summary: 'Summary'
+    6:
+      keywords: 'Keywords'
+    7:
+      description: 'Description'
+    8:
+      body: 'Content'
+    9:
+      last_status_changes: 'Last Status Changes'
+    10:
+      last_publication_status: 'Last Publication Status'
+    13:
+      modified_date_time: 'Modified Date Time'
+    14:
+      created_date_time: 'Created Date Time'
+    15:
+      friendly_url: 'Friendly Url'
+    16:
+      alternative_text: 'Alternative Text'
+    19:
+      link_url: 'Link Url'
+destination:
+  plugin: entity:node
+process:
+  # Hard code the destination node type (bundle) as 'publication'.
+  type:
+    plugin: default_value
+    default_value: publication
+  title: title
+  nid: id
+  status: last_publication_status
+  default_value: publication
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_pub_type: pub_type
+  field_amnet_id: id
+  field_active_voting_rating:
+    plugin: default_value
+    default_value: 1
+  'field_oldpath/uri': field_oldpath_uri
+  # Some Drupal fields may have multiple components we may want to set
+  # separately. For example, text fields may have summaries (teasers) in
+  # addition to the full text value. We use / to separate the field name from
+  # the internal field value being set, and put it in quotes because / is a
+  # YAML special character.
+  'body/value': body
+  'body/summary': summary
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  field_keywords:
+    -
+      plugin: explode
+      source: keywords
+      delimiter: ', '
+    -
+      plugin: entity_generate
+      # Value to compare in the bundle
+      value_key: name
+      # Bundle key value
+      # If you get errors consider using only bundle
+      bundle_key: vid
+      # Bundle machine name
+      bundle: keyword
+      # Type of entity
+      entity_type: taxonomy_term
+      # Set to true to ignore case on lookup
+      ignore_case: true

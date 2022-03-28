@@ -1,0 +1,23 @@
+uuid: 5ff6702f-dd94-498c-bcf9-bb046d581016
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - media
+id: media.field_cover_video
+field_name: field_cover_video
+entity_type: media
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

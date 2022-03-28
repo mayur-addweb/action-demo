@@ -1,0 +1,23 @@
+uuid: 20d6342d-98e9-4206-bf6a-941420f28e0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.registration.field_registration_status
+    - rng.registration_type.self_study_online
+  module:
+    - options
+id: registration.self_study_online.field_registration_status
+field_name: field_registration_status
+entity_type: registration
+bundle: self_study_online
+label: 'Registration status'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: active
+default_value_callback: ''
+settings: {  }
+field_type: list_string

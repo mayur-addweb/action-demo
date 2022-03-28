@@ -1,0 +1,26 @@
+uuid: 587aa423-f77d-41e0-bb76-772cb5b9f649
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_time
+    - vscpa_commerce.event_session_type.default
+  module:
+    - datetime_range
+id: event_session.default.field_session_time
+field_name: field_session_time
+entity_type: event_session
+bundle: default
+label: Time
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    default_end_date_type: relative
+    default_end_date: '+1 hour'
+default_value_callback: ''
+settings: {  }
+field_type: daterange

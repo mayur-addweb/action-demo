@@ -1,0 +1,23 @@
+uuid: a2005514-2e2d-414b-9af7-be89242d2aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_sidebar
+    - field.storage.block_content.field_buttons
+  module:
+    - link
+id: block_content.cta_sidebar.field_buttons
+field_name: field_buttons
+entity_type: block_content
+bundle: cta_sidebar
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

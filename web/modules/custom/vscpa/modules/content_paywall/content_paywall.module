@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Provides enhancements for implementing VSCPA Content Paywall.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\content_paywall\ContentPaywallHelper;
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function content_paywall_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  $view_mode = \Drupal::service('content_paywall.helper')->restrictContentAccess($view_mode, $entity, $context);
+}
+
+/**
+ * Implements template_preprocess_node().
+ */
+function content_paywall_preprocess_node(&$variables) {
+  if ($variables['view_mode'] == ContentPaywallHelper::RESTRICTED_CONTENT_VIEW_MODE) {
+    $label = $variables['node']->label();
+    $content = \Drupal::state()->get('content_paywall.restricted_content_message');
+    $restricted_content_message = str_replace('[entity_title]', $label, $content);
+    $variables['restricted_content_message'] = [
+      '#type' => "item",
+      '#markup' => $restricted_content_message,
+    ];
+  }
+}
+
+/**
+ * Implements template_preprocess_commerce_product().
+ */
+function content_paywall_preprocess_commerce_product(&$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  if ($variables['view_mode'] == ContentPaywallHelper::RESTRICTED_CONTENT_VIEW_MODE) {
+    $label = $variables['product_entity']->label();
+    $content = \Drupal::state()->get('content_paywall.restricted_content_message');
+    $restricted_content_message = str_replace('[entity_title]', $label, $content);
+    $variables['restricted_content_message'] = [
+      '#type' => "item",
+      '#markup' => $restricted_content_message,
+    ];
+  }
+}

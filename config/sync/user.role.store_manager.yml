@@ -1,0 +1,24 @@
+uuid: d8d4acf2-57b0-4c67-8e60-c946bba639c3
+langcode: en
+status: true
+dependencies: {  }
+id: store_manager
+label: 'Store Manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'add rss page entities'
+  - 'administer rss page entities'
+  - 'delete rss page entities'
+  - 'edit own vote on node:publication:field_rating'
+  - 'edit rss page entities'
+  - 'use text format basic_html'
+  - 'view published rss page entities'
+  - 'view the administration theme'
+  - 'view unpublished rss page entities'
+  - 'vote on node:publication:field_rating'

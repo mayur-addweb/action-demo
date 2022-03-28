@@ -1,0 +1,21 @@
+uuid: b82f90db-594a-49b9-88b4-b036a6b2d75a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_registrants_duplicate
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_registrants_duplicate
+field_name: rng_registrants_duplicate
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Allow duplicate registrants'
+description: 'Allows a registrant to create more than one registration for this event.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Allow duplicate registrants for this event'
+  off_label: 'Do not allow duplicate registrants for this event'
+field_type: boolean

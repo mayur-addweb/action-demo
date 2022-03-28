@@ -1,0 +1,139 @@
+am_net_user_profile.user_profiles:
+  path: '/admin/config/services/am_net/sync_user_profiles'
+  defaults:
+    _form: '\Drupal\am_net_user_profile\Form\FetchAndSyncAllUserProfilesForm'
+    _title: "Fetch User Profiles"
+  requirements:
+    _permission: 'edit terms in firm'
+  options:
+    _admin_route: TRUE
+
+am_net_user_profile.single_user_profile:
+  path: '/admin/config/services/am_net/sync_single_user_profile'
+  defaults:
+    _form: '\Drupal\am_net_user_profile\Form\FetchAndSyncSingleUserProfileForm'
+    _title: "Fetch User Profile by ID"
+  requirements:
+    _permission: 'edit terms in firm'
+  options:
+    _admin_route: TRUE
+
+am_net_user_profile.person_contacts:
+  path: '/admin/config/services/am_net/sync_person_contacts'
+  defaults:
+    _form: '\Drupal\am_net_user_profile\Form\FetchAndSyncAllLegislativeContactsForm'
+    _title: "Fetch Legislative Contacts"
+  requirements:
+    _permission: 'edit terms in firm'
+  options:
+    _admin_route: TRUE
+
+# User Profile Edit - Become a firm Admin Alias.
+am_net_user_profile.go_to_become_firm_admin_page:
+  path: '/become-firm-admin'
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\BecomeFirmAdmin::goToBecomeFirmAdminPage'
+    _title: "Become a firm Admin"
+  requirements:
+    _user_is_firm_admin: 'FALSE'
+
+# User Profile Edit - Become a firm Admin.
+am_net_user_profile.become_firm_admin:
+  path: 'user/{user}/edit/become-firm-admin'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\BecomeFirmAdmin::render'
+    _title: "Become a firm Admin"
+  requirements:
+    _custom_access: '\Drupal\am_net_user_profile\Controller\BecomeFirmAdmin::becomeFirmAdminAccess'
+    user: '^[a-zA-Z0-9_]+'
+
+# User Profile setting.
+am_net_user_profile.setting:
+  path: '/admin/config/vscpa/user-profile'
+  defaults:
+    _form: '\Drupal\am_net_user_profile\Form\UserProfileSettingForm'
+    _title: "User Profile setting"
+  requirements:
+    _permission: 'administer users'
+  options:
+    _admin_route: TRUE
+
+# Update Profile Edit - Website Account.
+am_net_user_profile.website_account:
+  path: 'user/{user}/edit/website-account'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\WebsiteAccount::render'
+    _title: "Update Login Information"
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    user: '^[a-zA-Z0-9_]+'
+    _custom_access: '\Drupal\am_net_user_profile\Controller\WebsiteAccount::access'
+  options:
+    _admin_route: TRUE
+
+# Update Profile Edit - General Member Information.
+am_net_user_profile.general_member_information:
+  path: 'user/{user}/edit/general-member-information'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\GeneralMemberInformation::render'
+    _title: "General Member Information"
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    user: '^[a-zA-Z0-9_]+'
+    _custom_access: '\Drupal\am_net_user_profile\Controller\GeneralMemberInformation::access'
+  options:
+    _admin_route: TRUE
+
+# Update Profile Edit - Communications.
+am_net_user_profile.communications:
+  path: 'user/{user}/edit/communications'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\Communications::render'
+    _title: "Communications"
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    user: '^[a-zA-Z0-9_]+'
+    _custom_access: '\Drupal\am_net_user_profile\Controller\Communications::access'
+  options:
+    _admin_route: TRUE
+
+# Update Profile Edit - Elected Officials.
+am_net_user_profile.elected_officials:
+  path: 'user/{user}/edit/elected-officials'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\ElectedOfficials::render'
+    _title: "Elected Officials"
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    user: '^[a-zA-Z0-9_]+'
+    _custom_access: '\Drupal\am_net_user_profile\Controller\ElectedOfficials::access'
+  options:
+    _admin_route: TRUE
+
+# Update Profile Edit - Employment Information.
+am_net_user_profile.employment_information:
+  path: 'user/{user}/edit/employment-information'
+  parent: entity.user.edit-form
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\EmploymentInformation::render'
+    _title: "Employment Information"
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    user: '^[a-zA-Z0-9_]+'
+    _custom_access: '\Drupal\am_net_user_profile\Controller\EmploymentInformation::access'
+  options:
+    _admin_route: TRUE
+
+# My Account.
+am_net_user_profile.my_account:
+  path: 'myaccount'
+  defaults:
+    _controller: '\Drupal\am_net_user_profile\Controller\MyAccount::render'
+    _title: "My Account"
+  requirements:
+    _permission: 'access content'

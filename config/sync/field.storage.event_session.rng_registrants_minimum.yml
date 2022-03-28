@@ -1,0 +1,20 @@
+uuid: 724d287c-7a00-4563-8530-7f737201a335
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.rng_registrants_minimum
+field_name: rng_registrants_minimum
+entity_type: event_session
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

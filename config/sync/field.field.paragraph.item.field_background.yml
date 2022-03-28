@@ -1,0 +1,21 @@
+uuid: 800e3c37-64ad-4cc0-89e0-c23766380d0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.item
+  module:
+    - options
+id: paragraph.item.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: item
+label: Background
+description: 'What color should this single item be styled with (<i>-none-</i> is transparent)?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

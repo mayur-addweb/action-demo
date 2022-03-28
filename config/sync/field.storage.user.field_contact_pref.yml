@@ -1,0 +1,30 @@
+uuid: 18704334-5bfc-4d28-acec-f35f73829993
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_contact_pref
+field_name: field_contact_pref
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: H
+      label: 'Home address'
+    -
+      value: O
+      label: 'Office address'
+    -
+      value: 'NULL'
+      label: 'Do not send general mail'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

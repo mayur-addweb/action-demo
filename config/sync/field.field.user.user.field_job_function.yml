@@ -1,0 +1,30 @@
+uuid: 1122b6b8-ddd3-4958-a97b-da683f56ca8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_job_function
+    - taxonomy.vocabulary.job_func
+  module:
+    - user
+id: user.user.field_job_function
+field_name: field_job_function
+entity_type: user
+bundle: user
+label: 'Primary Job Functions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      job_func: job_func
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

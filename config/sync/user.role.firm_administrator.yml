@@ -1,0 +1,19 @@
+uuid: baed9563-ff73-4aa2-a76f-8a1cbd49207b
+langcode: en
+status: true
+dependencies: {  }
+id: firm_administrator
+label: 'Firm Administrator'
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access user profiles'
+  - 'administer users'
+  - 'edit own vote on node:publication:field_rating'
+  - 'edit terms in firm'
+  - 'use text format basic_html'
+  - 'vote on node:publication:field_rating'

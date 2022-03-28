@@ -1,0 +1,117 @@
+uuid: 8aeb7233-ae96-4aa0-9fd8-389504d55b5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cover
+    - field.field.node.page.body
+    - field.field.node.page.field_alt_description
+    - field.field.node.page.field_alt_title
+    - field.field.node.page.field_amnet_id
+    - field.field.node.page.field_buttons
+    - field.field.node.page.field_categories
+    - field.field.node.page.field_cover_image
+    - field.field.node.page.field_cover_video
+    - field.field.node.page.field_custom
+    - field.field.node.page.field_featurette_bottom
+    - field.field.node.page.field_featurette_top
+    - field.field.node.page.field_field_of_interest
+    - field.field.node.page.field_general_business
+    - field.field.node.page.field_keywords
+    - field.field.node.page.field_memberonly
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_oldpath
+    - field.field.node.page.field_overlay
+    - field.field.node.page.field_position
+    - field.field.node.page.field_related_content
+    - field.field.node.page.field_vscpa_action
+    - node.type.page
+  module:
+    - link
+    - options
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.cover
+targetEntityType: node
+bundle: page
+mode: cover
+content:
+  field_alt_description:
+    type: string
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_alt_title:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_buttons:
+    type: link
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_cover_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_cover_video:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_overlay:
+    type: list_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  title_field:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  content_moderation_control: true
+  field_amnet_id: true
+  field_categories: true
+  field_custom: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_general_business: true
+  field_keywords: true
+  field_memberonly: true
+  field_meta_tags: true
+  field_oldpath: true
+  field_position: true
+  field_related_content: true
+  field_vscpa_action: true
+  links: true
+  title_teaser: true

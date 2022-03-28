@@ -1,0 +1,20 @@
+uuid: da1f7e3e-b0ac-42d6-b4cd-9a599f6a7859
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - vscpa_commerce
+id: paragraph.field_sessions
+field_name: field_sessions
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: event_session
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,14 @@
+uuid: ab79e067-c435-4dcf-a875-b837487ad917
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+id: my_account
+label: 'My Account'
+type: 'canonical_entities:user'
+pattern: '/my-account/[current-user:uid]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

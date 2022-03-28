@@ -1,0 +1,27 @@
+uuid: cd909f8d-56a4-40f6-bdb2-3d20a291a292
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order_item.field_donation_source
+field_name: field_donation_source
+entity_type: commerce_order_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: P
+      label: Person
+    -
+      value: F
+      label: Firm
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,62 @@
+uuid: 408c2f71-34fd-4c43-a88b-a15c5315a0ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.payment_plan_administrative_fee
+    - field.field.commerce_order_item.payment_plan_administrative_fee.field_order_item
+    - field.field.commerce_order_item.payment_plan_administrative_fee.field_user
+  module:
+    - commerce_order
+id: commerce_order_item.payment_plan_administrative_fee.default
+targetEntityType: commerce_order_item
+bundle: payment_plan_administrative_fee
+mode: default
+content:
+  field_order_item:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_user:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  purchased_entity:
+    type: entity_reference_autocomplete
+    weight: -1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  quantity:
+    type: commerce_quantity
+    weight: 1
+    region: content
+    settings:
+      step: '1'
+      placeholder: ''
+    third_party_settings: {  }
+  unit_price:
+    type: commerce_unit_price
+    weight: 2
+    settings:
+      require_confirmation: true
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true

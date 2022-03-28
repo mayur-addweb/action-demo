@@ -1,0 +1,46 @@
+uuid: b9804b27-1653-41c9-9ea6-0321ed976efc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.special_needs.field_amnet_special_needs_code
+    - taxonomy.vocabulary.special_needs
+  module:
+    - path
+    - text
+id: taxonomy_term.special_needs.default
+targetEntityType: taxonomy_term
+bundle: special_needs
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_amnet_special_needs_code:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

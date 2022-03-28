@@ -1,0 +1,30 @@
+uuid: f682f687-2b31-48e2-9819-8834b6e9c5a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.political_relate.field_amnet_id
+    - taxonomy.vocabulary.political_relate
+  module:
+    - text
+id: taxonomy_term.political_relate.default
+targetEntityType: taxonomy_term
+bundle: political_relate
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_id:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

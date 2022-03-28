@@ -1,0 +1,33 @@
+uuid: 4d43400d-d01f-4d5b-af52-2144e0adf60c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_licensed
+field_name: field_licensed
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'N'
+      label: 'Not Licensed'
+    -
+      value: 'Y'
+      label: 'Yes'
+    -
+      value: A
+      label: 'Yes - Actively Using License'
+    -
+      value: I
+      label: 'Yes - Not Actively Using License'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,47 @@
+uuid: b92c10c1-f1af-4841-be04-2a348b8d017a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vscpa
+  module:
+    - block_class
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: vscpa-view-title
+id: views_block__vscpa_practice_management_resources
+theme: vscpa_bootstrap
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:vscpa-practice_management_resources'
+settings:
+  id: 'views_block:vscpa-practice_management_resources'
+  label: 'Practice Management Resources'
+  provider: views
+  label_display: visible
+  views_label: 'Practice Management Resources'
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1539629308'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1539629308'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /practice-management-resources
+    negate: false
+    context_mapping: {  }

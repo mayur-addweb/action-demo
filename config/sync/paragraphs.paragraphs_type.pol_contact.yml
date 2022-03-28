@@ -1,0 +1,9 @@
+uuid: 4bd2e3c4-c9ee-4564-94b4-cc61af082ad5
+langcode: en
+status: true
+dependencies: {  }
+id: pol_contact
+label: 'Political Contact'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

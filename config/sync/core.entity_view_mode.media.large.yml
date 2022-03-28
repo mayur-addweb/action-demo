@@ -1,0 +1,10 @@
+uuid: 2dc42197-3913-4d89-957f-5cfca7eb7e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.large
+label: 'Large (480x480)'
+targetEntityType: media
+cache: true

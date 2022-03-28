@@ -1,0 +1,10 @@
+uuid: f1175d68-00d9-4cec-850d-c42632eb0af9
+langcode: en
+status: true
+dependencies: {  }
+id: membership_donation
+label: 'Membership donation'
+orderItemType: membership_donation
+generateTitle: false
+traits: {  }
+locked: false

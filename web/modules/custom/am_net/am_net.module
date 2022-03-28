@@ -1,0 +1,285 @@
+<?php
+
+/**
+ * @file
+ * Contains am_net.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+// Fetch records changes from AM.net each 30 minutes or 1800 sec.
+define('AM_NET_RECORDS_FETCH_INTERVAL', 1800);
+// Division codes for Self-study event & products.
+define('AM_NET_SELF_STUDY_CODES', ['INDII', 'SELFS', 'QASSE']);
+
+/**
+ * Implements hook_help().
+ */
+function am_net_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.am_net':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t("Access the Association Management System (AMS) AM.net's Tools Connection Drupal module for user, member, event registration, and order/transaction data Synchronization.") . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Check if the a given code represent a SelfStudy event.
+ *
+ * @param string $code
+ *   The Division code.
+ *
+ * @return bool
+ *   TRUE if is code is part of the SelfStudy Codes, otherwise FALSE.
+ */
+function am_net_is_self_study($code = NULL) {
+  if (empty($code)) {
+    return FALSE;
+  }
+  return in_array($code, AM_NET_SELF_STUDY_CODES);
+}
+
+/**
+ * Sets a message to display to the member.
+ *
+ * Messages are stored in a session variable and displayed in the page template
+ * via the $messages theme variable.
+ *
+ * @param string $type
+ *   (optional) The type of entity.
+ * @param string $id
+ *   (required) The entity ID.
+ * @param bool $synced
+ *   (optional) Flag that indicated whether the entity was synced with AM.net
+ *   in the current request.
+ *
+ * @return array
+ *   A multidimensional array with keys corresponding to the set synced types.
+ *
+ * @see am_net_entity_get_synced()
+ */
+function am_net_entity_set_synced($type = NULL, $id = NULL, $synced = FALSE) {
+  $stored_entities = &drupal_static(__FUNCTION__, []);
+  if (isset($id) && isset($type)) {
+    $key = "{$type}.{$id}";
+    if (!isset($stored_entities[$key])) {
+      $stored_entities[$key] = $synced;
+    }
+  }
+  return isset($stored_entities) ? $stored_entities : [];
+}
+
+/**
+ * Return if whether a entity has been synced in the current request.
+ *
+ * @param string $type
+ *   (optional) The type of entity.
+ * @param string $id
+ *   (required) The entity ID.
+ *
+ * @return bool
+ *   TRUE if whether a entity has been synced in the current request
+ *   Otherwise FALSE
+ *
+ * @see am_net_entity_set_synced()
+ */
+function am_net_entity_is_synced($type = NULL, $id = NULL) {
+  if (!isset($id) || isset($type)) {
+    return FALSE;
+  }
+  $stored_entities = am_net_entity_set_synced();
+  $key = "{$type}.{$id}";
+  if (!isset($stored_entities[$key])) {
+    return FALSE;
+  }
+  return $stored_entities[$key];
+}
+
+/**
+ * AM.net store a static iterator.
+ *
+ * @param int $iterator
+ *   The iterator.
+ *
+ * @return int|null
+ *   The stored iterator, otherwise NULL
+ */
+function am_net_set_iterator($iterator = NULL) {
+  $stored_iterator =& drupal_static(__FUNCTION__, $default_value = NULL);
+  if (isset($iterator)) {
+    $stored_iterator = $iterator;
+  }
+  return $stored_iterator;
+}
+
+/**
+ * AM.net get a stored static iterator.
+ *
+ * The iterator is incremented in each call.
+ *
+ * @return int|null
+ *   The stored iterator, otherwise NULL
+ */
+function am_net_get_iterator() {
+  $iterator = am_net_set_iterator();
+  $iterator = !isset($iterator) ? 1 : ($iterator + 1);
+  return am_net_set_iterator($iterator);
+}
+
+/**
+ * AM.net logger for debug purpose.
+ *
+ * @param int $message
+ *   The message.
+ * @param int $id
+ *   The entity id.
+ */
+function am_net_logger($message, $id = '') {
+  $message = t('@iterator - @id:', ['@iterator' => am_net_get_iterator(), '@id' => $id]) . $message;
+  if (am_net_debug_mode_is_active()) {
+    ksm($message);
+  }
+}
+
+/**
+ * AM.net Determines if the Debug mode is active.
+ *
+ * The debug value is store statically for be used during the request.
+ *
+ * @return bool
+ *   TRUE if the debug mode is active, Otherwise FAlSE.
+ */
+function am_net_debug_mode_is_active() {
+  $stored_debug =& drupal_static(__FUNCTION__, $default_value = NULL);
+  if (is_null($stored_debug)) {
+    $stored_debug = \Drupal::state()->get('am_net.settings.debug', FALSE);
+  }
+  return boolval($stored_debug);
+}
+
+/**
+ * AM.net Determines if the Cron mode is active.
+ *
+ * The cron value is store statically for be used during the request.
+ *
+ * @return bool
+ *   TRUE if the cron mode is active, Otherwise FAlSE.
+ */
+function am_net_cron_is_active() {
+  $stored_cron =& drupal_static(__FUNCTION__, $default_value = NULL);
+  if (is_null($stored_cron)) {
+    $stored_cron = \Drupal::state()->get('am_net.settings.cron', FALSE);
+  }
+  return boolval($stored_cron);
+}
+
+/**
+ * Determines if the the trigger of the profile update email is active.
+ *
+ * The flag value is store statically for be used during the request.
+ *
+ * @return bool
+ *   TRUE if the debug mode is active, Otherwise FAlSE.
+ */
+function am_net_profile_update_email_is_active() {
+  $stored_debug =& drupal_static(__FUNCTION__, $default_value = NULL);
+  if (is_null($stored_debug)) {
+    $stored_debug = \Drupal::state()->get('am_net.settings.disable_profile_update_email', FALSE);
+  }
+  return !boolval($stored_debug);
+}
+
+/**
+ * Log Requests Exception.
+ *
+ * @param string $type
+ *   (required) The type of Exception.
+ * @param string $error_message
+ *   (optional) The request error message.
+ */
+function am_net_resolve_exception($type = NULL, $error_message = '') {
+  if (empty($type)) {
+    return;
+  }
+  if ($type == 'connect_timeout') {
+    $ip = \Drupal::request()->getClientIp();
+    $error_message = t('AM.net Timeout - connection cannot be established from the IP: @ip.', ['@ip' => $ip]);
+  }
+  // Logs an error.
+  \Drupal::logger('am_net')->error($error_message);
+  // If user is admin show the message.
+  $user = \Drupal::currentUser()->getRoles();
+  if (in_array('administrator', $user)) {
+    drupal_set_message($error_message, 'warning');
+  }
+}
+
+/**
+ * Sets a message to display to the member.
+ *
+ * Messages are stored in a static variable.
+ *
+ * @param string $key
+ *   (optional) The entity ID.
+ * @param string $message
+ *   (optional) The message.
+ * @param string $code
+ *   (required) The message code.
+ *
+ * @return array
+ *   A multidimensional array with keys corresponding to the set messages.
+ */
+function am_net_entity_set_message($key = NULL, $message = NULL, $code = NULL) {
+  $stored_messages = &drupal_static(__FUNCTION__, []);
+  if (!empty($key) && !empty($message)) {
+    $stored_messages[$key] = [
+      'message' => $message,
+      'code' => $code,
+    ];
+  }
+  return isset($stored_messages) ? $stored_messages : [];
+}
+
+/**
+ * Return the list of messages in the current request.
+ *
+ * @param string $key
+ *   (optional) The entity ID.
+ *
+ * @return array|bool
+ *   The array list of messages or FALSE if no message.
+ */
+function am_net_entity_get_message($key = NULL) {
+  if (empty($key)) {
+    return FALSE;
+  }
+  $stored_messages = am_net_entity_set_message();
+  if (!isset($stored_messages[$key])) {
+    return FALSE;
+  }
+  $message = $stored_messages[$key]['message'] ?? FALSE;
+  return $message;
+}
+
+/**
+ * Log sync Error.
+ *
+ * @param array $log_error
+ *   The detailed log error array.
+ */
+function am_net_log_sync_error(array $log_error = []) {
+  // Add Request source.
+  $request = \Drupal::request();
+  $log_error['current_uri'] = $request->getRequestUri();
+  $log_error['host'] = $request->getHost();
+  // Save the log in custom state variable.
+  $state = \Drupal::state();
+  $key = "am_net.sync.error";
+  $values = $state->get($key, []);
+  $values[] = $log_error;
+  $state->set($key, $values);
+}

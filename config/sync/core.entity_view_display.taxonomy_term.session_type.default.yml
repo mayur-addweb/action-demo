@@ -1,0 +1,30 @@
+uuid: 0331bdd2-2dbb-4d77-be70-7c686934cd20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.session_type.field_icon
+    - taxonomy.vocabulary.session_type
+  module:
+    - file
+    - text
+id: taxonomy_term.session_type.default
+targetEntityType: taxonomy_term
+bundle: session_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

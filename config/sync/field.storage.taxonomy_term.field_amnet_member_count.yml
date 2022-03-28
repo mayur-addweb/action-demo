@@ -1,0 +1,20 @@
+uuid: 4d808953-3a59-4b11-987a-50b678d7e6fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_amnet_member_count
+field_name: field_amnet_member_count
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

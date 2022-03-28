@@ -1,0 +1,21 @@
+uuid: 2545b4b8-6ed4-410a-8365-9af85a2ec6bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_search_index_rating
+field_name: field_search_index_rating
+entity_type: commerce_product
+type: string
+settings:
+  max_length: 5
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

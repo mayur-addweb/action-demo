@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+  <file>.</file>
+  <arg name="extensions" value="css,inc,info,install,js,json,md,module,php,profile,test,theme,yml"/>
+  <exclude-pattern>./js/sentry-browser/*</exclude-pattern>
+  <exclude-pattern>./node_modules/*</exclude-pattern>
+  <rule ref="Drupal"/>
+  <rule ref="DrupalPractice"/>
+</ruleset>

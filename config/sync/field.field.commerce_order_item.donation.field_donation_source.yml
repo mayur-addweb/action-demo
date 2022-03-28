@@ -1,0 +1,23 @@
+uuid: 7391d178-068a-4abd-85cf-a53e49e1cf32
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.donation
+    - field.storage.commerce_order_item.field_donation_source
+  module:
+    - options
+id: commerce_order_item.donation.field_donation_source
+field_name: field_donation_source
+entity_type: commerce_order_item
+bundle: donation
+label: Source
+description: 'The source of this donation.'
+required: false
+translatable: false
+default_value:
+  -
+    value: I
+default_value_callback: ''
+settings: {  }
+field_type: list_string

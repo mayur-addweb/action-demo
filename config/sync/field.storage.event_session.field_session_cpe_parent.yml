@@ -1,0 +1,20 @@
+uuid: 522d7653-2f05-4dc8-97b7-546f9d8b3b8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - vscpa_commerce
+id: event_session.field_session_cpe_parent
+field_name: field_session_cpe_parent
+entity_type: event_session
+type: entity_reference
+settings:
+  target_type: commerce_product
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

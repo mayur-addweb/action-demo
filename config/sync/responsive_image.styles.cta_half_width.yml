@@ -1,0 +1,41 @@
+uuid: d30d3d71-2d0c-4e2e-8eea-5280e280a1bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.cta_extra_small
+    - image.style.cta_large
+    - image.style.cta_medium
+    - image.style.cta_small
+  theme:
+    - vscpa_bootstrap
+id: cta_half_width
+label: 'CTA (Half-Width)'
+image_style_mappings:
+  -
+    breakpoint_id: vscpa.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: cta_large
+  -
+    breakpoint_id: vscpa.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: cta_large
+  -
+    breakpoint_id: vscpa.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: cta_medium
+  -
+    breakpoint_id: vscpa.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: cta_small
+  -
+    breakpoint_id: vscpa.xsmall
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: cta_extra_small
+breakpoint_group: vscpa_bootstrap
+fallback_image_style: cta_extra_small

@@ -1,0 +1,21 @@
+uuid: 0203229f-5c65-4647-b10a-ed6bc1afffab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_undergrad_date
+  module:
+    - datetime
+    - user
+id: user.user.field_undergrad_date
+field_name: field_undergrad_date
+entity_type: user
+bundle: user
+label: 'Date of Graduation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

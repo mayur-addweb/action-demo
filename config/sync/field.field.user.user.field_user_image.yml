@@ -1,0 +1,38 @@
+uuid: 0eb45a73-aab0-416b-8b32-32e09e1dba1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_image
+  module:
+    - image
+    - user
+id: user.user.field_user_image
+field_name: field_user_image
+entity_type: user
+bundle: user
+label: 'Upload Image'
+description: 'Upload your photo here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: users
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 2MB
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,42 @@
+uuid: 565451d6-c319-424c-a394-905605956b99
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_vscpa
+  module:
+    - entity_browser_entity_form
+    - views
+name: images
+label: Images
+display: iframe
+display_configuration:
+  width: 99%
+  height: '500'
+  link_text: 'Select Entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9fc2e2ee-7dc2-4dd8-b0ac-e3ac81e2600d:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Save New Image'
+    uuid: 9fc2e2ee-7dc2-4dd8-b0ac-e3ac81e2600d
+    weight: -9
+    label: 'Add New Image'
+    id: entity_form
+  f3374dc8-0798-442a-be3e-6eed37606d3f:
+    settings:
+      view: media_vscpa
+      view_display: media_images
+      submit_text: 'Select Image'
+      auto_select: false
+    uuid: f3374dc8-0798-442a-be3e-6eed37606d3f
+    weight: -10
+    label: Library
+    id: view

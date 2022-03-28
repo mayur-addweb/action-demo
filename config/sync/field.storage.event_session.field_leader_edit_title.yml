@@ -1,0 +1,18 @@
+uuid: 8590970f-0f0c-4a4e-96b4-c8a2c80d19a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.field_leader_edit_title
+field_name: field_leader_edit_title
+entity_type: event_session
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

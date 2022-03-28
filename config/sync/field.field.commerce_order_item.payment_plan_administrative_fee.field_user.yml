@@ -1,0 +1,28 @@
+uuid: 4e2eecdb-75b9-4585-9fc8-46bdfa0b4f4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.payment_plan_administrative_fee
+    - field.storage.commerce_order_item.field_user
+id: commerce_order_item.payment_plan_administrative_fee.field_user
+field_name: field_user
+entity_type: commerce_order_item
+bundle: payment_plan_administrative_fee
+label: User
+description: 'The user for this Payment Plan.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

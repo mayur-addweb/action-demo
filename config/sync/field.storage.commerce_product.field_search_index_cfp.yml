@@ -1,0 +1,18 @@
+uuid: 04b7b6b8-5c8a-4839-8142-d9fa7f5283d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_search_index_cfp
+field_name: field_search_index_cfp
+entity_type: commerce_product
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,40 @@
+uuid: f41b72cb-2368-42ac-8e1c-9b5d2e10df50
+langcode: en
+status: true
+dependencies:
+  module:
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: vscpa_bootstrap_messages
+theme: vscpa_bootstrap
+region: top_full_width
+weight: -21
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1529601805'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1529601805'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

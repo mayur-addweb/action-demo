@@ -1,0 +1,33 @@
+uuid: 934a5d3a-0382-4d92-a11a-5b0e07998e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.misc_materials.field_resource_file
+    - field.field.paragraph.misc_materials.field_resource_name
+    - paragraphs.paragraphs_type.misc_materials
+  module:
+    - file
+id: paragraph.misc_materials.default
+targetEntityType: paragraph
+bundle: misc_materials
+mode: default
+content:
+  field_resource_file:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_resource_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

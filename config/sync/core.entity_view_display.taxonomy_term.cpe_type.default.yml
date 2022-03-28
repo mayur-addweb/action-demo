@@ -1,0 +1,30 @@
+uuid: 9fc08f22-c1d3-4208-8ef3-7b0c08120caa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cpe_type.field_amnet_code
+    - taxonomy.vocabulary.cpe_type
+  module:
+    - text
+id: taxonomy_term.cpe_type.default
+targetEntityType: taxonomy_term
+bundle: cpe_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

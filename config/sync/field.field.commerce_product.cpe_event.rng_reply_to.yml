@@ -1,0 +1,19 @@
+uuid: f072728a-a025-44ed-b9c7-ee70be303871
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_reply_to
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_reply_to
+field_name: rng_reply_to
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Reply-to e-mail address'
+description: 'E-mail address that appears as reply-to when emails are sent from this event. Leave empty to use site default.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

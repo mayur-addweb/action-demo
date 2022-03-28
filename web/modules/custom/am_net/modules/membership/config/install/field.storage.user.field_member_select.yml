@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_member_select
+field_name: field_member_select
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: MF
+      label: 'I am a licensed CPA'
+    -
+      value: MA
+      label: 'I am an unlicensed Professional'
+    -
+      value: MC
+      label: 'I am a college student and not a licensed CPA or working in an accounting or finance position'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

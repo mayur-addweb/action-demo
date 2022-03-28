@@ -1,0 +1,56 @@
+uuid: f898c473-e7ba-4d1d-a363-840cddafa3b5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:72eddd5d-81ef-491c-9a1e-3f1c173ca1a7'
+  module:
+    - block_class
+    - block_content
+    - rng
+    - system
+    - user
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: already-a-member
+id: alreadyamember
+theme: vscpa_bootstrap
+region: content
+weight: -22
+provider: null
+plugin: 'block_content:72eddd5d-81ef-491c-9a1e-3f1c173ca1a7'
+settings:
+  id: 'block_content:72eddd5d-81ef-491c-9a1e-3f1c173ca1a7'
+  label: 'Renew Your Membership'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1534881349'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1534881349'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/join-vscpa-today\r\n/join"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

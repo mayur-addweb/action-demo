@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Two column template for the checkout form.
+ *
+ * Available variables:
+ * - form: The form.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('vscpa_bootstrap/checkout') }}
+
+<div class="layout-checkout-form clearfix">
+    <div class="layout-region layout-region-checkout-main">
+        {{ form|without('sidebar', 'actions') }}
+    </div>
+    <div class="layout-region layout-region-checkout-secondary">
+        <h3 class="accent-left gold">{% trans %} Order Summary {% endtrans %}</h3>
+        {{ form.sidebar }}
+    </div>
+    <div class="layout-region layout-region-checkout-footer">
+        {{ form.actions }}
+    </div>
+</div>

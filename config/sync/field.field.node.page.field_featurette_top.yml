@@ -1,0 +1,87 @@
+uuid: 313e9219-d3ba-4ec8-a98f-5652050f0749
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featurette_top
+    - node.type.page
+    - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.slideshow
+    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - entity_reference_revisions
+id: node.page.field_featurette_top
+field_name: field_featurette_top
+entity_type: node
+bundle: page
+label: 'Featurette Top'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column: column
+      text_area: text_area
+      accordions: accordions
+      slideshow: slideshow
+      tabs: tabs
+    target_bundles_drag_drop:
+      bp_columns:
+        weight: 11
+        enabled: false
+      column:
+        enabled: true
+        weight: 12
+      slide:
+        weight: 13
+        enabled: false
+      cpe_credit:
+        weight: 13
+        enabled: false
+      feat_media:
+        weight: 14
+        enabled: false
+      feat_people:
+        weight: 15
+        enabled: false
+      tab_item:
+        weight: 15
+        enabled: false
+      text_area:
+        enabled: true
+        weight: 16
+      feat_tabs:
+        weight: 16
+        enabled: false
+      feat_textarea:
+        weight: 17
+        enabled: false
+      item:
+        weight: 18
+        enabled: false
+      accordion_item:
+        weight: 18
+        enabled: false
+      pol_contact:
+        weight: 19
+        enabled: false
+      accordions:
+        enabled: true
+        weight: 19
+      session:
+        weight: 20
+        enabled: false
+      slideshow:
+        enabled: true
+        weight: 24
+      tabs:
+        enabled: true
+        weight: 28
+field_type: entity_reference_revisions

@@ -1,0 +1,13 @@
+ignored_config_entities:
+  - am_net.settings
+  - am_net_membership.billing_class_checker_manager
+  - saml_sp.idp.vscpa_sso
+  - saml_sp.settings
+  - saml_sp_drupal_login.config
+  - simplesamlphp_auth.settings
+  - 'block.block.*'
+  - 'webform.webform.*'
+  - commerce_payment.commerce_payment_gateway.amnet_payflow
+  - swiftmailer.transport
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

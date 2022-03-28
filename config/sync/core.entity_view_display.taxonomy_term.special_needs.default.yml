@@ -1,0 +1,30 @@
+uuid: 2cfb04b7-d7f8-43da-89a4-c8d0e2c24267
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.special_needs.field_amnet_special_needs_code
+    - taxonomy.vocabulary.special_needs
+  module:
+    - text
+id: taxonomy_term.special_needs.default
+targetEntityType: taxonomy_term
+bundle: special_needs
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_special_needs_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

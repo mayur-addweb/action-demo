@@ -1,0 +1,23 @@
+uuid: aeada6ca-c8ad-44f4-a404-6bc3197814d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_oldpath
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - link
+id: commerce_product.cpe_event.field_oldpath
+field_name: field_oldpath
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ *
+ * CPE Event product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="registration-widget">
+  <div class="product-variations-price-fields-wrapper skinny-padding clearfix">
+    <div class="product--variation-field--variation_price field field--name-price field--type-commerce-price field--label-above">
+      <div class="registration">
+        {{ dates_full }}
+      </div>
+    </div>
+    {{ product.variations }}
+  </div>
+</div>

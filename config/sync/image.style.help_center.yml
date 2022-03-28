@@ -1,0 +1,15 @@
+uuid: 7c5b6cf8-c071-4c58-8a76-f43fc6c86c64
+langcode: en
+status: true
+dependencies: {  }
+name: help_center
+label: 'Help Center'
+effects:
+  d396291b-a905-4720-a96d-39b9279109ef:
+    uuid: d396291b-a905-4720-a96d-39b9279109ef
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 166
+      anchor: center-center

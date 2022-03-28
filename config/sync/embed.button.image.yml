@@ -1,0 +1,25 @@
+uuid: ebe2d747-f808-42e6-9215-4d37dc521974
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+  module:
+    - entity_embed
+    - media
+label: Image
+id: image
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - image
+  display_plugins:
+    - 'view_mode:media.full'
+    - 'view_mode:media.large'
+    - 'view_mode:media.medium'
+    - 'view_mode:media.thumbnail'
+  entity_browser: images
+  entity_browser_settings:
+    display_review: false
+icon_uuid: null

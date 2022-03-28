@@ -1,0 +1,8 @@
+uuid: 1da9ea54-4777-403b-bfb2-359d28e53b7a
+langcode: en
+status: true
+dependencies: {  }
+id: help_center
+label: 'Help Center'
+revision: 1
+description: 'This custom block type is used to manage the footer''s Help Center & Public Support block.'

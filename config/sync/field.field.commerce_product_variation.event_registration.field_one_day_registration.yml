@@ -1,0 +1,23 @@
+uuid: 8ccd3c33-8d35-4614-bb75-4bf71b3ca0dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.event_registration
+    - field.storage.commerce_product_variation.field_one_day_registration
+id: commerce_product_variation.event_registration.field_one_day_registration
+field_name: field_one_day_registration
+entity_type: commerce_product_variation
+bundle: event_registration
+label: 'One-day registration?'
+description: 'The event variation represent One-day registration fee on AM.net?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 9b2ed8e8-35ea-49af-98a7-c4ed1c3755d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_search_index_date
+  module:
+    - datetime
+id: commerce_product.cpe_event.field_search_index_date
+field_name: field_search_index_date
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Search index - Date'
+description: 'Field used on CPE catalog for date sort and date filter.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

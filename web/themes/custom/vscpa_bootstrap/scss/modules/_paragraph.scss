@@ -1,0 +1,804 @@
+.paragraph--type--accordions {
+  margin: 0 auto 15px;
+  max-width: 1170px;
+  padding: 15px;
+
+  .panel {
+    background: $white;
+    border: 0;
+    padding: 0;
+  }
+
+  .panel-body {
+    padding: 15px;
+
+    a {
+      color: $purple;
+    }
+  }
+
+  .panel-heading {
+    a {
+      background: $white;
+      border: 1px solid $blue !important;
+      border-left: 0 !important;
+      border-radius: 0;
+      border-right: 0 !important;
+      color: $blue;
+      display: block;
+      font-weight: 700;
+      padding: 15px;
+      position: relative;
+      text-decoration: none;
+      width: 100%;
+
+      &[aria-expanded='true'] {
+        background: rgba($blue, .2);
+
+        &::after {
+          top: 16px;
+          transform: rotate(180deg);
+        }
+      }
+
+      &::after {
+        content: '\e902';
+        font-family: vscpa-icons;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+      }
+    }
+
+    .panel-title {
+      padding: 0;
+    }
+  }
+}
+
+.paragraph--type--column {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  @media (min-width: $screen-lg) {
+    max-width: 1170px;
+    padding: 0 15px;
+  }
+
+  .field--name-field-buttons {
+    margin: 15px 0 0;
+  }
+}
+
+.paragraph-item {
+  padding: 0;
+
+  @media (min-width: $screen-lg) {
+    display: flex;
+  }
+
+  .btn {
+    margin: 0;
+  }
+
+  .field--name-field-item-body {
+    font-weight: 700;
+  }
+
+  .field-image {
+    position: relative;
+  }
+
+  .inner-wrapper {
+    background: $white;
+    color: $black;
+    height: 100%;
+    padding: 20px 30px;
+
+    @media (min-width: $screen-md) {
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  .wrapper {
+    margin: 0 auto 15px;
+    max-width: 1140px;
+    width: 100%;
+
+    @media (min-width: $screen-lg) {
+      margin: 0 auto;
+      padding: 0 7.5px;
+    }
+  }
+}
+
+.paragraph-image {
+  float: none;
+  padding: 0;
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &.full {
+    .wrapper {
+      max-width: none;
+      padding: 0;
+    }
+  }
+}
+
+.paragraph--type--slideshow {
+  margin: 0 0 15px;
+  padding: 2rem 15px;
+
+  @media (min-width: $screen-lg) {
+    padding: 3.5rem 15px;
+  }
+
+  .owl-dots {
+    .owl-dot:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .owl-nav {
+    margin: 0 auto;
+    max-width: 1140px;
+    position: relative;
+
+    > button {
+      bottom: -40px;
+      position: absolute;
+
+      span {
+        display: none;
+      }
+
+      &::after {
+        border-bottom: 10px solid transparent;
+        border-top: 10px solid transparent;
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+      }
+    }
+
+    .owl-next {
+      right: 0;
+
+      &::after {
+        border-left: 20px solid $blue;
+      }
+    }
+
+    .owl-prev {
+      left: 0;
+
+      &::after {
+        border-right: 20px solid $blue;
+      }
+    }
+  }
+
+  .title {
+    color: $black;
+    text-align: center;
+  }
+}
+
+.paragraph-slide {
+  background: $white;
+  color: $white;
+  text-align: center;
+
+  .field--name-field-slide-body {
+    text-align: center;
+  }
+
+  .buttons {
+    display: inline-block;
+    margin: 15px 0 0;
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  .slide-title {
+    color: $purple;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .wrapper {
+    color: $black;
+    height: 100%;
+    padding: 18px 30px;
+  }
+}
+
+.paragraph--type--tabs {
+  margin: 0 auto 15px;
+  max-width: 1170px;
+  padding: 15px;
+
+  .nav {
+    border: 0;
+
+    > li {
+      margin-right: 10px;
+    }
+
+    a {
+      border: 1px solid $blue !important;
+      border-left: 0 !important;
+      border-radius: 0;
+      border-right: 0 !important;
+      color: $blue;
+      font-weight: 700;
+      min-width: 100px;
+      padding: 15px 20px;
+      text-align: center;
+
+      &:hover {
+        background: $blue-lighter;
+      }
+    }
+  }
+
+  .tab-content {
+    border-bottom: 1px solid $slate-lightest;
+    padding: 15px;
+  }
+
+  .panel {
+    background: $white;
+    border: 0;
+    padding: 0;
+  }
+
+  .panel-body {
+    padding: 15px;
+  }
+
+  .panel-heading {
+    a {
+      background: $white;
+      border: 1px solid $blue !important;
+      border-left: 0 !important;
+      border-radius: 0;
+      border-right: 0 !important;
+      color: $blue;
+      display: block;
+      font-weight: 700;
+      padding: 15px;
+      position: relative;
+      width: 100%;
+
+      &[aria-expanded='true'] {
+        background: rgba($blue, .2);
+
+        &::after {
+          top: 16px;
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &::after {
+        content: '\e902';
+        font-family: vscpa-icons;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+      }
+    }
+
+    .panel-title {
+      padding: 0;
+    }
+  }
+}
+
+.paragraph-text-area {
+  border: 1px solid $slate;
+  color: $black;
+  margin: 15px auto;
+  max-width: 1140px;
+  padding: 15px;
+
+  a {
+    color: $purple;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 2rem;
+  }
+
+  .btn {
+    margin: 0;
+  }
+
+  &.black {
+    border: 1px solid $black;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $black;
+    }
+  }
+
+  &.blue {
+    border: 1px solid $blue;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $blue;
+    }
+  }
+
+  &.gold {
+    border: 1px solid $gold;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $gold;
+    }
+  }
+
+  &.green {
+    border: 1px solid $green;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $green;
+    }
+  }
+
+  &.purple {
+    border: 1px solid $purple;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $purple;
+    }
+  }
+
+  &.slate {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $black;
+    }
+  }
+
+  .field--name-field-buttons {
+    margin: 15px 0 0;
+  }
+}
+
+.paragraph-session {
+  border: 1px solid $slate-light;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 15px;
+  padding: 15px;
+
+  .field--name-field-marketing-copy {
+    margin: 15px 0 0;
+  }
+
+  .field--name-name {
+    font-weight: 700;
+  }
+
+  .field--name-field-speakers {
+    @media (min-width: $screen-md) {
+      .field--item {
+        display: inline-block;
+
+        &::after {
+          bottom: 1px;
+          content: '|';
+          margin-right: -3px;
+          padding: 0 5px;
+          position: relative;
+        }
+
+        &:last-of-type::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// New Landing page paragraph types.
+.paragraph-fw-cta {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+
+  .btn {
+    &.large {
+      font-size: 16px;
+      max-width: 600px;
+
+      &::after {
+        color: $white;
+        content: '\e901';
+        font-family: vscpa-icons;
+        position: absolute;
+        right: 30px;
+      }
+    }
+
+    &.btn-white {
+      &::after {
+        color: $black;
+      }
+    }
+  }
+
+  // If there is a background image, it will cover the background color and wavy background
+  .fw-bg-image {
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  // Page width
+  .inner-wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 15px;
+    position: relative;
+    z-index: 9;
+  }
+
+  h2 {
+    color: $black;
+    margin: 0 0 30px;
+    position: relative;
+
+    &.text-align-center {
+      &::after {
+        margin: 0 auto;
+        position: relative;
+      }
+    }
+  }
+
+  // Colors for Fonts and to set Background or wavy overlay.
+  &.black {
+    color: $white;
+    position: relative;
+    z-index: 3;
+
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $black;
+    }
+
+    h2 {
+      &::after {
+        background: $black;
+      }
+    }
+  }
+
+  &.blue {
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $blue;
+    }
+
+    h2 {
+      &::after {
+        background: $blue;
+      }
+    }
+  }
+
+  &.gold {
+
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $gold;
+    }
+
+    h2 {
+      &::after {
+        background: $gold;
+      }
+    }
+  }
+
+  &.green {
+
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $green;
+    }
+
+    h2 {
+      &::after {
+        background: $green;
+      }
+    }
+  }
+
+  &.purple {
+    color: $white;
+    position: relative;
+    z-index: 3;
+
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $purple;
+    }
+
+    h2 {
+      &::after {
+        background: $purple;
+      }
+    }
+  }
+
+  &.slate {
+    color: $white;
+
+    a,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $gray-dark;
+    }
+
+    h2 {
+      &::after {
+        background: $slate;
+      }
+    }
+  }
+
+  // Wave styling has to come after colors to over ride them.
+  // Wavy background default
+  &.wave-top-fade {
+    background: $slate-lightest;
+    color: $black;
+    margin: 0;
+    min-height: 1px;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.wave-bottom-fade {
+    background: $slate-lightest;
+    color: $black;
+    margin: 0;
+    min-height: 1px;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .field--name-field-buttons {
+    margin: 15px 0 0;
+  }
+
+  @media (min-width: $screen-sm) {
+    &.centered-body {
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .field--name-field-body {
+        flex: 1 0 50%;
+        margin: 1rem 0;
+        padding: 0;
+      }
+
+      .field--name-field-buttons {
+        flex: 1 0 50%;
+        margin: 1rem 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Two columns that stack on mobile and align side-by-side on bigger.
+.paragraph-hw-cta-container {
+  .field--name-field-hw-cta {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+
+    > .field--item {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md) {
+      > .field--item {
+        flex: 1 0 50%;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      margin: 0;
+    }
+  }
+
+  .half-width-cta {
+    background: lighten($slate-lightest, 5%);
+    height: 100%;
+    margin: 0;
+    min-height: 1px;
+    padding: 2rem 1rem;
+
+    @media (min-width: $screen-lg) {
+      padding: 3rem 1.5rem;
+    }
+
+    .wrapper {
+      background: $white;
+      padding: 2rem;
+
+      .field--name-field-body {
+        margin-bottom: 15px;
+      }
+    }
+
+    &::after {
+      content: ' ';
+      display: table;
+    }
+
+    .field--name-field-body {
+      padding: 1rem 0;
+    }
+
+    h2 {
+      color: $black;
+      margin: 0 0 30px;
+      position: relative;
+
+      &.text-align-center {
+        &::after {
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    }
+
+    .field--name-field-buttons {
+      margin: 15px 0 0;
+    }
+  }
+}
+
+.paragraph--type--image {
+  min-height: 1px;
+
+  .img-responsive {
+    margin: auto;
+  }
+}
+
+.paragraph--type--view-embed {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 15px;
+
+  .field--name-field-view-title {
+    color: $black;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 22px 0 30px;
+    position: relative;
+  }
+
+  .field--name-field-view-summary {
+    margin: 0 0 15px;
+  }
+
+  .view-content {
+    margin: 0 0 30px;
+
+    .views-row {
+      display: block;
+      margin: 0 0 15px;
+      padding-right: 15px;
+      position: relative;
+
+      &::after {
+        background: $purple;
+        border-radius: 50%;
+        color: $white;
+        content: '\e258';
+        font-family: 'Glyphicons Halflings';
+        font-size: 14px;
+        padding: 1px 3px;
+        position: absolute;
+        right: 0;
+        top: 3px;
+      }
+
+      a {
+        font-weight: 700;
+      }
+
+      time {
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      @media (min-width: $screen-lg) {
+        .views-field {
+          display: inline-block;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .view-footer {
+    text-align: right;
+  }
+
+  .viewsreference--view-title {
+    display: none;
+  }
+}

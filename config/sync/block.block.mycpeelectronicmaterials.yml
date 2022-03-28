@@ -1,0 +1,39 @@
+uuid: 1ab1c83b-23b3-4de0-8608-8d4b3cbb1425
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_cpe
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: mycpeelectronicmaterials
+theme: vscpa_bootstrap
+region: content
+weight: 0
+provider: null
+plugin: am_net_cpe_electronic_materials_block
+settings:
+  id: am_net_cpe_electronic_materials_block
+  label: 'My Electronic Materials Archive'
+  provider: am_net_cpe
+  label_display: '0'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1552608294'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1552608294'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/account/*/orders\r\n/account/*/payment-history"
+    negate: false
+    context_mapping: {  }

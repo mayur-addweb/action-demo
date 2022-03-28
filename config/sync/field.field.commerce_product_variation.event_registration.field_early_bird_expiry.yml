@@ -1,0 +1,21 @@
+uuid: fc760391-fee4-41ca-a14e-b8158a146670
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.event_registration
+    - field.storage.commerce_product_variation.field_early_bird_expiry
+  module:
+    - datetime
+id: commerce_product_variation.event_registration.field_early_bird_expiry
+field_name: field_early_bird_expiry
+entity_type: commerce_product_variation
+bundle: event_registration
+label: 'Early bird expiration'
+description: 'The date and time (EST timezone) when early bird registration option expires.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

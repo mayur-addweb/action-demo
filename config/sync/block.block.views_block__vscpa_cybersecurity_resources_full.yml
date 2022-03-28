@@ -1,0 +1,43 @@
+uuid: 3166002b-236f-47f3-b0e4-5e92c080b428
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vscpa
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+id: views_block__vscpa_cybersecurity_resources_full
+theme: vscpa_bootstrap
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:vscpa-cybersecurity_resources_full'
+settings:
+  id: 'views_block:vscpa-cybersecurity_resources_full'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1539205213'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1539205213'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /cybersecurity-business-protection-resources/all
+    negate: false
+    context_mapping: {  }

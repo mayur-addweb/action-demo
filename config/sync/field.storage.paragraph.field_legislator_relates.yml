@@ -1,0 +1,20 @@
+uuid: 92484d4f-c313-42cc-8d9e-52b98c8c2d88
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_legislator_relates
+field_name: field_legislator_relates
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

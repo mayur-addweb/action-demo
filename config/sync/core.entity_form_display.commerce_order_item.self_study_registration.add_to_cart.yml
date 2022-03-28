@@ -1,0 +1,34 @@
+uuid: ee7239e6-e782-4d56-b80e-3df7ea0dc398
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.self_study_registration
+    - core.entity_form_mode.commerce_order_item.add_to_cart
+    - field.field.commerce_order_item.self_study_registration.field_user
+  module:
+    - am_net_firms
+    - commerce_product
+id: commerce_order_item.self_study_registration.add_to_cart
+targetEntityType: commerce_order_item
+bundle: self_study_registration
+mode: add_to_cart
+content:
+  field_user:
+    type: am_net_firms_modal_registration
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  purchased_entity:
+    type: commerce_product_variation_title
+    weight: 0
+    settings:
+      label_display: true
+      label_text: 'Please select'
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  quantity: true
+  unit_price: true

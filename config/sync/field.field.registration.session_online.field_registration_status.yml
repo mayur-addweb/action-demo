@@ -1,0 +1,23 @@
+uuid: aa1630c2-e963-48ee-b5ab-1d1e38ac6369
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.registration.field_registration_status
+    - rng.registration_type.session_online
+  module:
+    - options
+id: registration.session_online.field_registration_status
+field_name: field_registration_status
+entity_type: registration
+bundle: session_online
+label: 'Registration status'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: active
+default_value_callback: ''
+settings: {  }
+field_type: list_string

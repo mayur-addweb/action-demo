@@ -1,0 +1,19 @@
+uuid: 1881ab75-5aab-4ab6-bb15-fce3834f2fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_search_keywords
+id: commerce_product.cpe_event.field_search_keywords
+field_name: field_search_keywords
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Search Keywords'
+description: 'Search Keywords area populated w/the Marketing>keywords from AM.net events/products. Provide words that should boost this page towards the top of search results. For example, to encourage this event/product to show up closer to the top of the search results when someone searches for anything regarding auditing add the word "auditing".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

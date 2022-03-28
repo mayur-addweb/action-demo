@@ -1,0 +1,21 @@
+uuid: d461458d-96a3-4875-a7b3-8dadef3d367b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cert_va_date
+  module:
+    - datetime
+    - user
+id: user.user.field_cert_va_date
+field_name: field_cert_va_date
+entity_type: user
+bundle: user
+label: 'Original Date of Virginia Certification'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

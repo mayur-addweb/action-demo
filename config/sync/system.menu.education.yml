@@ -1,0 +1,8 @@
+uuid: 1008804e-f863-4523-833d-b9acd06965fd
+langcode: en
+status: true
+dependencies: {  }
+id: education
+label: Education
+description: ''
+locked: false

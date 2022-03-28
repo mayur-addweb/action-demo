@@ -1,0 +1,22 @@
+uuid: ecad85ef-7b74-40a5-b995-ec61e8ce8c2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - vscpa_bootstrap
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: vscpa_bootstrap_help
+theme: vscpa_bootstrap
+region: content
+weight: -31
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

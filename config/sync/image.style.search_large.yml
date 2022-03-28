@@ -1,0 +1,15 @@
+uuid: 3a39aa45-bbc8-48b8-b1dc-015e7c13d34b
+langcode: en
+status: true
+dependencies: {  }
+name: search_large
+label: 'Search Large'
+effects:
+  f7867c43-ab4a-4318-bd18-6c73a9b36caa:
+    uuid: f7867c43-ab4a-4318-bd18-6c73a9b36caa
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 200
+      anchor: center-center

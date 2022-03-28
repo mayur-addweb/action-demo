@@ -1,0 +1,21 @@
+uuid: 961e4d52-db31-45b1-a2bc-b1f30e1e207e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_amnet_event_id
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - am_net
+id: commerce_product.cpe_event.field_amnet_event_id
+field_name: field_amnet_event_id
+entity_type: commerce_product
+bundle: cpe_event
+label: 'AM.net Event ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amnet_event_id

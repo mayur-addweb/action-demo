@@ -1,0 +1,28 @@
+uuid: 7f07aff3-11e8-4ab1-b56d-348df8320eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.membership
+    - commerce_order.commerce_order_item_type.membership_donation
+    - field.storage.commerce_order_item.field_order_item
+id: commerce_order_item.membership_donation.field_order_item
+field_name: field_order_item
+entity_type: commerce_order_item
+bundle: membership_donation
+label: 'Order item'
+description: 'The parent membership order item for this donation.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order_item'
+  handler_settings:
+    target_bundles:
+      membership: membership
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

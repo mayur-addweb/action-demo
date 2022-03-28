@@ -1,0 +1,22 @@
+uuid: 5620934e-5100-4769-8ec6-339a95720d13
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.membership
+    - field.storage.commerce_order_item.field_payment_plan_info
+  module:
+    - am_net
+id: commerce_order_item.membership.field_payment_plan_info
+field_name: field_payment_plan_info
+entity_type: commerce_order_item
+bundle: membership
+label: 'Payment Plan Info'
+description: 'Field used to store Info related to the Dues Payment Plan.'
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: amnet_data

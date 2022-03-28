@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+exec('git tag', $tags);
+$manifest = json_decode(file_get_contents('https://deployer.org/manifest.json'), true);
+
+foreach ($manifest as $m) {
+    $version = 'v' . $m['version'];
+    $url = $m['url'];
+
+    if (!in_array($version, $tags, true)) {
+        run("git checkout -b dist");
+        run("curl -LO $url");
+        run("mv deployer.phar dep");
+        run("git add dep");
+        run("git commit -m 'Deployer $version'");
+        run("git tag $version");
+        run("git checkout master");
+        run("git branch --delete --force dist");
+    }
+}
+
+run("git push --tags");
+
+function run($command) {
+    echo "\n$ \033[0;32m$command\033[0m\n";
+    exec($command, $output);
+    echo implode("\n", $output);
+}

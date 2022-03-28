@@ -1,0 +1,15 @@
+uuid: feb18231-8c9b-40d9-82d9-038b7bc9fead
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: digital_goods
+label: 'Self-study registration'
+id: self_study_registration
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

@@ -1,0 +1,15 @@
+uuid: 4c1eab06-f8c0-4d7e-b207-b108dc53b818
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: services
+label: Donation
+id: donation
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

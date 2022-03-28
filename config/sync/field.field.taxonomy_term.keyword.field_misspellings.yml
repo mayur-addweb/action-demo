@@ -1,0 +1,19 @@
+uuid: 3c776a19-b189-4c61-ab67-65bd9adf47e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_misspellings
+    - taxonomy.vocabulary.keyword
+id: taxonomy_term.keyword.field_misspellings
+field_name: field_misspellings
+entity_type: taxonomy_term
+bundle: keyword
+label: Misspellings
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

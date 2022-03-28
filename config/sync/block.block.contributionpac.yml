@@ -1,0 +1,41 @@
+uuid: 985cbbea-1e5c-4c55-bc04-f7bbc5df7ac9
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_donations
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: contributionpac
+theme: vscpa_bootstrap
+region: content
+weight: -6
+provider: null
+plugin: contribution_block
+settings:
+  id: contribution_block
+  label: 'VSCPA PAC Contribution Form'
+  provider: am_net_donations
+  label_display: visible
+  body: "<p><span style=\"font-size:11.0pt;line-height:107%;\r\nfont-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA\">Help us make sure your voice is heard at the capitol, contribute to the VSCPA PAC today!</span></p>\r\n\r\n<h4>Donors will be recognized at the following levels</h4>\r\n\r\n<ul>\r\n\t<li>CPA Champion — $500 +</li>\r\n\t<li>CPA Pacesetter — $200 - $499</li>\r\n\t<li>CPA Activist — $100 - $199</li>\r\n\t<li>CPA Sponsor — $50 - $99</li>\r\n\t<li>CPA Supporter&nbsp;— $35 - $49</li>\r\n</ul>\r\n"
+  note: "<p>Note: <small><em>Virginia law requires that we disclose contributor information for contributions in excess of $100 during a calendar year to the State Board of Elections.</em></small></p>\r\n"
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1533302289'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1533302289'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /pac-contribution
+    negate: false
+    context_mapping: {  }

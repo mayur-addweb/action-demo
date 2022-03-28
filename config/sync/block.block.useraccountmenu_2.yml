@@ -1,0 +1,50 @@
+uuid: 04552139-76fa-413e-b21d-ea68a8e83d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - block_class
+    - ctools
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'my-account-menu-sidebar clearfix'
+id: useraccountmenu_2
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -35
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'My Account Menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rng_current_time:
+    id: rng_current_time
+    date: '1597350824'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1597350824'
+    negate: false
+    context_mapping: {  }

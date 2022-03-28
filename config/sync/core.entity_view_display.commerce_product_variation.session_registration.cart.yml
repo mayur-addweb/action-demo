@@ -1,0 +1,39 @@
+uuid: f9a1fd17-39d7-47f5-8114-8a5ab75b924a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.session_registration
+    - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.session_registration.field_price_guest
+    - field.field.commerce_product_variation.session_registration.field_price_guest_addl
+    - field.field.commerce_product_variation.session_registration.field_price_nonmember
+id: commerce_product_variation.session_registration.cart
+targetEntityType: commerce_product_variation
+bundle: session_registration
+mode: cart
+content:
+  list_price:
+    label: above
+    type: commerce_price_default
+    weight: -1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  product_id:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_price_guest: true
+  field_price_guest_addl: true
+  field_price_nonmember: true
+  price: true
+  sku: true
+  title: true

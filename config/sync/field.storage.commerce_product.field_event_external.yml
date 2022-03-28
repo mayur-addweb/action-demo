@@ -1,0 +1,19 @@
+uuid: 93c12e07-6166-4c83-a401-18837b9c3ff9
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - commerce_product
+id: commerce_product.field_event_external
+field_name: field_event_external
+entity_type: commerce_product
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

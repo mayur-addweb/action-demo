@@ -1,0 +1,25 @@
+uuid: e0462c3c-a705-45db-a98e-dc97f2869056
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_registrants_minimum
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_registrants_minimum
+field_name: rng_registrants_minimum
+entity_type: event_session
+bundle: default
+label: 'Minimum registrants'
+description: 'Minimum number of registrants per registration.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

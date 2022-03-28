@@ -1,0 +1,21 @@
+uuid: 46a824c2-7ae8-4241-89d9-e6850663f078
+langcode: en
+status: true
+dependencies:
+  config:
+    - rng.event_type.event_session.default
+id: event_session.default.user_role
+entity_type: event_session
+bundle: default
+machine_name: user_role
+trigger: rng_event.register
+conditions:
+  role:
+    id: rng_user_role
+    roles: {  }
+actions:
+  registration_operations:
+    id: registration_operations
+    configuration:
+      operations:
+        create: true

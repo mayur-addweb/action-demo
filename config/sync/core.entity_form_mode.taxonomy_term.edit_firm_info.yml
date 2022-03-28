@@ -1,0 +1,10 @@
+uuid: bf978d4b-fc2c-42a2-8929-1cf56cca8b12
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.edit_firm_info
+label: 'Edit Firm Info'
+targetEntityType: taxonomy_term
+cache: true

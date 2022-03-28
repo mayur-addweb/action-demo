@@ -1,0 +1,28 @@
+uuid: 0c06af92-e21b-4d16-b838-29f16546bb69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_teaser
+    - node.type.article_teaser
+    - node.type.publication
+id: node.publication.field_article_teaser
+field_name: field_article_teaser
+entity_type: node
+bundle: publication
+label: 'Article Teaser'
+description: 'Please add Teaser information used for the RSS feed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article_teaser: article_teaser
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

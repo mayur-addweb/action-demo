@@ -1,0 +1,49 @@
+uuid: a9ad80fe-c0f8-43c3-bdc2-942b537ffdd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article_teaser.field_featured_image
+    - field.field.node.article_teaser.field_summary
+    - image.style.thumbnail
+    - node.type.article_teaser
+  module:
+    - image
+id: node.article_teaser.default
+targetEntityType: node
+bundle: article_teaser
+mode: default
+content:
+  field_featured_image:
+    weight: 26
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_summary:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

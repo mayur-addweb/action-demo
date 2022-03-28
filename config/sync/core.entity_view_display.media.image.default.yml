@@ -1,0 +1,46 @@
+uuid: 22a5265f-dc14-4674-bdb9-200d013afbee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_cover_image
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_1
+    - image.style.cover_region
+    - media.type.image
+  module:
+    - bg_image_formatter
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_cover_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: cover_region
+      css_settings:
+        bg_image_selector: .cover-wrapper
+        bg_image_z_index: auto
+        bg_image_color: '#FFFFFF'
+        bg_image_x: center
+        bg_image_y: top
+        bg_image_attachment: scroll
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: '1'
+        bg_image_path_format: absolute
+        bg_image_background_size_ie8: 0
+    third_party_settings: {  }
+    type: bg_image_formatter
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_media_image: true
+  field_media_image_1: true
+  name: true
+  thumbnail: true
+  uid: true

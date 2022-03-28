@@ -1,0 +1,23 @@
+uuid: f30afd1f-a0f8-483f-9601-ce0520c42c36
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: publication_type
+label: 'Publication Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/publication-types/[term:name]'
+selection_criteria:
+  cc53a83e-280c-4008-8d9e-b4464917f033:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      publication_type: publication_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: cc53a83e-280c-4008-8d9e-b4464917f033
+selection_logic: and
+weight: -5
+relationships: {  }

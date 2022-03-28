@@ -1,0 +1,26 @@
+uuid: 4997f1a6-737a-4cba-af02-62bc6c9da6df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_dates_times
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - datetime_range
+id: commerce_product.cpe_event.field_dates_times
+field_name: field_dates_times
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Dates and Times'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    default_end_date_type: relative
+    default_end_date: '+1 Day'
+default_value_callback: ''
+settings: {  }
+field_type: daterange

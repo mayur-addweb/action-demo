@@ -1,0 +1,19 @@
+uuid: c1f80792-7963-41b6-9960-d203a2bf55c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_triggers
+    - basic_auth
+    - serialization
+id: am_net_trigger_sync_registration
+plugin_id: am_net_trigger_sync_registration
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - json
+    - xml
+  authentication:
+    - basic_auth

@@ -1,0 +1,10 @@
+uuid: 7c2c9ef3-8677-493f-b3a6-0b40f79c1145
+langcode: en
+status: true
+dependencies:
+  module:
+    - licensing
+id: license.token
+label: Token
+targetEntityType: license
+cache: true

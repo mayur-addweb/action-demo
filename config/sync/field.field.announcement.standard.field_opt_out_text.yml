@@ -1,0 +1,21 @@
+uuid: dd1d526e-c494-4d8e-a194-c0b15d532d53
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.storage.announcement.field_opt_out_text
+id: announcement.standard.field_opt_out_text
+field_name: field_opt_out_text
+entity_type: announcement
+bundle: standard
+label: 'Opt Out Text'
+description: 'Define text for Announcement''s <i>Opt-Out</i> button.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'No Thanks'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the (AMS) AM.net Module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function am_net_requirements($phase) {
+  $requirements = [];
+  // Do not use ::class constants, because we do not want to cause autoloading
+  // errors.
+  $classes = [
+    // A class belonging to unleashedtech/amnet-api.
+    '\UnleashedTech\AMNet\Api\Client',
+  ];
+  foreach ($classes as $class) {
+    if (!class_exists($class)) {
+      $requirements['association_management_client'] = [
+        'description' => t('(AMS) AM.net\'s API requires Composer dependencies. Read the <a href="@url">documentation</a> on how to install them.', [
+          '@url' => 'https://www.drupal.org/node/2627292',
+        ]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+      break;
+    }
+  }
+
+  return $requirements;
+}

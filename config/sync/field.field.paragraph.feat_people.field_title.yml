@@ -1,0 +1,19 @@
+uuid: 84235d3a-65b5-4286-ba55-558793f49b1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.feat_people
+id: paragraph.feat_people.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: feat_people
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

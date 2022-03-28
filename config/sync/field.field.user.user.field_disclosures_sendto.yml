@@ -1,0 +1,21 @@
+uuid: 0ba379e4-5c07-4eeb-98bb-b0882a3002da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_disclosures_sendto
+  module:
+    - options
+    - user
+id: user.user.field_disclosures_sendto
+field_name: field_disclosures_sendto
+entity_type: user
+bundle: user
+label: 'How should we send Disclosures bimonthly magazine?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

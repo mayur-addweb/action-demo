@@ -1,0 +1,27 @@
+uuid: 843394db-c1dc-4c03-8a1f-9bf240dc7f45
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_disclosures_sendto
+field_name: field_disclosures_sendto
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: D1
+      label: Mail
+    -
+      value: D2
+      label: Email
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: d7668b8f-1551-44a4-82e8-7c326291d0a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_sponsors
+field_name: field_sponsors
+entity_type: commerce_product
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

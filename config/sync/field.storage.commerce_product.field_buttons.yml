@@ -1,0 +1,19 @@
+uuid: f97fd50b-adaf-4546-8e7a-e8c43702f459
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - commerce_product
+id: commerce_product.field_buttons
+field_name: field_buttons
+entity_type: commerce_product
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

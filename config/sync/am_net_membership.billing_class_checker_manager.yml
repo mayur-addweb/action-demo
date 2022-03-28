@@ -1,0 +1,4 @@
+default_checker_id: default_billing_class
+license_expiration_month: April
+license_expiration_day: '30'
+membership_renewal_on_days_left: 30

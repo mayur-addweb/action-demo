@@ -1,0 +1,49 @@
+uuid: 9a7b174e-b6e6-42c2-92cb-6a5a676569e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featurette_top
+  module:
+    - ctools
+    - entity_reference_revisions
+    - fieldblock
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: featurette_top
+theme: vscpa_bootstrap
+region: top_full_width
+weight: -19
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Node Featurette Top'
+  provider: fieldblock
+  label_display: '0'
+  label_from_field: true
+  field_name: field_featurette_top
+  formatter_id: entity_reference_revisions_entity_view
+  formatter_settings:
+    view_mode: default
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1524689441'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1524689441'
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

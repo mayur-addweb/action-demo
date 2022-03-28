@@ -1,0 +1,47 @@
+uuid: 2e35a3e8-684b-4c13-9bac-8adc9168d862
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - ctools
+    - rng
+    - views
+  theme:
+    - vscpa_bootstrap
+id: views_block__events_related_events
+theme: vscpa_bootstrap
+region: bottom_full_width
+weight: -32
+provider: null
+plugin: 'views_block:events-related_events'
+settings:
+  id: 'views_block:events-related_events'
+  label: 'Related Events'
+  provider: views
+  label_display: '0'
+  views_label: 'Related Events'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1527079745'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1527079745'
+    negate: false
+    context_mapping: {  }

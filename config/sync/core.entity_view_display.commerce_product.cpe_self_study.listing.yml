@@ -1,0 +1,160 @@
+uuid: 79bfda97-838c-445e-b7dd-27d6e2b23e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_self_study
+    - core.entity_view_mode.commerce_product.listing
+    - field.field.commerce_product.cpe_self_study.body
+    - field.field.commerce_product.cpe_self_study.field_alt_description
+    - field.field.commerce_product.cpe_self_study.field_alt_title
+    - field.field.commerce_product.cpe_self_study.field_buttons
+    - field.field.commerce_product.cpe_self_study.field_categories
+    - field.field.commerce_product.cpe_self_study.field_company_code
+    - field.field.commerce_product.cpe_self_study.field_course_designedfor
+    - field.field.commerce_product.cpe_self_study.field_course_highlights
+    - field.field.commerce_product.cpe_self_study.field_course_level
+    - field.field.commerce_product.cpe_self_study.field_course_link
+    - field.field.commerce_product.cpe_self_study.field_course_prep
+    - field.field.commerce_product.cpe_self_study.field_course_prereqs
+    - field.field.commerce_product.cpe_self_study.field_course_prodcode
+    - field.field.commerce_product.cpe_self_study.field_course_syllabus
+    - field.field.commerce_product.cpe_self_study.field_course_vendors
+    - field.field.commerce_product.cpe_self_study.field_courses_objectives
+    - field.field.commerce_product.cpe_self_study.field_cover_image
+    - field.field.commerce_product.cpe_self_study.field_cover_video
+    - field.field.commerce_product.cpe_self_study.field_cpe_format
+    - field.field.commerce_product.cpe_self_study.field_cpe_type
+    - field.field.commerce_product.cpe_self_study.field_credits
+    - field.field.commerce_product.cpe_self_study.field_division
+    - field.field.commerce_product.cpe_self_study.field_electronic_material
+    - field.field.commerce_product.cpe_self_study.field_event_external
+    - field.field.commerce_product.cpe_self_study.field_exclude_from_web_catalog
+    - field.field.commerce_product.cpe_self_study.field_external_product_codes
+    - field.field.commerce_product.cpe_self_study.field_featurette_bottom
+    - field.field.commerce_product.cpe_self_study.field_featurette_top
+    - field.field.commerce_product.cpe_self_study.field_field_of_interest
+    - field.field.commerce_product.cpe_self_study.field_field_of_study
+    - field.field.commerce_product.cpe_self_study.field_keywords
+    - field.field.commerce_product.cpe_self_study.field_leaders
+    - field.field.commerce_product.cpe_self_study.field_memberonly
+    - field.field.commerce_product.cpe_self_study.field_oldpath
+    - field.field.commerce_product.cpe_self_study.field_overlay
+    - field.field.commerce_product.cpe_self_study.field_related_content
+    - field.field.commerce_product.cpe_self_study.field_search_index_credit_hours
+    - field.field.commerce_product.cpe_self_study.field_search_index_date
+    - field.field.commerce_product.cpe_self_study.field_search_index_is_bundle
+    - field.field.commerce_product.cpe_self_study.field_search_index_is_self_study
+    - field.field.commerce_product.cpe_self_study.field_search_index_on_demand
+    - field.field.commerce_product.cpe_self_study.field_search_keywords
+    - field.field.commerce_product.cpe_self_study.rng_capacity
+    - field.field.commerce_product.cpe_self_study.rng_registrants_duplicate
+    - field.field.commerce_product.cpe_self_study.rng_registrants_maximum
+    - field.field.commerce_product.cpe_self_study.rng_registrants_minimum
+    - field.field.commerce_product.cpe_self_study.rng_registration_groups
+    - field.field.commerce_product.cpe_self_study.rng_registration_type
+    - field.field.commerce_product.cpe_self_study.rng_reply_to
+    - field.field.commerce_product.cpe_self_study.rng_status
+  module:
+    - smart_trim
+id: commerce_product.cpe_self_study.listing
+targetEntityType: commerce_product
+bundle: cpe_self_study
+mode: listing
+content:
+  body:
+    type: smart_trim
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_cover_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  created: true
+  field_alt_description: true
+  field_alt_title: true
+  field_buttons: true
+  field_categories: true
+  field_company_code: true
+  field_course_designedfor: true
+  field_course_highlights: true
+  field_course_level: true
+  field_course_link: true
+  field_course_prep: true
+  field_course_prereqs: true
+  field_course_prodcode: true
+  field_course_syllabus: true
+  field_course_vendors: true
+  field_courses_objectives: true
+  field_cover_video: true
+  field_cpe_format: true
+  field_cpe_type: true
+  field_credits: true
+  field_division: true
+  field_electronic_material: true
+  field_event_external: true
+  field_exclude_from_web_catalog: true
+  field_external_product_codes: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_field_of_study: true
+  field_keywords: true
+  field_leaders: true
+  field_memberonly: true
+  field_oldpath: true
+  field_overlay: true
+  field_related_content: true
+  field_search_index_credit_hours: true
+  field_search_index_date: true
+  field_search_index_is_bundle: true
+  field_search_index_is_self_study: true
+  field_search_index_on_demand: true
+  field_search_keywords: true
+  links: true
+  rng_capacity: true
+  rng_registrants_duplicate: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_registration_type: true
+  rng_reply_to: true
+  rng_status: true
+  stores: true
+  title_field: true
+  title_teaser: true
+  uid: true
+  variations: true

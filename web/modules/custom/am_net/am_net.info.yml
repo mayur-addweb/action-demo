@@ -1,0 +1,6 @@
+name: (AMS) AM.net Tools
+type: module
+description: (AMS) AM.net integration for user, member, event registration, and order/transaction data Synchronization.
+core: 8.x
+package: VSCPA
+configure: am_net.admin_settings

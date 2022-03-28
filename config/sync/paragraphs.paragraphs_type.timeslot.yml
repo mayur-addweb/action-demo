@@ -1,0 +1,9 @@
+uuid: dcbf4391-ce11-4751-aadf-4156be84ad73
+langcode: en
+status: true
+dependencies: {  }
+id: timeslot
+label: Timeslot
+icon_uuid: null
+description: 'Represents a time slot in an event schedule.'
+behavior_plugins: {  }

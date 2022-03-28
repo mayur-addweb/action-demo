@@ -1,0 +1,114 @@
+uuid: 7c8ada4d-f823-4c68-a3f2-eeb5a855ed02
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.event_registration
+    - field.field.commerce_product_variation.event_registration.field_applies_to_date_range
+    - field.field.commerce_product_variation.event_registration.field_early_bird_expiry
+    - field.field.commerce_product_variation.event_registration.field_one_day_registration
+    - field.field.commerce_product_variation.event_registration.field_override_e_fee_apply_to
+    - field.field.commerce_product_variation.event_registration.field_override_s_fee_apply_to
+    - field.field.commerce_product_variation.event_registration.field_price_early
+    - field.field.commerce_product_variation.event_registration.field_price_member
+    - field.field.commerce_product_variation.event_registration.field_price_member_early
+  module:
+    - commerce_price
+    - datetime
+    - datetime_range
+id: commerce_product_variation.event_registration.default
+targetEntityType: commerce_product_variation
+bundle: event_registration
+mode: default
+content:
+  field_applies_to_date_range:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_early_bird_expiry:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_one_day_registration:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_override_e_fee_apply_to:
+    weight: 12
+    settings:
+      size: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_override_s_fee_apply_to:
+    weight: 11
+    settings:
+      size: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_price_early:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_member:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_member_early:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  list_price:
+    type: commerce_list_price
+    weight: -1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

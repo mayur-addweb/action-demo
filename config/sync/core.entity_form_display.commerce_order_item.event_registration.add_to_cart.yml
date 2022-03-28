@@ -1,0 +1,35 @@
+uuid: 4202dac7-4161-458e-8216-48ae4879aa63
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.event_registration
+    - core.entity_form_mode.commerce_order_item.add_to_cart
+    - field.field.commerce_order_item.event_registration.field_sessions_selected
+    - field.field.commerce_order_item.event_registration.field_user
+  module:
+    - am_net_firms
+id: commerce_order_item.event_registration.add_to_cart
+targetEntityType: commerce_order_item
+bundle: event_registration
+mode: add_to_cart
+content:
+  field_user:
+    type: am_net_firms_modal_registration
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  purchased_entity:
+    type: employee_selector_commerce_product_variation_title
+    weight: 0
+    settings:
+      label_display: true
+      label_text: 'Please select'
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_sessions_selected: true
+  quantity: true
+  unit_price: true

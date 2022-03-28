@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.event_registration
+    - field.field.commerce_product.event_registration.stores
+    - field.field.commerce_product.event_registration.variations
+  module:
+    - commerce_product
+id: commerce_product.event_registration.default
+targetEntityType: commerce_product
+bundle: event_registration
+mode: default
+content:
+  variations:
+    type: commerce_add_to_cart
+    weight: 0
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  rng_capacity: true
+  rng_registrants_duplicate: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_registration_type: true
+  rng_reply_to: true
+  rng_status: true
+  stores: true
+  uid: true

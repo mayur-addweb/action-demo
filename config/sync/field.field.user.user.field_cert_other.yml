@@ -1,0 +1,34 @@
+uuid: 4e850286-b00d-4d66-b024-65b52ff080ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cert_other
+    - taxonomy.vocabulary.us_state
+  content:
+    - 'taxonomy_term:us_state:9fc6aed6-ce63-48e8-a07d-39c7d6bdfb77'
+  module:
+    - user
+id: user.user.field_cert_other
+field_name: field_cert_other
+entity_type: user
+bundle: user
+label: 'State of Original Certification (if other than Virginia)'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 9fc6aed6-ce63-48e8-a07d-39c7d6bdfb77
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      us_state: us_state
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

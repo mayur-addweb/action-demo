@@ -1,0 +1,36 @@
+uuid: 261a4065-0dd6-4317-86f6-92152fdf8d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_receive_sms
+field_name: field_receive_sms
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: EN
+      label: 'Notice of cancellations or important alerts like inclement weather about my event registration'
+    -
+      value: DR
+      label: 'Notice when membership dues are due'
+    -
+      value: LR
+      label: 'Notice when my CPA license renewal is due'
+    -
+      value: OC
+      label: 'Notice when my credit card used for payments is declined'
+    -
+      value: OL
+      label: 'Notice of important legislative updates or lobbying efforts'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

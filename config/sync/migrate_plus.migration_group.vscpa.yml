@@ -1,0 +1,10 @@
+uuid: f4d14880-210c-4e5e-8ccd-a81b5ea730b3
+langcode: en
+status: true
+dependencies: {  }
+id: vscpa
+label: vscpa
+description: ''
+source_type: null
+module: null
+shared_configuration: null

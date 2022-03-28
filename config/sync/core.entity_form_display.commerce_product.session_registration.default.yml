@@ -1,0 +1,39 @@
+uuid: 8fb551fd-f9e4-4648-9624-f68badeebab8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.session_registration
+    - field.field.commerce_product.session_registration.field_session
+  module:
+    - commerce
+id: commerce_product.session_registration.default
+targetEntityType: commerce_product
+bundle: session_registration
+mode: default
+content:
+  stores:
+    type: commerce_entity_select
+    weight: 2
+    settings:
+      hide_single_entity: true
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_session: true
+  path: true
+  status: true
+  uid: true
+  variations: true

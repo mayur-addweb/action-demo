@@ -1,0 +1,30 @@
+uuid: 20d5dfd5-f067-43ac-b807-be95c4d603df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_preferred_chapter
+    - taxonomy.vocabulary.chapter
+  module:
+    - user
+id: user.user.field_preferred_chapter
+field_name: field_preferred_chapter
+entity_type: user
+bundle: user
+label: Chapter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      chapter: chapter
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

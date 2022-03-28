@@ -1,0 +1,91 @@
+uuid: 3ca2bac9-2587-4ab1-a641-defd540c150b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_resources
+    - node.type.digital_rewind_page
+    - paragraphs.paragraphs_type.misc_materials
+  module:
+    - entity_reference_revisions
+id: node.digital_rewind_page.field_additional_resources
+field_name: field_additional_resources
+entity_type: node
+bundle: digital_rewind_page
+label: 'Additional Resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      misc_materials: misc_materials
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 23
+        enabled: false
+      accordions:
+        weight: 22
+        enabled: false
+      column:
+        weight: 24
+        enabled: false
+      cpe_credit:
+        weight: 25
+        enabled: false
+      feat_media:
+        weight: 26
+        enabled: false
+      feat_people:
+        weight: 27
+        enabled: false
+      full_width_cta:
+        weight: 28
+        enabled: false
+      half_width_cta:
+        weight: 29
+        enabled: false
+      half_width_cta_container:
+        weight: 30
+        enabled: false
+      image:
+        weight: 31
+        enabled: false
+      item:
+        weight: 32
+        enabled: false
+      misc_materials:
+        enabled: true
+        weight: 33
+      pol_contact:
+        weight: 34
+        enabled: false
+      slide:
+        weight: 35
+        enabled: false
+      slideshow:
+        weight: 36
+        enabled: false
+      tab_item:
+        weight: 38
+        enabled: false
+      tabs:
+        weight: 37
+        enabled: false
+      text_area:
+        weight: 39
+        enabled: false
+      timeslot:
+        weight: 40
+        enabled: false
+      timeslot_group:
+        weight: 41
+        enabled: false
+      view_embed:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

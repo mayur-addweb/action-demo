@@ -1,0 +1,29 @@
+uuid: f5bd9ae2-0af0-41b2-aa44-094ed83221b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_level
+    - commerce_product.commerce_product_type.cpe_self_study
+    - taxonomy.vocabulary.course_level
+id: commerce_product.cpe_self_study.field_course_level
+field_name: field_course_level
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Course Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      course_level: course_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: c8f2cf6f-ce62-4330-ae12-b67ed6d84ec8
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.administrative_fields
+label: 'Administrative fields'
+targetEntityType: user
+cache: true

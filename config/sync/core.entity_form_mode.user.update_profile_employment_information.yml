@@ -1,0 +1,10 @@
+uuid: 86fa8039-5d8f-4435-8ccb-b5cb250f0ac9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile_employment_information
+label: 'Update Profile - Employment Information'
+targetEntityType: user
+cache: true

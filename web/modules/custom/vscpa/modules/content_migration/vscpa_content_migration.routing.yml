@@ -1,0 +1,9 @@
+vscpa_content_migration.format:
+  path: '/admin/config/vscpa/content-migration'
+  defaults:
+    _form: '\Drupal\vscpa_content_migration\Form\ContentMigrationForm'
+    _title: "Content Migration"
+  requirements:
+    _permission: 'administer nodes'
+  options:
+    _admin_route: TRUE

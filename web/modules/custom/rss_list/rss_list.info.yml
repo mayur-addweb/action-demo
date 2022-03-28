@@ -1,0 +1,5 @@
+name: 'RSS Article list'
+type: module
+description: 'Expose articles listing into RSS feed and feed pages.'
+core: 8.x
+package: 'Content'

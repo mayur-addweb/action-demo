@@ -1,0 +1,18 @@
+uuid: e3e30b34-2359-4039-aa2b-a97b55df5c5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article_teaser
+id: node.article_teaser.title
+field_name: title
+entity_type: node
+bundle: article_teaser
+label: 'Teaser Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,7 @@
+uuid: 5b4aa434-875d-485a-8acf-eb101db2c2f5
+langcode: en
+status: true
+dependencies: {  }
+label: 'In-person session'
+id: session_in_person
+description: 'A registration for an in-person session.'

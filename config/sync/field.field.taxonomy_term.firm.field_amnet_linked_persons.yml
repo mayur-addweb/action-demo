@@ -1,0 +1,19 @@
+uuid: b3f59b34-075e-4763-807e-4eb35f701214
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_linked_persons
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_amnet_linked_persons
+field_name: field_amnet_linked_persons
+entity_type: taxonomy_term
+bundle: firm
+label: 'AM.net Linked Persons'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

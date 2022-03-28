@@ -1,0 +1,10 @@
+uuid: f874e890-3154-4499-9800-778344c7f33f
+langcode: en
+status: true
+dependencies: {  }
+id: payment_plan_administrative_fee
+label: 'Payment Plan Administrative Fee'
+orderItemType: payment_plan_administrative_fee
+generateTitle: false
+traits: {  }
+locked: false

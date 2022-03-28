@@ -1,0 +1,327 @@
+uuid: a39ae581-15e6-4516-87f4-4b7016e6200c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.event_session.default.field_amnet_sort_sequence
+    - field.field.event_session.default.field_credits
+    - field.field.event_session.default.field_electronic_materials
+    - field.field.event_session.default.field_leader_edit_desc
+    - field.field.event_session.default.field_leader_edit_title
+    - field.field.event_session.default.field_marketing_copy
+    - field.field.event_session.default.field_session_administrator
+    - field.field.event_session.default.field_session_code
+    - field.field.event_session.default.field_session_cpe_parent
+    - field.field.event_session.default.field_session_day
+    - field.field.event_session.default.field_session_excluded_catalog
+    - field.field.event_session.default.field_session_general
+    - field.field.event_session.default.field_session_guest_only
+    - field.field.event_session.default.field_session_product
+    - field.field.event_session.default.field_session_registrants_only
+    - field.field.event_session.default.field_session_status
+    - field.field.event_session.default.field_session_time
+    - field.field.event_session.default.field_session_track
+    - field.field.event_session.default.field_sessions_concurrent
+    - field.field.event_session.default.field_speakers
+    - field.field.event_session.default.rng_capacity
+    - field.field.event_session.default.rng_registrants_duplicate
+    - field.field.event_session.default.rng_registrants_maximum
+    - field.field.event_session.default.rng_registrants_minimum
+    - field.field.event_session.default.rng_registration_groups
+    - field.field.event_session.default.rng_registration_type
+    - field.field.event_session.default.rng_reply_to
+    - field.field.event_session.default.rng_status
+    - vscpa_commerce.event_session_type.default
+  module:
+    - datetime_range
+    - entity_browser_entity_form
+    - field_group
+    - inline_entity_form
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_amnet_fields:
+      children:
+        - group_amnet_general
+        - group_amnet_topics_notes
+        - group_amnet_marketing_copy
+        - group_amnet_credits
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: amnet-session-fields
+        classes: ''
+        direction: horizontal
+      label: 'AMnet fields'
+      region: content
+    group_amnet_general:
+      children:
+        - name
+        - field_session_code
+        - field_session_day
+        - field_session_time
+        - field_sessions_concurrent
+        - rng_capacity
+        - field_session_general
+        - field_session_guest_only
+        - field_session_registrants_only
+        - field_session_status
+        - field_session_track
+        - field_session_excluded_catalog
+      parent_name: group_amnet_fields
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: General
+      region: content
+    group_amnet_data:
+      children: {  }
+      parent_name: ''
+      weight: 8
+      format_type: accordion
+      format_settings:
+        effect: none
+        classes: ''
+        id: ''
+      label: Data
+      region: content
+    group_amnet_topics_notes:
+      children: {  }
+      parent_name: group_amnet_fields
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Topics/Notes
+      region: content
+    group_amnet_credits:
+      children:
+        - field_credits
+      parent_name: group_amnet_fields
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Credits
+      region: content
+    group_amnet_marketing_copy:
+      children:
+        - field_marketing_copy
+      parent_name: group_amnet_fields
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Marketing copy'
+      region: content
+id: event_session.default.default
+targetEntityType: event_session
+bundle: default
+mode: default
+content:
+  field_credits:
+    type: entity_reference_paragraphs
+    weight: 29
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_electronic_materials:
+    weight: 30
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      match_operator: CONTAINS
+      override_labels: false
+      allow_existing: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_marketing_copy:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_session_code:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_session_day:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_session_excluded_catalog:
+    weight: 16
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_session_general:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_session_guest_only:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_session_product:
+    weight: 6
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: 'session registration product'
+      label_plural: 'session registration products'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_session_registrants_only:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_session_status:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_session_time:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_session_track:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sessions_concurrent:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_speakers:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  rng_capacity:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  rng_registrants_duplicate:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  rng_registration_type:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rng_status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_amnet_sort_sequence: true
+  field_leader_edit_desc: true
+  field_leader_edit_title: true
+  field_session_administrator: true
+  field_session_cpe_parent: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_reply_to: true
+  status: true
+  uid: true
+  user_id: true

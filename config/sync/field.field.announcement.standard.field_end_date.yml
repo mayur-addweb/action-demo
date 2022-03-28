@@ -1,0 +1,21 @@
+uuid: 410753ee-f034-47b5-a1c8-d082bf559594
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.storage.announcement.field_end_date
+  module:
+    - datetime
+id: announcement.standard.field_end_date
+field_name: field_end_date
+entity_type: announcement
+bundle: standard
+label: 'End Date'
+description: 'When should this announcement end?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

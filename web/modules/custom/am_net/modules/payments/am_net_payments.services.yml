@@ -1,0 +1,13 @@
+services:
+  am_net_payments.payment_events_subscriber:
+    class: \Drupal\am_net_payments\EventSubscriber\PaymentEventsSubscriber
+    arguments: ['@am_net_payments.payments_updater', '@am_net_payments.payments_helper']
+    tags:
+      - { name: event_subscriber }
+
+  am_net_payments.payments_helper:
+    class: \Drupal\am_net_payments\PaymentsHelper
+
+  am_net_payments.payments_updater:
+    class: \Drupal\am_net_payments\PaymentsUpdater
+    arguments: ['@am_net.client', '@entity_type.manager', '@am_net_payments.payments_helper']

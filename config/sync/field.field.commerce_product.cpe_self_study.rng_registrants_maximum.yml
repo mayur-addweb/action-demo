@@ -1,0 +1,25 @@
+uuid: 4e676256-8b37-4164-8768-072bb222bf40
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_self_study
+    - field.storage.commerce_product.rng_registrants_maximum
+id: commerce_product.cpe_self_study.rng_registrants_maximum
+field_name: rng_registrants_maximum
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Maximum registrants'
+description: 'Maximum number of registrants per registration.'
+required: false
+translatable: true
+default_value:
+  -
+    value: -1
+default_value_callback: ''
+settings:
+  min: -1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

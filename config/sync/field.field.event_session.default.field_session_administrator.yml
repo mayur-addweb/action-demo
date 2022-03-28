@@ -1,0 +1,139 @@
+uuid: 62dcdb80-bb8e-4e0b-aa13-4e00978f2fa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_administrator
+    - vscpa_commerce.event_session_type.default
+  module:
+    - dynamic_entity_reference
+id: event_session.default.field_session_administrator
+field_name: field_session_administrator
+entity_type: event_session
+bundle: default
+label: 'Session administrators'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  user:
+    handler: 'default:user'
+    handler_settings:
+      include_anonymous: false
+      filter:
+        type: _none
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  commerce_promotion_coupon:
+    handler: 'default:commerce_promotion_coupon'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  courier_email:
+    handler: 'default:courier_email'
+    handler_settings: {  }
+  rng_rule:
+    handler: 'default:rng_rule'
+    handler_settings: {  }
+  rng_rule_component:
+    handler: 'default:rng_rule_component'
+    handler_settings: {  }
+  event_session:
+    handler: 'default:event_session'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  license:
+    handler: 'default:license'
+    handler_settings: {  }
+  courier_template_collection:
+    handler: 'default:courier_template_collection'
+    handler_settings: {  }
+  commerce_log:
+    handler: 'default:commerce_log'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  courier_message_queue_item:
+    handler: 'default:courier_message_queue_item'
+    handler_settings: {  }
+  commerce_order:
+    handler: 'default:commerce_order'
+    handler_settings: {  }
+  commerce_order_item:
+    handler: 'default:commerce_order_item'
+    handler_settings: {  }
+  paragraph:
+    handler: 'default:paragraph'
+    handler_settings: {  }
+  commerce_payment:
+    handler: 'default:commerce_payment'
+    handler_settings: {  }
+  commerce_payment_method:
+    handler: 'default:commerce_payment_method'
+    handler_settings: {  }
+  commerce_product:
+    handler: 'default:commerce_product'
+    handler_settings: {  }
+  commerce_product_attribute_value:
+    handler: 'default:commerce_product_attribute_value'
+    handler_settings: {  }
+  commerce_product_variation:
+    handler: 'default:commerce_product_variation'
+    handler_settings: {  }
+  profile:
+    handler: 'default:profile'
+    handler_settings: {  }
+  commerce_promotion:
+    handler: 'default:commerce_promotion'
+    handler_settings: {  }
+  registrant:
+    handler: 'default:registrant'
+    handler_settings: {  }
+  registration:
+    handler: 'default:registration'
+    handler_settings: {  }
+  registration_group:
+    handler: 'default:registration_group'
+    handler_settings: {  }
+  rng_rule_scheduler:
+    handler: 'default:rng_rule_scheduler'
+    handler_settings: {  }
+  scheduled_update:
+    handler: 'default:scheduled_update'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  commerce_store:
+    handler: 'default:commerce_store'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+  vote:
+    handler: 'default:vote'
+    handler_settings: {  }
+  vote_result:
+    handler: 'default:vote_result'
+    handler_settings: {  }
+  webform_submission:
+    handler: 'default:webform_submission'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

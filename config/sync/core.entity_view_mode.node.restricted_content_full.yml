@@ -1,0 +1,10 @@
+uuid: 044c270b-b468-4f5b-bf7d-1f925c5b8d68
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.restricted_content_full
+label: 'Restricted Content Full'
+targetEntityType: node
+cache: true

@@ -1,0 +1,29 @@
+uuid: 8df6e51d-d9f6-4dd8-b695-b599821d3dd3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vscpa_bootstrap
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: vscpa_bootstrap_local_tasks
+theme: vscpa_bootstrap
+region: content
+weight: -30
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: /membership
+    negate: true
+    context_mapping: {  }

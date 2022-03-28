@@ -1,0 +1,25 @@
+uuid: 3edf6bba-5f8d-4ecd-bbc0-1aad7469e0ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - rng.event_type.commerce_product.cpe_self_study
+id: commerce_product.cpe_self_study.event_manager
+entity_type: commerce_product
+bundle: cpe_self_study
+machine_name: event_manager
+trigger: rng_event.register
+conditions:
+  operation:
+    id: rng_event_operation
+    operations:
+      'manage event': true
+actions:
+  registration_operations:
+    id: registration_operations
+    configuration:
+      operations:
+        create: true
+        view: true
+        update: true
+        delete: true

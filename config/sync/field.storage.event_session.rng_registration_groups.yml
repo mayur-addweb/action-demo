@@ -1,0 +1,20 @@
+uuid: 9defe4c7-b026-4d23-9bc8-67efb0b2cd53
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+    - rng
+id: event_session.rng_registration_groups
+field_name: rng_registration_groups
+entity_type: event_session
+type: entity_reference
+settings:
+  target_type: registration_group
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

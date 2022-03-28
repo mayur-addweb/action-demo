@@ -1,0 +1,9 @@
+uuid: bd32a37c-b02a-493d-b573-7977322476cf
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_job_func
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

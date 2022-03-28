@@ -1,0 +1,20 @@
+uuid: 57432657-2429-4bcf-96d8-e5c2a580b00a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_billing_class
+  module:
+    - user
+id: user.user.field_amnet_billing_class
+field_name: field_amnet_billing_class
+entity_type: user
+bundle: user
+label: 'Billing Class Code'
+description: 'AM.net Billing Class Code'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,82 @@
+uuid: a4eb58d8-afa7-45e2-8115-8ea473ab3808
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.rss_page.rss_page.field_filter_custom
+    - field.field.rss_page.rss_page.field_filter_field_of_interest
+    - field.field.rss_page.rss_page.field_filter_general_business
+    - field.field.rss_page.rss_page.field_filter_position
+    - field.field.rss_page.rss_page.field_filter_vscpa_action
+    - field.field.rss_page.rss_page.field_rss_channel_description
+  module:
+    - rss_list
+    - user
+id: rss_page.rss_page.default
+targetEntityType: rss_page
+bundle: rss_page
+mode: default
+content:
+  field_filter_custom:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_filter_field_of_interest:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_filter_general_business:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_filter_position:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_filter_vscpa_action:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_rss_channel_description:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

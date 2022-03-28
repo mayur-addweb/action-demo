@@ -1,0 +1,29 @@
+uuid: 634b7980-8590-4842-ab48-46032dd3b630
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_memberonly
+    - node.type.landing_page
+    - taxonomy.vocabulary.memberonly
+id: node.landing_page.field_memberonly
+field_name: field_memberonly
+entity_type: node
+bundle: landing_page
+label: 'Member Only Content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:firm_by_address'
+  handler_settings:
+    target_bundles:
+      memberonly: memberonly
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

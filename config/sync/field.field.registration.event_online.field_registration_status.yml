@@ -1,0 +1,23 @@
+uuid: dc476c09-4193-4d06-a3c3-b0b1b2a85084
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.registration.field_registration_status
+    - rng.registration_type.event_online
+  module:
+    - options
+id: registration.event_online.field_registration_status
+field_name: field_registration_status
+entity_type: registration
+bundle: event_online
+label: 'Registration status'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: active
+default_value_callback: ''
+settings: {  }
+field_type: list_string

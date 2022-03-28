@@ -1,0 +1,28 @@
+uuid: f5a07b78-87fd-4bc4-8f5d-2f2341e401b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net
+    - am_net_donations
+    - commerce_paypal
+    - commerce_promotion
+id: paypal_checkout
+label: 'PayPal Checkout'
+plugin: paypal_checkout
+configuration:
+  display_checkout_progress: true
+  panes:
+    review:
+      step: review
+      weight: '1'
+    completion_message:
+      step: complete
+      weight: '3'
+    order_summary:
+      view: ''
+      step: _sidebar
+      weight: '4'
+    paypal_checkout_payment_process:
+      step: payment
+      weight: '0'

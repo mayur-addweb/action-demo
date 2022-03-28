@@ -1,0 +1,18 @@
+uuid: ed991349-039d-4ca5-a37e-875389665876
+langcode: en
+status: true
+dependencies:
+  module:
+    - ad_entity_dfp
+third_party_settings:
+  ad_entity_dfp:
+    network_id: '21756634409'
+    unit_id: ad_bottom_region
+    out_of_page: false
+    sizes: '[[720,90]]'
+    targeting: null
+id: ad_bottom_region_tablet
+label: 'Ad Bottom Region (Tablet)'
+type_plugin_id: dfp
+view_plugin_id: dfp_default
+disable_initialization: false

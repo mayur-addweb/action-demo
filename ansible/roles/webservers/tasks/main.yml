@@ -1,0 +1,43 @@
+---
+
+- import_tasks: ufw.yml
+- import_tasks: nfs.yml
+- import_tasks: nginx.yml
+- import_role:
+    name: ut.mariadb
+  become: yes
+  tags:
+    - mariadb
+    - mariadb-client
+- import_role:
+    name: geerlingguy.composer
+  become: yes
+  tags:
+    - composer
+    - php
+- import_role:
+    name: weareinteractive.php5_newrelic
+  become: yes
+  notify: restart php-fpm
+  tags:
+    - php
+    - newrelic
+- import_role:
+    name: newrelic.newrelic-infra
+  become: yes
+  tags:
+    - newrelic
+- import_role:
+    name: geerlingguy.nodejs
+  become: yes
+  tags:
+    - nodejs
+    - npm
+    - yarn
+- import_tasks: deploykeys.yml
+- import_tasks: cron.yml
+- import_role:
+    name: geerlingguy.postfix
+  become: yes
+  tags:
+    - postfix

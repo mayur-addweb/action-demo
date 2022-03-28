@@ -1,0 +1,162 @@
+am_net_membership.billing_class_config:
+  path: 'admin/config/services/am_net/billing_class/settings'
+  defaults:
+    _form: '\Drupal\am_net_membership\Form\BillingClassConfigForm'
+    _title: 'Configure Billing Class'
+  requirements:
+    _permission: 'administer am_net'
+  options:
+    _admin_route: TRUE
+
+am_net_membership.dues_rates:
+  path: 'admin/config/services/am_net/dues_rates'
+  defaults:
+    _title: 'Dues Rates'
+    _controller: '\Drupal\am_net_membership\Controller\DuesRates::render'
+  requirements:
+    _permission: 'administer am_net'
+  options:
+    _admin_route: TRUE
+
+# Join or Renew.
+am_net_membership.join_or_renew:
+  path: 'join-or-renew'
+  defaults:
+    _title: 'Join or Renew'
+    _controller: '\Drupal\am_net_membership\Controller\JoinOrRenew::render'
+  requirements:
+    _permission: 'access content'
+
+# Membership Applications Routes.
+am_net_membership.application:
+  path: 'membership/application'
+  defaults:
+    _title: 'Application for Membership'
+    _form: '\Drupal\am_net_membership\Form\MembershipSelectionForm'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.application.general_information:
+  path: 'membership/application/general-information'
+  defaults:
+    _title: 'General Information'
+    _form: '\Drupal\am_net_membership\Form\MembershipGeneralInformationForm'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.application.employment_information:
+  path: 'membership/application/employment-information'
+  defaults:
+    _title: 'Employment Information'
+    _form: '\Drupal\am_net_membership\Form\MembershipEmploymentInformationForm'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.application.membership_qualification:
+  path: 'membership/application/membership-qualification'
+  defaults:
+    _title: 'Membership Qualification'
+    _form: '\Drupal\am_net_membership\Form\MembershipQualificationForm'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.application.membership_dues:
+  path: 'membership/application/membership-dues'
+  defaults:
+    _title: 'Membership Dues'
+    _form: '\Drupal\am_net_membership\Form\MembershipDuesForm'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.application.felony_conviction:
+  path: 'membership/application/status'
+  defaults:
+    _title: 'Membership Application'
+    _form: '\Drupal\am_net_membership\Form\FelonyConvictionForm'
+  requirements:
+    _permission: 'access content'
+
+# Membership Renewal Routes.
+am_net_membership.renewal.page:
+  path: 'membership/renewal'
+  defaults:
+    _title: 'Membership Renewal'
+    _controller: '\Drupal\am_net_membership\Controller\MembershipRenewal::render'
+  requirements:
+    _permission: 'access content'
+
+am_net_membership.renewal:
+  path: 'user/{user}/membership/renewal'
+  defaults:
+    _title: 'Membership Renewal'
+    _form: '\Drupal\am_net_membership\Form\MembershipRenewalSelectionForm'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+am_net_membership.renewal.confirm.information:
+  path: 'user/{user}/membership/renewal/confirm-information'
+  defaults:
+    _title: 'Confirm information'
+    _form: '\Drupal\am_net_membership\Form\MembershipRenewalConfirmInformationForm'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+am_net_membership.renewal.verification:
+  path: 'user/{user}/membership/renewal/verification'
+  defaults:
+    _title: 'Verification'
+    _form: '\Drupal\am_net_membership\Form\MembershipRenewalVerificationForm'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+am_net_membership.renewal.contact.us:
+  path: 'user/{user}/membership/renewal/contact-us'
+  defaults:
+    _title: 'Contact us'
+    _form: '\Drupal\am_net_membership\Form\MembershipRenewalContactUsForm'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+am_net_membership.renewal.membership_dues:
+  path: 'user/{user}/membership/renewal/membership-dues'
+  defaults:
+    _title: 'Renew Dues'
+    _form: '\Drupal\am_net_membership\Form\MembershipRenewalDuesForm'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+am_net_membership.persons_recurring:
+  path: 'admin/config/services/am_net/persons_recurring'
+  defaults:
+    _title: 'Persons Recurring'
+    _controller: '\Drupal\am_net_membership\Controller\PersonsRecurring::render'
+  requirements:
+    _permission: 'administer am_net'
+  options:
+    _admin_route: TRUE
+

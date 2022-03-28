@@ -1,0 +1,8 @@
+uuid: 7a568ddf-75ba-4ec6-a3b8-8094f3459f9e
+langcode: en
+status: true
+dependencies: {  }
+name: 'City or Area'
+vid: city_area
+description: ''
+weight: 0

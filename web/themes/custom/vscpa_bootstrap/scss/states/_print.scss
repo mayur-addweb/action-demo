@@ -1,0 +1,244 @@
+@media print {
+  a {
+    pointer-events: none;
+
+    &::after {
+      display: none !important;
+    }
+  }
+
+  body {
+    padding-top: 0 !important;
+
+    &.toolbar-horizontal,
+    &.toolbar-vertical {
+      padding-top: 0 !important;
+    }
+  }
+
+  .back-to-top,
+  .fly-out,
+  .fly-out-menu {
+    display: none;
+  }
+
+  .cover-wrapper {
+    background-image: none !important;
+    min-height: 0 !important;
+
+    .field--name-field-buttons {
+      display: none;
+    }
+
+    &::before {
+      background: url('/themes/custom/vscpa_bootstrap/modules/vscpa_admin/images/logo.svg') no-repeat !important;
+      content: '';
+      display: block;
+      height: 50px;
+      margin: 0 auto 15px;
+      width: 200px;
+    }
+  }
+
+  .cover {
+    padding: 0 !important;
+  }
+
+  footer {
+    padding: 0 !important;
+
+    .footer-curve,
+    .footer-menu,
+    .help-center {
+      display: none;
+    }
+
+    .vscpa-info {
+      border: 0;
+      width: 100%;
+
+      .logo {
+        display: none;
+      }
+    }
+  }
+
+  .paragraph--type--accordions {
+    .collapse {
+      display: block;
+    }
+
+    .panel-heading {
+      a::after {
+        display: none;
+      }
+    }
+  }
+
+  .paragraph--type--slideshow {
+    .owl-dots {
+      display: none;
+    }
+
+    .owl-item {
+      display: block;
+      width: 100% !important;
+
+      &.cloned {
+        display: none;
+      }
+
+      .wrapper {
+        border: 0;
+
+        .buttons {
+          display: none;
+        }
+      }
+    }
+
+    .owl-stage {
+      transform: none !important;
+      width: 100% !important;
+    }
+
+    .paragraph-slide {
+      background-image: none !important;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+  .paragraph--type--tabs {
+    .nav-tabs {
+      li {
+        width: 100%;
+
+        a {
+          border-color: $black !important;
+        }
+      }
+    }
+
+    .tab-content {
+      & > .tab-pane {
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .paragraph-text-area,
+  .sidebar-cta {
+    background: transparent;
+    border-color: $black !important;
+
+    .field--name-field-buttons {
+      display: none;
+    }
+  }
+
+  #toolbar-administration {
+    display: none;
+  }
+
+  .user-links {
+    display: none;
+  }
+
+  #block-my-account-menu {
+    display: none;
+  }
+
+  .path-account,
+  .path-user {
+    .main-container {
+      .tabs {
+        display: none;
+      }
+    }
+  }
+
+  .block-ad-entity {
+    display: none;
+  }
+
+  .events-list-page,
+  .search-list-page {
+    .event-image {
+      display: none;
+    }
+
+    .item {
+      border-color: $black !important;
+    }
+  }
+
+  .btn {
+    background-color: $white !important;
+    border-color: $black !important;
+    color: $black !important;
+
+    &:hover {
+      background-color: $white !important;
+    }
+
+    &.register-now {
+      background-color: $white !important;
+    }
+  }
+
+  .pagination a,
+  .product-variations-price-fields-wrapper,
+  .field--name-price,
+  .employee-selector-widget,
+  .nasba,
+  .non-members,
+  .icon-check,
+  .icon-user,
+  .related-events article,
+  .events-of-interest article {
+    border-color: $black !important;
+  }
+
+  .tabs--primary {
+    display: none;
+  }
+
+  .half-width-cta {
+    .field--name-field-image {
+      display: none;
+    }
+  }
+
+  .owl-nav {
+    display: none;
+  }
+
+  .panel {
+    .collapse {
+      display: block;
+      height: auto !important;
+    }
+  }
+
+  .sidebar-cta {
+    .field--name-field-cover-image {
+      display: none;
+    }
+  }
+
+  .view-my-events {
+    .group-online,
+    .group-in_person {
+      .views-field-field-dates-times {
+        border: 1px solid $black;
+      }
+    }
+  }
+
+  #block-event-menu,
+  #block-social-sharing-events {
+    display: none;
+  }
+}

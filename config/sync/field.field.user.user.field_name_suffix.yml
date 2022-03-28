@@ -1,0 +1,20 @@
+uuid: 67a608d0-8a38-4b15-95d1-95837bb48139
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_name_suffix
+  module:
+    - user
+id: user.user.field_name_suffix
+field_name: field_name_suffix
+entity_type: user
+bundle: user
+label: Suffix
+description: 'Sr., III, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

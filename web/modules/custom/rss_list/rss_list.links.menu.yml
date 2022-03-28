@@ -1,0 +1,21 @@
+
+# RSS Page menu items definition
+entity.rss_page.collection:
+  title: 'RSS Page list'
+  route_name: entity.rss_page.collection
+  description: 'List RSS Page entities'
+  parent: system.admin_structure
+  weight: 100
+
+rss_page.admin.structure.settings:
+  title: 'RSS Page settings'
+  description: 'Configure RSS Page entities'
+  route_name: rss_page.settings
+  parent: system.admin_structure
+
+rss_list.pages:
+  title: 'RSS Pages'
+  route_name: 'entity.rss_page.collection'
+  parent: 'system.admin_content'
+  description: 'Administer and configure RSS Pages.'
+  weight: 2

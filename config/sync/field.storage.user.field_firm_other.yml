@@ -1,0 +1,21 @@
+uuid: fde23aeb-d0d7-425d-9fd8-94a3d277a924
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_firm_other
+field_name: field_firm_other
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

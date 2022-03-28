@@ -1,0 +1,18 @@
+uuid: ccb1c2e7-e74b-46b6-8c8e-bda4170a201f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.rng_registrants_duplicate
+field_name: rng_registrants_duplicate
+entity_type: commerce_product
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

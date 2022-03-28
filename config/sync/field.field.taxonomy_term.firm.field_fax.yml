@@ -1,0 +1,21 @@
+uuid: 7b9445a5-9e3f-491a-9229-13a196139faa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_fax
+    - taxonomy.vocabulary.firm
+  module:
+    - telephone
+id: taxonomy_term.firm.field_fax
+field_name: field_fax
+entity_type: taxonomy_term
+bundle: firm
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,23 @@
+uuid: efa467ac-9dee-4043-8a23-5194b5d4c1ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: location_type
+label: 'Location Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/location-types/[term:name]'
+selection_criteria:
+  837147d4-47b5-4d5b-ab2b-52a95863713f:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      location_type: location_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 837147d4-47b5-4d5b-ab2b-52a95863713f
+selection_logic: and
+weight: -5
+relationships: {  }

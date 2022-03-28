@@ -1,0 +1,87 @@
+uuid: da4a6190-4177-4268-93e4-bee621a69217
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_featurette_bottom
+    - commerce_product.commerce_product_type.cpe_self_study
+    - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.slideshow
+    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - entity_reference_revisions
+id: commerce_product.cpe_self_study.field_featurette_bottom
+field_name: field_featurette_bottom
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Featurette Bottom'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column: column
+      accordions: accordions
+      slideshow: slideshow
+      tabs: tabs
+      text_area: text_area
+    target_bundles_drag_drop:
+      bp_columns:
+        weight: 11
+        enabled: false
+      column:
+        enabled: true
+        weight: 12
+      cpe_credit:
+        weight: 13
+        enabled: false
+      feat_media:
+        weight: 14
+        enabled: false
+      feat_people:
+        weight: 15
+        enabled: false
+      feat_tabs:
+        weight: 16
+        enabled: false
+      feat_textarea:
+        weight: 17
+        enabled: false
+      item:
+        weight: 18
+        enabled: false
+      accordions:
+        enabled: true
+        weight: 18
+      accordion_item:
+        weight: 19
+        enabled: false
+      pol_contact:
+        weight: 19
+        enabled: false
+      session:
+        weight: 20
+        enabled: false
+      slide:
+        weight: 26
+        enabled: false
+      slideshow:
+        enabled: true
+        weight: 27
+      tabs:
+        enabled: true
+        weight: 28
+      tab_item:
+        weight: 29
+        enabled: false
+      text_area:
+        enabled: true
+        weight: 30
+field_type: entity_reference_revisions

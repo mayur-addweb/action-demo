@@ -1,0 +1,91 @@
+uuid: 80cd982a-95e2-495e-89da-43cd77ea40e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hw_cta
+    - paragraphs.paragraphs_type.half_width_cta
+    - paragraphs.paragraphs_type.half_width_cta_container
+  module:
+    - entity_reference_revisions
+id: paragraph.half_width_cta_container.field_hw_cta
+field_name: field_hw_cta
+entity_type: paragraph
+bundle: half_width_cta_container
+label: 'Half Width CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      half_width_cta: half_width_cta
+    target_bundles_drag_drop:
+      half_width_cta_container:
+        weight: 22
+        enabled: false
+      accordions:
+        weight: 23
+        enabled: false
+      accordion_item:
+        weight: 24
+        enabled: false
+      column:
+        weight: 25
+        enabled: false
+      cpe_credit:
+        weight: 26
+        enabled: false
+      feat_media:
+        weight: 27
+        enabled: false
+      feat_people:
+        weight: 28
+        enabled: false
+      full_width_cta:
+        weight: 29
+        enabled: false
+      half_width_container:
+        weight: 30
+        enabled: false
+      half_width_cta:
+        enabled: true
+        weight: 31
+      image:
+        weight: 32
+        enabled: false
+      item:
+        weight: 33
+        enabled: false
+      pol_contact:
+        weight: 34
+        enabled: false
+      slide:
+        weight: 35
+        enabled: false
+      slideshow:
+        weight: 36
+        enabled: false
+      tabs:
+        weight: 37
+        enabled: false
+      tab_item:
+        weight: 38
+        enabled: false
+      text_area:
+        weight: 39
+        enabled: false
+      timeslot:
+        weight: 40
+        enabled: false
+      timeslot_group:
+        weight: 41
+        enabled: false
+      view_embed:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

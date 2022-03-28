@@ -1,0 +1,20 @@
+uuid: 457f2725-0371-4bca-9097-6dbec22029f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - commerce_product
+id: commerce_product.field_event_expiry
+field_name: field_event_expiry
+entity_type: commerce_product
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+# Route: EF Donation.
+am_net_donations.ef_donation:
+  path: 'donations/ef-donation'
+  defaults:
+    _title: 'VSCPA Educational Foundation Contribution'
+    _form: '\Drupal\am_net_donations\Form\DonationForm'
+  requirements:
+    _permission: 'access content'
+
+# Route: PAC Donation.
+am_net_donations.pac_donation:
+  path: 'donations/pac-contribution'
+  defaults:
+    _title: 'VSCPA PAC Contribution Form'
+    _form: '\Drupal\am_net_donations\Form\ContributionForm'
+  requirements:
+    _permission: 'access content'

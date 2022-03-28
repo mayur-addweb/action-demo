@@ -1,0 +1,9 @@
+uuid: 4316ff73-c309-4c97-9552-52627a147e11
+langcode: en
+status: true
+dependencies: {  }
+id: cpe_credit
+label: 'CPE Credit'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

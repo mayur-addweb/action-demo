@@ -1,0 +1,27 @@
+uuid: b089fee1-6369-4b35-bfc3-7cae410c1b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.session_type
+  module:
+    - file
+id: taxonomy_term.session_type.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: session_type
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: icons
+  file_extensions: 'gif jpg jpeg png'
+  max_filesize: 8MB
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

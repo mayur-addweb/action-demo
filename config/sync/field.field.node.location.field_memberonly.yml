@@ -1,0 +1,29 @@
+uuid: d2bdc25b-f16f-4b83-b440-878f95251e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_memberonly
+    - node.type.location
+    - taxonomy.vocabulary.memberonly
+id: node.location.field_memberonly
+field_name: field_memberonly
+entity_type: node
+bundle: location
+label: 'Member Only Content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      memberonly: memberonly
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

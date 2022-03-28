@@ -1,0 +1,49 @@
+uuid: c642088e-9cca-4741-a932-08d7f707071e
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+    - content_paywall
+    - node
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: social_sharing
+theme: vscpa_bootstrap
+region: content
+weight: -27
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'Social Sharing'
+  provider: addtoany
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      publication: publication
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rng_current_time:
+    id: rng_current_time
+    date: '1516638234'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1516638234'
+    negate: false
+    context_mapping: {  }
+  check_content_paywall_access:
+    id: check_content_paywall_access
+    check_content_paywall_access: '1'
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+      node: '@node.node_route_context:node'

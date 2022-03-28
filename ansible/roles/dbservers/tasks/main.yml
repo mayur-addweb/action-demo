@@ -1,0 +1,17 @@
+---
+# This is the main task file for the dbservers role. This file should typically
+# only contain import and include statements for other files and roles.
+
+- import_role:
+    name: ut.mariadb
+  become: yes
+  tags:
+    - mariadb
+    - mariadb-server
+- import_role:
+    name: newrelic.newrelic-infra
+  become: yes
+  tags:
+  - newrelic
+- import_tasks: solr.yml
+- import_tasks: ufw.yml

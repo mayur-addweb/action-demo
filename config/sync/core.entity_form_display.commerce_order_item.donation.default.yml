@@ -1,0 +1,95 @@
+uuid: 5532ec08-ce5d-45a2-abf3-b74926346349
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.donation
+    - field.field.commerce_order_item.donation.field_am_net_recurring
+    - field.field.commerce_order_item.donation.field_am_net_recurring_interval
+    - field.field.commerce_order_item.donation.field_donation_anonymous
+    - field.field.commerce_order_item.donation.field_donation_destination
+    - field.field.commerce_order_item.donation.field_donation_source
+    - field.field.commerce_order_item.donation.field_fund
+    - field.field.commerce_order_item.donation.field_user
+  module:
+    - commerce_order
+id: commerce_order_item.donation.default
+targetEntityType: commerce_order_item
+bundle: donation
+mode: default
+content:
+  field_am_net_recurring:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_am_net_recurring_interval:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_donation_anonymous:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_donation_destination:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_donation_source:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_fund:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_user:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  purchased_entity:
+    type: entity_reference_autocomplete
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  quantity:
+    type: commerce_quantity
+    weight: 1
+    region: content
+    settings:
+      step: '1'
+      placeholder: ''
+    third_party_settings: {  }
+  unit_price:
+    type: commerce_unit_price
+    weight: 2
+    settings:
+      require_confirmation: true
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true

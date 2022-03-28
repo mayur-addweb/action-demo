@@ -1,0 +1,30 @@
+uuid: 7f15ffea-3202-4506-932e-cd77b9e9e854
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.job_status.field_amnet_job_status_code
+    - taxonomy.vocabulary.job_status
+  module:
+    - text
+id: taxonomy_term.job_status.default
+targetEntityType: taxonomy_term
+bundle: job_status
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_job_status_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,13 @@
+name: Theme Breakpoints for Javascript
+type: module
+description: Exposes theme-related breakpoints as directly usable Javascript variables.
+package: Helper
+# core: 8.x
+dependencies:
+  - drupal:breakpoint
+
+# Information added by Drupal.org packaging script on 2018-05-23
+version: '8.x-1.0-beta3'
+core: '8.x'
+project: 'theme_breakpoints_js'
+datestamp: 1527080891

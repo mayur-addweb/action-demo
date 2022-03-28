@@ -1,0 +1,10 @@
+---
+
+- hosts: webservers
+  roles:
+    - webservers
+  vars_files:
+    - vars/auth.yml
+    - vars/newrelic.yml
+    - vars/sql.yml
+    - vars/deploykeys.yml

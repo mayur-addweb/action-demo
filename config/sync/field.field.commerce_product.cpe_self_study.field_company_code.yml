@@ -1,0 +1,21 @@
+uuid: 9721edc7-300a-4d67-9f76-5c5432b4270e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_self_study
+    - field.storage.commerce_product.field_company_code
+  module:
+    - options
+id: commerce_product.cpe_self_study.field_company_code
+field_name: field_company_code
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Company Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

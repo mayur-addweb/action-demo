@@ -1,0 +1,21 @@
+uuid: 06a5313c-1016-487b-b20f-bfeba82c78a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.donation
+    - field.storage.commerce_order_item.field_fund
+  module:
+    - options
+id: commerce_order_item.donation.field_fund
+field_name: field_fund
+entity_type: commerce_order_item
+bundle: donation
+label: Fund
+description: 'Contribution Fund code'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

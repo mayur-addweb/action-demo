@@ -1,0 +1,19 @@
+uuid: 674d8864-f787-4f3e-b096-07caf5e52ab3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_email_codes
+    - taxonomy.vocabulary.connect_comm
+id: taxonomy_term.connect_comm.field_amnet_email_codes
+field_name: field_amnet_email_codes
+entity_type: taxonomy_term
+bundle: connect_comm
+label: 'Email OptIn Code'
+description: 'Provide AM.net Email OptIn Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

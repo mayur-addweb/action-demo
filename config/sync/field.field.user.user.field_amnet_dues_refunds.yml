@@ -1,0 +1,20 @@
+uuid: 836249be-f34e-4a11-bbb3-75d7d0402c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_dues_refunds
+  module:
+    - user
+id: user.user.field_amnet_dues_refunds
+field_name: field_amnet_dues_refunds
+entity_type: user
+bundle: user
+label: 'Dues Refunds'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

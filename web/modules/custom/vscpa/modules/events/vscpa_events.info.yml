@@ -1,0 +1,5 @@
+name: VSCPA Events
+description: Provides event-related functionality for VSCPA.
+package: VSCPA
+type: module
+core: 8.x

@@ -1,0 +1,84 @@
+uuid: 19c0575a-2196-4b05-b8be-087e9e61baf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view
+    - paragraphs.paragraphs_type.view_embed
+    - views.view.upcoming_events_trainings_for_technology
+  module:
+    - viewsreference
+id: paragraph.view_embed.field_view
+field_name: field_view
+entity_type: paragraph
+bundle: view_embed
+label: View
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    options:
+      argument: ''
+    display_id: block_1
+    data: 'a:5:{s:5:"pager";N;s:8:"argument";s:0:"";s:5:"limit";N;s:6:"offset";N;s:5:"title";N;}'
+    target_uuid: 8879135f-ef17-4a4b-90c4-ed1a7339b627
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    entity_reference: 0
+    attachment: 0
+    entity_browser: 0
+    embed: 0
+    feed: 0
+  preselect_views:
+    upcoming_events_trainings_for_technology: upcoming_events_trainings_for_technology
+    block_content: 0
+    college_or_university: 0
+    commerce_activity: 0
+    commerce_carts: 0
+    commerce_cart_block: 0
+    commerce_cart_form: 0
+    commerce_checkout_order_summary: 0
+    commerce_orders: 0
+    commerce_order_item_table: 0
+    commerce_products: 0
+    commerce_stores: 0
+    commerce_user_orders: 0
+    content: 0
+    content_recent: 0
+    cpa_resources: 0
+    events: 0
+    events_of_interest: 0
+    event_registrations_all: 0
+    event_registration_cart_form: 0
+    files: 0
+    find_employees: 0
+    firm_employees: 0
+    firm_name: 0
+    legislative_contacts: 0
+    media: 0
+    media_entity_browser: 0
+    media_vscpa: 0
+    membership_cart_form: 0
+    moderated_content: 0
+    my_events: 0
+    profiles: 0
+    redirect: 0
+    redirect_404: 0
+    rss_feed: 0
+    search: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    webform_submissions: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

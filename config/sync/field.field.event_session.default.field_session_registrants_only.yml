@@ -1,0 +1,23 @@
+uuid: d855d072-7173-4121-8658-9e6f5fdd8915
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_registrants_only
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_registrants_only
+field_name: field_session_registrants_only
+entity_type: event_session
+bundle: default
+label: 'Registrants only (no guests)?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

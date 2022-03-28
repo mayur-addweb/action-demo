@@ -1,0 +1,21 @@
+uuid: cfa5ef94-b765-47a7-b335-5fda3619876d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.half_width_cta
+  module:
+    - text
+id: paragraph.half_width_cta.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: half_width_cta
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default template for cookieconsent.
+ *
+ * Available variables:
+ * - dismiss : The text used on the dismiss button.
+ * - message : The message shown by the plugin.
+ * - target : The target of the link to your cookie policy. Use to open a link in a new window, or specific frame,
+              if you wish.
+ * - link : The url of your cookie policy. If it’s set to null, the link is hidden.
+ * - learn_more : The text shown on the link to the cookie policy (requires the link option to also be set)
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="cc_banner cc_container cc_container--open">
+    <a href="#" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all btn btn-purple">{{ dismiss }}</a>
+    <p class="cc_message">This website uses cookies to personalize content and analyze traffic to ensure you get the best possible experience on our website. Learn more about cookies and our terms <a href="/privacy-policy-and-terms">here</a>.</p>
+</div>

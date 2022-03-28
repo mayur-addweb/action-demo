@@ -1,0 +1,30 @@
+uuid: 083bb38a-133a-41c6-9a4f-f095a1c2307c
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - user
+id: user.field_user_image
+field_name: field_user_image
+entity_type: user
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: 9ca840cc-2673-4817-83b7-085e3ca8dc11
+    alt: ''
+    title: ''
+    width: 294
+    height: 270
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,41 @@
+uuid: f4408d65-f5e0-43bf-846e-632c145d4e0a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'create default commerce_order'
+  - 'create membership commerce_order'
+  - 'create membership commerce_product'
+  - 'manage default commerce_order_item'
+  - 'manage membership commerce_order_item'
+  - 'manage membership commerce_product_variation'
+  - 'manage membership_donation commerce_order_item'
+  - 'manage own commerce_payment_method'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'update default commerce_order'
+  - 'update membership commerce_order'
+  - 'update own membership commerce_product'
+  - 'use search_api_autocomplete for search'
+  - 'view ad_display'
+  - 'view ad_entity'
+  - 'view commerce_product'
+  - 'view disqus comments'
+  - 'view media'
+  - 'view own commerce_order'
+  - 'view published event session entities'
+  - 'view published rss page entities'
+  - 'view published sitewide alert entities'

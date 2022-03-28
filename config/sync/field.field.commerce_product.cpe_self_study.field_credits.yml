@@ -1,0 +1,73 @@
+uuid: f2da7332-a258-49aa-b8ae-541dcdef1c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_credits
+    - commerce_product.commerce_product_type.cpe_self_study
+    - paragraphs.paragraphs_type.cpe_credit
+  module:
+    - entity_reference_revisions
+id: commerce_product.cpe_self_study.field_credits
+field_name: field_credits
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cpe_credit: cpe_credit
+    target_bundles_drag_drop:
+      bp_columns:
+        weight: 16
+        enabled: false
+      column:
+        weight: 17
+        enabled: false
+      cpe_credit:
+        enabled: true
+        weight: 18
+      feat_media:
+        weight: 19
+        enabled: false
+      feat_people:
+        weight: 20
+        enabled: false
+      feat_tabs:
+        weight: 21
+        enabled: false
+      feat_textarea:
+        weight: 22
+        enabled: false
+      item:
+        weight: 23
+        enabled: false
+      pol_contact:
+        weight: 24
+        enabled: false
+      session:
+        weight: 25
+        enabled: false
+      slide:
+        weight: 26
+        enabled: false
+      slideshow:
+        weight: 27
+        enabled: false
+      tabs:
+        weight: 28
+        enabled: false
+      tab_item:
+        weight: 29
+        enabled: false
+      text_area:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

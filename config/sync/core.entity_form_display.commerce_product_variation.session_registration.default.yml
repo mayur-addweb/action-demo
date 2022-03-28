@@ -1,0 +1,66 @@
+uuid: 207d23f2-cf4a-4ec0-a33b-8cf848b6ba0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.session_registration
+    - field.field.commerce_product_variation.session_registration.field_price_guest
+    - field.field.commerce_product_variation.session_registration.field_price_guest_addl
+    - field.field.commerce_product_variation.session_registration.field_price_nonmember
+  module:
+    - commerce_price
+id: commerce_product_variation.session_registration.default
+targetEntityType: commerce_product_variation
+bundle: session_registration
+mode: default
+content:
+  field_price_guest:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_guest_addl:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_price_nonmember:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  price:
+    type: commerce_price_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

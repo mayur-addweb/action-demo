@@ -1,0 +1,23 @@
+uuid: b78f3d4c-e579-4e13-b7ad-638aedb6a73b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_leader_edit_title
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_leader_edit_title
+field_name: field_leader_edit_title
+entity_type: event_session
+bundle: default
+label: 'Leader can edit session title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

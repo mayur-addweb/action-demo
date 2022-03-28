@@ -1,0 +1,15 @@
+uuid: 06d06df5-327d-4998-8a78-87ede63cdf53
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_generic
+id: document
+label: Document
+description: 'Use <i>Document</i> to add a locally hosted document file.'
+source: generic
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_generic
+field_map: {  }

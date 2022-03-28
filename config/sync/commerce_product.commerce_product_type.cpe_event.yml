@@ -1,0 +1,11 @@
+uuid: 15fcdb60-3bba-4de1-ba38-597eda051751
+langcode: en
+status: true
+dependencies: {  }
+id: cpe_event
+label: 'CPE Event'
+description: ''
+variationType: event_registration
+injectVariationFields: true
+traits: {  }
+locked: false

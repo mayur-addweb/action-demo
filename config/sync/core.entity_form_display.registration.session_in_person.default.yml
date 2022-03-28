@@ -1,0 +1,21 @@
+uuid: f1438895-b11d-47a4-8ffc-b0e7f98c4dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.registration.session_in_person.field_order_item
+    - field.field.registration.session_in_person.field_registration_status
+    - rng.registration_type.session_in_person
+id: registration.session_in_person.default
+targetEntityType: registration
+bundle: session_in_person
+mode: default
+content:
+  field_registration_status:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  field_order_item: true

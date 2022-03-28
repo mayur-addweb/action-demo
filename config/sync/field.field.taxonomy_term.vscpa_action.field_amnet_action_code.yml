@@ -1,0 +1,19 @@
+uuid: 20b5fdd8-8d52-455b-aa49-e82c054c5bfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_action_code
+    - taxonomy.vocabulary.vscpa_action
+id: taxonomy_term.vscpa_action.field_amnet_action_code
+field_name: field_amnet_action_code
+entity_type: taxonomy_term
+bundle: vscpa_action
+label: 'Action Code'
+description: 'AM.net Action Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

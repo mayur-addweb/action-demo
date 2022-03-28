@@ -1,0 +1,155 @@
+uuid: 921759c1-cf29-4eb9-be5b-2b5ad04c62c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.event_session.rng_event
+    - field.field.event_session.default.field_amnet_sort_sequence
+    - field.field.event_session.default.field_credits
+    - field.field.event_session.default.field_leader_edit_desc
+    - field.field.event_session.default.field_leader_edit_title
+    - field.field.event_session.default.field_marketing_copy
+    - field.field.event_session.default.field_session_administrator
+    - field.field.event_session.default.field_session_code
+    - field.field.event_session.default.field_session_cpe_parent
+    - field.field.event_session.default.field_session_day
+    - field.field.event_session.default.field_session_excluded_catalog
+    - field.field.event_session.default.field_session_general
+    - field.field.event_session.default.field_session_guest_only
+    - field.field.event_session.default.field_session_product
+    - field.field.event_session.default.field_session_registrants_only
+    - field.field.event_session.default.field_session_status
+    - field.field.event_session.default.field_session_time
+    - field.field.event_session.default.field_session_track
+    - field.field.event_session.default.field_sessions_concurrent
+    - field.field.event_session.default.field_speakers
+    - field.field.event_session.default.rng_capacity
+    - field.field.event_session.default.rng_registrants_duplicate
+    - field.field.event_session.default.rng_registrants_maximum
+    - field.field.event_session.default.rng_registrants_minimum
+    - field.field.event_session.default.rng_registration_groups
+    - field.field.event_session.default.rng_registration_type
+    - field.field.event_session.default.rng_reply_to
+    - field.field.event_session.default.rng_status
+    - vscpa_commerce.event_session_type.default
+  module:
+    - content_moderation
+    - rng
+    - unlimited_number
+id: event_session.default.rng_event
+targetEntityType: event_session
+bundle: default
+mode: rng_event
+content:
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  rng_capacity:
+    type: unlimited_number
+    weight: 2
+    settings:
+      value_unlimited: 0
+      label_unlimited: Unlimited
+      label_number: Limited
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  rng_registrants_duplicate:
+    type: boolean_checkbox
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  rng_registrants_maximum:
+    type: unlimited_number
+    settings:
+      value_unlimited: -1
+      label_unlimited: 'No maximum'
+      label_number: Maximum
+      placeholder: ''
+    weight: 7
+    third_party_settings: {  }
+    region: content
+  rng_registrants_minimum:
+    type: unlimited_number
+    settings:
+      value_unlimited: 0
+      label_unlimited: 'No registrants required'
+      label_number: Minimum
+      placeholder: ''
+    weight: 6
+    third_party_settings: {  }
+    region: content
+  rng_registration_groups:
+    type: rng_registration_group
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rng_registration_type:
+    type: rng_registration_type
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rng_reply_to:
+    type: email_default
+    settings:
+      placeholder: 'Leave empty to use site default.'
+      size: 60
+    weight: 3
+    third_party_settings: {  }
+    region: content
+  rng_status:
+    type: boolean_checkbox
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_amnet_sort_sequence: true
+  field_credits: true
+  field_electronic_materials: true
+  field_leader_edit_desc: true
+  field_leader_edit_title: true
+  field_marketing_copy: true
+  field_session_administrator: true
+  field_session_code: true
+  field_session_cpe_parent: true
+  field_session_day: true
+  field_session_excluded_catalog: true
+  field_session_general: true
+  field_session_guest_only: true
+  field_session_product: true
+  field_session_registrants_only: true
+  field_session_status: true
+  field_session_time: true
+  field_session_track: true
+  field_sessions_concurrent: true
+  field_speakers: true
+  status: true
+  uid: true

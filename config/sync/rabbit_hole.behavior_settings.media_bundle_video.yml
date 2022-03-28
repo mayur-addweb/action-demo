@@ -1,0 +1,9 @@
+uuid: 85e17592-17c5-4dd3-8e74-2d422e93bbf4
+langcode: en
+status: true
+dependencies: {  }
+id: media_bundle_video
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

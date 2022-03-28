@@ -1,0 +1,9 @@
+uuid: ffcc38cd-6464-4f73-9245-b05370de1378
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_cpe_type
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

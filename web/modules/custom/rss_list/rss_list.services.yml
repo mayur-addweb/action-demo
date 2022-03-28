@@ -1,0 +1,4 @@
+services:
+  rss_list.helper:
+    class: Drupal\rss_list\RssFeedHelper
+    arguments: []

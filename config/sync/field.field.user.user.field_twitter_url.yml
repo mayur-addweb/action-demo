@@ -1,0 +1,20 @@
+uuid: a906dc56-db2d-49d8-a554-2ea3fc2efc97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_twitter_url
+  module:
+    - user
+id: user.user.field_twitter_url
+field_name: field_twitter_url
+entity_type: user
+bundle: user
+label: 'Twitter handle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

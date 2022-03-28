@@ -1,0 +1,8 @@
+uuid: 59cebd6d-f6fd-4e5c-9025-23e19ab1ce8d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field of Study'
+vid: field_of_study
+description: ''
+weight: 0

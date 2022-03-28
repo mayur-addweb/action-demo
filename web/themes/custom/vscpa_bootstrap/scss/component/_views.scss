@@ -1,0 +1,1512 @@
+.view-my-events {
+  .group-title::after {
+    background: $purple;
+    width: 70px;
+  }
+
+  .views-row {
+    border-bottom: 1px solid $slate-lightest;
+    margin-bottom: 15px;
+    padding: 0 0 15px 80px;
+    position: relative;
+
+    &:last-of-type {
+      border: 0;
+    }
+  }
+
+  .views-field-body {
+    margin: 0 0 10px;
+  }
+
+  .views-field-field-electronic-material {
+    .btn {
+      background-color: $purple;
+      color: $white;
+      margin: 15px 0 5px;
+
+      &:hover {
+        background-color: darken($purple, 10%) !important;
+      }
+    }
+
+    .panel-title {
+      padding: 0;
+      position: relative;
+
+      a {
+        background: $slate-lightest;
+        color: $purple;
+        display: block;
+        font-weight: 700;
+        padding: 10px 15px;
+
+        &::after {
+          content: '\e902';
+          font-family: vscpa-icons;
+          position: absolute;
+          right: 20px;
+          top: 10px;
+          transform: rotate(180deg);
+        }
+
+        &.collapsed {
+          background: $white;
+
+          &::after {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+
+    .panel-body {
+      overflow: hidden;
+    }
+
+    .panel {
+      margin: 0 0 5px;
+      padding: 0;
+
+      .file {
+        span {
+          border: 0;
+          font-size: 16px;
+
+          a {
+            font-family: $font-family-sans-serif;
+          }
+        }
+      }
+    }
+
+    .panel-heading {
+      background: $white;
+      border: 0;
+    }
+  }
+
+  .views-field-field-dates-times {
+    background: $purple;
+    color: $white;
+    font-weight: 900;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 70px;
+
+    span.label {
+      background: $slate-lighter;
+      border-radius: 0;
+      display: block;
+      font-size: 10px;
+      margin-left: -5px;
+      margin-right: -5px;
+      margin-top: -5px;
+      padding-top: 5px;
+    }
+
+    .field-content {
+      position: relative;
+
+      &::before {
+        background: $white;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 22px;
+        width: 100%;
+      }
+    }
+
+    time:last-of-type {
+      display: none;
+    }
+  }
+
+  .views-field-title {
+    margin: 0 0 10px;
+
+    a, p {
+      color: $purple;
+      font-size: 20px;
+      font-weight: 900;
+    }
+  }
+
+  .group-in_person {
+    .group-title::after {
+      background: $blue;
+    }
+
+    .panel-title {
+      a {
+        color: $blue;
+      }
+    }
+
+    .views-field-field-dates-times {
+      background: $blue;
+    }
+
+    .views-field-field-electronic-material {
+      .btn {
+        background-color: $blue;
+
+        &:hover {
+          background-color: darken($blue, 10%) !important;
+        }
+      }
+
+      .file {
+        span {
+          color: $blue;
+          font-size: 16px;
+
+          a {
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    .views-field-title {
+      a, p {
+        color: $blue;
+      }
+    }
+  }
+
+  .group-online {
+    .group-title::after {
+      background: $green;
+    }
+
+    .panel-title {
+      a {
+        color: $green;
+      }
+    }
+
+    .views-field-field-dates-times {
+      background: $green;
+    }
+
+    .views-field-field-electronic-material {
+      .btn {
+        background-color: $green;
+
+        &:hover {
+          background-color: darken($green, 10%) !important;
+        }
+      }
+
+      .file {
+        span {
+          color: $green;
+          font-size: 16px;
+
+          a {
+            color: $green;
+          }
+        }
+      }
+    }
+
+    .views-field-title {
+      a, p {
+        color: $green;
+      }
+    }
+  }
+}
+
+.session-panel {
+  .panel-title {
+    a[role='button'] {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+
+    a.launch-session {
+      color: $white;
+      font-size: 16px;
+      line-height: 16px;
+      margin-top: 3px;
+      padding: 10px 14px;
+      position: absolute;
+      right: 60px;
+      top: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 0 10px 10px;
+
+    label {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.event-filter {
+  background: $slate;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  position: relative;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 75px;
+  }
+
+  @media (min-width: $screen-lg) {
+    .form-inline {
+      max-width: calc(100% - 300px);
+    }
+  }
+
+  .form-submit[value='Filter Results'] {
+    background: none;
+    border: 0;
+    box-shadow: none !important;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    top: 35px;
+    width: 40px;
+
+    &::after {
+      border: 0;
+      color: $black;
+      content: '\e916';
+      display: block;
+      font-family: vscpa-icons;
+      left: 10px;
+      position: absolute;
+      top: 10px;
+    }
+
+    @media (min-width: $screen-lg) {
+      right: 315px;
+    }
+  }
+
+  .form-submit[value='Reset Filters'] {
+    background: $gold;
+    border: 0;
+    display: block;
+    font-weight: 700;
+    margin: -20px auto 15px;
+    max-width: 300px;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: $screen-lg) {
+      float: right;
+      left: 285px;
+      margin: -20px 0 30px;
+      max-width: 285px;
+    }
+
+    &:hover {
+      background-color: darken($gold, 10%) !important;
+    }
+  }
+
+  .form-item {
+    display: none;
+
+    &.form-item-sort-by,
+    &.form-item-title {
+      display: block !important;
+    }
+
+    &.form-item-sort-by {
+      bottom: -120px;
+      left: 0;
+      position: absolute;
+
+      @media (min-width: $screen-sm) {
+        bottom: -75px;
+        left: auto;
+        right: 0;
+        width: 50%;
+      }
+
+      @media (min-width: $screen-lg) {
+        width: 33%;
+      }
+
+      label {
+        color: $black;
+        display: block;
+        margin: 0 0 15px;
+        text-align: left !important;
+        text-transform: capitalize;
+        width: 100%;
+
+        @media (min-width: $screen-sm) {
+          display: inline-block;
+          text-align: center !important;
+          width: 90px;
+        }
+      }
+
+      .col-sm-9 {
+        display: block;
+        text-align: left !important;
+        width: 100%;
+
+        @media (min-width: $screen-sm) {
+          display: inline-block;
+          width: calc(100% - 90px);
+        }
+
+        .select-wrapper::after {
+          color: $blue;
+        }
+
+        select {
+          border-bottom: 1px solid $slate-lighter !important;
+          color: $slate-lighter;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .full-width {
+    padding: 0 15px;
+    text-align: center;
+
+    @media (min-width: $screen-lg) {
+      &.bottom {
+        position: absolute;
+        right: 0;
+        top: 35px;
+      }
+    }
+  }
+
+  .collapse-filters {
+    display: none;
+
+    &::before {
+      content: '\e907';
+      font-family: vscpa-icons;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+
+  .expand-filters {
+    max-width: 300px;
+    width: 100%;
+
+    &::before {
+      content: '\e914';
+      font-family: vscpa-icons;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 6px 15px;
+      width: 285px;
+    }
+  }
+
+  .col-sm-3,
+  .col-sm-9 {
+    width: 100%;
+
+    input {
+      border-radius: 5px !important;
+      width: 100%;
+    }
+  }
+
+  .form-item-title {
+    label {
+      display: none;
+    }
+  }
+
+  .geolocation-filter {
+    background: transparent;
+    border: 0;
+    margin-top: 10px !important;
+
+    .form-item-location-radius,
+    .form-item-location-zip-code {
+      label {
+        display: none;
+      }
+    }
+
+
+    .form-item-location-radius {
+      select {
+        border-radius: 5px !important;
+      }
+
+      .col-sm-9 {
+        display: block;
+
+        &::before {
+          color: $white;
+          content: 'Radius in Miles';
+          display: block;
+          font-weight: 900;
+          margin-bottom: 5px;
+        }
+
+        @media (min-width: $screen-lg) {
+          text-align: center;
+
+          select {
+            max-width: 250px;
+          }
+        }
+
+        .select-wrapper {
+          max-width: 250px;
+        }
+      }
+    }
+
+
+    .form-item-location-zip-code {
+      text-align: center;
+
+      input {
+        border-radius: 5px !important;
+        width: 100%;
+
+        @media (min-width: $screen-md) {
+          max-width: 250px;
+        }
+      }
+    }
+
+    .panel-title {
+      color: $white;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 15px;
+      position: relative;
+      text-align: center;
+
+      &::after {
+        content: '\e902';
+        font-family: vscpa-icons;
+        margin-top: -4px;
+        position: absolute;
+        right: 30px;
+        top: 20px !important;
+      }
+
+      &[aria-expanded='true'] {
+        color: $gold;
+
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        font-size: 24px;
+      }
+    }
+
+    .panel-body {
+      margin-top: 15px;
+    }
+  }
+
+  &.show {
+    background: rgba($slate, .9);
+    height: 100vh;
+    left: 0;
+    overflow-y: scroll;
+    padding-top: 8px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 600;
+
+    form {
+      margin: 0 auto;
+      max-width: 1170px;
+
+      @media (min-width: $screen-lg) {
+        .form-inline {
+          max-width: none;
+        }
+      }
+    }
+
+    .form-submit {
+      background: $gold;
+      color: $white;
+      font-family: $font-family-sans-serif !important;
+      font-weight: 700;
+      max-width: 300px;
+      padding: 15px;
+      position: relative;
+      right: 0;
+      text-align: left;
+      top: 0;
+      width: 100%;
+
+      &::after {
+        color: $white;
+        content: '\e901';
+        left: auto;
+        right: 15px;
+        top: 16px;
+      }
+
+      .glyphicon {
+        display: none;
+      }
+    }
+
+    .form-submit[value='Reset Filters'] {
+      left: 0;
+      margin: 15px auto 0 !important;
+
+      @media (min-width: $screen-lg) {
+        float: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .form-actions {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .form-item {
+      border-bottom: 1px solid $slate;
+      display: block;
+      float: none;
+      margin: 0;
+      width: 100%;
+
+      &.fieldgroup {
+        .form-item {
+          border-bottom: 0;
+          color: $white;
+          display: block;
+          float: left;
+          margin: 0 0 5px;
+          text-align: left;
+          width: 100%;
+
+          @media (min-width: $screen-md) {
+            width: 50%;
+          }
+
+          @media (min-width: $screen-lg) {
+            width: 33.33%;
+          }
+
+          .style::before {
+            background: $white;
+            border: 1px solid $blue;
+            color: $blue;
+          }
+
+          label {
+            padding-left: 20px;
+          }
+        }
+
+        .show {
+          padding-bottom: 15px;
+        }
+      }
+
+      &.is-open {
+        padding-bottom: 15px;
+      }
+
+      .fieldset-legend {
+        text-transform: capitalize;
+      }
+    }
+
+    .form-item-field-dates-times-value-min {
+      input {
+        &:first-of-type {
+          margin: 0 auto 15px !important;
+
+          @media (min-width: $screen-md) {
+            margin: 0 15px 0 0 !important;
+          }
+        }
+
+        @media (min-width: $screen-md) {
+          max-width: 33% !important;
+        }
+      }
+    }
+
+    .form-item-field-dates-times-value-max,
+    .form-item-sort-by {
+      display: none !important;
+    }
+
+    .form-item-title {
+      border-bottom: 0;
+
+      .col-sm-9 {
+        background: $blue;
+        display: block;
+        padding: 125px 15px 15px;
+        position: relative;
+        right: 15px;
+        width: calc(100% + 30px);
+
+        input {
+          margin: 0 auto !important;
+        }
+      }
+    }
+
+    .col-sm-3 {
+      color: $white;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 900 !important;
+      margin: 0;
+      padding: 15px;
+      position: relative;
+      text-align: center !important;
+      top: 0;
+      z-index: 1;
+
+      @media (min-width: $screen-md) {
+        font-size: 24px;
+      }
+
+      &::after {
+        content: '\e902';
+        font-family: vscpa-icons;
+        margin-top: -4px;
+        position: absolute;
+        right: 30px;
+        top: 20px !important;
+      }
+
+      &.gold {
+        color: $gold;
+
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .col-sm-9 {
+      display: none;
+      text-align: center;
+
+      input {
+        margin: 0 auto !important;
+        max-width: 75%;
+      }
+
+      select {
+        width: 100%;
+      }
+    }
+
+    .full-width {
+      display: block;
+      width: 100%;
+      z-index: 1;
+
+      @media (min-width: $screen-lg) {
+        &.bottom {
+          position: relative;
+          top: 0;
+        }
+      }
+
+      &.top {
+        position: absolute;
+        top: 95px;
+      }
+    }
+
+    .collapse-filters {
+      display: block;
+      margin: -8px auto 0;
+      padding: 5px;
+      width: 200px;
+    }
+
+    .expand-filters {
+      display: none;
+    }
+
+    .form-item-field-of-study,
+    .form-item-field-credit-hours-value {
+      input,
+      select {
+        max-width: 300px !important;
+        position: relative;
+
+        @media (min-width: $screen-md) {
+          max-width: 500px !important;
+        }
+      }
+    }
+
+    .form-item-cpe-type,
+    .form-item-field-course-level-target-id {
+      .select-wrapper {
+        max-width: 300px;
+        position: relative;
+
+        @media (min-width: $screen-md) {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}
+
+.events-list-page,
+.search-list-page {
+  .event-details {
+    font-size: 15px;
+    padding: 15px 15px 0;
+
+    .customer-reviews-stars {
+      font-size: 19px;
+
+      .glyphicon {
+        color: #74d2cc;
+
+        &.start-active {
+          color: #f1c10d;
+        }
+      }
+
+      .rating-text {
+        vertical-align: text-top;
+        display: inline-block;
+        line-height: 22px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .event-image {
+    background: rgba($blue, .4);
+    height: 125px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    img {
+      height: 125px;
+      width: 100%;
+    }
+  }
+
+  .event-image-multiple {
+    background: rgba($orange-lighter, 1);
+    height: 125px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    img {
+      height: 125px;
+      width: 100%;
+    }
+  }
+
+  .overlay-none {
+    background: rgba($white, 0);
+    height: 125px;
+    overflow: hidden;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .overlay {
+    background: rgba($white, .8);
+    height: 125px;
+    overflow: hidden;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .type {
+    left: 0;
+    z-index: 2;
+
+    .icon {
+      color: $blue;
+      font-family: vscpa-icons !important;
+      font-size: 24px;
+      font-style: normal;
+      font-variant: normal;
+      margin-right: -5px;
+      position: relative;
+      top: 5px;
+
+      &.conference::before {
+        content: '\e915';
+      }
+
+      &.course::before {
+        content: '\e903';
+      }
+
+      &.live::before {
+        content: '\e90e';
+      }
+
+      &.on-demand::before,
+      &.webinar::before {
+        content: '\e918';
+      }
+    }
+  }
+
+  .view-title {
+    color: $black;
+    font-weight: 900;
+    overflow: hidden;
+  }
+
+  .events-results {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .views-row {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 15px;
+    padding: 0 5px;
+  }
+
+  .field--name-field-city-area {
+    font-weight: 700;
+
+    .icon-location {
+      color: $blue;
+    }
+  }
+
+  .field--name-field-cpe-type {
+    color: $blue;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .field--name-field-dates-times {
+    margin: 0 0 5px;
+
+    > div {
+      margin: 0 0 5px;
+    }
+
+    .icon-calendar {
+      float: left;
+      margin: 3px 0 0;
+    }
+
+    .time-tease {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .field-cpe-credits {
+    .icon-credit-bolt {
+      float: left;
+      margin: 5px 0 0;
+    }
+  }
+
+  .item {
+    border: 3px solid $blue;
+    border-left: 2px solid $slate-lightest;
+    border-right: 2px solid $slate-lightest;
+    height: 100%;
+    padding: 125px 0 75px;
+    position: relative;
+    &.is-bundle-event {
+      border: 3px solid $purple-light;
+      border-left: 2px solid $slate-lightest;
+      border-right: 2px solid $slate-lightest;
+      .overlay{
+        background: $purple-lighter;
+        .field--name-field-cpe-type {
+          color: $purple;
+        }
+        .type .icon {
+          color: $purple;
+        }
+      }
+      .field--name-field-dates-times .icon-calendar {
+        color: $purple;
+      }
+      .field--name-field-city-area .icon-location {
+        color: $purple;
+      }
+      .field-cpe-credits .icon-credit-bolt {
+        color: $purple;
+      }
+    }
+  }
+
+  .location-teaser {
+    span:nth-child(2) {
+      display: none;
+    }
+
+    .field--name-field-address::before {
+      display: none;
+    }
+  }
+
+  .members-only {
+    background: $white;
+    border: 1px solid $slate-lightest;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: -25px;
+    padding: 2px 10px;
+    position: absolute;
+    right: 15px;
+    z-index: 1;
+
+    .glyphicon {
+      bottom: 1px;
+      font-size: 8px;
+      margin-right: 5px;
+      position: relative;
+    }
+  }
+
+  .register-now {
+    border-top: 1px solid $slate-lightest;
+    bottom: 0;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+
+    .btn {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .wrapper {
+    background: rgba($blue-lightest, .5);
+    left: -15px;
+    padding: 15px;
+    position: relative;
+    top: -15px;
+    width: calc(100% + 30px);
+  }
+
+  .cpe-self-study {
+    .paragraph--type--cpe-credit {
+      display: inline-block;
+    }
+
+    .credit {
+      &::after {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.search-list-page {
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .views-row {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15px;
+      padding: 0 5px;
+    }
+
+    .page,
+    .publication {
+      .overlay {
+        padding: 15px 15px 0;
+      }
+    }
+
+    .btn-gold {
+      background-color: $blue !important;
+
+      &:hover {
+        background-color: darken($blue, 10%) !important;
+      }
+    }
+
+    .image {
+      background: rgba($blue, .4);
+      height: 125px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      img {
+        height: 125px;
+        width: 100%;
+      }
+    }
+
+    .details {
+      padding: 15px 15px 0;
+
+      &.restricted {
+        p {
+          margin: 0 0 15px;
+        }
+      }
+    }
+
+    .members-only {
+      background: $white;
+      border: 1px solid $slate-lightest;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-top: -25px;
+      padding: 2px 10px;
+      position: absolute;
+      right: 15px;
+      z-index: 1;
+
+      .glyphicon {
+        bottom: 1px;
+        font-size: 8px;
+        margin-right: 5px;
+        position: relative;
+      }
+    }
+
+    .read-more {
+      border-top: 1px solid $slate-lightest;
+      bottom: 0;
+      left: 0;
+      padding: 15px;
+      position: absolute;
+      width: 100%;
+
+      .btn {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.events-of-interest,
+.related-events,
+.upcoming-vscpa-events {
+  margin: 0 auto;
+  max-width: 1170px;
+  position: relative;
+
+  [class^='icon-'] {
+    color: $blue;
+  }
+
+  article {
+    background: $white;
+    border: 0;
+    height: 100%;
+    padding: 15px 15px 60px;
+  }
+
+  h3 {
+    color: $black;
+    font-weight: 900;
+    margin: 32px 15px 30px;
+
+    @media (min-width: $screen-md) {
+      margin: 40px 15px;
+    }
+  }
+
+  .events-results {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .jump {
+    margin-left: 15px;
+
+    @media (min-width: $screen-md) {
+      position: absolute;
+      right: 15px;
+      top: 0;
+    }
+  }
+
+  .field-cpe-credits {
+    display: inline-block;
+  }
+
+  .field--name-field-course-fieldofstudy,
+  .views-field-field-field-of-interest .field-content {
+    color: $slate-light;
+    display: inline-block;
+    font-size: 14px;
+    font-style: oblique;
+
+    &::before {
+      content: '|';
+      font-style: normal;
+      margin: 0 8px 0 0;
+    }
+  }
+
+  .field--name-field-address::before {
+    display: none;
+  }
+
+  .field--name-field-dates-times,
+  .views-field-field-dates-times {
+    float: none !important;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+
+  .field--name-field-cpe-type {
+    color: $slate-light;
+    font-size: 14px;
+    position: relative;
+    text-transform: uppercase;
+    top: 5px;
+  }
+
+  .location-teaser {
+    margin: 0 0 5px;
+
+    a {
+      display: none;
+    }
+
+    span[data-quickedit-field-id] {
+      display: none;
+    }
+  }
+
+  .register-now {
+    background: $blue;
+    bottom: 0;
+    color: $white;
+    position: absolute;
+    right: 30px;
+
+    &:hover {
+      background-color: darken($blue, 10%) !important;
+    }
+  }
+
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .views-row {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 30px;
+  }
+
+  .view-title,
+  .views-field-title a {
+    color: $blue;
+    font-weight: 900;
+  }
+}
+
+.events-of-interest {
+  article {
+    padding: 15px;
+  }
+
+  .register-link {
+    a {
+      background: $blue;
+      border-radius: 5px;
+      bottom: 15px;
+      color: $white;
+      font-weight: 700;
+      padding: 10px 15px;
+      position: absolute;
+      right: 30px;
+
+      &:hover {
+        background-color: darken($blue, 10%) !important;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .views-field-field-dates-times {
+    &::before {
+      color: $blue;
+      content: '\e903';
+      font-family: vscpa-icons;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .field-content {
+      display: inline-block;
+    }
+  }
+
+  .views-field-field-credit-hours {
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 10px;
+
+    .field-content {
+      &::before {
+        color: $blue;
+        content: '\e909';
+        font-family: vscpa-icons;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .views-field-field-field-of-interest {
+    display: inline-block;
+  }
+}
+
+.related-events {
+  [class^='icon-'] {
+    color: $purple !important;
+  }
+
+  article {
+    padding: 15px;
+  }
+
+  .field--name-field-dates-times,
+  .field--name-field-city-area,
+  .field-cpe-credits {
+    display: block;
+    width: 100%;
+  }
+
+  .field--name-field-city-area {
+    bottom: 5px;
+    position: relative;
+  }
+
+  .view-title {
+    color: $purple;
+  }
+
+  .view-content {
+    .accent-left {
+      display: none;
+    }
+  }
+}
+
+.upcoming-vscpa-events {
+  .view-content {
+    .accent-left {
+      display: none;
+    }
+
+    .credit::after {
+      display: none;
+    }
+
+    .field--name-field-credit-type {
+      color: $slate-light;
+      display: inline-block;
+      font-size: 14px;
+      font-style: oblique;
+      font-weight: 400;
+
+      &::before {
+        content: '|';
+        font-style: normal;
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+}
+
+.view-commerce-user-orders,
+.view-commerce-order-item-table {
+  table {
+    thead {
+      a {
+        color: $white;
+      }
+
+      th {
+        text-transform: capitalize;
+      }
+
+      tr {
+        background: $purple;
+      }
+    }
+
+    td,
+    th {
+      &:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.view-commerce-checkout-order-summary {
+  .views-field-purchased-entity {
+    .field--name-price {
+      display: none;
+    }
+  }
+}
+
+#ui-datepicker-div {
+  max-width: 300px;
+  overflow-x: scroll;
+  width: auto !important;
+
+  @media (min-width: $screen-md) {
+    max-width: none;
+    overflow-x: visible;
+  }
+}
+
+.view-commerce-user-orders {
+  .view-header {
+    background: $purple-light;
+    border: 1px solid $purple;
+    margin: 0 0 15px;
+    padding: 18px;
+  }
+
+  .views-field-placed {
+    .icon {
+      display: none;
+    }
+  }
+}
+
+.view-vscpa,
+.view-vscpa-events {
+  margin: 0 0 15px;
+
+  article {
+    border-bottom: 1px solid $slate-lightest;
+    margin: 15px 0 0;
+
+    h4 {
+      margin: 0;
+    }
+
+    .field--name-field-cover-image {
+      &.field--type-entity-reference {
+        float: left;
+        margin: 0 15px 15px 0;
+      }
+    }
+
+    .title {
+      margin: 0 0 5px;
+    }
+  }
+
+  .views-row:last-of-type {
+    article {
+      border-bottom: 0;
+    }
+  }
+
+  .pagination {
+    > .active a {
+      background-color: $purple;
+      border-color: $purple;
+    }
+
+    > li a {
+      &:focus,
+      &:hover {
+        background-color: $purple;
+        border-color: $purple;
+      }
+    }
+
+    > .pager__item--first a,
+    > .pager__item--previous a,
+    > .pager__item--next a,
+    > .pager__item--last a {
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.vscpa-view-title {
+  .block-title {
+    font-weight: 900;
+    margin-bottom: 30px;
+    position: relative;
+  }
+}
+
+.acrogroup-right-text {
+  float: right;
+  width:50%;
+  padding-left: 10px;
+  padding-top: 20px;
+}

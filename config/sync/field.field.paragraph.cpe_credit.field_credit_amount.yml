@@ -1,0 +1,23 @@
+uuid: 0d68ce21-a705-42e8-b743-fae13fc56946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_credit_amount
+    - paragraphs.paragraphs_type.cpe_credit
+id: paragraph.cpe_credit.field_credit_amount
+field_name: field_credit_amount
+entity_type: paragraph
+bundle: cpe_credit
+label: 'Credit Amount'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

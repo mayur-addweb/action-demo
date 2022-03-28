@@ -1,0 +1,7 @@
+uuid: eac8a8ba-2d87-4520-82f1-8c24817d6734
+langcode: en
+status: true
+dependencies: {  }
+label: 'In-person event'
+id: event_in_person
+description: 'A registration for an in-person event.'

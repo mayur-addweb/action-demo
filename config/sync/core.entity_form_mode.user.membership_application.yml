@@ -1,0 +1,10 @@
+uuid: 75e4f13d-68b9-4e5f-9d11-45db87e2b811
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.membership_application
+label: 'Membership Application'
+targetEntityType: user
+cache: true

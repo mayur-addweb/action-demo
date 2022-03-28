@@ -1,0 +1,21 @@
+uuid: fe8871ec-15ad-460a-ba1a-a30b9944da2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_receive_sms
+  module:
+    - options
+    - user
+id: user.user.field_receive_sms
+field_name: field_receive_sms
+entity_type: user
+bundle: user
+label: 'Would you like to receive text messages from the VSCPA?* Yes, please send:'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

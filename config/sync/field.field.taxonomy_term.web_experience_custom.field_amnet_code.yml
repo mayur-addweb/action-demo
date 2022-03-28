@@ -1,0 +1,19 @@
+uuid: f9ff75b4-b542-4614-9c4a-8aed40f0474a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_code
+    - taxonomy.vocabulary.web_experience_custom
+id: taxonomy_term.web_experience_custom.field_amnet_code
+field_name: field_amnet_code
+entity_type: taxonomy_term
+bundle: web_experience_custom
+label: Code
+description: 'AM.net Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: bb0320cf-1d9a-40e2-b35e-5dd4aef9a27d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_half_width
+    - field.storage.block_content.field_alignment
+  module:
+    - options
+id: block_content.cta_half_width.field_alignment
+field_name: field_alignment
+entity_type: block_content
+bundle: cta_half_width
+label: Alignment
+description: 'Will this block render on the left or right half of large screens?'
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

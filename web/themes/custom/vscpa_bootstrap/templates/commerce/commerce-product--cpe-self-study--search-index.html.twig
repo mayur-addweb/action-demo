@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ *
+ * CPE Self-study product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    product_entity.bundle|clean_class,
+    view_mode ? view_mode|clean_class,
+    'item',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+    <div class="wrapper">
+        <span class="type">{{ product.field_cpe_type }}</span>
+        <h4 class="title">
+            <a href="{{ product_url }}" rel="bookmark">{{ product.title }}</a>
+        </h4>
+    </div>
+    <div{{ content_attributes }}>
+        {{ product|without('field_cpe_type') }}
+    </div>
+    <div class="register-now">
+        <a href="{{ url }}" rel="bookmark" class="btn btn-blue pull-right">{{ 'Course Info'|trans }}</a>
+    </div>
+</article>

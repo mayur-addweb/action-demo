@@ -1,0 +1,11 @@
+uuid: 68681483-6d5e-45b1-8f0b-282d60aaf5d3
+langcode: en
+status: true
+dependencies: {  }
+id: cpe_self_study
+label: 'Self-study CPE'
+description: ''
+variationType: self_study_registration
+injectVariationFields: true
+traits: {  }
+locked: false

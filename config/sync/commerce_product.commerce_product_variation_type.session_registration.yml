@@ -1,0 +1,9 @@
+uuid: 6ed4b991-0730-4e8e-88e0-d28a32241698
+langcode: en
+status: true
+dependencies: {  }
+id: session_registration
+label: 'Session registration'
+orderItemType: session_registration
+generateTitle: false
+traits: {  }

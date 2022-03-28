@@ -1,0 +1,23 @@
+uuid: 9c33ecaf-8268-45c2-80a2-8d8668b5ff6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.half_width_cta
+  module:
+    - options
+id: paragraph.half_width_cta.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: half_width_cta
+label: 'Background Color'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

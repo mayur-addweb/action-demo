@@ -1,0 +1,10 @@
+uuid: 12c0b13a-a4a0-4480-b664-3b6f3acdb1bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.home_address
+label: 'Home Address'
+targetEntityType: user
+cache: true

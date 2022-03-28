@@ -1,0 +1,28 @@
+uuid: e284e63c-3dc4-4c13-b428-4197fdfee37a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating
+    - node.type.publication
+  module:
+    - votingapi_widgets
+id: node.publication.field_rating
+field_name: field_rating
+entity_type: node
+bundle: publication
+label: Rating
+description: 'Select whether the Voting Rating must be Activated for this content.'
+required: false
+translatable: false
+default_value:
+  -
+    status: '1'
+    value: 0
+default_value_callback: ''
+settings:
+  anonymous_window: '-1'
+  user_window: '-1'
+  result_function: vote_average
+  widget_format: fivestar
+field_type: voting_api_field

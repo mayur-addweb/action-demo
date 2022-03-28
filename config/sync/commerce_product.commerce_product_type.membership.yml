@@ -1,0 +1,10 @@
+uuid: f3ff381e-50b3-459a-8040-956965666cc6
+langcode: en
+status: true
+dependencies: {  }
+id: membership
+label: Membership
+description: 'Membership (product).'
+variationType: membership
+injectVariationFields: true
+traits: {  }

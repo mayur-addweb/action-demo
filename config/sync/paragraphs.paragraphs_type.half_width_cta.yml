@@ -1,0 +1,9 @@
+uuid: 91a9f956-e2f1-4ec4-8a57-b5e736a735bb
+langcode: en
+status: true
+dependencies: {  }
+id: half_width_cta
+label: 'Half-Width CTA'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

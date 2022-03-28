@@ -1,0 +1,17 @@
+am_net_user_profile.sync_firms:
+  title: 'Fetch Firm Records'
+  parent: am_net.admin_settings
+  description: 'Fetch Firm Records.'
+  route_name: am_net_firms.sync_firms
+
+am_net_firms.employee_management_tool.setting:
+  title: 'Employee Management Tool Setting'
+  parent: am_net.vscpa_config
+  description: 'Employee Management Tool Setting'
+  route_name: am_net_firms.employee_management_tool.setting
+
+am_net_firms.employee_management_tool.manage_my_firm:
+  weight: 10
+  menu_name: account
+  title: 'Manage My Firm'
+  route_name: am_net_firms.employee_management_tool.manage_my_firm

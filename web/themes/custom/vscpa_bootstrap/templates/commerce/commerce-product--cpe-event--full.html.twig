@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ *
+ * CPE Event product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    product_entity.bundle|clean_class,
+    not product_entity.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+{{ attach_library('vscpa_bootstrap/event-menu') }}
+
+{# Check if field_firm has content #}
+{% set location_link = product.field_firm|render %}
+
+<article class="content event">
+  <div class="menu-fields">
+      {{ product.field_sponsors }}
+      {% if location_link %}
+        <h3 class="accent-left blue" id="location">Facility</h3>
+          {{ product.field_firm }}
+          <hr>
+      {% endif %}
+      {{ product|without('field_cpe_type', 'field_firm', 'field_sponsors') }}
+  </div>
+  <div class="nasba">
+    <p>The Virginia Society of CPAs (VSCPA) is registered with the National Association of State Boards of Accountancy (NASBA) as a sponsor of continuing professional education on the National Registry of CPE Sponsors. State boards of accountancy have final authority on the acceptance of individual courses for CPE credit. Complaints regarding registered sponsors may be submitted to the National Registry of CPE Sponsors through its website: <a href="https://www.nasbaregistry.org/">NASBARegistry.org</a>.</p>
+    <p>For more information regarding refund, complaint, program cancellation or other policies, visit our <a href="/registrationpolicies">Registration Policies</a> page or call <a href="tel:8007338272">(800) 733-8272</a>.</p>
+  </div>
+</article>

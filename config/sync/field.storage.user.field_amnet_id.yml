@@ -1,0 +1,21 @@
+uuid: 5a32c783-45f2-4a9c-87b4-ac7b07237fc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_amnet_id
+field_name: field_amnet_id
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

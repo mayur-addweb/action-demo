@@ -1,0 +1,39 @@
+uuid: 431da5d9-efc9-4334-9002-cfd5b6b55bbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_overlay
+field_name: field_overlay
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: black
+      label: Black
+    -
+      value: blue
+      label: Blue
+    -
+      value: gold
+      label: Gold
+    -
+      value: green
+      label: Green
+    -
+      value: purple
+      label: Purple
+    -
+      value: slate
+      label: Slate
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

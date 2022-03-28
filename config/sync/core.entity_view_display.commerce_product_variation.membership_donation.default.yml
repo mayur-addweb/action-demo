@@ -1,0 +1,32 @@
+uuid: 0072e1af-48a7-4f1f-b5af-68914645c0c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.membership_donation
+id: commerce_product_variation.membership_donation.default
+targetEntityType: commerce_product_variation
+bundle: membership_donation
+mode: default
+content:
+  list_price:
+    label: above
+    type: commerce_price_default
+    weight: -1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  price: true
+  product_id: true
+  sku: true

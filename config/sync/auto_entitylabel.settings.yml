@@ -1,0 +1,17 @@
+node_type_person_status: '1'
+node_type_person_pattern: '[node:field_givenname] [node:field_familyname]'
+node_type_person_php: 0
+submit: 'Save configuration'
+form_build_id: form-slainPmlNCfUm16JvYEFSWvTlvno_u20sadqu5w-NAk
+form_token: HrUy6nPKfsKSlZwjAwuq3aRYcU_ItPxFJmXlinV_YpY
+form_id: auto_entitylabel_settings_form
+op: 'Save configuration'
+node_type_location_status: '0'
+node_type_location_pattern: ''
+node_type_location_php: 0
+node_type_page_status: '0'
+node_type_page_pattern: ''
+node_type_page_php: 0
+node_type_publication_status: '0'
+node_type_publication_pattern: ''
+node_type_publication_php: 0

@@ -1,0 +1,19 @@
+uuid: 36c7bff6-be39-48f4-80a5-783760eef53c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.timeslot_group
+id: paragraph.timeslot_group.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: timeslot_group
+label: Label
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

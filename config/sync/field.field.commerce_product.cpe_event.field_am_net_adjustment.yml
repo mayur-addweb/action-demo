@@ -1,0 +1,19 @@
+uuid: a410bc18-0363-4940-8474-5572287c49d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_am_net_adjustment
+id: commerce_product.cpe_event.field_am_net_adjustment
+field_name: field_am_net_adjustment
+entity_type: commerce_product
+bundle: cpe_event
+label: 'AM.net Adjustment'
+description: 'Admin field, used for storage AM.net Special Fee like discounts that are considered Base Fee Adjustment.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

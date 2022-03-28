@@ -1,0 +1,12 @@
+uuid: e04f6a9d-ebf6-4dc0-9ea9-e7bae44be8a4
+langcode: en
+status: true
+dependencies: {  }
+id: member
+label: Member
+weight: 7
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'edit own vote on node:publication:field_rating'
+  - 'vote on node:publication:field_rating'

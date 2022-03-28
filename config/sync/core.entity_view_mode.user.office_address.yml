@@ -1,0 +1,10 @@
+uuid: 87b6b2a6-1e64-4d2c-925a-068ad76c3393
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.office_address
+label: 'Office Address'
+targetEntityType: user
+cache: true

@@ -1,0 +1,21 @@
+uuid: 41206d71-713f-40a0-9803-d4fb22bc1557
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_work_phone
+  module:
+    - telephone
+    - user
+id: user.user.field_work_phone
+field_name: field_work_phone
+entity_type: user
+bundle: user
+label: 'Work Phone'
+description: 'Format: XXX-XXX-XXXX'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

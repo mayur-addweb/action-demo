@@ -1,0 +1,85 @@
+services:
+  logger.channel.vscpa_commerce:
+    parent: logger.channel_base
+    arguments: ['vscpa_commerce']
+
+  vscpa_commerce.am_net_sync_manager:
+    class: Drupal\vscpa_commerce\AmNetSyncManager
+    arguments: ['@am_net.client', '@am_net_cpe.product_manager', '@am_net_cpe.registration_manager', '@entity_type.manager', '@rng.event_manager', '@logger.channel.vscpa_commerce', '@am_net_membership.checker', '@vscpa_commerce.price_manager', '@commerce_store.current_store']
+
+  vscpa_commerce.cart_event_subscriber:
+    class: Drupal\vscpa_commerce\EventSubscriber\CartEventSubscriber
+    arguments: ['@commerce_cart.cart_manager', '@commerce_cart.cart_provider', '@commerce_store.current_store', '@entity_type.manager']
+    tags:
+      - { name: event_subscriber }
+
+  vscpa_commerce.cpe_order_registration_subscriber:
+    class: Drupal\vscpa_commerce\EventSubscriber\CpeOrderRegistrationSubscriber
+    arguments: ['@entity_type.manager', '@rng.registrant.factory', '@logger.channel.vscpa_commerce']
+    tags:
+      - { name: event_subscriber }
+
+  vscpa_commerce.order_sync_subscriber:
+    class: Drupal\vscpa_commerce\EventSubscriber\OrderSyncSubscriber
+    arguments: ['@vscpa_commerce.am_net_sync_manager']
+    tags:
+      - { name: event_subscriber, priority: 100 }
+
+  vscpa_commerce.event_price_resolver:
+    class: Drupal\vscpa_commerce\Resolver\EventPriceResolver
+    arguments: ['@am_net_membership.checker', '@vscpa_commerce.price_manager']
+    tags:
+      - { name: commerce_price.price_resolver, priority: 200 }
+
+  vscpa_commerce.event_session_price_resolver:
+    class: Drupal\vscpa_commerce\Resolver\EventSessionPriceResolver
+    arguments: ['@vscpa_commerce.price_manager']
+    tags:
+      - { name: commerce_price.price_resolver, priority: 199 }
+
+  vscpa_commerce.event_registration_manager:
+    class: Drupal\vscpa_commerce\EventRegistrationManager
+
+  vscpa_commerce.order_event_subscriber:
+    class: Drupal\vscpa_commerce\EventSubscriber\OrderEventSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  vscpa_commerce.membership_event_subscriber:
+    class: Drupal\vscpa_commerce\EventSubscriber\MembershipEventSubscriber
+    arguments: ['@am_net_membership.checker', '@commerce_cart.cart_manager', '@commerce_cart.cart_provider', '@commerce_store.current_store', '@am_net_donations.donation_manager', '@event_dispatcher']
+    tags:
+      - { name: event_subscriber }
+
+  vscpa_commerce.self_study_price_resolver:
+    class: Drupal\vscpa_commerce\Resolver\SelfStudyRegistrationResolver
+    arguments: ['@am_net_membership.checker', '@vscpa_commerce.price_manager']
+    tags:
+      - { name: commerce_price.price_resolver, priority: 202 }
+
+  vscpa_commerce.price_manager:
+    class: Drupal\vscpa_commerce\PriceManager
+
+  vscpa_commerce.availability_checker:
+    class: Drupal\vscpa_commerce\EventRegistrationAvailabilityChecker
+    arguments: []
+    tags:
+      - { name: commerce.availability_checker, priority: 0 }
+
+  vscpa_commerce.payment_history:
+    class: Drupal\vscpa_commerce\PaymentHistory\PaymentList
+    arguments: ['@am_net.client']
+
+  vscpa_commerce.peer_review_rates:
+    class: Drupal\vscpa_commerce\PeerReview\PeerReviewRates
+    arguments: ['@state', '@am_net.client']
+
+  vscpa_commerce.peer_review_info:
+    class: Drupal\vscpa_commerce\PeerReview\PeerReviewInfo
+    arguments: []
+
+  vscpa_commerce.peer_review_payment:
+    class: Drupal\vscpa_commerce\EventSubscriber\PeerReviewPaymentEventSubscriber
+    arguments: ['@commerce_cart.cart_manager', '@commerce_cart.cart_provider', '@commerce_store.current_store']
+    tags:
+      - { name: event_subscriber }

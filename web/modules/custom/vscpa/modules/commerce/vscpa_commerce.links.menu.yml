@@ -1,0 +1,11 @@
+entity.event_session_type.collection:
+  title: 'Event session types'
+  route_name: entity.event_session_type.collection
+  description: 'List Event session types (bundles)'
+  parent: system.admin_structure
+
+vscpa_commerce.peer_review_config:
+  title: 'Peer Review Config'
+  parent: am_net.vscpa_config
+  description: 'Peer Review Config'
+  route_name: vscpa_commerce.peer_review_config

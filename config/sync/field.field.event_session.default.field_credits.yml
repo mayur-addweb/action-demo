@@ -1,0 +1,70 @@
+uuid: 2b7a5187-ee14-411e-aaeb-297d2a3fcd47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_credits
+    - paragraphs.paragraphs_type.cpe_credit
+    - vscpa_commerce.event_session_type.default
+  module:
+    - entity_reference_revisions
+id: event_session.default.field_credits
+field_name: field_credits
+entity_type: event_session
+bundle: default
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cpe_credit: cpe_credit
+    target_bundles_drag_drop:
+      bp_columns:
+        weight: 15
+        enabled: false
+      column:
+        weight: 16
+        enabled: false
+      cpe_credit:
+        enabled: true
+        weight: 17
+      feat_media:
+        weight: 18
+        enabled: false
+      feat_people:
+        weight: 19
+        enabled: false
+      feat_tabs:
+        weight: 20
+        enabled: false
+      feat_textarea:
+        weight: 21
+        enabled: false
+      item:
+        weight: 22
+        enabled: false
+      pol_contact:
+        weight: 23
+        enabled: false
+      slide:
+        weight: 24
+        enabled: false
+      slideshow:
+        weight: 25
+        enabled: false
+      tabs:
+        weight: 26
+        enabled: false
+      tab_item:
+        weight: 27
+        enabled: false
+      text_area:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

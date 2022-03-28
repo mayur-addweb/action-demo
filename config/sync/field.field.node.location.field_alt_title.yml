@@ -1,0 +1,19 @@
+uuid: c1a2583f-745a-4a37-8a3b-ae84b00ec446
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alt_title
+    - node.type.location
+id: node.location.field_alt_title
+field_name: field_alt_title
+entity_type: node
+bundle: location
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

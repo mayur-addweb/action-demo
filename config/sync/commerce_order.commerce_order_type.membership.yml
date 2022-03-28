@@ -1,0 +1,22 @@
+uuid: f564f976-8164-4fb9-8578-aff50177c8ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+third_party_settings:
+  commerce_cart:
+    cart_form_view: membership_cart_form
+    cart_block_view: commerce_cart_block
+  commerce_checkout:
+    checkout_flow: membership
+label: Membership
+id: membership
+workflow: order_default_validation
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: false
+receiptBcc: vscpa@vscpa.com
+traits: {  }
+locked: false

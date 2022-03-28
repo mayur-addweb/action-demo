@@ -1,0 +1,21 @@
+uuid: 6f950297-dea0-40b1-8ddd-f25ec6b86e0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_convicted_felon
+  module:
+    - options
+    - user
+id: user.user.field_convicted_felon
+field_name: field_convicted_felon
+entity_type: user
+bundle: user
+label: 'Have you ever been convicted of a felony?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

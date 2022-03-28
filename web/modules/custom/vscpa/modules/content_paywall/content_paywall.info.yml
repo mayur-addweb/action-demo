@@ -1,0 +1,7 @@
+name: VSCPA Content Paywall
+description: 'Common functionality for content Paywall — Limit access to content and files on the new website, Access should be limited by whether or not a user is an active member.'
+package: VSCPA
+type: module
+core: 8.x
+dependencies:
+  - am_net_membership

@@ -1,0 +1,61 @@
+uuid: 76807dd0-d5ef-4dff-81ac-31f15ffd810a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pol_other_relates
+    - paragraphs.paragraphs_type.pol_contact
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_pol_other_relates
+field_name: field_pol_other_relates
+entity_type: user
+bundle: user
+label: 'Other Relationships'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pol_contact: pol_contact
+    target_bundles_drag_drop:
+      cpe_credit:
+        weight: 12
+        enabled: false
+      feat_banner:
+        weight: 13
+        enabled: false
+      feat_columns:
+        weight: 14
+        enabled: false
+      feat_content:
+        weight: 15
+        enabled: false
+      feat_media:
+        weight: 16
+        enabled: false
+      feat_people:
+        weight: 17
+        enabled: false
+      feat_slideshow:
+        weight: 18
+        enabled: false
+      feat_tabs:
+        weight: 19
+        enabled: false
+      feat_textarea:
+        weight: 20
+        enabled: false
+      pol_contact:
+        enabled: true
+        weight: 21
+      session:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

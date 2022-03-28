@@ -1,0 +1,43 @@
+uuid: baa269fc-9cc2-4e46-ae6c-936413835e00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_people.field_people
+    - field.field.paragraph.feat_people.field_title
+    - paragraphs.paragraphs_type.feat_people
+id: paragraph.feat_people.default
+targetEntityType: paragraph
+bundle: feat_people
+mode: default
+content:
+  field_people:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

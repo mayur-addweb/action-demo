@@ -1,0 +1,10 @@
+uuid: 5dc8a6be-09eb-4ec4-bead-f75706f41e30
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.user_summary
+label: 'User Summary'
+targetEntityType: user
+cache: true

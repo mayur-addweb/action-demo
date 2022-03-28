@@ -1,0 +1,105 @@
+uuid: 188169ff-ee74-4ad6-8331-7af58e511cba
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_division
+field_name: field_division
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: CONTE
+      label: 'Event - Content-only'
+    -
+      value: GROUI
+      label: 'Event - Group internet-based'
+    -
+      value: GROUO
+      label: 'Event - Group on-demand'
+    -
+      value: GROUW
+      label: 'Event - Group webcast'
+    -
+      value: GROUE
+      label: 'Event - Group webinar'
+    -
+      value: GROUP
+      label: 'Event - Group live'
+    -
+      value: INDII
+      label: 'Event - Individual on-demand'
+    -
+      value: INDIV
+      label: 'Event - Individual webcast'
+    -
+      value: INDID
+      label: 'Event - Individual webinar'
+    -
+      value: NOTNA
+      label: 'Event - Not NASBA-approved'
+    -
+      value: ADVER
+      label: 'Product - Advertisement'
+    -
+      value: BROCH
+      label: 'Product - Brochures'
+    -
+      value: RENTL
+      label: 'Product - Central Rental'
+    -
+      value: COMIC
+      label: 'Product - Comic Books'
+    -
+      value: CPEDI
+      label: 'Product - CPE Division'
+    -
+      value: EXHIB
+      label: 'Product - Exhibitor'
+    -
+      value: INHOU
+      label: 'Product - In House'
+    -
+      value: LABEL
+      label: 'Product - Labels'
+    -
+      value: MAPSY
+      label: 'Product - Map Survey'
+    -
+      value: MISCE
+      label: 'Product - Miscellaneous'
+    -
+      value: PROMO
+      label: 'Product - Promotional Items'
+    -
+      value: SELFS
+      label: 'Product - Self Study'
+    -
+      value: SPEEC
+      label: 'Product - Speeches'
+    -
+      value: SPONS
+      label: 'Product - Sponsorship'
+    -
+      value: TAXFM
+      label: 'Product - Tax Forms'
+    -
+      value: TSHIR
+      label: 'Product - Tshirt VSCPA'
+    -
+      value: VSCPA
+      label: 'Product - VSCPA Fees'
+    -
+      value: GLASS
+      label: 'Product - VSCPA Glass'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

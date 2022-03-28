@@ -1,0 +1,23 @@
+uuid: 9bccf4bb-b454-4083-9be9-e7314c38eed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.body
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - text
+id: commerce_product.cpe_event.body
+field_name: body
+entity_type: commerce_product
+bundle: cpe_event
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

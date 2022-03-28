@@ -1,0 +1,31 @@
+uuid: db3d76a5-6614-4219-a1dc-756d6dc44297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.registration.session_in_person.field_order_item
+    - field.field.registration.session_in_person.field_registration_status
+    - rng.registration_type.session_in_person
+  module:
+    - options
+id: registration.session_in_person.default
+targetEntityType: registration
+bundle: session_in_person
+mode: default
+content:
+  field_order_item:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_registration_status:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

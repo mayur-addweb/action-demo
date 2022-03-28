@@ -1,0 +1,30 @@
+uuid: 23864628-ebdb-49e4-8f92-97ce09724f0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order_item.field_am_net_recurring_interval
+field_name: field_am_net_recurring_interval
+entity_type: commerce_order_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: MNTH
+      label: Monthly
+    -
+      value: 3MNT
+      label: Quarterly
+    -
+      value: YEAR
+      label: Annually
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

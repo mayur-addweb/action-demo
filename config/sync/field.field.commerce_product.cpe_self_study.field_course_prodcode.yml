@@ -1,0 +1,19 @@
+uuid: 69d89232-7edc-4ef6-b89c-2984ec840019
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_prodcode
+    - commerce_product.commerce_product_type.cpe_self_study
+id: commerce_product.cpe_self_study.field_course_prodcode
+field_name: field_course_prodcode
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Product Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

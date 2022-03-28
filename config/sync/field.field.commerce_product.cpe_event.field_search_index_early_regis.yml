@@ -1,0 +1,21 @@
+uuid: dc198a03-bcb4-48a1-a6e3-ce03e0e9a9ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_search_index_early_regis
+  module:
+    - datetime
+id: commerce_product.cpe_event.field_search_index_early_regis
+field_name: field_search_index_early_regis
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Search Index - Early registration'
+description: '<strong>Early registration</strong> would apply to any events who''s early registration fees are in effect.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

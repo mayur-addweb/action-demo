@@ -1,0 +1,22 @@
+uuid: 74f3db7f-6426-4de9-a81e-85f1fddd1c69
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.peer_review_administrative_fee
+    - field.storage.commerce_order_item.field_peer_review_transaction
+  module:
+    - vscpa_commerce
+id: commerce_order_item.peer_review_administrative_fee.field_peer_review_transaction
+field_name: field_peer_review_transaction
+entity_type: commerce_order_item
+bundle: peer_review_administrative_fee
+label: 'Peer Review Transaction'
+description: 'Field Used to storage all the relevant AM.net Data related to the Peer Review Transaction.'
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: am_net_peer_review_transaction

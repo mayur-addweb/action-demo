@@ -1,0 +1,21 @@
+uuid: 6e6c0455-7247-49b4-93ce-9caf71b2c50a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_prep
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - text
+id: commerce_product.cpe_self_study.field_course_prep
+field_name: field_course_prep
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Advanced Preparation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

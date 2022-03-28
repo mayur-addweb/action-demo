@@ -1,0 +1,23 @@
+uuid: 254c1f26-2e0b-4dc5-91e9-20137cc65b84
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.membership_donation
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.membership_donation.body
+field_name: body
+entity_type: commerce_product
+bundle: membership_donation
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

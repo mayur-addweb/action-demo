@@ -1,0 +1,28 @@
+uuid: 2057117b-fb73-42ea-83f7-408a0029a254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.timeslot_group.field_label
+    - field.field.paragraph.timeslot_group.field_timeslot_group_time
+    - field.field.paragraph.timeslot_group.field_timeslots
+    - paragraphs.paragraphs_type.timeslot_group
+  module:
+    - entity_reference_revisions
+id: paragraph.timeslot_group.default
+targetEntityType: paragraph
+bundle: timeslot_group
+mode: default
+content:
+  field_timeslots:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_label: true
+  field_timeslot_group_time: true

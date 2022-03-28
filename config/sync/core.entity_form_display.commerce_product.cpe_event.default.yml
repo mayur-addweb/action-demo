@@ -1,0 +1,936 @@
+uuid: 5fe84b73-5ea7-4010-b5be-af6f90cc5db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - entity_browser.browser.video
+    - field.field.commerce_product.cpe_event.body
+    - field.field.commerce_product.cpe_event.field_acronym
+    - field.field.commerce_product.cpe_event.field_alt_description
+    - field.field.commerce_product.cpe_event.field_alt_title
+    - field.field.commerce_product.cpe_event.field_am_net_adjustment
+    - field.field.commerce_product.cpe_event.field_am_net_deleted
+    - field.field.commerce_product.cpe_event.field_am_net_related_events
+    - field.field.commerce_product.cpe_event.field_amnet_event_id
+    - field.field.commerce_product.cpe_event.field_bundle_items
+    - field.field.commerce_product.cpe_event.field_buttons
+    - field.field.commerce_product.cpe_event.field_categories
+    - field.field.commerce_product.cpe_event.field_city_area
+    - field.field.commerce_product.cpe_event.field_company_code
+    - field.field.commerce_product.cpe_event.field_course_designedfor
+    - field.field.commerce_product.cpe_event.field_course_highlights
+    - field.field.commerce_product.cpe_event.field_course_level
+    - field.field.commerce_product.cpe_event.field_course_link
+    - field.field.commerce_product.cpe_event.field_course_prep
+    - field.field.commerce_product.cpe_event.field_course_prereqs
+    - field.field.commerce_product.cpe_event.field_course_syllabus
+    - field.field.commerce_product.cpe_event.field_course_vendors
+    - field.field.commerce_product.cpe_event.field_courses_objectives
+    - field.field.commerce_product.cpe_event.field_cover_image
+    - field.field.commerce_product.cpe_event.field_cover_video
+    - field.field.commerce_product.cpe_event.field_cpe_format
+    - field.field.commerce_product.cpe_event.field_cpe_type
+    - field.field.commerce_product.cpe_event.field_credit_hours
+    - field.field.commerce_product.cpe_event.field_credits
+    - field.field.commerce_product.cpe_event.field_dates_times
+    - field.field.commerce_product.cpe_event.field_division
+    - field.field.commerce_product.cpe_event.field_electronic_material
+    - field.field.commerce_product.cpe_event.field_event_expiry
+    - field.field.commerce_product.cpe_event.field_event_external
+    - field.field.commerce_product.cpe_event.field_event_timeslot_groups
+    - field.field.commerce_product.cpe_event.field_exclude_from_web_catalog
+    - field.field.commerce_product.cpe_event.field_external_event_codes
+    - field.field.commerce_product.cpe_event.field_featurette_bottom
+    - field.field.commerce_product.cpe_event.field_featurette_top
+    - field.field.commerce_product.cpe_event.field_field_of_interest
+    - field.field.commerce_product.cpe_event.field_field_of_study
+    - field.field.commerce_product.cpe_event.field_firm
+    - field.field.commerce_product.cpe_event.field_keywords
+    - field.field.commerce_product.cpe_event.field_leaders
+    - field.field.commerce_product.cpe_event.field_location
+    - field.field.commerce_product.cpe_event.field_memberonly
+    - field.field.commerce_product.cpe_event.field_oldpath
+    - field.field.commerce_product.cpe_event.field_overlay
+    - field.field.commerce_product.cpe_event.field_related_content
+    - field.field.commerce_product.cpe_event.field_search_index_aicpa
+    - field.field.commerce_product.cpe_event.field_search_index_attest_compil
+    - field.field.commerce_product.cpe_event.field_search_index_cfp
+    - field.field.commerce_product.cpe_event.field_search_index_credit_hours
+    - field.field.commerce_product.cpe_event.field_search_index_date
+    - field.field.commerce_product.cpe_event.field_search_index_early_regis
+    - field.field.commerce_product.cpe_event.field_search_index_free
+    - field.field.commerce_product.cpe_event.field_search_index_geolocation
+    - field.field.commerce_product.cpe_event.field_search_index_in_person
+    - field.field.commerce_product.cpe_event.field_search_index_is_bundle
+    - field.field.commerce_product.cpe_event.field_search_index_is_self_study
+    - field.field.commerce_product.cpe_event.field_search_index_keyword
+    - field.field.commerce_product.cpe_event.field_search_index_on_demand
+    - field.field.commerce_product.cpe_event.field_search_index_online
+    - field.field.commerce_product.cpe_event.field_search_index_rating
+    - field.field.commerce_product.cpe_event.field_search_index_yellow_book
+    - field.field.commerce_product.cpe_event.field_search_keywords
+    - field.field.commerce_product.cpe_event.field_sponsors
+    - field.field.commerce_product.cpe_event.field_trending_event
+    - field.field.commerce_product.cpe_event.rng_capacity
+    - field.field.commerce_product.cpe_event.rng_registrants_duplicate
+    - field.field.commerce_product.cpe_event.rng_registrants_maximum
+    - field.field.commerce_product.cpe_event.rng_registrants_minimum
+    - field.field.commerce_product.cpe_event.rng_registration_groups
+    - field.field.commerce_product.cpe_event.rng_registration_type
+    - field.field.commerce_product.cpe_event.rng_reply_to
+    - field.field.commerce_product.cpe_event.rng_status
+  module:
+    - am_net
+    - datetime
+    - datetime_range
+    - entity_browser
+    - entity_browser_entity_form
+    - field_group
+    - geolocation
+    - inline_entity_form
+    - link
+    - link_class
+    - paragraphs
+    - path
+    - text
+    - unlimited_number
+third_party_settings:
+  field_group:
+    group_cover:
+      children:
+        - title
+        - field_alt_title
+        - field_alt_description
+        - field_cover_image
+        - field_cover_video
+        - field_buttons
+        - field_overlay
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Cover
+      region: content
+    group_featurette_top:
+      children:
+        - field_featurette_top
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Featurette Top'
+      region: content
+    group_featurette_bottom:
+      children:
+        - field_featurette_bottom
+      parent_name: group_administrative_fields
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Featurette Bottom'
+      region: content
+    group_credits:
+      children:
+        - field_credit_hours
+        - field_credits
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Credits
+      region: content
+    group_categorization:
+      children:
+        - field_categories
+        - field_keywords
+        - group_web_experience
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: categorization
+        description: ''
+        required_fields: true
+      label: Categorization
+      region: content
+    group_web_experience:
+      children:
+        - field_field_of_study
+        - field_field_of_interest
+      parent_name: group_categorization
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: web_experience
+        description: ''
+        required_fields: true
+      label: 'Web Experience'
+      region: content
+    group_administrative_fields:
+      children:
+        - group_featurette_bottom
+        - field_memberonly
+        - field_oldpath
+      parent_name: ''
+      weight: 22
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: administrative_fields
+        description: ''
+        required_fields: true
+      label: 'Administrative Fields'
+      region: content
+    group_event_details:
+      children:
+        - field_cpe_type
+        - field_cpe_format
+        - field_amnet_event_id
+        - field_acronym
+        - field_course_level
+        - field_firm
+        - field_city_area
+        - field_dates_times
+        - field_event_expiry
+        - field_course_link
+        - field_event_external
+        - rng_registration_type
+        - rng_status
+        - rng_registrants_duplicate
+        - rng_capacity
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: event_details
+        description: ''
+        required_fields: true
+      label: 'Event Details'
+      region: content
+    group_search_index_fields:
+      children:
+        - field_division
+        - field_search_keywords
+        - field_company_code
+        - field_search_index_credit_hours
+        - field_search_index_date
+        - group_discounts
+        - group_format
+        - group_credit_type
+        - field_exclude_from_web_catalog
+        - field_search_index_keyword
+        - field_search_index_geolocation
+        - field_search_index_is_bundle
+        - field_bundle_items
+        - field_search_index_is_self_study
+        - field_search_index_on_demand
+        - field_search_index_rating
+        - field_am_net_deleted
+      parent_name: ''
+      weight: 23
+      format_type: fieldset
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: search-index-field
+      label: 'Search index fields'
+      region: content
+    group_discounts:
+      children:
+        - field_search_index_free
+        - field_search_index_aicpa
+        - field_search_index_early_regis
+      parent_name: group_search_index_fields
+      weight: 30
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Discounts
+      region: content
+    group_format:
+      children:
+        - field_search_index_in_person
+        - field_search_index_online
+      parent_name: group_search_index_fields
+      weight: 31
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Format
+      region: content
+    group_credit_type:
+      children:
+        - field_search_index_attest_compil
+        - field_search_index_cfp
+        - field_search_index_yellow_book
+      parent_name: group_search_index_fields
+      weight: 32
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Credit type'
+      region: content
+id: commerce_product.cpe_event.default
+targetEntityType: commerce_product
+bundle: cpe_event
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_acronym:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_alt_description:
+    weight: -7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_alt_title:
+    weight: -8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_am_net_deleted:
+    type: boolean_checkbox
+    weight: 41
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_amnet_event_id:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: amnet_event_id_default
+    region: content
+  field_bundle_items:
+    weight: 37
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      allow_existing: true
+      match_operator: STARTS_WITH
+      override_labels: false
+      allow_new: false
+      allow_duplicate: false
+      revision: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_buttons:
+    weight: -4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: select_class
+      link_class_force: ''
+      link_class_select: "btn btn-black half|Black, Half\nbtn btn-blue half|Blue, Half\nbtn btn-gold half|Gold, Half\nbtn btn-green half|Green, Half\nbtn btn-purple half|Purple, Half\nbtn btn-white half|White, Half\nbtn btn-black full|Black, Full\nbtn btn-blue full|Blue, Full\nbtn btn-gold full|Gold, Full\nbtn btn-green full|Green, Full\nbtn btn-purple full|Purple, Full\nbtn btn-white full|White, Full"
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_categories:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_city_area:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_company_code:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_course_designedfor:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_highlights:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_level:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_course_link:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: 'Course Link'
+      link_class_mode: force_class
+      link_class_force: 'btn btn-blue'
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_course_prep:
+    weight: 15
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_prereqs:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_syllabus:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_vendors:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_courses_objectives:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cover_image:
+    weight: -6
+    settings:
+      entity_browser: images
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_cover_video:
+    weight: -5
+    settings:
+      entity_browser: video
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_cpe_format:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cpe_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_credit_hours:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_credits:
+    weight: 16
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_dates_times:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_division:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_electronic_material:
+    weight: 16
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+      revision: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_event_expiry:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event_external:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: Register
+      link_class_mode: force_class
+      link_class_force: 'btn btn-white'
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_event_timeslot_groups:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_exclude_from_web_catalog:
+    weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_featurette_bottom:
+    weight: -1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_featurette_top:
+    weight: -3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_field_of_interest:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_field_of_study:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_firm:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_keywords:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_leaders:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_memberonly:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_oldpath:
+    weight: 44
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_overlay:
+    weight: -3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_related_content:
+    weight: 21
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_search_index_aicpa:
+    weight: 31
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_attest_compil:
+    weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_cfp:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_credit_hours:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_search_index_date:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_search_index_early_regis:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_search_index_free:
+    weight: 29
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_geolocation:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_search_index_in_person:
+    weight: 36
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_is_bundle:
+    weight: 36
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_is_self_study:
+    weight: 38
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_keyword:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_search_index_on_demand:
+    weight: 39
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_online:
+    weight: 37
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_index_rating:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_search_index_yellow_book:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_keywords:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_sponsors:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 19
+    region: content
+    third_party_settings: {  }
+  rng_capacity:
+    type: unlimited_number
+    weight: 21
+    region: content
+    settings:
+      placeholder: ''
+      value_unlimited: 0
+      label_unlimited: Unlimited
+      label_number: Limited
+    third_party_settings: {  }
+  rng_registrants_duplicate:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  rng_registration_type:
+    type: options_select
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rng_status:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 20
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 20
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_am_net_adjustment: true
+  field_am_net_related_events: true
+  field_external_event_codes: true
+  field_location: true
+  field_trending_event: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_reply_to: true
+  stores: true
+  variations: true

@@ -1,0 +1,40 @@
+uuid: 972798f4-8640-4e53-88f3-a5bec04ce63e
+langcode: en
+status: true
+dependencies:
+  module:
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: tabs_homepage
+theme: vscpa_bootstrap
+region: homepage
+weight: -31
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Tabs (Homepage)'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1555437003'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1555437003'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,9 @@
+.member-since {
+  display: none;
+}
+
+.role-member {
+  .member-since {
+    display: block;
+  }
+}

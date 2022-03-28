@@ -1,0 +1,9 @@
+uuid: 13a5e35f-c532-4061-a562-8bd0a6673692
+langcode: en
+status: true
+dependencies: {  }
+id: rng_registration_event_session
+label: 'Event Session: Registration'
+tokens:
+  - vscpa_commerce
+  - registration

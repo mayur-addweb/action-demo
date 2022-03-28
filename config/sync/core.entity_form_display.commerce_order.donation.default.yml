@@ -1,0 +1,55 @@
+uuid: 2f6f6326-76fe-430c-b119-867c67a0200f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.donation
+    - field.field.commerce_order.donation.field_amnet_order_number
+  module:
+    - commerce_order
+    - inline_entity_form
+id: commerce_order.donation.default
+targetEntityType: commerce_order
+bundle: donation
+mode: default
+content:
+  adjustments:
+    type: commerce_adjustment_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  billing_profile:
+    type: commerce_billing_profile
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  cart:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  order_items:
+    type: inline_entity_form_complex
+    weight: 2
+    settings:
+      override_labels: true
+      label_singular: 'order item'
+      label_plural: 'order items'
+      form_mode: default
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_amnet_order_number: true
+  ip_address: true
+  mail: true
+  order_number: true
+  state: true
+  store_id: true
+  uid: true

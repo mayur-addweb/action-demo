@@ -1,0 +1,10 @@
+uuid: 70375cf2-6415-4bf8-b45a-d036787512e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.registration_widget
+label: 'Registration Widget'
+targetEntityType: commerce_product
+cache: true

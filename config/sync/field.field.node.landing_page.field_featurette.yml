@@ -1,0 +1,96 @@
+uuid: 9885f2ad-a81d-47f9-9c5a-310d7bcad88c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featurette
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.full_width_cta
+    - paragraphs.paragraphs_type.half_width_cta_container
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.view_embed
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_featurette
+field_name: field_featurette
+entity_type: node
+bundle: landing_page
+label: Featurette
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column: column
+      view_embed: view_embed
+      full_width_cta: full_width_cta
+      half_width_cta_container: half_width_cta_container
+      image: image
+    target_bundles_drag_drop:
+      accordions:
+        weight: 16
+        enabled: false
+      accordion_item:
+        weight: 17
+        enabled: false
+      column:
+        enabled: true
+        weight: 18
+      cpe_credit:
+        weight: 19
+        enabled: false
+      view_embed:
+        enabled: true
+        weight: 20
+      feat_media:
+        weight: 20
+        enabled: false
+      feat_people:
+        weight: 21
+        enabled: false
+      item:
+        weight: 22
+        enabled: false
+      pol_contact:
+        weight: 23
+        enabled: false
+      slide:
+        weight: 24
+        enabled: false
+      slideshow:
+        weight: 25
+        enabled: false
+      tabs:
+        weight: 26
+        enabled: false
+      full_width_cta:
+        enabled: true
+        weight: 27
+      half_width_cta:
+        weight: 27
+        enabled: false
+      tab_item:
+        weight: 27
+        enabled: false
+      text_area:
+        weight: 28
+        enabled: false
+      half_width_cta_container:
+        enabled: true
+        weight: 29
+      image:
+        enabled: true
+        weight: 29
+      timeslot:
+        weight: 29
+        enabled: false
+      timeslot_group:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

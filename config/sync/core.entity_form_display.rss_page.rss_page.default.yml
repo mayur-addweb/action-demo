@@ -1,0 +1,157 @@
+uuid: f1658ae5-230e-42b1-8fbc-a8cedc509df0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.rss_page.rss_page.field_filter_custom
+    - field.field.rss_page.rss_page.field_filter_field_of_interest
+    - field.field.rss_page.rss_page.field_filter_general_business
+    - field.field.rss_page.rss_page.field_filter_position
+    - field.field.rss_page.rss_page.field_filter_vscpa_action
+    - field.field.rss_page.rss_page.field_rss_channel_description
+  module:
+    - field_group
+    - path
+    - rss_list
+third_party_settings:
+  field_group:
+    group_filters:
+      children:
+        - group_column_left
+        - group_middle_column
+        - group_right_column
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        label: 'Filters — Web Experience'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Filters — Web Experience'
+    group_column_left:
+      children:
+        - field_filter_field_of_interest
+        - field_filter_general_business
+      parent_name: group_filters
+      weight: 20
+      format_type: html_element
+      format_settings:
+        label: 'Left Column'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: col-md-4
+        required_fields: false
+      label: 'Left Column'
+    group_middle_column:
+      children:
+        - field_filter_position
+      parent_name: group_filters
+      weight: 21
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-4
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Middle Column'
+    group_right_column:
+      children:
+        - field_filter_custom
+        - field_filter_vscpa_action
+      parent_name: group_filters
+      weight: 22
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-4
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Right Column'
+id: rss_page.rss_page.default
+targetEntityType: rss_page
+bundle: rss_page
+mode: default
+content:
+  feed_path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_filter_custom:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_filter_field_of_interest:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_filter_general_business:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_filter_position:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_filter_vscpa_action:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_rss_channel_description:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  page_path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

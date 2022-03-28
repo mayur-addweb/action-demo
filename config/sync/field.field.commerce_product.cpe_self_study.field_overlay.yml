@@ -1,0 +1,21 @@
+uuid: 6fb9441a-f436-43a1-87b7-322c5722b675
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_overlay
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - options
+id: commerce_product.cpe_self_study.field_overlay
+field_name: field_overlay
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Overlay
+description: 'What color should the Cover be overlaid with (<i>-none-</i> is transparent)?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

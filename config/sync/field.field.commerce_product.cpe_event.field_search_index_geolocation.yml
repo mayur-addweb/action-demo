@@ -1,0 +1,21 @@
+uuid: c5cac59f-9cab-498e-9f61-21fc49086a84
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_search_index_geolocation
+  module:
+    - geolocation
+id: commerce_product.cpe_event.field_search_index_geolocation
+field_name: field_search_index_geolocation
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Search Index - Geolocation'
+description: 'Geographical locations as pairs of latitude and longitude (lan, lng).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

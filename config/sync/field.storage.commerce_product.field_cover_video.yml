@@ -1,0 +1,20 @@
+uuid: f3ee73b0-dd3b-49eb-8206-62518f886354
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - commerce_product
+id: commerce_product.field_cover_video
+field_name: field_cover_video
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

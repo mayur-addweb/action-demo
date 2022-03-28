@@ -1,0 +1,28 @@
+uuid: 39820dfc-da24-473a-b1c3-6792ece78d0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sessions
+    - paragraphs.paragraphs_type.timeslot
+    - vscpa_commerce.event_session_type.default
+id: paragraph.timeslot.field_sessions
+field_name: field_sessions
+entity_type: paragraph
+bundle: timeslot
+label: Sessions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:event_session'
+  handler_settings:
+    target_bundles:
+      default: default
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: b73c7b3a-33fd-448e-8f31-f7dd9551b9af
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.rng_registrants_maximum
+field_name: rng_registrants_maximum
+entity_type: event_session
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

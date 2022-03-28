@@ -1,0 +1,119 @@
+uuid: 25886441-4975-4e70-acac-e62ccef90945
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cover
+    - field.field.node.person.body
+    - field.field.node.person.field_address
+    - field.field.node.person.field_alt_description
+    - field.field.node.person.field_alt_title
+    - field.field.node.person.field_amnet_id
+    - field.field.node.person.field_buttons
+    - field.field.node.person.field_categories
+    - field.field.node.person.field_cover_image
+    - field.field.node.person.field_cover_video
+    - field.field.node.person.field_email
+    - field.field.node.person.field_familyname
+    - field.field.node.person.field_featurette_bottom
+    - field.field.node.person.field_featurette_top
+    - field.field.node.person.field_field_of_interest
+    - field.field.node.person.field_givenname
+    - field.field.node.person.field_keywords
+    - field.field.node.person.field_memberonly
+    - field.field.node.person.field_oldpath
+    - field.field.node.person.field_overlay
+    - field.field.node.person.field_person_image
+    - field.field.node.person.field_person_type
+    - field.field.node.person.field_pol_district
+    - field.field.node.person.field_related_content
+    - node.type.person
+  module:
+    - link
+    - options
+    - user
+id: node.person.cover
+targetEntityType: node
+bundle: person
+mode: cover
+content:
+  field_alt_description:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_alt_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_buttons:
+    type: link
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_cover_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_cover_video:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_overlay:
+    type: list_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  title_field:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  content_moderation_control: true
+  field_address: true
+  field_amnet_id: true
+  field_categories: true
+  field_email: true
+  field_familyname: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_givenname: true
+  field_keywords: true
+  field_memberonly: true
+  field_oldpath: true
+  field_person_image: true
+  field_person_type: true
+  field_pol_district: true
+  field_related_content: true
+  links: true
+  title_teaser: true

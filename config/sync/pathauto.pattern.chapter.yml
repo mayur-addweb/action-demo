@@ -1,0 +1,23 @@
+uuid: 6ba26271-4e2a-45bd-ad4e-3e96ab325324
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: chapter
+label: Chapter
+type: 'canonical_entities:taxonomy_term'
+pattern: '/chapters/[term:name]'
+selection_criteria:
+  010debf3-43d4-484f-9b3a-8bb06e2e1ac8:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      chapter: chapter
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 010debf3-43d4-484f-9b3a-8bb06e2e1ac8
+selection_logic: and
+weight: -5
+relationships: {  }

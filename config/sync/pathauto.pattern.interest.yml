@@ -1,0 +1,23 @@
+uuid: 9f1f5a5e-9240-4f79-8b55-aa4be29d2f05
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: interest
+label: Interest
+type: 'canonical_entities:taxonomy_term'
+pattern: '/interests/[term:name]'
+selection_criteria:
+  2d87b030-2932-480a-ae67-ae3e631483b2:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      interest: interest
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 2d87b030-2932-480a-ae67-ae3e631483b2
+selection_logic: and
+weight: -5
+relationships: {  }

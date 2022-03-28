@@ -1,0 +1,28 @@
+uuid: 674c32a9-0204-472c-922a-9c97bd5db4ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_people
+    - node.type.person
+    - paragraphs.paragraphs_type.feat_people
+id: paragraph.feat_people.field_people
+field_name: field_people
+entity_type: paragraph
+bundle: feat_people
+label: People
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

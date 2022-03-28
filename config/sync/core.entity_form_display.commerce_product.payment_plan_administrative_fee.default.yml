@@ -1,0 +1,63 @@
+uuid: eabf0d7a-c622-4151-af2b-3d5641e4b1a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.payment_plan_administrative_fee
+  module:
+    - commerce
+    - path
+id: commerce_product.payment_plan_administrative_fee.default
+targetEntityType: commerce_product
+bundle: payment_plan_administrative_fee
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 90
+    region: content
+    third_party_settings: {  }
+  stores:
+    type: commerce_entity_select
+    weight: -10
+    settings:
+      hide_single_entity: true
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+hidden:
+  variations: true

@@ -1,0 +1,24 @@
+uuid: a42df8c0-102a-4f22-a93c-c876bb3a50f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.storage.announcement.field_start_date
+  module:
+    - datetime
+id: announcement.standard.field_start_date
+field_name: field_start_date
+entity_type: announcement
+bundle: standard
+label: 'Start Date'
+description: 'When should this announcement begin?'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

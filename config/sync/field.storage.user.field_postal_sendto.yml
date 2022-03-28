@@ -1,0 +1,27 @@
+uuid: eb873e21-ac5e-43ce-a738-02d1fab051e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_postal_sendto
+field_name: field_postal_sendto
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: H
+      label: 'Home address'
+    -
+      value: O
+      label: 'Office address'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

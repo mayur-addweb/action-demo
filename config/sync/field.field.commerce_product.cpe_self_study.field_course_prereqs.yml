@@ -1,0 +1,21 @@
+uuid: 932e7739-2a6e-47b3-9f5d-2b4c71dd26cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_prereqs
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - text
+id: commerce_product.cpe_self_study.field_course_prereqs
+field_name: field_course_prereqs
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Prerequisites
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

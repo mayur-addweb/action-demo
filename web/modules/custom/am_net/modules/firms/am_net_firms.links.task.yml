@@ -1,0 +1,16 @@
+am_net_firms.employee_management_tool:
+  route_name: am_net_firms.employee_management_tool
+  base_route: entity.user.canonical
+  title: 'Manage My Firm'
+
+fetch_firms.all:
+  route_name : am_net_firms.sync_firms
+  title: "Fetch Firm Records"
+  base_route: am_net_firms.sync_firms
+  weight: 10
+
+fetch_firms.single:
+  route_name: am_net_firms.sync_single_firm
+  title: "Fetch Firm Record by Code"
+  base_route: am_net_firms.sync_firms
+  weight: 20

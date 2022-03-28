@@ -1,0 +1,9 @@
+uuid: 5cc13900-5211-43d5-8c75-258966187441
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_field_of_study
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

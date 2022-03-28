@@ -1,0 +1,70 @@
+uuid: 9fc9250d-654c-43f5-b275-bfcb9406ca5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_alt_description
+    - field.field.node.page.field_alt_title
+    - field.field.node.page.field_amnet_id
+    - field.field.node.page.field_buttons
+    - field.field.node.page.field_categories
+    - field.field.node.page.field_cover_image
+    - field.field.node.page.field_cover_video
+    - field.field.node.page.field_custom
+    - field.field.node.page.field_featurette_bottom
+    - field.field.node.page.field_featurette_top
+    - field.field.node.page.field_field_of_interest
+    - field.field.node.page.field_general_business
+    - field.field.node.page.field_keywords
+    - field.field.node.page.field_memberonly
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_oldpath
+    - field.field.node.page.field_overlay
+    - field.field.node.page.field_position
+    - field.field.node.page.field_related_content
+    - field.field.node.page.field_vscpa_action
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_alt_description: true
+  field_alt_title: true
+  field_amnet_id: true
+  field_buttons: true
+  field_categories: true
+  field_cover_image: true
+  field_cover_video: true
+  field_custom: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_general_business: true
+  field_keywords: true
+  field_memberonly: true
+  field_meta_tags: true
+  field_oldpath: true
+  field_overlay: true
+  field_position: true
+  field_related_content: true
+  field_vscpa_action: true
+  links: true
+  title_field: true
+  title_teaser: true

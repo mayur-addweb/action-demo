@@ -1,0 +1,20 @@
+uuid: 1c7a4ceb-0aab-43b8-a4ec-28bb44d7047f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.field_connect_email_prefs
+field_name: field_connect_email_prefs
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

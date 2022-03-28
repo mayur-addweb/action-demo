@@ -1,0 +1,27 @@
+uuid: 19c8296a-7afe-4c00-b81a-72d32541df34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_file
+    - paragraphs.paragraphs_type.misc_materials
+  module:
+    - file
+id: paragraph.misc_materials.field_resource_file
+field_name: field_resource_file
+entity_type: paragraph
+bundle: misc_materials
+label: 'Resource File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

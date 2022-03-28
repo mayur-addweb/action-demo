@@ -1,0 +1,41 @@
+uuid: 5846da09-a80b-4ea5-9e51-68a0724465cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_donations
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: donationefeducationalfoundation
+theme: vscpa_bootstrap
+region: content
+weight: -7
+provider: null
+plugin: donation_block
+settings:
+  id: donation_block
+  label: 'Donation EF - Educational Foundation'
+  provider: am_net_donations
+  label_display: '0'
+  body: "<div class=\"intro\">\r\n<p>Your tax-deductible donation helps the VSCPA Educational Foundation fund scholarships, programs and learning events for the next generation of CPAs. Any size gift helps us make education possible. Thank you!</p>\r\n</div>\r\n"
+  note: "<p><small><em>*Unrestricted gifts to the annual fund support current and future needs of the VSCPA Educational Foundation. Your tax-deductible contribution helps provide important accounting scholarships for deserving Virginia students and ensures the Foundation will continue inspiring and supporting future CPAs for years to come.</em></small></p>\r\n"
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1533301979'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1533301979'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /ef-donation
+    negate: false
+    context_mapping: {  }

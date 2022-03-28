@@ -1,0 +1,23 @@
+uuid: ec52d7bc-ed9f-48ee-be28-9a6a897da859
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.half_width_cta
+  module:
+    - link
+id: paragraph.half_width_cta.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: half_width_cta
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

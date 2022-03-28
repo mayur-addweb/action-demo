@@ -1,0 +1,25 @@
+uuid: 94b4efe6-b214-48f0-97d4-da7fad87a18f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - vscpa_bootstrap
+id: important_links
+theme: vscpa_bootstrap
+region: footer
+weight: -4
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Important Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

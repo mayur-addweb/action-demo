@@ -1,0 +1,35 @@
+uuid: f785666c-af40-41dc-a09e-17027a68eb22
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail
+    - field.field.media.image.field_cover_image
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_1
+    - image.style.thumbnail
+    - media.type.image
+  module:
+    - image
+id: media.image.thumbnail
+targetEntityType: media
+bundle: image
+mode: thumbnail
+content:
+  field_cover_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_media_image: true
+  field_media_image_1: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,20 @@
+uuid: c82e92cb-476b-4f91-9cbd-24c7645f377d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vscpa_bootstrap
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: vscpa_bootstrap_local_actions
+theme: vscpa_bootstrap
+region: content
+weight: -29
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

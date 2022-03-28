@@ -1,0 +1,59 @@
+uuid: d4ada861-7e6f-4e1a-9655-dfaaf394cc66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.timeslot_group.field_label
+    - field.field.paragraph.timeslot_group.field_timeslot_group_time
+    - field.field.paragraph.timeslot_group.field_timeslots
+    - paragraphs.paragraphs_type.timeslot_group
+  module:
+    - datetime_range
+    - paragraphs
+id: paragraph.timeslot_group.default
+targetEntityType: paragraph
+bundle: timeslot_group
+mode: default
+content:
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_timeslot_group_end:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_timeslot_group_time:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_timeslots:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

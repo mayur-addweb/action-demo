@@ -1,0 +1,28 @@
+uuid: 169d1c93-6090-4063-856b-e31904a526a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.membership
+    - commerce_order.commerce_order_item_type.payment_plan_administrative_fee
+    - field.storage.commerce_order_item.field_order_item
+id: commerce_order_item.payment_plan_administrative_fee.field_order_item
+field_name: field_order_item
+entity_type: commerce_order_item
+bundle: payment_plan_administrative_fee
+label: 'Order item'
+description: 'The parent membership order item for this administrative Fee.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order_item'
+  handler_settings:
+    target_bundles:
+      membership: membership
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

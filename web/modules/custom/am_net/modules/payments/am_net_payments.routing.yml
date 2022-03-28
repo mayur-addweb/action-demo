@@ -1,0 +1,9 @@
+am_net_payments.clean_duplicated_payment_methods:
+  path: '/admin/config/services/am_net_payments/clean_duplicated_payment_methods'
+  defaults:
+    _form: '\Drupal\am_net_payments\Form\CleanDuplicatedPaymentMethodsForm'
+    _title: "Clean Duplicated Payment Methods"
+  requirements:
+    _permission: 'administer users'
+  options:
+    _admin_route: TRUE

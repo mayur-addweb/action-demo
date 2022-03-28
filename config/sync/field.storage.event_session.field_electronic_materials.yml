@@ -1,0 +1,20 @@
+uuid: bede89f9-8bb4-4b35-808a-478631030ad8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - vscpa_commerce
+id: event_session.field_electronic_materials
+field_name: field_electronic_materials
+entity_type: event_session
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

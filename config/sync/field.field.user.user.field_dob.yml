@@ -1,0 +1,21 @@
+uuid: d49b52f1-93e7-488c-a36a-4197574c953b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_dob
+  module:
+    - datetime
+    - user
+id: user.user.field_dob
+field_name: field_dob
+entity_type: user
+bundle: user
+label: 'Date of Birth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

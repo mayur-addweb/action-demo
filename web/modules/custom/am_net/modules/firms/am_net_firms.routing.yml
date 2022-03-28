@@ -1,0 +1,194 @@
+am_net_firms.sync_firms:
+  path: '/admin/config/services/am_net/sync_firms'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\FetchAndSyncAllFirmRecordsForm'
+    _title: "Fetch Firm Records"
+  requirements:
+    _permission: 'edit terms in firm'
+  options:
+    _admin_route: TRUE
+
+am_net_firms.sync_single_firm:
+  path: '/admin/config/services/am_net/sync_single_firm'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\FetchAndSyncFirmRecordForm'
+    _title: "Fetch Firm Record by Code"
+  requirements:
+    _permission: 'edit terms in firm'
+  options:
+    _admin_route: TRUE
+
+# Manage My Firm.
+am_net_firms.employee_management_tool:
+  path: 'user/{user}/manage-my-firm'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\ManageMyFirm::render'
+    _title: "Manage My Firm"
+  requirements:
+    _permission: 'edit terms in firm'
+    _custom_access: '\Drupal\am_net_firms\Controller\ManageMyFirm::access'
+    user: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+# Manage My Firm Alias.
+am_net_firms.employee_management_tool.manage_my_firm:
+  path: '/manage-my-firm'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\ManageMyFirm::goToManageMyFirmPage'
+    _title: "Manage My Firm"
+  requirements:
+    _user_is_firm_admin: 'TRUE'
+
+# EMT setting.
+am_net_firms.employee_management_tool.setting:
+  path: '/admin/config/vscpa/employee-management-tool'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\EMTSettingForm'
+    _title: "Employee Management Tool Setting"
+  requirements:
+    _permission: 'administer nodes'
+  options:
+    _admin_route: TRUE
+
+am_net_firms.employee_management_tool.edit_firm_info:
+  path: 'user/{user}/manage-my-firm/{firm}/edit-firm-info'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\FirmInfo::render'
+    _title: "Edit Firm Info"
+  requirements:
+    _permission: 'edit terms in firm'
+    _custom_access: '\Drupal\am_net_firms\Controller\FirmInfo::access'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      firm:
+        type: entity:taxonomy_term
+
+# Firm Dues.
+am_net_firms.employee_management_tool.manage_dues:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees/manage-dues'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\ManageEmployeesDuesForm'
+    _title: 'Pay Dues'
+  requirements:
+    _permission: 'administer users'
+    _role: 'firm_administrator'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+      firm:
+        type: entity:taxonomy_term
+
+# Manage Employees.
+am_net_firms.employee_management_tool.manage_employees:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\ManageEmployees::render'
+    _title: "Manage Employees/Pay Dues"
+  requirements:
+    _permission: 'edit terms in firm'
+    _custom_access: '\Drupal\am_net_firms\Controller\ManageEmployees::access'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      firm:
+        type: entity:taxonomy_term
+
+
+am_net_firms.employee_management_tool.find_employees:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees/find-employees'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\FindEmployees::render'
+    _title: "Find Employees"
+  requirements:
+    _permission: 'edit terms in firm'
+    _custom_access: '\Drupal\am_net_firms\Controller\FindEmployees::access'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      firm:
+        type: entity:taxonomy_term
+
+am_net_firms.employee_management_tool.add_employees:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees/add-employees'
+  defaults:
+    _controller: '\Drupal\am_net_firms\Controller\AddEmployees::render'
+    _title: "Create New Employee"
+  requirements:
+    _permission: 'edit terms in firm'
+    _custom_access: '\Drupal\am_net_firms\Controller\AddEmployees::access'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      firm:
+        type: entity:taxonomy_term
+
+# Add Employees Confirm.
+am_net_firms.employee_management_tool.manage_employees.add_employees_confirm:
+  path: 'firm/manage-my-firm/manage-employees/add-employees-confirm'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\AddEmployeesConfirm'
+    _title: 'Manage My Firm'
+  requirements:
+    _permission: 'administer users'
+    _role: 'firm_administrator'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+      firm:
+        type: entity:taxonomy_term
+
+# Remove Employees Confirm.
+am_net_firms.employee_management_tool.manage_employees.remove_employee_confirm:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees/{employee}/remove-employee-confirm'
+  defaults:
+    _form: '\Drupal\am_net_firms\Form\RemoveEmployeesConfirm'
+    _title: 'Remove Employee'
+  requirements:
+    _permission: 'administer users'
+    _role: 'firm_administrator'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+    employee: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+      firm:
+        type: entity:taxonomy_term
+      employee:
+        type: entity:user
+
+# Membership Qualification Form for Employees.
+am_net_firms.employee_management_tool.manage_employees.membership_qualification:
+  path: 'user/{user}/manage-my-firm/{firm}/manage-employees/{employee}/membership-qualification'
+  defaults:
+    _form: '\Drupal\am_net_firms\MembershipQualification\MembershipQualificationForm'
+    _title: 'Membership Qualification'
+  requirements:
+    _permission: 'administer users'
+    _role: 'firm_administrator'
+    user: '^[a-zA-Z0-9_]+'
+    firm: '^[a-zA-Z0-9_]+'
+    employee: '^[a-zA-Z0-9_]+'
+  options:
+    parameters:
+      user:
+        type: entity:user
+      firm:
+        type: entity:taxonomy_term
+      employee:
+        type: entity:user

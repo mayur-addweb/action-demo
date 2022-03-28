@@ -1,0 +1,61 @@
+uuid: 43839592-8d65-40b0-9c15-81a4092ed582
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.membership_donation
+    - field.field.commerce_product.membership_donation.body
+    - field.field.commerce_product.membership_donation.field_donation_destination
+  module:
+    - commerce_product
+    - options
+    - text
+id: commerce_product.membership_donation.default
+targetEntityType: commerce_product
+bundle: membership_donation
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_donation_destination:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  title_field:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title_teaser:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    weight: 10
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  stores: true
+  uid: true

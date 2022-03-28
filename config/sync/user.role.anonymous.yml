@@ -1,0 +1,26 @@
+uuid: a031d1bf-9a07-43a9-8aae-d34077300803
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use search_api_autocomplete for search'
+  - 'use text format restricted_html'
+  - 'view ad_display'
+  - 'view ad_entity'
+  - 'view commerce_product'
+  - 'view media'
+  - 'view published event session entities'
+  - 'view published rss page entities'
+  - 'view published sitewide alert entities'

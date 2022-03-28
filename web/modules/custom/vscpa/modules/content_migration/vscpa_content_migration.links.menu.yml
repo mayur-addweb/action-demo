@@ -1,0 +1,5 @@
+vscpa_content_migration.format:
+  title: 'Content Migration'
+  parent: am_net.vscpa_config
+  description: 'Content Migration'
+  route_name: vscpa_content_migration.format

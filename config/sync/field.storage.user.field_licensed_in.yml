@@ -1,0 +1,30 @@
+uuid: 531498d0-1c91-492f-b5f1-991bfbaad6e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_licensed_in
+field_name: field_licensed_in
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: in_and_out_of_state
+      label: 'In and Out-Of-State'
+    -
+      value: in_state_only
+      label: 'In-State Only'
+    -
+      value: out_of_stat_only
+      label: 'Out-Of-State Only'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

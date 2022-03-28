@@ -1,0 +1,26 @@
+uuid: 78daf96a-337a-4e66-bb6b-1a49f0462fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cpe_credit.field_credit_amount
+    - field.field.paragraph.cpe_credit.field_credit_type
+    - paragraphs.paragraphs_type.cpe_credit
+id: paragraph.cpe_credit.default
+targetEntityType: paragraph
+bundle: cpe_credit
+mode: default
+content:
+  field_credit_amount:
+    weight: 0
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: false
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden:
+  field_credit_type: true

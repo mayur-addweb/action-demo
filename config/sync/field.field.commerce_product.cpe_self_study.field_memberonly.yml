@@ -1,0 +1,29 @@
+uuid: c2e4b183-b12f-4cda-a2c4-c3dece1beb2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_memberonly
+    - commerce_product.commerce_product_type.cpe_self_study
+    - taxonomy.vocabulary.memberonly
+id: commerce_product.cpe_self_study.field_memberonly
+field_name: field_memberonly
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Member Only Content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      memberonly: memberonly
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

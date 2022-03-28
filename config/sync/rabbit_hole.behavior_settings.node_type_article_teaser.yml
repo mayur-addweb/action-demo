@@ -1,0 +1,11 @@
+uuid: 40d28ecc-7f67-4e63-b5a6-d37ddb9cc9dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article_teaser
+id: node_type_article_teaser
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

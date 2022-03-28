@@ -1,0 +1,21 @@
+uuid: 18bae6a0-8fe4-4d7e-8478-2047af5a1994
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - vscpa_commerce
+id: event_session.field_credits
+field_name: field_credits
+entity_type: event_session
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

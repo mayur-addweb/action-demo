@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * Module exposing Title field within UI.
+ */
+
+use Drupal\commerce_product\Entity\ProductType;
+use Drupal\node\Entity\NodeType;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function field_title_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (NodeType::loadMultiple() as $bundle) {
+    $extra['node'][$bundle->Id()]['display']['title_field'] = [
+      'label' => t('Title (H1, no link)'),
+      'description' => t('Title field'),
+      'weight' => 100,
+      'visible' => TRUE,
+    ];
+
+    $extra['node'][$bundle->Id()]['display']['title_teaser'] = [
+      'label' => t('Title (Teaser, linked)'),
+      'description' => t('Title field teaser'),
+      'weight' => 101,
+      'visible' => TRUE,
+    ];
+  }
+
+  foreach (ProductType::loadMultiple() as $bundle) {
+    $extra['commerce_product'][$bundle->id()]['display']['title_field'] = [
+      'label' => t('Title (H1, no link)'),
+      'description' => t('Title field'),
+      'weight' => 100,
+      'visible' => TRUE,
+    ];
+
+    $extra['commerce_product'][$bundle->id()]['display']['title_teaser'] = [
+      'label' => t('Title (Teaser, linked)'),
+      'description' => t('Title field teaser'),
+      'weight' => 101,
+      'visible' => TRUE,
+    ];
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function field_title_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  $current_node = \Drupal::routeMatch()->getParameter('node');
+  $current_path = \Drupal::request();
+
+  if ($current_node or $current_path) {
+    // You can get NID and anything else you need from the node object.
+    $title = $current_node ? $current_node->getTitle() : '';
+    $url = $current_path->getRequestUri();
+  }
+
+  if ($display->getComponent('title_field')) {
+    $build['title_field'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="title-full accent-center"><h1>' . $title . '</h1></div>',
+    ];
+  }
+
+  if ($display->getComponent('title_teaser')) {
+    $build['title_teaser'] = [
+      '#type' => 'markup',
+      '#markup' => '<h3 class="title-teaser"><a href="' . $url . '">' . $title . '</a></h3>',
+    ];
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function field_title_commerce_product_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  $current_product = \Drupal::routeMatch()->getParameter('commerce_product');
+  $current_path = \Drupal::request();
+
+  if ($current_product or $current_path) {
+    // You can get NID and anything else you need from the node object.
+    $title = $current_product ? $current_product->getTitle() : '';
+    $url = $current_path->getRequestUri();
+  }
+
+  if ($display->getComponent('title_field')) {
+    $build['title_field'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="title-full accent-center"><h1>' . $title . '</h1></div>',
+    ];
+  }
+
+  if ($display->getComponent('title_teaser')) {
+    $build['title_teaser'] = [
+      '#type' => 'markup',
+      '#markup' => '<h3 class="title-teaser"><a href="' . $url . '">' . $title . '</a></h3>',
+    ];
+  }
+}

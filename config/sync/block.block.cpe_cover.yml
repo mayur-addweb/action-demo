@@ -1,0 +1,44 @@
+uuid: 662c4976-7c33-4e29-99e7-c659dffaba05
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: cpe_cover
+theme: vscpa_bootstrap
+region: cover
+weight: 0
+provider: null
+plugin: 'entity_view:commerce_product'
+settings:
+  id: 'entity_view:commerce_product'
+  label: 'CPE Cover'
+  provider: ctools
+  label_display: '0'
+  view_mode: cover
+  context_mapping:
+    entity: '@commerce_product.product_route_context:commerce_product'
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1524690322'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1524690322'
+    negate: false
+    context_mapping: {  }

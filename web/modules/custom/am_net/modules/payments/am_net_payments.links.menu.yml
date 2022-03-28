@@ -1,0 +1,5 @@
+am_net_payments.clean_duplicated_payment_methods:
+  title: 'Clean Duplicated Payment Methods'
+  parent: am_net.admin_settings
+  description: 'Clean Duplicated Payment Methods.'
+  route_name: am_net_payments.clean_duplicated_payment_methods

@@ -1,0 +1,7 @@
+.webform-multiple-table table.responsive-enabled {
+	max-width: 500px;
+}
+
+.webform-multiple-table table.responsive-enabled .form-type-textfield {
+	max-width: 130px;
+}

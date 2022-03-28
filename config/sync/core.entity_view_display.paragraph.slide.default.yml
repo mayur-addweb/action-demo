@@ -1,0 +1,76 @@
+uuid: 52322e13-b998-4491-a4b1-a83352077221
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slide.field_background
+    - field.field.paragraph.slide.field_buttons
+    - field.field.paragraph.slide.field_slide_background_image
+    - field.field.paragraph.slide.field_slide_body
+    - field.field.paragraph.slide.field_slide_title
+    - paragraphs.paragraphs_type.slide
+  module:
+    - bg_image_formatter
+    - link
+    - options
+    - text
+id: paragraph.slide.default
+targetEntityType: paragraph
+bundle: slide
+mode: default
+content:
+  field_background:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_buttons:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_slide_background_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      css_settings:
+        bg_image_selector: '.slide-[paragraph:uuid:value]'
+        bg_image_z_index: auto
+        bg_image_color: '#FFFFFF'
+        bg_image_x: center
+        bg_image_y: center
+        bg_image_attachment: scroll
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: '1'
+        bg_image_background_size_ie8: 0
+    third_party_settings: {  }
+    type: bg_image_formatter
+    region: content
+  field_slide_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_slide_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,10 @@
+uuid: 7f82365f-1701-4b18-985a-4770f20f55ae
+langcode: en
+status: true
+dependencies: {  }
+id: misc_materials
+label: 'Misc Materials'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

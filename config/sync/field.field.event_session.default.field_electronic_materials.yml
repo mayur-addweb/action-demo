@@ -1,0 +1,28 @@
+uuid: 314100f7-3a56-4567-959c-94d485e183ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_electronic_materials
+    - media.type.document
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_electronic_materials
+field_name: field_electronic_materials
+entity_type: event_session
+bundle: default
+label: 'Electronic materials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

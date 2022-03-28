@@ -1,0 +1,15 @@
+---
+
+- name: Allow NFS mounts through the firewall
+  ufw:
+    rule: allow
+    from_ip: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+    port: 2049
+  with_items: "{{ groups['webservers'] }}"
+  when: nfs_server_install is defined and
+        nfs_server_install
+  become: yes
+  tags:
+    - nfs
+    - nfs-server
+    - ufw

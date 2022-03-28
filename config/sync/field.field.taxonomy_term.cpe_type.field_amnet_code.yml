@@ -1,0 +1,19 @@
+uuid: 69d5b13b-578d-4ed1-88b6-ae198aa37abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_code
+    - taxonomy.vocabulary.cpe_type
+id: taxonomy_term.cpe_type.field_amnet_code
+field_name: field_amnet_code
+entity_type: taxonomy_term
+bundle: cpe_type
+label: 'CPE Type code'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

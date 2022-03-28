@@ -1,0 +1,41 @@
+uuid: 47f84e0b-f9da-4610-b4b0-856f5be4156c
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_cpe
+    - ctools
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: eventsponsorsdigitalrewind
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -31
+provider: null
+plugin: am_net_cpe_event_sponsor_digital_rewind_block
+settings:
+  id: am_net_cpe_event_sponsor_digital_rewind_block
+  label: Sponsors
+  provider: am_net_cpe
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rng_current_time:
+    id: rng_current_time
+    date: '1588283158'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1588283158'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: 24a82fe3-e059-4ab6-890e-f0cf43d76239
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.item
+  module:
+    - options
+id: paragraph.item.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: item
+label: Width
+description: 'How wide should this item print on large screens?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

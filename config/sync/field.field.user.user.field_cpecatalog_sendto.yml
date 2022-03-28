@@ -1,0 +1,21 @@
+uuid: 90dfd4dc-8d05-4c28-a29e-a6fc54a0349f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cpecatalog_sendto
+  module:
+    - options
+    - user
+id: user.user.field_cpecatalog_sendto
+field_name: field_cpecatalog_sendto
+entity_type: user
+bundle: user
+label: 'How should we send the CPE Catalog?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

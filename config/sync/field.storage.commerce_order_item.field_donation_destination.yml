@@ -1,0 +1,27 @@
+uuid: 04261e8c-a037-43af-bdae-6f7f5a88fec7
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order_item.field_donation_destination
+field_name: field_donation_destination
+entity_type: commerce_order_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: PAC
+      label: 'Political Action Committee'
+    -
+      value: EF
+      label: 'Educational Foundation'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

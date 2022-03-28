@@ -1,0 +1,19 @@
+uuid: fdfde290-1c23-4f71-bdd0-62299dd11e24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_position_code
+    - taxonomy.vocabulary.job_position
+id: taxonomy_term.job_position.field_amnet_position_code
+field_name: field_amnet_position_code
+entity_type: taxonomy_term
+bundle: job_position
+label: 'Position Code'
+description: 'AM.net Position Code'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,13 @@
+name: Raven (Sentry integration)
+description: Provides integration with Sentry exception logging platform.
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: system.logging_settings
+test_dependencies:
+  - csp:csp
+
+# Information added by Drupal.org packaging script on 2020-06-23
+version: '8.x-2.27'
+project: 'raven'
+datestamp: 1592939090

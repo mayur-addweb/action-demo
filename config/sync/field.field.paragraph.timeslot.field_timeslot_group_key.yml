@@ -1,0 +1,19 @@
+uuid: 9ef4550b-27d1-437b-90f3-b9c65bc11fc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timeslot_group_key
+    - paragraphs.paragraphs_type.timeslot
+id: paragraph.timeslot.field_timeslot_group_key
+field_name: field_timeslot_group_key
+entity_type: paragraph
+bundle: timeslot
+label: 'Timeslot group key'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,45 @@
+uuid: c2e90032-aae5-4342-94da-1ec8f43d9201
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_area.field_background
+    - field.field.paragraph.text_area.field_body
+    - field.field.paragraph.text_area.field_buttons
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - link
+    - options
+    - text
+id: paragraph.text_area.default
+targetEntityType: paragraph
+bundle: text_area
+mode: default
+content:
+  field_background:
+    type: list_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_buttons:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

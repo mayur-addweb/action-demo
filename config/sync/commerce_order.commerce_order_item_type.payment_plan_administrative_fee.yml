@@ -1,0 +1,15 @@
+uuid: bd15188b-3704-4972-9c05-31b1bef825b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: digital_goods
+label: 'Payment Plan Administrative Fee'
+id: payment_plan_administrative_fee
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

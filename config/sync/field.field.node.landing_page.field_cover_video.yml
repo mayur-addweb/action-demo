@@ -1,0 +1,28 @@
+uuid: 22c670b6-f67d-4783-9397-bbaf2fecc664
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cover_video
+    - media.type.video
+    - node.type.landing_page
+id: node.landing_page.field_cover_video
+field_name: field_cover_video
+entity_type: node
+bundle: landing_page
+label: 'Cover Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

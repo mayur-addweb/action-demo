@@ -1,0 +1,15 @@
+uuid: 9af37b07-652d-4724-9db0-d4015039ac43
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: events
+label: 'Session registration'
+id: session_registration
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

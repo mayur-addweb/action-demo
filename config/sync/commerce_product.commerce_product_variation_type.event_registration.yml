@@ -1,0 +1,9 @@
+uuid: 20d55410-a8aa-47d1-9df4-8106f989ebd2
+langcode: en
+status: true
+dependencies: {  }
+id: event_registration
+label: 'Event registration'
+orderItemType: event_registration
+generateTitle: false
+traits: {  }

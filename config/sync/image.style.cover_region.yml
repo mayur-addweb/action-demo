@@ -1,0 +1,15 @@
+uuid: 39f0ec6b-686a-4b6c-b6a9-2e6c8b9a2fd9
+langcode: en
+status: true
+dependencies: {  }
+name: cover_region
+label: 'Cover Region'
+effects:
+  a9621f28-d32a-4005-a36e-67784d65c97b:
+    uuid: a9621f28-d32a-4005-a36e-67784d65c97b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 400
+      anchor: center-center

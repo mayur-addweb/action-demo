@@ -1,0 +1,19 @@
+uuid: 20ca3259-23be-4df7-870a-b02c4835c213
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net
+    - commerce_order
+id: commerce_order_item.field_payment_plan_info
+field_name: field_payment_plan_info
+entity_type: commerce_order_item
+type: amnet_data
+settings: {  }
+module: am_net
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

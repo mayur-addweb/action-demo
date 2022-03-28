@@ -1,0 +1,21 @@
+uuid: bfb6b912-d9de-4ebf-8463-0a52d730f0e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nasba_optin
+  module:
+    - options
+    - user
+id: user.user.field_nasba_optin
+field_name: field_nasba_optin
+entity_type: user
+bundle: user
+label: 'NASBA Opt-In'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

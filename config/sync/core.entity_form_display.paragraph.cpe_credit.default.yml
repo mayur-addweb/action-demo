@@ -1,0 +1,42 @@
+uuid: e1ec2204-b695-446f-b13b-1a5aec113265
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cpe_credit.field_credit_amount
+    - field.field.paragraph.cpe_credit.field_credit_type
+    - paragraphs.paragraphs_type.cpe_credit
+id: paragraph.cpe_credit.default
+targetEntityType: paragraph
+bundle: cpe_credit
+mode: default
+content:
+  field_credit_amount:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_credit_type:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

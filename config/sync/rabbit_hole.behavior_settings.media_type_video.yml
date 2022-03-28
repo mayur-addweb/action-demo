@@ -1,0 +1,9 @@
+uuid: b7f73718-379e-41ef-8cb0-eab8985b2097
+langcode: en
+status: true
+dependencies: {  }
+id: media_type_video
+action: page_redirect
+allow_override: 0
+redirect: '[media:field_cover_video]'
+redirect_code: 301

@@ -1,0 +1,21 @@
+uuid: cc3a153f-ea10-4afb-9ca0-1e8eca9a8215
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_home_phone
+  module:
+    - telephone
+    - user
+id: user.user.field_home_phone
+field_name: field_home_phone
+entity_type: user
+bundle: user
+label: 'Home Phone'
+description: 'Format: XXX-XXX-XXXX'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

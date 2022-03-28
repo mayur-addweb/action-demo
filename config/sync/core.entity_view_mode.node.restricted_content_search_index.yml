@@ -1,0 +1,10 @@
+uuid: 17cdfe63-4e4d-4f67-a49c-c257a5e21f58
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.restricted_content_search_index
+label: 'Restricted Content Search Index'
+targetEntityType: node
+cache: true

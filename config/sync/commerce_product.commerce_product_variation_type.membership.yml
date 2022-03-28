@@ -1,0 +1,9 @@
+uuid: 6e321ed3-9c84-4b1b-94bd-1757422e4e2e
+langcode: en
+status: true
+dependencies: {  }
+id: membership
+label: Membership
+orderItemType: membership
+generateTitle: false
+traits: {  }

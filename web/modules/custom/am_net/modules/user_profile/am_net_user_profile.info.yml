@@ -1,0 +1,9 @@
+name: AM.net User Profile Integration
+type: module
+description: A Drupal module that loads user profile data from AM.net and caches/updates fields in an associated Drupal account.
+core: 8.x
+package: VSCPA
+dependencies:
+  - am_net
+  - am_net_membership
+  - am_net_firms

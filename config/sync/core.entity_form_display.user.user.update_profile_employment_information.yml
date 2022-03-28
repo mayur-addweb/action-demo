@@ -1,0 +1,277 @@
+uuid: 905c8baf-c7c4-4909-93bc-6d97de021a55
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.update_profile_employment_information
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_additionalname
+    - field.field.user.user.field_amnet_billing_class
+    - field.field.user.user.field_amnet_dues_adjs
+    - field.field.user.user.field_amnet_dues_billing
+    - field.field.user.user.field_amnet_dues_lookup
+    - field.field.user.user.field_amnet_dues_paid_through
+    - field.field.user.user.field_amnet_dues_payments
+    - field.field.user.user.field_amnet_dues_refunds
+    - field.field.user.user.field_amnet_id
+    - field.field.user.user.field_become_a_firm_admin
+    - field.field.user.user.field_cert_other
+    - field.field.user.user.field_cert_other_date
+    - field.field.user.user.field_cert_other_no
+    - field.field.user.user.field_cert_va_date
+    - field.field.user.user.field_cert_va_no
+    - field.field.user.user.field_connect_email_prefs
+    - field.field.user.user.field_contact_pref
+    - field.field.user.user.field_convicted_felon
+    - field.field.user.user.field_cpecatalog_sendto
+    - field.field.user.user.field_disclosures_sendto
+    - field.field.user.user.field_dob
+    - field.field.user.user.field_edupostal_sendto
+    - field.field.user.user.field_ethnic_origin
+    - field.field.user.user.field_facebook_url
+    - field.field.user.user.field_familyname
+    - field.field.user.user.field_fax
+    - field.field.user.user.field_fields_of_interest
+    - field.field.user.user.field_firm
+    - field.field.user.user.field_firm_other
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_givenname
+    - field.field.user.user.field_grad_date
+    - field.field.user.user.field_graduate_loc
+    - field.field.user.user.field_home_address
+    - field.field.user.user.field_home_phone
+    - field.field.user.user.field_instagram_url
+    - field.field.user.user.field_is_aicpa_member
+    - field.field.user.user.field_job_function
+    - field.field.user.user.field_job_position
+    - field.field.user.user.field_job_status
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_join_date
+    - field.field.user.user.field_join_date_2
+    - field.field.user.user.field_licensed
+    - field.field.user.user.field_licensed_in
+    - field.field.user.user.field_linkedin_url
+    - field.field.user.user.field_links
+    - field.field.user.user.field_member_select
+    - field.field.user.user.field_member_status
+    - field.field.user.user.field_membership_qualify
+    - field.field.user.user.field_mobile_phone
+    - field.field.user.user.field_name_creds
+    - field.field.user.user.field_name_suffix
+    - field.field.user.user.field_nasba_id
+    - field.field.user.user.field_nasba_optin
+    - field.field.user.user.field_nickname
+    - field.field.user.user.field_other_graduate
+    - field.field.user.user.field_other_undergraduate
+    - field.field.user.user.field_party_affiliation
+    - field.field.user.user.field_peer_review_information
+    - field.field.user.user.field_pol_delegate_relates
+    - field.field.user.user.field_pol_district
+    - field.field.user.user.field_pol_other_relates
+    - field.field.user.user.field_pol_senator_relates
+    - field.field.user.user.field_postal_sendto
+    - field.field.user.user.field_preferred_chapter
+    - field.field.user.user.field_receive_calls
+    - field.field.user.user.field_receive_offers
+    - field.field.user.user.field_receive_sms
+    - field.field.user.user.field_revoked_license
+    - field.field.user.user.field_secondary_emails
+    - field.field.user.user.field_special_needs
+    - field.field.user.user.field_sso_id
+    - field.field.user.user.field_term_conditions
+    - field.field.user.user.field_twitter_url
+    - field.field.user.user.field_undergrad_date
+    - field.field.user.user.field_undergrad_loc
+    - field.field.user.user.field_user_image
+    - field.field.user.user.field_work_address
+    - field.field.user.user.field_work_phone
+  module:
+    - address
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_your_place_of_employment:
+      children:
+        - field_firm
+        - field_firm_other
+        - field_work_address
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        label: 'Your Place of Employment'
+        description: '<div>Enter the first few letters of your Employer''s name to begin your search. From the list that appears, continue to narrow your search by typing a space followed by US, then another space followed by the state abbreviation, i.e. KPMG US VA... Locations will then be sorted by city and street address. Choose one to select as your employer, or, if you cannot locate your employer, type in "Other" to select and fill out the address information in the fields provided.</div>'
+        required_fields: true
+        id: your_place_of_employment
+        classes: your_place_of_employment
+      label: 'Your Place of Employment'
+    group_position:
+      children:
+        - field_job_title
+        - field_job_position
+        - field_job_function
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: position_information
+        classes: position_information
+        description: '<div>Please enter your job title and a general position. For example, if you are a "Director of Finance" you would enter that in the field below and select "Director" for the general position.</div>'
+        required_fields: true
+      label: Position
+    group_employment_status:
+      children:
+        - field_job_status
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: employment_status
+        classes: employment_status
+        description: '<div>Please enter your employment status.</div>'
+        required_fields: true
+      label: 'Employment Status'
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.update_profile_employment_information
+targetEntityType: user
+bundle: user
+mode: update_profile_employment_information
+content:
+  field_firm:
+    weight: 12
+    settings:
+      match_operator: STARTS_WITH
+      size: 60
+      placeholder: 'Type firm name...'
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_firm_other:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_job_function:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_job_position:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_job_status:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_job_title:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_work_address:
+    weight: 14
+    settings:
+      default_country: ''
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  timezone:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  account: true
+  commerce_remote_id: true
+  contact: true
+  customer_profiles: true
+  field_additionalname: true
+  field_amnet_billing_class: true
+  field_amnet_dues_adjs: true
+  field_amnet_dues_billing: true
+  field_amnet_dues_lookup: true
+  field_amnet_dues_paid_through: true
+  field_amnet_dues_payments: true
+  field_amnet_dues_refunds: true
+  field_amnet_id: true
+  field_become_a_firm_admin: true
+  field_cert_other: true
+  field_cert_other_date: true
+  field_cert_other_no: true
+  field_cert_va_date: true
+  field_cert_va_no: true
+  field_connect_email_prefs: true
+  field_contact_pref: true
+  field_convicted_felon: true
+  field_cpecatalog_sendto: true
+  field_disclosures_sendto: true
+  field_dob: true
+  field_edupostal_sendto: true
+  field_ethnic_origin: true
+  field_facebook_url: true
+  field_familyname: true
+  field_fax: true
+  field_fields_of_interest: true
+  field_gender: true
+  field_givenname: true
+  field_grad_date: true
+  field_graduate_loc: true
+  field_home_address: true
+  field_home_phone: true
+  field_instagram_url: true
+  field_is_aicpa_member: true
+  field_join_date: true
+  field_join_date_2: true
+  field_licensed: true
+  field_licensed_in: true
+  field_linkedin_url: true
+  field_links: true
+  field_member_select: true
+  field_member_status: true
+  field_membership_qualify: true
+  field_mobile_phone: true
+  field_name_creds: true
+  field_name_suffix: true
+  field_nasba_id: true
+  field_nasba_optin: true
+  field_nickname: true
+  field_other_graduate: true
+  field_other_undergraduate: true
+  field_party_affiliation: true
+  field_peer_review_information: true
+  field_pol_delegate_relates: true
+  field_pol_district: true
+  field_pol_other_relates: true
+  field_pol_senator_relates: true
+  field_postal_sendto: true
+  field_preferred_chapter: true
+  field_receive_calls: true
+  field_receive_offers: true
+  field_receive_sms: true
+  field_revoked_license: true
+  field_secondary_emails: true
+  field_special_needs: true
+  field_sso_id: true
+  field_term_conditions: true
+  field_twitter_url: true
+  field_undergrad_date: true
+  field_undergrad_loc: true
+  field_user_image: true
+  field_work_phone: true
+  language: true
+  path: true

@@ -1,0 +1,23 @@
+uuid: 33b71512-5361-47a3-8af1-33adf6aa21a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.session_registration
+    - field.storage.commerce_product_variation.field_price_guest_addl
+  module:
+    - commerce_price
+id: commerce_product_variation.session_registration.field_price_guest_addl
+field_name: field_price_guest_addl
+entity_type: commerce_product_variation
+bundle: session_registration
+label: 'Additional guest price'
+description: 'The price for additional guests (after the first guest) to attend this session.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+field_type: commerce_price

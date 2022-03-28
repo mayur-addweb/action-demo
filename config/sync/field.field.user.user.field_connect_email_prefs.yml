@@ -1,0 +1,30 @@
+uuid: f5be8719-e6fc-4b67-acd3-04905fb7cebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_connect_email_prefs
+    - taxonomy.vocabulary.connect_comm
+  module:
+    - user
+id: user.user.field_connect_email_prefs
+field_name: field_connect_email_prefs
+entity_type: user
+bundle: user
+label: 'Connect Preferences'
+description: '<a href="http://connect.vscpa.com/communities/viewdiscussions/mysubscriptions/" class="connect-preferences-link" target="_blank">VSCPAConnect communication preferences</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      connect_comm: connect_comm
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

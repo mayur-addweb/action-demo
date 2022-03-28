@@ -1,0 +1,19 @@
+uuid: e4950ab2-5a7b-4391-9236-5916180f8044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_reply_to
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_reply_to
+field_name: rng_reply_to
+entity_type: event_session
+bundle: default
+label: 'Reply-to e-mail address'
+description: 'E-mail address that appears as reply-to when emails are sent from this event. Leave empty to use site default.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

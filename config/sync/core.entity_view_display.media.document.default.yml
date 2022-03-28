@@ -1,0 +1,32 @@
+uuid: c98409e5-400b-4db4-bc48-bc703677ee36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_amnet_document_id
+    - field.field.media.document.field_media_generic
+    - field.field.media.document.field_res_files
+    - media.type.document
+  module:
+    - file
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  field_res_files:
+    weight: 0
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_amnet_document_id: true
+  field_media_generic: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,32 @@
+uuid: a888e442-6c96-41ab-a7cc-3228f7c77e37
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.article_teaser
+  module:
+    - user
+id: node.article_teaser.teaser
+targetEntityType: node
+bundle: article_teaser
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title_field:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title_teaser:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_featured_image: true
+  field_summary: true

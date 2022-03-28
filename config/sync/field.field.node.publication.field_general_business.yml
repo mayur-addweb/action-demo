@@ -1,0 +1,29 @@
+uuid: f3d9542f-b12f-4a33-8b85-46324e47d46d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_business
+    - node.type.publication
+    - taxonomy.vocabulary.general_business
+id: node.publication.field_general_business
+field_name: field_general_business
+entity_type: node
+bundle: publication
+label: 'General Business'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      general_business: general_business
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

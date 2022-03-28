@@ -1,0 +1,8 @@
+uuid: 661489c8-74ea-4f19-aa27-b1483babf8e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Membership Qualification'
+vid: membership_qualify
+description: ''
+weight: 0

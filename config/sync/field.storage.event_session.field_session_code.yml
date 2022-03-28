@@ -1,0 +1,21 @@
+uuid: 603197a9-cbd4-4000-924f-12fba260ea78
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.field_session_code
+field_name: field_session_code
+entity_type: event_session
+type: string
+settings:
+  max_length: 3
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

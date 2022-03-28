@@ -1,0 +1,10 @@
+uuid: 2e5286f3-22e0-4820-813f-d9c901c12f68
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.rng_event
+label: 'Event Settings'
+targetEntityType: paragraph
+cache: true

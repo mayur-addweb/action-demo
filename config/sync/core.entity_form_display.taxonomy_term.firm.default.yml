@@ -1,0 +1,122 @@
+uuid: 48e941ec-7d5f-42a5-b4bc-5a5ffe8634bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.firm.field_address
+    - field.field.taxonomy_term.firm.field_amnet_branch_offices
+    - field.field.taxonomy_term.firm.field_amnet_id
+    - field.field.taxonomy_term.firm.field_amnet_linked_persons
+    - field.field.taxonomy_term.firm.field_amnet_main_office
+    - field.field.taxonomy_term.firm.field_amnet_member_count
+    - field.field.taxonomy_term.firm.field_amnet_nonmember_count
+    - field.field.taxonomy_term.firm.field_fax
+    - field.field.taxonomy_term.firm.field_firm_contacts
+    - field.field.taxonomy_term.firm.field_firm_name2
+    - field.field.taxonomy_term.firm.field_general_business
+    - field.field.taxonomy_term.firm.field_phone
+    - field.field.taxonomy_term.firm.field_websites
+    - taxonomy.vocabulary.firm
+  module:
+    - address
+    - link
+    - path
+    - telephone
+    - text
+id: taxonomy_term.firm.default
+targetEntityType: taxonomy_term
+bundle: firm
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_address:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_fax:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_firm_contacts:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_firm_name2:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_general_business:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_phone:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_websites:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_amnet_branch_offices: true
+  field_amnet_id: true
+  field_amnet_linked_persons: true
+  field_amnet_main_office: true
+  field_amnet_member_count: true
+  field_amnet_nonmember_count: true

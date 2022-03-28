@@ -1,0 +1,23 @@
+uuid: dc621fa4-0383-4be3-b5c5-42e3b6dadfdd
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: firm
+label: Firm
+type: 'canonical_entities:taxonomy_term'
+pattern: '/firms/[term:name]'
+selection_criteria:
+  69b55d4d-554e-4d9d-9792-ae064cd95e30:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      firm: firm
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 69b55d4d-554e-4d9d-9792-ae064cd95e30
+selection_logic: and
+weight: -5
+relationships: {  }

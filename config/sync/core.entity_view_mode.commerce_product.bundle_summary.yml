@@ -1,0 +1,10 @@
+uuid: f06c3972-5a18-45a0-99c2-0f38b2bd9194
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.bundle_summary
+label: 'Bundle Summary'
+targetEntityType: commerce_product
+cache: true

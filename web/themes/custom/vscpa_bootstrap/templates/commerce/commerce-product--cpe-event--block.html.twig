@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ *
+ * CPE Event product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    product_entity.bundle|clean_class,
+    not product_entity.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="content">
+    {{ product.field_cpe_type }}
+    <h4 class="title">
+      <a href="{{ product_url }}" class="view-title" rel="bookmark">{{ product.title }}</a>
+    </h4>
+    {{ dates }}
+    {{ product.field_city_area }}
+    {{ product.field_credit_hours }}
+    {{ product.field_course_fieldofstudy }}
+  </div>
+</article>

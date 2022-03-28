@@ -1,0 +1,19 @@
+uuid: 1a0b8bb8-194c-44eb-a734-5e060d401584
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_sessions_concurrent
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_sessions_concurrent
+field_name: field_sessions_concurrent
+entity_type: event_session
+bundle: default
+label: 'Concurrent sessions'
+description: 'Codes of sessions that occur at the same time.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

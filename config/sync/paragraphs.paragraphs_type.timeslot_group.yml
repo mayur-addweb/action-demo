@@ -1,0 +1,9 @@
+uuid: 8f24eea6-e060-47de-bd7c-0c1b839e9770
+langcode: en
+status: true
+dependencies: {  }
+id: timeslot_group
+label: 'Timeslot group'
+icon_uuid: null
+description: 'A grouping of timeslots, e.g. each day in a conference schedule.'
+behavior_plugins: {  }

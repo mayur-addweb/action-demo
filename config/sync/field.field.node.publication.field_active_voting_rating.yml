@@ -1,0 +1,23 @@
+uuid: c5710919-0ce0-4072-86f8-9315ceb7bb3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active_voting_rating
+    - node.type.publication
+id: node.publication.field_active_voting_rating
+field_name: field_active_voting_rating
+entity_type: node
+bundle: publication
+label: 'Display Voting Rating'
+description: 'Select whether the Voting Rating must be displayed for this content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

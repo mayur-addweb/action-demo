@@ -1,0 +1,29 @@
+---
+# Variables pertaining to managing database servers go in this file. Typically
+# in a multi-host environment, the database server(s) run ONLY the database
+# service (e.g. MariaDB) and not any other services. In a single-host
+# environment this limitation is obviously not applicable.
+
+
+# MariaDB
+# Reference: https://gitlab.utdev.com/DevOps/ansible/mariadb
+mariadb_server_install: true
+
+# Whether to set the MariaDB root password. Set to true if you need to update
+# the password.
+mariadb_root_password_set: false
+# Use 50% of RAM for MariaDB (defaults to 512MB)
+mariadb_innodb_buffer_pool_size: "{{ ((ansible_memtotal_mb|default(1024)) * 0.50)|round|int }}M"
+mariadb_max_connections: 250
+mariadb_myisam_key_buffer_size: 128M
+mariadb_myisam_sort_buffer_size: 512M
+mariadb_use_binlog: false
+
+# Solr
+# Reference: https://github.com/geerlingguy/ansible-role-solr
+solr_cores:
+  - vscpa
+solr_connect_host: 0.0.0.0
+solr_timezone: "America/New_York"
+java_packages:
+  - openjdk-8-jdk

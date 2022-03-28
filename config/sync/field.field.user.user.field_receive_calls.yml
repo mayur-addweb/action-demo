@@ -1,0 +1,21 @@
+uuid: e535b45c-8263-4a3e-bb1b-e44b78d792d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_receive_calls
+  module:
+    - options
+    - user
+id: user.user.field_receive_calls
+field_name: field_receive_calls
+entity_type: user
+bundle: user
+label: 'Would you like to receive automated calls from the VSCPA?* Yes, please send:'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

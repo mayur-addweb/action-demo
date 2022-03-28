@@ -1,0 +1,72 @@
+.announcement-overlay {
+  background: rgba(0,0,0,.6);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 15;
+}
+
+.path-admin .announcement-overlay,
+.announcement-standard-edit-form .form-item-negate {
+  display: none !important;
+}
+
+.announcement {
+  background: #fff;
+  border: 1px solid #808285;
+  left: 50%;
+  margin: 0 auto;
+  max-width: calc(100% - 30px);
+  padding: 0 0 15px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.announcement .close {
+  background: #b11f24;
+  color: #fff;
+  font-weight: 700;
+  min-height: 45px;
+  padding: 10px 45px 10px 15px;
+  width: 100%;
+}
+
+.announcement .close div {
+  cursor: pointer;
+  height: 45px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45px;
+}
+
+.announcement .close div::after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 5px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 15px;
+}
+
+.announcement .links {
+  border-top: 1px solid #e2e3e4;
+  padding: 15px 0 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .announcement {
+    max-width: 600px;
+  }
+}
+
+.site--lto-uk .announcement .close {
+  background: #0e2c87;
+}

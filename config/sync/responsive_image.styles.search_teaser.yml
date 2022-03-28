@@ -1,0 +1,39 @@
+uuid: 8a07c07c-2def-486d-91e7-3a6962ae903e
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.search_large
+    - image.style.search_small
+  theme:
+    - vscpa_bootstrap
+id: search_teaser
+label: 'Search Teaser'
+image_style_mappings:
+  -
+    breakpoint_id: vscpa.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: search_small
+  -
+    breakpoint_id: vscpa.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: search_small
+  -
+    breakpoint_id: vscpa.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: search_small
+  -
+    breakpoint_id: vscpa.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: search_large
+  -
+    breakpoint_id: vscpa.xsmall
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: search_small
+breakpoint_group: vscpa_bootstrap
+fallback_image_style: search_small

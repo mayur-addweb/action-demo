@@ -1,0 +1,41 @@
+---
+# Variables that apply to ALL hosts in the inventory are defined here.
+
+# Specify the environment. This is typically the same as the inventory directory
+# name.
+env: production
+
+# SSH credentials
+# Ansible uses SSH to connect to hosts. Here we define the credentials Ansible
+# will use for SSH connections. The variables currently listed (sys_user and
+# sys_password) should be defined in `vars/auth.yml` as an Ansible Vault file.
+ansible_user: "{{ sys_user }}"
+ansible_ssh_pass: "{{ sys_password }}"
+ansible_become_pass: "{{ sys_password }}"
+ansible_port: 52222
+
+# Package Upgrades
+# System package upgrades can be managed through these playbooks. By default,
+# all available upgrades will be installed, and old/unneeded packages will be
+# removed.
+# Reference: https://gitlab.utdev.com/DevOps/ansible/common
+apt_upgrade: dist
+apt_autoclean: yes
+apt_autoremove: yes
+
+# NFS directories
+# NFS is used to allow multiple hosts to share data. Since hosts in different
+# groups need access to this list of directories, it lives in this file.
+nfs_shared_directories:
+  - "/srv/shared"
+
+ut_ansible_repository_url: https://gitlab.utdev.com/vscpa/drupal8
+
+
+# New Relic Infrastructure
+nrinfragent_state: "absent"
+
+
+# New Relic APM for PHP
+php5_newrelic_extra_config:
+  newrelic.enabled: false

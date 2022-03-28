@@ -1,0 +1,21 @@
+uuid: f04bcffd-44a8-42f0-86ff-e6de0f321023
+langcode: en
+status: true
+dependencies:
+  config:
+    - rng.event_type.commerce_product.cpe_self_study
+id: commerce_product.cpe_self_study.registrant
+entity_type: commerce_product
+bundle: cpe_self_study
+machine_name: registrant
+trigger: rng_event.register
+conditions:
+  identity:
+    id: rng_registration_identity
+actions:
+  registration_operations:
+    id: registration_operations
+    configuration:
+      operations:
+        view: true
+        update: true

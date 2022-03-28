@@ -1,0 +1,51 @@
+definitions:
+  contact__site_page:
+    weight: -50
+    menu_name: footer
+    parent: ''
+    expanded: false
+    enabled: false
+  standard__front_page:
+    weight: -54
+    menu_name: main
+    parent: ''
+    enabled: false
+    expanded: false
+  masquerade__unmasquerade:
+    weight: -41
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: false
+  user__page:
+    weight: -43
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+  user__logout:
+    weight: -48
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+  entity__block_content__collection:
+    menu_name: admin
+    parent: block.admin_display
+    weight: 0
+    expanded: false
+    enabled: false
+  am_net_user_profile__go_to_become_firm_admin_page:
+    weight: -40
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+  am_net_firms__employee_management_tool__manage_my_firm:
+    weight: -39
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

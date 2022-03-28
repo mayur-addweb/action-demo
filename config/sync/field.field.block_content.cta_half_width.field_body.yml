@@ -1,0 +1,21 @@
+uuid: 1495b92e-579f-4b46-8eb7-20b4c37f51a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_half_width
+    - field.storage.block_content.field_body
+  module:
+    - text
+id: block_content.cta_half_width.field_body
+field_name: field_body
+entity_type: block_content
+bundle: cta_half_width
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

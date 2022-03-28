@@ -1,0 +1,20 @@
+uuid: f863df43-9172-4d6c-bfc9-643c83b625c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pol_district
+  module:
+    - user
+id: user.user.field_pol_district
+field_name: field_pol_district
+entity_type: user
+bundle: user
+label: District
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

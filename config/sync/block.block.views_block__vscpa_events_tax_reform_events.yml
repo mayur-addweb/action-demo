@@ -1,0 +1,47 @@
+uuid: bb79819f-be4b-4008-9379-a4a8f625bf04
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vscpa_events
+  module:
+    - block_class
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: vscpa-view-title
+id: views_block__vscpa_events_tax_reform_events
+theme: vscpa_bootstrap
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:vscpa_events-tax_reform_events'
+settings:
+  id: 'views_block:vscpa_events-tax_reform_events'
+  label: 'Tax Reform Events'
+  provider: views
+  label_display: visible
+  views_label: 'Tax Reform Events'
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1539120615'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1539120615'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /tax-reform-news
+    negate: false
+    context_mapping: {  }

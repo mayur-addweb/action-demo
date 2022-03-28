@@ -1,0 +1,15 @@
+minified: 1
+headline_text: ''
+accept_button_text: 'I Accept'
+read_more_button_text: 'More Info'
+theme: light-bottom
+path: /
+domain: ''
+expiry: '365'
+target: _self
+_core:
+  default_config_hash: _tr-X8c0EtWB8CElgT53wtsgTQfB_Th-MMGaw7xA6bo
+theme_path: ''
+customise: 0
+cookie_policy: null
+container: ''

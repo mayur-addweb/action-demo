@@ -1,0 +1,23 @@
+uuid: dcaa13f7-19b8-4227-9677-f847a6dedaa6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: session_type
+label: 'Session Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/session-types/[term:name]'
+selection_criteria:
+  ec17d0b7-12b2-4208-8300-30e20ec7461f:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      session_type: session_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: ec17d0b7-12b2-4208-8300-30e20ec7461f
+selection_logic: and
+weight: -5
+relationships: {  }

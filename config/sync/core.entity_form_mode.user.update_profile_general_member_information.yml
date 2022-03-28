@@ -1,0 +1,10 @@
+uuid: 03b86e39-1cf9-401c-817c-5876f0b4fa7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile_general_member_information
+label: 'Update Profile - General Member Information'
+targetEntityType: user
+cache: true

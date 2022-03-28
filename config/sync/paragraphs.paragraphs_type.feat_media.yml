@@ -1,0 +1,9 @@
+uuid: 035e14d4-041e-42f8-b98b-e6bf57b2042a
+langcode: en
+status: true
+dependencies: {  }
+id: feat_media
+label: 'Media Featurette'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

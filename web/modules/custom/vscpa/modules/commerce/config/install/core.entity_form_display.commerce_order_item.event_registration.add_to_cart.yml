@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.event_registration
+    - core.entity_form_mode.commerce_order_item.add_to_cart
+    - field.field.commerce_order_item.event_registration.field_user
+    - field.field.commerce_order_item.event_registration.field_sessions_selected
+  module:
+    - commerce_product
+id: commerce_order_item.event_registration.add_to_cart
+targetEntityType: commerce_order_item
+bundle: event_registration
+mode: add_to_cart
+content:
+  field_user:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  purchased_entity:
+    type: commerce_product_variation_title
+    weight: 1
+    settings:
+      label_display: true
+      label_text: 'Please select'
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_sessions_selected: true
+  quantity: true
+  unit_price: true

@@ -1,0 +1,27 @@
+uuid: 5249804e-d0db-4b5a-9cf6-34ff225c6d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_bundle_items
+id: commerce_product.cpe_event.field_bundle_items
+field_name: field_bundle_items
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Bundle Items'
+description: 'List of products that make up the Bundle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product'
+  handler_settings:
+    target_bundles:
+      cpe_event: cpe_event
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

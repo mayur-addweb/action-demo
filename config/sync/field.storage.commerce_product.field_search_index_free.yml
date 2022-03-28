@@ -1,0 +1,18 @@
+uuid: 41adcff4-8d13-456e-9801-2e93f12d9edb
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_search_index_free
+field_name: field_search_index_free
+entity_type: commerce_product
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

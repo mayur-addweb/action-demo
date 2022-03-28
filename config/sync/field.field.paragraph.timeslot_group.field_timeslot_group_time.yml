@@ -1,0 +1,21 @@
+uuid: 54054b7a-bf76-45c3-beec-5c19b16fbe61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timeslot_group_time
+    - paragraphs.paragraphs_type.timeslot_group
+  module:
+    - datetime_range
+id: paragraph.timeslot_group.field_timeslot_group_time
+field_name: field_timeslot_group_time
+entity_type: paragraph
+bundle: timeslot_group
+label: 'Date and time range'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

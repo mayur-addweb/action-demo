@@ -1,0 +1,40 @@
+_core:
+  default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: themes/custom/vscpa_bootstrap/favicons/favicon.ico
+  url: 'http://vscpa.test/themes/custom/vscpa_bootstrap/favicon.ico'
+  use_default: false
+schemas:
+  bootstrap: 8000
+  vscpa_bootstrap: 8000
+features:
+  comment_user_picture: false
+  comment_user_verification: false
+  favicon: true
+  node_user_picture: false
+table_bordered: 1
+table_responsive: '-1'
+table: ''
+cdn_provider: ''
+fluid_container: 1
+breadcrumb_home: 1
+region_wells:
+  homepage: ''
+  cover: ''
+  top_full_width: ''
+  system: ''
+  cart: ''
+  content: ''
+  sidebar_top: ''
+  sidebar_bottom: ''
+  bottom_full_width: ''
+  footer: ''
+  hidden: ''
+  menu_flyout: ''
+  search_flyout: ''
+tooltip_enabled: 0
+logo:
+  path: ''
+  url: ''
+  use_default: true

@@ -1,0 +1,5 @@
+name: Announcement Pop-up
+type: module
+description: A module for managing custom announcement pop-ups across webpages.
+core: 8.x
+package: Custom

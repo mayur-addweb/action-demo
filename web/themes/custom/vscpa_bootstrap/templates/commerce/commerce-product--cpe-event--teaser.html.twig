@@ -1,0 +1,106 @@
+{#
+/**
+ * @file
+ *
+ * CPE Event product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_attributes: The product entity title attributes.
+ *
+ * VSCPA Bootstrap variables (extra):
+ * - view_mode: The product view mode.
+ * - page: TRUE if this is the 'full' view mode.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'item',
+    product_entity.bundle|clean_class,
+    not product_entity.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+    bundle_icon ? 'is-bundle-event'
+  ]
+%}
+
+{% set acronym = product.field_acronym['#items'].getString() %}
+{% set type = product.field_cpe_type.0 %}
+{{ attach_library('vscpa_bootstrap/succinct') }}
+
+<article{{ attributes.addClass(classes) }}>
+   <div class="{% if registration_widgets %}event-image-multiple{% else %}event-image{% endif %}">
+     {{ product.field_cover_image }}
+   </div>
+   <div class="{% if registration_widgets %}overlay-none{% else %}overlay{% endif %}">
+    {% if bundle_icon %}
+      {{ bundle_icon }}
+    {% elseif product.field_cpe_type['#title'] is defined %}
+        <div class="field--name-field-cpe-type type"><span class="icon {{ type|render|clean_class }}">&nbsp;</span>
+            {% if product.field_city_area['0']['#plain_text'] == "Online" %}
+              ONLINE
+            {% elseif is_seminary %}
+              SEMINAR
+            {% else %}
+              {{ product.field_cpe_type }}
+            {% endif %}
+        </div>
+    {% endif %}
+    {# Add Badge 'trending' & 'hot' icons #}
+     {% if registration_widgets %}
+      {% set badge_class= 'multiple' %}
+    {% endif %}
+    {% if badge_class %}
+      {% if badge_class == 'multiple' %}
+        <div class="badge badge-flag badge-{{ badge_class }} badge-flag-small">{{ 'Multiple Dates'|trans }}</div>
+      {% endif %}
+      {% if badge_class == 'trending' %}
+        <div class="badge badge-flag badge-{{ badge_class }} badge-flag-small">{{ 'Trending Event'|trans }}</div>
+      {% endif %}
+      {% if badge_class == 'hot' %}
+        <div class="badge badge-flag badge-{{ badge_class }} badge-flag-small">{{ 'Hot Event'|trans }}</div>
+      {% endif %}
+    {% endif %}
+    {% if discount_off_badge %}
+      {{ discount_off_badge }}
+    {% endif %}
+    <h4 class="title">
+        <a href="{{ product_url }}" class="view-title" rel="bookmark">{{ product.title.0 }}</a>
+    </h4>
+</div>
+    <div class="event-details">
+        {# Add Customer Reviews - Rating info #}
+        {% if has_customer_reviews %}
+          <div class="customer-reviews-stars">
+            {% for i in range(1, 5) %}
+              <span class="glyphicon {% if round_rating_overall >= i %} glyphicon-star start-active {% else %} glyphicon-star-empty star-color {% endif %}"></span>
+            {% endfor %}
+            <span class="rating-text">{{ rating_overall }} {{ 'out of 5'|trans }}</span>
+          </div>
+        {% endif %}
+        {% if registration_widgets %}
+          <div class="field field--name-field-dates-times field--type-daterange field--label-hidden field--items">
+            <span class="icon-calendar"></span>&nbsp;{{ 'Multiple Dates Available - Click "Register Now" to view'|trans }}
+          </div>
+        {% else %}
+          {{ dates }}
+        {% endif %}
+        {{ product.field_city_area }}
+        {{ product.field_credit_hours }}
+        {{ product_prices }}
+        {{ product.body }}
+    </div>
+    <div class="register-now"><a class="btn btn-gold" href="{{ product_url }}">Register Now</a></div>
+</article>

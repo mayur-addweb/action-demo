@@ -1,0 +1,10 @@
+uuid: 120ce9d2-b865-4e07-9285-cdc7accdbf75
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.upcoming_event_teaser
+label: 'Upcoming Event Teaser'
+targetEntityType: commerce_product
+cache: true

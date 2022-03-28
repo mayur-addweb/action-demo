@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: event_registration
+label: 'Event registration'
+orderItemType: event_registration
+generateTitle: false
+traits: {  }

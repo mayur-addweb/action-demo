@@ -1,0 +1,9 @@
+uuid: 7a36392a-b536-4832-bdef-675765ef7da1
+langcode: en
+status: true
+dependencies: {  }
+id: rng_registration_commerce_product
+label: 'Commerce Product (Content): Registration'
+tokens:
+  - commerce_product
+  - registration

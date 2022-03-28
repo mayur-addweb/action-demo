@@ -1,0 +1,20 @@
+uuid: 4601ba72-9a51-4b9f-a51b-b73df16aba11
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_cert_va_date
+field_name: field_cert_va_date
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

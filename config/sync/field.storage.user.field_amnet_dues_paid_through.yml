@@ -1,0 +1,20 @@
+uuid: 03cf50e5-db46-461f-9e6b-97e1983c0b60
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_amnet_dues_paid_through
+field_name: field_amnet_dues_paid_through
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

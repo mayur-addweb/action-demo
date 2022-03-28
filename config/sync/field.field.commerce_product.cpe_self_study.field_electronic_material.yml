@@ -1,0 +1,28 @@
+uuid: 996d0f0d-5e3f-49d5-b36a-8278a72f9cb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_electronic_material
+    - media.type.document
+    - commerce_product.commerce_product_type.cpe_self_study
+id: commerce_product.cpe_self_study.field_electronic_material
+field_name: field_electronic_material
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Electronic Materials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

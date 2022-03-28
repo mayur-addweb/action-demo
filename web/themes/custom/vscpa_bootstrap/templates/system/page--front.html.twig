@@ -1,0 +1,21 @@
+{% extends "page.html.twig" %}
+
+{% block main %}
+  <div role="main" class="main-container container-fluid js-quickedit-main-content">
+    {# Homepage #}
+    {% if page.homepage %}
+      {{ page.homepage }}
+    {% endif %}
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+        {# Bottom Bar #}
+        {% if page.bottom_full_width %}
+            {% block bottom_full_width %}
+                {{ page.bottom_full_width }}
+            {% endblock %}
+        {% endif %}
+    </div>
+  </div>
+{% endblock %}

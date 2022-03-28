@@ -1,0 +1,194 @@
+uuid: 9d20e8e3-a9a4-43ce-bc34-1c7b89a20f7a
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 7218
+template: false
+archive: false
+id: technology_innovation_showcase_a
+title: 'Technology & Innovation Showcase Application'
+description: 'Apply to sponsor the VSCPA Technology &amp; Innovation Showcase.&nbsp;'
+category: ''
+elements: "markup:\n  '#type': webform_markup\n  '#markup': '<h2>Technology &amp; Innovation Virtual Showcase Sponsorship Application</h2>'\nprocessed_text:\n  '#type': processed_text\n  '#text': |\n    <h4><strong>VSCPA Technology &amp; Innovation Virtual Showcase</strong></h4>\n    \n    <p>Dec. 14- 25, 2020&nbsp; |&nbsp; Online</p>\n    \n    <p><i>Invoice and exhibitor kit to follow confirmed reservation.</i></p>\n    \n  '#format': basic_html\ncontact_name:\n  '#type': textfield\n  '#title': 'Contact Name'\n  '#required': true\ncompany_name:\n  '#type': textfield\n  '#title': 'Company Name'\n  '#required': true\ncompany_address:\n  '#type': webform_address\n  '#title': 'Company Address'\n  '#address_2__access': false\n  '#country__access': false\n  '#required': true\ncontact_email:\n  '#type': textfield\n  '#title': 'Contact Email'\n  '#required': true\ncontact_phone:\n  '#type': tel\n  '#title': 'Contact Phone'\n  '#required': true\nproduct_service:\n  '#type': textfield\n  '#title': 'What product(s) or service(s) do you provide?'\nhorizontal_rule:\n  '#type': webform_horizontal_rule\nmarkup_02:\n  '#type': webform_markup\n  '#markup': '<h3>Sponsor Options</h3>'\nsponsor_levels:\n  '#type': checkboxes\n  '#title': 'Select sponsor level:'\n  '#title_display': before\n  '#description_display': after\n  '#options':\n    'Platinum Sponsor: $4,500': 'Platinum Sponsor: $4,500'\n    'Gold Sponsor $2,750': 'Gold Sponsor $2,750'\n    'Silver Sponsor $1,500': 'Silver Sponsor $1,500'\n    'Virtual Exhibit Hall: $750': 'Virtual Exhibit Hall: $750'\n    'Firm Sponsor: $2,500': 'Firm Sponsor: $2,500'\n  '#required': true\nmarkup_01:\n  '#type': webform_markup\n  '#markup': |\n    <h3>Additional Sponsor Options</h3>\n    <em><span style=\"font-size:11.0pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Available to Platinum, Gold, and Silver sponsors only</span></span></span></em>\n    \nadditional_sponsorships:\n  '#type': checkboxes\n  '#title': 'Select any additional sponsorships:'\n  '#options':\n    'Virtual Happy Hour: $2,500': 'Virtual Happy Hour: $2,500'\n    '50-minute CPE session: $650 ': '50-minute CPE session: $650 '\n    '25-minute CPE session: $350 ': '25-minute CPE session: $350 '\n    'TECH Demo: $350 ': 'TECH Demo: $350 '\n    'Closed captioning: $2,500 ': 'Closed captioning: $2,500 '\n    'Email Deployment or Tech Tip: $500 ': 'Email Deployment or Tech Tip: $500 '\nhorizontal_rule_01:\n  '#type': webform_horizontal_rule\nmarkup_03:\n  '#type': webform_markup\n  '#markup': '<h3>Marketing Information</h3>'\nupload_your_headshot:\n  '#type': webform_image_file\n  '#title': 'Upload company logo'\n  '#file_placeholder': |\n    32 MB limit.<br />\n    Allowed types:&nbsp;<code>gif, jpg, png, svg</code>.\n    \n  '#file_preview': ':image'\n  '#max_filesize': '32'\ncompany_description_:\n  '#type': textarea\n  '#title': 'Company Description:'\n  '#description': '*For marketing purposes.'\nhorizontal_rule_02:\n  '#type': webform_horizontal_rule\nmarkup_04:\n  '#type': webform_markup\n  '#markup': '<h3>Event Terms and Conditions</h3>'\nterms_of_service:\n  '#type': webform_terms_of_service\n  '#required': true\n  '#terms_title': 'VSCPA Event Terms and Conditions'\n  '#terms_content': |\n    <ul>\n    \t<li><strong>Purpose of sponsorship</strong>: Sponsorship is for the purpose of education and to provide a service to VSCPA members and event attendees. The VSCPA prohibits sponsorship and exhibition for the purpose of recruiting event attendees unless the primary or a reasonably anticipated purpose of the event is for employee recruitment. Approval of sponsors will be at the sole discretion of the VSCPA.</li>\n    \t<li><strong>Eligible sponsors</strong>: The VSCPA reserves the right to determine the eligibility of any company or product for inclusion based on the information provided by the sponsor. The VSCPA does not promote companies whose programs, services, products, etc. compete with those offered by the VSCPA to its members.</li>\n    \t<li><strong>Confidentiality</strong>: Member information provided on the registration list shall only be used by the sponsoring organization for a post-event follow-up mailing to registered attendees. This list shall not be distributed to any outside company or provided (in part or in full) to any organization other than the sponsoring organization.</li>\n    \t<li><strong>Fees</strong>: Payments must be received by the VSCPA with the registration form. Sponsors will not be promoted or allowed access to the exhibit space unless all fees have been paid in full.</li>\n    \t<li><strong>Cancellation / termination of sponsorship agreement</strong>: Sponsorship cancellations are fully refundable if submitted in writing at least 45 calendar days prior to the event. No refunds will be given to cancellations received within 44 days of the event. The sponsor agreement automatically terminates on the final day of the event.</li>\n    \t<li><strong>Cancellation of event</strong>: The VSCPA reserves the right to cancel an event at any time. Should this occur the VSCPA will refund any fees paid to the VSCPA by sponsors or exhibitors for the cancelled event. The VSCPA will not be held responsible for any other expenses incurred by the sponsor.</li>\n    \t<li><strong>Upon acceptance of your reservation</strong>: Sponsors that are exhibiting at an event will receive instructions on shipping procedures, set up and tear down, as well as information on securing electricity, internet, audiovisual equipment and other supplies.</li>\n    \t<li><strong>Exhibit hours are established by the VSCPA</strong>: To maintain the educational integrity of the program, sponsors are asked to adhere to the exhibit hours indicated. Once event sessions begin, discussions with participants should be finished and participants should be encouraged to return to the sessions.&nbsp;This will enable participants to receive the maximum benefit from both the educational program and the exhibits.</li>\n    \t<li><strong>Assignment of exhibit space</strong>: In assigning exhibit space, full consideration will be given to competing products and general grouping of exhibits for proper display and comparison. Every effort will be made for the equitable assignment of space. The VSCPA reserves the right to relocate any exhibit for the benefit of the sponsor or for the betterment of the exhibition. No firm, organization, company or individual without assigned exhibit space will be permitted to display or distribute products or literature, or solicit business within the exhibition space. Sponsors will not be permitted to assign, sublet or share with others any part of the space allocated to them.</li>\n    \t<li><strong>Liability</strong>: Upon agreeing to this contract, the exhibitor acknowledges possession of general liability insurance and expressly releases the foregoing institutions, individuals and committees from any and all claims for loss, damage or injury. The exhibitor assumes the entire responsibility and liability for losses, damages and claims arising out of exhibitor&#39;s activities on the Hotel premises and will indemnify, defend and hold harmless the Hotel, its owner, and its management company, as well as their respective agents, servants, and employees from any and all such losses, damages, and claims.</li>\n    \t<li><strong>Staffing</strong>: Knowledgeable representatives should staff exhibits during the specified exhibit hours. Sponsors must provide the VSCPA with the name(s) of the representative(s) who will attend the event. The VSCPA will not provide staffing for sponsors.</li>\n    \t<li><strong>Approval of presentations, remarks, ads and other marketing materials</strong>: The VSCPA must approve presentations, remarks, ads and other marketing materials prior to promoting the sponsoring organization to its members. Materials should be provided in written form prior to the deadline established by the VSCPA.</li>\n    </ul>\n    \nprint_name_:\n  '#type': webform_name\n  '#title': 'Print Name:'\n  '#required': true\n  '#title__access': false\n  '#first__required': true\n  '#middle__access': false\n  '#last__required': true\n  '#suffix__access': false\n  '#degree__access': false\n  '#flexbox': '0'\ndate_:\n  '#type': date\n  '#title': 'Date:'\n  '#required': true\n  '#datepicker': true\n  '#datepicker_button': true\nsignature:\n  '#type': webform_signature\n  '#title': Signature\n  '#required': true"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

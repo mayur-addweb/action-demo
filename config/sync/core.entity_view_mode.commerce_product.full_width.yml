@@ -1,0 +1,10 @@
+uuid: 971ee823-b08c-49fe-b4e1-728c377b1d8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.full_width
+label: 'Full Width'
+targetEntityType: commerce_product
+cache: true

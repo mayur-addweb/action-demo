@@ -1,0 +1,20 @@
+uuid: 4b8b1053-0233-4b7e-a2e4-c808887c1621
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - taxonomy
+id: commerce_product.field_field_of_interest
+field_name: field_field_of_interest
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

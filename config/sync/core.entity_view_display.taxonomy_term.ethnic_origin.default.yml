@@ -1,0 +1,30 @@
+uuid: 127149bc-6a06-4b24-839d-e6af42fff870
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.ethnic_origin.field_amnet_ethnicity_code
+    - taxonomy.vocabulary.ethnic_origin
+  module:
+    - text
+id: taxonomy_term.ethnic_origin.default
+targetEntityType: taxonomy_term
+bundle: ethnic_origin
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_ethnicity_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

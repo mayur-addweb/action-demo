@@ -1,0 +1,20 @@
+uuid: 9bd3dfeb-e934-457d-81c8-6f2853820526
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_firm_other
+  module:
+    - user
+id: user.user.field_firm_other
+field_name: field_firm_other
+entity_type: user
+bundle: user
+label: Other
+description: 'What is the name of your firm?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

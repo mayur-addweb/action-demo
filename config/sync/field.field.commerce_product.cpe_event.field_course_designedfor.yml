@@ -1,0 +1,21 @@
+uuid: ac9d3b45-8944-4678-8d60-40146e6e8194
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_designedfor
+    - commerce_product.commerce_product_type.cpe_event
+  module:
+    - text
+id: commerce_product.cpe_event.field_course_designedfor
+field_name: field_course_designedfor
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Designed For'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

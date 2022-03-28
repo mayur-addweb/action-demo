@@ -1,0 +1,20 @@
+uuid: c66b1f51-5ca2-4bc5-b6b7-a894bcd8eac4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - search_api_exclude
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  search_api_exclude:
+    enabled: 0
+name: 'Article Teaser'
+type: article_teaser
+description: 'This content type is used  to allow authors to optionally create “Article Teasers” when creating publications.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

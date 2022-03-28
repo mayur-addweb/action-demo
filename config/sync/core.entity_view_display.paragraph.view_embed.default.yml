@@ -1,0 +1,42 @@
+uuid: 3a659c7e-3019-4d76-bb94-e1ea063de627
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view_embed.field_view
+    - field.field.paragraph.view_embed.field_view_summary
+    - field.field.paragraph.view_embed.field_view_title
+    - paragraphs.paragraphs_type.view_embed
+  module:
+    - text
+    - viewsreference
+id: paragraph.view_embed.default
+targetEntityType: paragraph
+bundle: view_embed
+mode: default
+content:
+  field_view:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  field_view_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_view_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,30 @@
+uuid: a99f6f13-4f69-4c73-9800-25234a2c4530
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.rss_page.field_filter_vscpa_action
+    - taxonomy.vocabulary.vscpa_action
+  module:
+    - rss_list
+id: rss_page.rss_page.field_filter_vscpa_action
+field_name: field_filter_vscpa_action
+entity_type: rss_page
+bundle: rss_page
+label: 'VSCPA Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:firm_by_address'
+  handler_settings:
+    target_bundles:
+      vscpa_action: vscpa_action
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

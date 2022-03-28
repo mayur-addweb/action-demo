@@ -1,0 +1,21 @@
+uuid: 1ff7c954-c924-40e1-bf51-5afa2a7e127d
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_am_net_related_events
+  module:
+    - am_net
+id: commerce_product.cpe_event.field_am_net_related_events
+field_name: field_am_net_related_events
+entity_type: commerce_product
+bundle: cpe_event
+label: 'AM.net Related Events'
+description: 'Am.net list of Related Events: display data from the Related Events tab in AM.net '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: amnet_event_id

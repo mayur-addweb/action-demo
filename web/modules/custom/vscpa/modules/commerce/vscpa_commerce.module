@@ -1,0 +1,1166 @@
+<?php
+
+/**
+ * @file
+ * VSCPA Commerce module.
+ */
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\commerce_product\Entity\ProductVariationInterface;
+use Drupal\vscpa_commerce\Entity\EventSessionInterface;
+use Drupal\commerce_product\Entity\ProductInterface;
+use Drupal\commerce_order\Entity\OrderInterface;
+use Drupal\commerce\PurchasableEntityInterface;
+use Drupal\am_net\AmNetRecordNotFoundException;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\commerce_price\Entity\Currency;
+use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\am_net_cpe\EventHelper;
+use Drupal\commerce_price\Price;
+
+/**
+ * Implements hook_form_alter().
+ */
+function vscpa_commerce_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if (($form_id == 'views_exposed_form') && ($form['#id'] == 'views-exposed-form-commerce-orders-page-1') && isset($form['order_item_type'])) {
+    unset($form['order_item_type']['#options']['default']);
+    unset($form['order_item_type']['#options']['session_registration']);
+  }
+  if (strpos($form_id, 'views_form_commerce_cart_form') !== FALSE) {
+    $form['actions']['submit']['#attributes']['class'] = ['update-cart-button'];
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function vscpa_commerce_views_data_alter(array &$data) {
+  $data['commerce_order_item']['remove_button']['field'] = [
+    'title' => t('Remove button'),
+    'help' => t('Adds a button for removing the order item.'),
+    'id' => 'vscpa_commerce_order_item_remove_button',
+  ];
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ *
+ * Add 'Virtual Conference' on event edit page.
+ */
+function vscpa_commerce_menu_local_tasks_alter(&$data, $route_name) {
+  if ($route_name !== 'entity.commerce_product.edit_form') {
+    return;
+  }
+  // Get the current product from the route
+  $event = \Drupal::routeMatch()->getParameter('commerce_product');
+  if (!($event instanceof ProductInterface)) {
+    return;
+  }
+  // Only Show the 'Virtual Conference' tab in product of type 'event.
+  if ($event->bundle() != 'cpe_event' && isset($data['tabs'][0]['am_net_cpe.event.virtual_conference'])) {
+    unset($data['tabs'][0]['am_net_cpe.event.virtual_conference']);
+  }
+}
+
+/**
+ * Check if a given order has a membership order item.
+ *
+ * @param Drupal\commerce_order\Entity\OrderInterface $order
+ *   The order entity.
+ *
+ * @return array|bool
+ *   TRUE if the given order has a membership order item, otherwise false.
+ */
+function vscpa_commerce_order_has_membership(OrderInterface $order = NULL) {
+  if (!$order) {
+    return FALSE;
+  }
+  $items = $order->getItems();
+  if (empty($items)) {
+    return FALSE;
+  }
+  foreach ($items as $delta => $item) {
+    if ($item->bundle() == 'membership') {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_preprocess_commerce_checkout_completion_message().
+ */
+function vscpa_commerce_preprocess_commerce_checkout_completion_message(&$variables) {
+  /** @var Drupal\commerce_order\Entity\OrderInterface $order */
+  $order = $variables['order_entity'];
+  $show_chapter_alert = vscpa_commerce_order_has_membership($order);
+  $variables['show_chapter_alert'] = $show_chapter_alert;
+  // Add Show Chapter Alert.
+  if ($show_chapter_alert) {
+    /** @var Drupal\Core\Session\AccountProxy $account */
+    $account = $variables['user'];
+    $chapter_info = am_net_user_profile_get_chapter_info($account->id());
+    if (!empty($chapter_info)) {
+      $variables['chapter_info'] = $chapter_info;
+    }
+  }
+  // Add Payment reference #.
+  $order_id = $order->id();
+  $variables['paypal_remote_id'] = $order_id;
+  /** @var \Drupal\commerce_payment\PaymentStorageInterface $payment_storage */
+  try {
+    $payment_storage = \Drupal::entityTypeManager()
+      ->getStorage('commerce_payment');
+  }
+  catch (InvalidPluginDefinitionException $e) {
+    return NULL;
+  }
+  catch (PluginNotFoundException $e) {
+    return NULL;
+  }
+  $payments = $payment_storage->loadMultipleByOrder($order);
+  $payment = !empty($payments) ? current($payments) : NULL;
+  if (!$payment) {
+    return;
+  }
+  // Get Remote ID.
+  $remote_id = explode('|', $payment->getRemoteId());
+  $payment_reference_number = $remote_id[0] ?? '';
+  $variables['paypal_remote_id'] = !empty($payment_reference_number) ? $payment_reference_number : $order_id;
+}
+
+/**
+ * Implements hook_commerce_checkout_pane_info_alter().
+ */
+function vscpa_commerce_commerce_checkout_pane_info_alter(&$definitions) {
+  // The PaymentInformationAMNet pane replaces the payment_information one.
+  if (isset($definitions['payment_information'])) {
+    $definitions['payment_information']['class'] = 'Drupal\vscpa_commerce\Plugin\Commerce\CheckoutPane\PaymentInformationAMNet';
+  }
+  // The CouponRedemptionAMNet pane replaces the coupon_redemption one.
+  if (isset($definitions['coupon_redemption'])) {
+    $definitions['coupon_redemption']['class'] = 'Drupal\vscpa_commerce\Plugin\Commerce\CheckoutPane\CouponRedemptionAMNet';
+  }
+  // The 'Contact information' pane replaces the contact_information one.
+  if (isset($definitions['contact_information'])) {
+    $definitions['contact_information']['class'] = 'Drupal\vscpa_commerce\Plugin\Commerce\CheckoutPane\ContactInformation';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Disables the 'Add variation' action, preventing adding more than one session
+ * product variation.  NOTE: This does not affect inline entity forms.
+ *
+ * @todo Implement hook_ief...
+ */
+function vscpa_commerce_form_commerce_product_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\commerce_product\Form\ProductForm $product_form */
+  $product_form = $form_state->getFormObject();
+  $product = $product_form->getEntity();
+  if ($product->bundle() === 'session_registration') {
+    $ief_add = ['variations', 'widget', 'actions', 'ief_add'];
+    if (NestedArray::keyExists($form, $ief_add)) {
+      // Create only, do not allow add (more than one).
+      NestedArray::setValue($form, array_merge($ief_add, ['#access']), FALSE);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for 'commerce_order_item'.
+ */
+function vscpa_commerce_commerce_order_item_presave(EntityInterface $order_item) {
+  /** @var \Drupal\commerce_order\Entity\OrderItemInterface $order_item */
+  // Use current user for event and session registrations.
+  // In the future, the order item add to cart form could allow user selection.
+  switch ($order_item->bundle()) {
+    case 'event_registration':
+    case 'session_registration':
+    case 'self_study_registration':
+      if ($order_item->hasField('field_user') && $order_item->get('field_user')->isEmpty()) {
+        $order_item->set('field_user', \Drupal::currentUser()->id());
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function vscpa_commerce_entity_delete(EntityInterface $entity) {
+  if (!($entity instanceof ProductInterface)) {
+    return;
+  }
+  if ($entity->bundle() != 'cpe_event') {
+    return;
+  }
+  if (!$entity->hasField('field_event_timeslot_groups')) {
+    return;
+  }
+  // Delete child Sessions from CPE Event products.
+  foreach ($entity->get('field_event_timeslot_groups') as $group_item) {
+    $group = $group_item->entity ?? NULL;
+    if ($group) {
+      if ($group->hasField('field_timeslots')) {
+        foreach ($group->get('field_timeslots') as $timeslot_item) {
+          $timeslot = $timeslot_item->entity ?? NULL;
+          if ($timeslot) {
+            if ($timeslot->hasField('field_sessions')) {
+              foreach ($timeslot->get('field_sessions') as $session) {
+                $session_entity = $session->entity ?? NULL;
+                if ($session_entity) {
+                  // Delete session.
+                  $session_entity->delete();
+                }
+              }
+            }
+            // Delete Timeslot.
+            $timeslot->delete();
+          }
+        }
+      }
+      // Delete group.
+      $group->delete();
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function vscpa_commerce_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['commerce_order_item'])) {
+    $entity_types['commerce_order_item']->setFormClass('add_to_cart', '\Drupal\vscpa_commerce\Form\AddToCartForm');
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function vscpa_commerce_event_session_insert(EventSessionInterface $entity) {
+  try {
+    _vscpa_commerce_update_session_registration_session_backreference($entity);
+  }
+  catch (InvalidPluginDefinitionException $e) {
+    return;
+  }
+  catch (\Exception $e) {
+    return;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function vscpa_commerce_event_session_update(EventSessionInterface $entity) {
+  try {
+    _vscpa_commerce_update_session_registration_session_backreference($entity);
+  }
+  catch (InvalidPluginDefinitionException $e) {
+    return;
+  }
+  catch (\Exception $e) {
+    return;
+  }
+}
+
+/**
+ * Implements hook_commerce_condition_info_alter().
+ */
+function vscpa_commerce_commerce_condition_info_alter(array &$definitions) {
+  $definitions['order_item_product']['class'] = 'Drupal\vscpa_commerce\Plugin\Commerce\Condition\OrderItemProduct';
+}
+
+/**
+ * Updates registration product back reference field(s) for the given session.
+ *
+ * @param \Drupal\vscpa_commerce\Entity\EventSessionInterface $session
+ *   The event session entity.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Exception
+ */
+function _vscpa_commerce_update_session_registration_session_backreference(EventSessionInterface $session) {
+  if ($session->hasField('field_session_product')) {
+    $product_storage = \Drupal::entityTypeManager()->getStorage('commerce_product');
+    foreach ($session->get('field_session_product')->getValue() as $registration_product) {
+      try {
+        /** @var \Drupal\commerce_product\Entity\ProductInterface $product */
+        $product = $product_storage->load($registration_product['target_id']);
+        if ($product && $product->hasField('field_session') && $product->get('field_session')->isEmpty()) {
+          $product->field_session = $session->id();
+          $product->save();
+        }
+      }
+      catch (EntityStorageException $e) {
+        \Drupal::logger('vscpa_commerce')->error($e->getMessage());
+        $message = t('We encountered an error updating event registration product #:num. The error has been logged.', [
+          ':num' => $registration_product['target_id'],
+        ]);
+        drupal_set_message($message, 'error');
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_commerce_product().
+ */
+function vscpa_commerce_preprocess_commerce_product(array &$variables) {
+
+  /** @var Drupal\commerce_product\Entity\ProductInterface $product */
+  $product = $variables['elements']['#commerce_product'];
+  $event_registration_status = vscpa_commerce_is_event_product_open_for_registration($product) ? 'event-open' : 'event-closed';
+  $variables['event_registration_status'] = $event_registration_status;
+  // Inject Membership prices.
+  $prices = NULL;
+  $early_bird_expiry = NULL;
+  $expiry_datetime = NULL;
+  $current_datetime = NULL;
+
+  $current_user_roles = \Drupal::currentUser()->getRoles();
+  $is_member = in_array('member', $current_user_roles) || in_array('firm_administrator', $current_user_roles);
+  if ($product->bundle() == 'cpe_self_study') {
+    $prices = vscpa_commerce_get_cpe_self_study_prices($product);
+  }
+  $variables['is_seminary'] = FALSE;
+  $is_event = ($product->bundle() == 'cpe_event');
+  if ($is_event) {
+    $prices = vscpa_commerce_get_cpe_event_prices($product);
+    $early_bird_expiry = vscpa_commerce_get_early_bird_expiry($product);
+
+    foreach ($early_bird_expiry as $expiry_date) {
+      $early_bird_expiry=$expiry_date;
+    }
+
+    if (!empty($early_bird_expiry) && isset($early_bird_expiry[0]['value'])) {
+      $early_bird_expiry = $early_bird_expiry[0]['value'];
+      $early_bird_original = new DrupalDateTime($early_bird_expiry, 'UTC');
+      $expiry_datetime = $early_bird_original->getTimestamp();
+    }
+
+    // Get the current date time.
+    $current_datetime = strtotime('now');
+
+    $am_net_id = $product->get('field_amnet_event_id')->getString();
+    if (!empty($am_net_id)) {
+      $variables['is_seminary'] = (strpos($am_net_id, '3-') === 0) || (strpos($am_net_id, '7-') === 0);
+    }
+  }
+  if (!empty($prices)) {
+    /** @var \CommerceGuys\Intl\Formatter\NumberFormatterInterface $number_format */
+    $number_format = \Drupal::service('commerce_price.number_formatter_factory')->createInstance();
+    $price = $prices['higher_member_price'] ?? NULL;
+    if (!empty($early_bird_expiry) && !empty($expiry_datetime)) {
+      if ($current_datetime < $expiry_datetime) {
+        $price = $prices['lowest_member_price'] ?? NULL;
+      }
+    }
+    $items = [];
+    $currency = NULL;
+    if (!empty($price)) {
+      $currency_code = $price->getCurrencyCode();
+      $currency = Currency::load($currency_code);
+      $price = $number_format->formatCurrency($price->getNumber(), $currency);
+      $label_member = t("<strong>Your Member Price: </strong> @price", ["@price" => $price]);
+      $label_nonmember = t("<strong>Member Price: </strong> @price", ["@price" => $price]);
+      $label = $is_member ? $label_member : "<span>$label_nonmember</span>";
+      $items[] = $label;
+    }
+    $price = $prices['higher_no_member_price'] ?? NULL;
+    if (!empty($early_bird_expiry) && !empty($expiry_datetime)) {
+      if ($current_datetime < $expiry_datetime) {
+        $price = $prices['lowest_no_member_price'] ?? NULL;
+      }
+    }
+    if (!empty($price)) {
+      $currency_code = $price->getCurrencyCode();
+      $currency = !is_null($currency) ? $currency : Currency::load($currency_code);
+      $price = $number_format->formatCurrency($price->getNumber(), $currency);
+      $label_member = t("<strong>Nonmember Price: </strong> @price", ["@price" => $price]);
+      $label_nonmember = t("<strong>Your Price: </strong> @price", ["@price" => $price]);
+      $label = $is_member ? "<span>$label_member</span>" : $label_nonmember;
+      $items[] = $label;
+    }
+    if (!empty($items)) {
+      $markup = implode('</br>', $items);
+      $variables['product_prices'] = [
+        '#markup' => '<div class="product-prices margin-bottom-20">' . $markup . '</div>',
+        '#allowed_tags' => ['div', 'br', 'strong', 'span'],
+      ];
+    }
+  }
+
+  // Handle render logic related to group of events(by acronym).
+  if ($is_event && EventHelper::isEventGroup($product, FALSE, TRUE)) {
+    $acronym = $product->get('field_acronym')->getString();
+    $event_year = $product->field_amnet_event_id->year ?? NULL;
+    $events = EventHelper::getGroupedEventsOpenForRegistration($acronym, $event_year);
+    $count_events = count($events);
+    if (!empty($events) && ($count_events > 1)) {
+      $variables['event_registration_status'] = 'event-open';
+      $entity_manager = \Drupal::entityTypeManager();
+      $view_builder = $entity_manager->getViewBuilder('commerce_product');
+      $widgets = [];
+      foreach ($events as $event) {
+        $widget = $view_builder->view($event, 'registration_widget');
+        $widgets[] = $widget;
+      }
+      $variables['registration_widgets'] = $widgets;
+    }
+  }
+  // Handle bundle events.
+  $product_support_bundle = $product->hasField('field_bundle_items') && $product->hasField('field_search_index_is_bundle');
+  $is_bundle_product = $product_support_bundle && ($product->get('field_search_index_is_bundle')->getString() == 1);
+  if ($is_bundle_product) {
+    $items = $product->get('field_bundle_items')->referencedEntities();
+    $count = count($items);
+    $data = '<div class="bundle-event-top"><div class="bundle-event-icon"></div><div class="bundle-event-summary"><h2>Package</h2><p>This package contains ' . $count . ' courses. See below for details about each course.</p></div></div>';
+    $markup = vscpa_commerce_get_bundle_info($items);
+    $data .= '<div class="bundle-event-bottom clearfix"><div class="bundle-event-summary"><h2>Package</h2><p>By purchasing this package, you will be registered for the following courses:</p></div><div class="bundle-items row">' . $markup . '</div></div>';
+    $variables['bundle_info'] = $data;
+    $variables['#attached']['library'][] = 'vscpa_commerce/bundle_events';
+  }
+  // Handle Discounts Labels.
+  if ($product->hasField('field_am_net_adjustment')) {
+    $target_adjustment_code = 'DP';
+    $adjustments = $product->get('field_am_net_adjustment')->getString();
+    $adjustments = !empty($adjustments) ? json_decode($adjustments, TRUE) : [];
+    foreach ($adjustments as $delta => $adjustment) {
+      $applies_by_code = isset($adjustment['Ty2']) && ($adjustment['Ty2'] == $target_adjustment_code);
+      if (!$applies_by_code) {
+        continue;
+      }
+      $percentage_amount = $adjustment['Amount'] ?? 0;
+      $variables['discount_off_label'] = [
+        '#markup' => '<div class="discount-off-label"><span>Now ' . $percentage_amount . '% Off!</span></div>',
+        '#allowed_tags' => ['div', 'class', 'span'],
+      ];
+      $variables['discount_off_badge'] = [
+        '#markup' => '<div class="badge badge-flag badge-off badge-flag-small">Now ' . $percentage_amount . '% Off!</div>',
+        '#allowed_tags' => ['div', 'class'],
+      ];
+    }
+  }
+
+  // Handle Customer Reviews - Rating info.
+  if ($product->hasField('field_search_index_rating')) {
+    $rating_overall = $product->get('field_search_index_rating')->getString();
+    $am_net_event_id = $product->get('field_amnet_event_id')->getValue();
+    $event_code = $am_net_event_id[0]['code'];
+    $has_customer_reviews = is_numeric($rating_overall) && ($rating_overall > 0);
+    if ($has_customer_reviews) {
+      $variables['has_customer_reviews'] = TRUE;
+      $variables['rating_overall'] = $rating_overall;
+      $variables['round_rating_overall'] = floor($rating_overall);
+    }
+    else {
+      $product_storage1 = \Drupal::entityTypeManager()->getStorage('commerce_product')->loadByProperties(['field_amnet_event_id' => $event_code]);
+      $old_ratings=array_shift($product_storage1);
+      if (!empty($old_ratings)) {
+        $rating_overall = $old_ratings->get('field_search_index_rating')->getString();
+        $has_customer_reviews = is_numeric($rating_overall) && ($rating_overall > 0);
+        if ($has_customer_reviews) {
+          $variables['has_customer_reviews'] = TRUE;
+          $variables['rating_overall'] = $rating_overall;
+          $variables['round_rating_overall'] = floor($rating_overall);
+        }
+      }
+    }
+
+  }
+
+}
+
+/**
+ * Get the Bundle info.
+ *
+ * @param array $items
+ *   The array of items.
+ *
+ * @return string
+ *   The Bundle info.
+ */
+function vscpa_commerce_get_bundle_info(array $items = []) {
+  $bundle_items = [];
+  $no_date_bundle_items = [];
+  $renderer = \Drupal::service('renderer');
+  /** @var \Drupal\commerce_product\Entity\ProductInterface $item */
+  foreach ($items as $delta => $item) {
+    $view = entity_view($item, 'bundle_summary');
+    if (empty($view)) {
+      continue;
+    }
+    $dates = $item->get('field_dates_times')->getValue();
+    $date_time = NULL;
+    if (!empty($dates)) {
+      $dates = current($dates);
+      $dates = $dates['value'] ?? NULL;
+      $date_time = !empty($dates) ? strtotime($dates) : NULL;
+    }
+    if (!empty($date_time)) {
+      $date_time .= microtime();
+    }
+    $bundle_item_summary = $renderer->renderPlain($view);
+    if (!empty($date_time)) {
+      $bundle_items[$date_time] = $bundle_item_summary;
+    }
+    else {
+      $no_date_bundle_items[] = $bundle_item_summary;
+    }
+  }
+  // Sort the items.
+  ksort($bundle_items);
+  $markup = implode('', $bundle_items);
+  if (!empty($no_date_bundle_items)) {
+    $markup .= implode('', $no_date_bundle_items);
+  }
+  return $markup;
+}
+
+/**
+ * Get the prices from a given product - CPE self study.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductInterface $product
+ *   The product entity.
+ *
+ * @return array||null
+ *   The lowest member and non-member prices, otherwise null.
+ */
+function vscpa_commerce_get_cpe_self_study_prices(ProductInterface $product = NULL) {
+  if (!$product) {
+    return NULL;
+  }
+  $lowest_no_member_price = NULL;
+  $lowest_member_price = NULL;
+  // Self Study are always opened for registration.
+  $variations = $product->getVariations();
+  foreach ($variations as $delta => $variation) {
+    // Lowest no Member Price.
+    $price = $variation->getPrice();
+    if (is_null($lowest_no_member_price)) {
+      $lowest_no_member_price = $price;
+    }
+    elseif ($price->lessThan($lowest_no_member_price)) {
+      $lowest_no_member_price = $price;
+    }
+    // Lowest Member Price.
+    $price = vscpa_commerce_get_price($variation, 'field_price_member');
+    if (is_null($lowest_member_price)) {
+      $lowest_member_price = $price;
+    }
+    elseif ($price && $price->lessThan($lowest_member_price)) {
+      $lowest_member_price = $price;
+    }
+  }
+  return [
+    'lowest_no_member_price' => $lowest_no_member_price,
+    'lowest_member_price' => $lowest_member_price,
+  ];
+}
+
+/**
+ * Get the prices from a given product - Events.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductInterface $product
+ *   The product entity.
+ *
+ * @return array||null
+ *   The lowest member and non-member prices, otherwise null.
+ */
+function vscpa_commerce_get_cpe_event_prices(ProductInterface $product = NULL) {
+  if (!$product) {
+    return NULL;
+  }
+  $lowest_no_member_price = NULL;
+  $lowest_member_price = NULL;
+  $higher_no_member_price = NULL;
+  $higher_member_price = NULL;
+  // Self Study are always opened for registration.
+  $variations = $product->getVariations();
+  foreach ($variations as $delta => $variation) {
+    // Lowest no Member Price.
+    $prices = [
+      $variation->getPrice(),
+      vscpa_commerce_get_price($variation, 'field_price_early'),
+    ];
+    foreach ($prices as $key => $price) {
+      // Check Lowest.
+      if (is_null($lowest_no_member_price)) {
+        $lowest_no_member_price = $price;
+      }
+      elseif ($price && $price->lessThan($lowest_no_member_price)) {
+        $lowest_no_member_price = $price;
+      }
+      // Check higher.
+      if (is_null($higher_no_member_price)) {
+        $higher_no_member_price = $price;
+      }
+      elseif ($price && $price->greaterThan($higher_no_member_price)) {
+        $higher_no_member_price = $price;
+      }
+    }
+    // Lowest Member Price.
+    $prices = [
+      $price = vscpa_commerce_get_price($variation, 'field_price_member_early'),
+      vscpa_commerce_get_price($variation, 'field_price_member'),
+    ];
+    foreach ($prices as $key => $price) {
+      // Check Lowest.
+      if (is_null($lowest_member_price)) {
+        $lowest_member_price = $price;
+      }
+      elseif ($price && $price->lessThan($lowest_member_price)) {
+        $lowest_member_price = $price;
+      }
+      // Check higher.
+      if (is_null($higher_member_price)) {
+        $higher_member_price = $price;
+      }
+      elseif ($price && $price->greaterThan($higher_member_price)) {
+        $higher_member_price = $price;
+      }
+    }
+  }
+  return [
+    'lowest_no_member_price' => $lowest_no_member_price,
+    'lowest_member_price' => $lowest_member_price,
+    'higher_no_member_price' => $higher_no_member_price,
+    'higher_member_price' => $higher_member_price,
+  ];
+}
+
+/**
+ * Get the price from a given variation.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductVariationInterface $variation
+ *   The variation entity.
+ * @param string $field_name
+ *   The field name.
+ *
+ * @return \Drupal\commerce_price\Price||null
+ *   The price, otherwise null.
+ */
+function vscpa_commerce_get_price(ProductVariationInterface $variation = NULL, $field_name = '') {
+  if (!$variation) {
+    return NULL;
+  }
+  if (empty($field_name)) {
+    return NULL;
+  }
+  if (!$variation->hasField($field_name)) {
+    return NULL;
+  }
+  $prices = $variation->get($field_name)->getValue();
+  $price = is_array($prices) ? current($prices) : NULL;
+  $number = $price['number'] ?? NULL;
+  $currency_code = $price['currency_code'] ?? NULL;
+  return (!empty($number) && !empty($currency_code)) ? new Price($number, $currency_code) : NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vscpa_commerce_theme() {
+  $theme = [];
+  $theme['event_session'] = [
+    'render element' => 'elements',
+    'file' => 'event_session.page.inc',
+    'template' => 'event_session',
+  ];
+  $theme['event_session_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'event_session.page.inc',
+  ];
+  $theme['vscpa_commerce_current_price_event'] = [
+    'variables' => [
+      'current_option' => [],
+      'next_option' => [],
+      'status' => NULL,
+      'badge_class' => NULL,
+      'discount_off_label' => NULL,
+    ],
+  ];
+  $theme['vscpa_commerce_current_price_self_study'] = [
+    'variables' => [
+      'pricing_options' => [],
+    ],
+  ];
+  $theme['modal_website_terms_conditions'] = [
+    'variables' => [],
+    'template' => 'modal-website-terms-conditions',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function vscpa_commerce_theme_suggestions_event_session(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#event_session'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $suggestions[] = 'event_session__' . $sanitized_view_mode;
+  $suggestions[] = 'event_session__' . $entity->bundle();
+  $suggestions[] = 'event_session__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'event_session__' . $entity->id();
+  $suggestions[] = 'event_session__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Check if is Event Product status Open.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductInterface $product
+ *   The event product entity.
+ *
+ * @return bool
+ *   TRUE if the Event Registration status is Open otherwise FALSE.
+ */
+function vscpa_commerce_is_event_product_open_for_registration(ProductInterface $product = NULL) {
+  $is_event_available = vscpa_commerce_is_event_available($product);
+  if (!$is_event_available) {
+    return FALSE;
+  }
+  try {
+    // Check if the event Has seat Available.
+    return \Drupal::service('am_net_cpe.product_manager')->eventHasSeatsAvailable($product);
+  }
+  catch (AmNetRecordNotFoundException $ex) {
+    // Show the event as closed if the AmNet lookup fails unexpectedly.
+    // Since that is possible that Drupal was to able to reach AM.net at this
+    // point we are going to assume that there are seat available for this
+    // Event registration.
+    return TRUE;
+  }
+}
+
+/**
+ * Check if Event Product is available.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductInterface $product
+ *   The event product entity.
+ *
+ * @return bool
+ *   TRUE if the Event Registration status is Open otherwise FALSE.
+ */
+function vscpa_commerce_is_event_available(ProductInterface $product = NULL) {
+  if (!$product) {
+    return FALSE;
+  }
+  if (!$product->isPublished()) {
+    return FALSE;
+  }
+  // Check Product bundle.
+  if ($product->bundle() == 'cpe_self_study') {
+    // Self Study event are always opened for registration.
+    return TRUE;
+  }
+  $field_name = 'field_event_expiry';
+  if (!$product->hasField($field_name)) {
+    return FALSE;
+  }
+  $expiry_date = $product->get($field_name)->getString();
+  if (empty($expiry_date)) {
+    return FALSE;
+  }
+  // Set the timezone user for date comparison.
+  // Get the expiry date time.
+  $date_original = new DrupalDateTime($expiry_date, 'UTC');
+  $expiry_datetime = $date_original->getTimestamp();
+  // Get the current date time.
+  $current_datetime = strtotime('now');
+  // Five mins ago.
+  $five_mins_before_expiry_datetime = strtotime('-5 min', $expiry_datetime);
+  // Get the CPE format based on the field: City or Area - Online.
+  $format = ($product->hasField('field_city_area')) ? $product->get('field_city_area')->getString() : NULL;
+  // Calculate if the event is closed for registration.
+  $available_now = ($expiry_datetime > $current_datetime);
+  if (empty($format)) {
+    return $available_now;
+  }
+  // City or Area - Online: 15345.
+  if ($format != '15345') {
+    // It is a Live type of event.
+    return $available_now;
+  }
+  else {
+    // It is a OnLive type of event.
+    // Online events should closed for registration 5 min before begin time.
+    return ($current_datetime < $five_mins_before_expiry_datetime);
+  }
+}
+
+/**
+ * Check if an user is registered for an bundle event.
+ *
+ * @param \Drupal\commerce\PurchasableEntityInterface $entity
+ *   The purchasable entity.
+ * @param int $uid
+ *   The user ID.
+ *
+ * @return bool
+ *   TRUE is the user is register for an event, otherwise FALSE.
+ */
+function vscpa_commerce_bundle_product_was_purchased(PurchasableEntityInterface $entity = NULL, $uid = NULL) {
+  if (is_null($entity) || is_null($uid)) {
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_product\Entity\ProductVariationInterface $entity */
+  if (!$product = $entity->getProduct()) {
+    return FALSE;
+  }
+  // Get the AMNet id by uid.
+  $amnet_id = am_net_user_profile_get_amnet_id_by_uid($uid);
+  if (empty($amnet_id)) {
+    return FALSE;
+  }
+  if ($entity->bundle() != 'event_registration') {
+    return FALSE;
+  }
+  // Check if the user is register on the bundle.
+  $event_code = $product->field_amnet_event_id->code ?? NULL;
+  $event_year = $product->field_amnet_event_id->year ?? NULL;
+  if (empty($event_code) || empty($event_year)) {
+    return FALSE;
+  }
+  $event_code = trim($event_code);
+  $event_year = trim($event_year);
+  $registration_manager = \Drupal::service('am_net_cpe.registration_manager');
+  $event_registration = $registration_manager->getEventRegistrations($event_year, $event_code);
+  if (isset($event_registration[$amnet_id])) {
+    // User is already registered on the bundle event.
+    return TRUE;
+  }
+  // Check if the user is registered in any of the child events of the bundle.
+  $field_bundle_items = $product->get('field_bundle_items');
+  if ($field_bundle_items->isEmpty()) {
+    return FALSE;
+  }
+  $items = $field_bundle_items->referencedEntities();
+  foreach ($items as $delta => $item) {
+    $event_code = $item->field_amnet_event_id->code ?? NULL;
+    $event_year = $item->field_amnet_event_id->year ?? NULL;
+    if (empty($event_code) || empty($event_year)) {
+      continue;
+    }
+    $event_code = trim($event_code);
+    $event_year = trim($event_year);
+    // Check if the event registration exists.
+    $event_registration = $registration_manager->getEventRegistrations($event_year, $event_code);
+    if (isset($event_registration[$amnet_id])) {
+      // User is already registered on a child event of the bundle event.
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Check if an user is registered for an child bundle event.
+ *
+ * @param \Drupal\commerce\PurchasableEntityInterface $entity
+ *   The purchasable entity.
+ * @param int $uid
+ *   The user ID.
+ *
+ * @return bool
+ *   TRUE is the user is register for an event, otherwise FALSE.
+ */
+function vscpa_commerce_are_child_products_in_cart(PurchasableEntityInterface $entity = NULL, $uid = NULL) {
+  if (is_null($entity) || is_null($uid)) {
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_product\Entity\ProductVariationInterface $entity */
+  if (!$product = $entity->getProduct()) {
+    return FALSE;
+  }
+  if (!$product->hasField('field_bundle_items')) {
+    return FALSE;
+  }
+  $field_bundle_items = $product->get('field_bundle_items');
+  if ($field_bundle_items->isEmpty()) {
+    return FALSE;
+  }
+  $values = $field_bundle_items->getValue();
+  $ids = [];
+  foreach ($values as $value) {
+    $target_id = $value['target_id'] ?? NULL;
+    if (empty($target_id)) {
+      continue;
+    }
+    $ids[] = $target_id;
+  }
+  if (vscpa_commerce_cart_contains_product($ids, $uid)) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Check if an user is registered for an bundle event.
+ *
+ * @param \Drupal\commerce\PurchasableEntityInterface $entity
+ *   The purchasable entity.
+ * @param int $uid
+ *   The user ID.
+ *
+ * @return bool
+ *   TRUE is the user is register for an event, otherwise FALSE.
+ */
+function vscpa_commerce_is_parent_bundle_product_in_cart(PurchasableEntityInterface $entity = NULL, $uid = NULL) {
+  if (is_null($entity) || is_null($uid)) {
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_product\Entity\ProductVariationInterface $entity */
+  if (!$product = $entity->getProduct()) {
+    return FALSE;
+  }
+  $ids = vscpa_commerce_product_get_parent_bundle_id($product->id());
+  if (empty($ids)) {
+    return FALSE;
+  }
+  if (vscpa_commerce_cart_contains_product($ids, $uid)) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Check if the current cart contains product.
+ *
+ * @param array $product_ids
+ *   The products IDs.
+ * @param int $uid
+ *   The user ID.
+ *
+ * @return bool
+ *   TRUE is the cart contains product, otherwise FALSE.
+ */
+function vscpa_commerce_cart_contains_product(array $product_ids = NULL, $uid = NULL) {
+  if (empty($product_ids) || empty($uid)) {
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_store\CurrentStoreInterface $current_store */
+  $current_store = \Drupal::service('commerce_store.current_store');
+  $store = $current_store->getStore();
+  $cart_owner = \Drupal::currentUser();
+  /* @var \Drupal\commerce_cart\CartProvider $cart_provider */
+  $cart_provider = \Drupal::service('commerce_cart.cart_provider');
+  $cart = $cart_provider->getCart('default', $store, $cart_owner);
+  if (!$cart) {
+    // No Cart.
+    return FALSE;
+  }
+  if (!$cart->hasItems()) {
+    // Cart is empty.
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_order\Entity\OrderItemInterface $item */
+  $items = $cart->getItems();
+  foreach ($items as $item) {
+    $field = 'field_user';
+    if (!$item->hasField($field)) {
+      continue;
+    }
+    $registrant_id = $item->get($field)->getString();
+    /* @var \Drupal\commerce_product\Entity\ProductVariationInterface $variation */
+    $variation = $item->getPurchasedEntity();
+    if (!$variation) {
+      continue;
+    }
+    $id = $variation->getProductId();
+    if (in_array($id, $product_ids) && ($registrant_id == $uid)) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Check if an user is registered for an event.
+ *
+ * @param string $product_id
+ *   The event product ID.
+ *
+ * @return array|bool
+ *   The parent ID, otherwise FALSE.
+ */
+function vscpa_commerce_product_get_parent_bundle_id($product_id = NULL) {
+  $database = \Drupal::database();
+  $query = $database->select('commerce_product__field_bundle_items', 'bundle');
+  $query->condition('bundle.field_bundle_items_target_id', $product_id);
+  $query->addField('bundle', 'entity_id', 'entity_id');
+  $result = $query->execute();
+  $ids = $result->fetchCol();
+  if (empty($ids)) {
+    return FALSE;
+  }
+  return $ids;
+}
+
+/**
+ * Check if an user is registered for an event.
+ *
+ * @param string $product_id
+ *   The event product ID.
+ *
+ * @return bool
+ *   TRUE is the user is register for an event, otherwise FALSE.
+ */
+function vscpa_commerce_product_get_bundle_parent_event_codes($product_id = NULL) {
+  $database = \Drupal::database();
+  $query = $database->select('commerce_product__field_bundle_items', 'bundle');
+  $query->join('commerce_product__field_amnet_event_id', 'event_id', 'bundle.entity_id = event_id.entity_id');
+  $query->condition('bundle.field_bundle_items_target_id', $product_id);
+  $query->addField('event_id', 'entity_id', 'id');
+  $query->addField('event_id', 'field_amnet_event_id_code', 'code');
+  $query->addField('event_id', 'field_amnet_event_id_year', 'year');
+  $result = $query->execute();
+  $codes = $result->fetchAllAssoc('id', PDO::FETCH_ASSOC);
+  return $codes;
+}
+
+/**
+ * Get Bundle child events.
+ *
+ * @param string $product_id
+ *   The event product ID.
+ *
+ * @return array
+ *   Array lis with the bundle child events.
+ */
+function vscpa_commerce_product_get_bundle_child_event_codes($product_id = NULL) {
+  $database = \Drupal::database();
+  $query = $database->select('commerce_product__field_bundle_items', 'bundle');
+  $query->join('commerce_product__field_amnet_event_id', 'event_id', 'bundle.field_bundle_items_target_id = event_id.entity_id');
+  $query->condition('bundle.entity_id', $product_id);
+  $query->addField('bundle', 'field_bundle_items_target_id', 'id');
+  $query->addField('event_id', 'field_amnet_event_id_code', 'code');
+  $query->addField('event_id', 'field_amnet_event_id_year', 'year');
+  $result = $query->execute();
+  $codes = $result->fetchAllAssoc('id', PDO::FETCH_ASSOC);
+  return $codes;
+}
+
+/**
+ * Check if an user is registered for an event.
+ *
+ * @param \Drupal\commerce\PurchasableEntityInterface $entity
+ *   The purchasable entity.
+ * @param int $uid
+ *   The user ID.
+ *
+ * @return bool
+ *   TRUE is the user is register for an event, otherwise FALSE.
+ */
+function vscpa_commerce_product_was_purchased(PurchasableEntityInterface $entity = NULL, $uid = NULL) {
+  if (is_null($entity) || is_null($uid)) {
+    return FALSE;
+  }
+  /* @var \Drupal\commerce_product\Entity\ProductVariationInterface $entity */
+  if (!$product = $entity->getProduct()) {
+    return FALSE;
+  }
+  // Get the AMNet id by uid.
+  $amnet_id = am_net_user_profile_get_amnet_id_by_uid($uid);
+  if (empty($amnet_id)) {
+    return FALSE;
+  }
+  if ($entity->bundle() === 'event_registration') {
+    return FALSE;
+  }
+  elseif ($entity->bundle() === 'self_study_registration') {
+    $product_code = $product->get('field_course_prodcode')->getString();
+    if (empty($product_code)) {
+      return FALSE;
+    }
+    // Check if the user haas already purchased this course.
+    $product_purchases = \Drupal::service('am_net_cpe.registration_manager')->getUserProductPurchases($amnet_id);
+    return isset($product_purchases[$product_code]);
+  }
+  return FALSE;
+}
+
+/**
+ * Get list of user with product purchases on the given event.
+ *
+ * @param \Drupal\commerce\PurchasableEntityInterface $entity
+ *   The purchasable entity.
+ *
+ * @return array
+ *   The array of customer with product purchases.
+ */
+function vscpa_commerce_get_product_customers(PurchasableEntityInterface $entity = NULL) {
+  if (!$entity) {
+    return [];
+  }
+  /** @var \Drupal\commerce_product\Entity\ProductVariationInterface $entity */
+  if (!$product = $entity->getProduct()) {
+    return [];
+  }
+  if ($entity->bundle() === 'event_registration') {
+    $event_code = $product->field_amnet_event_id->code ?? NULL;
+    $event_year = $product->field_amnet_event_id->year ?? NULL;
+    if (empty($event_code) || empty($event_year)) {
+      return [];
+    }
+    // List of customers registered for this event.
+    return \Drupal::service('am_net_cpe.registration_manager')->getEventRegistrations($event_year, $event_code);
+  }
+  return [];
+}
+
+/**
+ * Transform a given string into a machine name.
+ *
+ * @param string $value
+ *   The value to be transformed.
+ *
+ * @return string|null
+ *   The newly transformed value.
+ */
+function vscpa_commerce_generate_machine_name($value = NULL) {
+  if (empty($value)) {
+    return NULL;
+  }
+  $new_value = strtolower($value);
+  $new_value = preg_replace('/[^a-z0-9_]+/', '_', $new_value);
+  return preg_replace('/_+/', '_', $new_value);
+}
+
+/**
+ * Get the early bird expiry from a given product - Events.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductInterface $product
+ *   The product entity.
+ *
+ * @return array||null
+ *   The lowest member and non-member prices, otherwise null.
+ */
+function vscpa_commerce_get_early_bird_expiry(ProductInterface $product = NULL) {
+  if (!$product) {
+    return NULL;
+  }
+  $field_early_bird_expiry = NULL;
+
+  $variations = $product->getVariations();
+  foreach ($variations as $delta => $variation) {
+    if (!$variation->hasField('field_early_bird_expiry')) {
+      return NULL;
+    }
+    $field_early_bird_expiry = $variation->get('field_early_bird_expiry')->getValue();
+  }
+  return [
+    'field_early_bird_expiry' => $field_early_bird_expiry,
+  ];
+}

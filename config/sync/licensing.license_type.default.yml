@@ -1,0 +1,12 @@
+uuid: 0ccccd31-d78e-48f4-97df-ec1a10003bc0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Xb7l_5APBnxswSptf3nfgKxgEegE0cEEshKSvwN3Zko
+id: default
+label: 'Default license'
+target_bundles: null
+target_entity_type: null
+roles: null
+exempt_roles: null

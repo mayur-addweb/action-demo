@@ -1,0 +1,33 @@
+uuid: f8361454-e4ef-47cd-8439-85365d1fa64f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.location
+    - node.type.page
+    - node.type.person
+    - node.type.publication
+id: node.location.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: location
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      location: location
+      person: person
+      publication: publication
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: page
+field_type: entity_reference

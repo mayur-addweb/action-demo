@@ -1,0 +1,21 @@
+uuid: e5ca4c40-a755-4aef-823d-a0689b504bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - options
+id: paragraph.text_area.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: text_area
+label: Background
+description: 'What background color should this Text Area be styled with (<i>-none-</i> is transparent)?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

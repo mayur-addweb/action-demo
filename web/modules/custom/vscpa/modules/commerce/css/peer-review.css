@@ -1,0 +1,57 @@
+.text-float-right {
+    float: right;
+}
+
+.total-price-peer-review {
+    margin: auto;
+}
+
+.current-balance-peer-review {
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+.btn.peer-review-button-float-right {
+    float: right;
+    color: #fff;
+    background-color: #751746;
+    border-color: #601339;
+}
+
+.btn.peer-review-button-change-firm-size {
+    border-radius: 50px !important;
+    margin-top: 1.5rem;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container_firm_size_changes {
+    border: 2px solid #efefef;
+    padding: 0 15px 25px 15px;
+}
+
+.form-item-container-container-firm-size-changes-firm-size-changes .description {
+    margin-bottom: 0;
+}
+
+form .form-group .firm-size-options legend {
+    width: 100%;
+    text-align: left !important;
+}
+
+form .form-group .firm-size-options .fieldset-wrapper {
+    width: 100%;
+}
+
+form .form-group .firm-size-options .form-item {
+    width: 100%;
+}
+
+form .form-group .firm-size-options .form-item .control-label {
+    font-weight: 500 !important;
+}
+
+form .form-group .firm-size-options .form-item.radio {
+    display: block;
+}

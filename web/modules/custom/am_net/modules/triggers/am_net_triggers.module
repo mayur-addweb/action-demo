@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * VSCPA triggers module.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function am_net_triggers_cron() {
+  if (am_net_cron_is_active()) {
+    $am_net_triggers_sync = \Drupal::service('am_net_triggers.sync');
+    // Changes on Name records(From AM.Net to Drupal) are synchronized
+    // when the user edits their profile or when the user starts a session,
+    // so it is not necessary to synchronize change in cron.
+    // Add to queue events changed recently from AMNet.
+    $am_net_triggers_sync->addToQueueEventsChangedRecentlyFromAmNet();
+    // Add to queue products changed recently from AMNet.
+    $am_net_triggers_sync->addToQueueProductsChangedRecentlyFromAmNet();
+    // Add to queue firms changed recently from AMNet.
+    $am_net_triggers_sync->addToQueueFirmsChangedRecentlyFromAmNet();
+    // Add to queue name changed recently from AMNet.
+    $am_net_triggers_sync->addToQueueNamesChangedRecentlyFromAmNet();
+    // Add to queue name merges recently from AMNet.
+    $am_net_triggers_sync->addToQueueNamesMergesRecentlyFromAmNet();
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 4352e127-a4bf-4536-b685-50d7a541881f
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_amnet_dues_lookup
+field_name: field_amnet_dues_lookup
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

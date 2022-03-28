@@ -1,0 +1,8 @@
+uuid: dddb8e29-5134-4c30-8183-d99819559998
+langcode: en
+status: true
+dependencies: {  }
+name: 'Session Type'
+vid: session_type
+description: ''
+weight: 0

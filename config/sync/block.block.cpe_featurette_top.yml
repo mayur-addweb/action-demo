@@ -1,0 +1,57 @@
+uuid: e552e1e6-a720-4f84-aa1b-21937875390a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_featurette_top
+  module:
+    - ctools
+    - entity_reference_revisions
+    - fieldblock
+    - rng
+  theme:
+    - vscpa_bootstrap
+id: cpe_featurette_top
+theme: vscpa_bootstrap
+region: top_full_width
+weight: -18
+provider: null
+plugin: 'fieldblock:commerce_product'
+settings:
+  id: 'fieldblock:commerce_product'
+  label: 'CPE Featurette Top'
+  provider: fieldblock
+  label_display: '0'
+  label_from_field: true
+  field_name: field_featurette_top
+  formatter_id: entity_reference_revisions_entity_view
+  formatter_settings:
+    view_mode: default
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      cpe_event: cpe_event
+      cpe_self_study: cpe_self_study
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  rng_current_time:
+    id: rng_current_time
+    date: '1524690089'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1524690089'
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      digital_rewind_page: digital_rewind_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

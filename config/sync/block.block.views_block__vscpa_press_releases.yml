@@ -1,0 +1,47 @@
+uuid: c4aa3617-4548-4282-a3af-2451daaf8221
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vscpa
+  module:
+    - block_class
+    - rng
+    - system
+    - views
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: vscpa-view-title
+id: views_block__vscpa_press_releases
+theme: vscpa_bootstrap
+region: content
+weight: -15
+provider: null
+plugin: 'views_block:vscpa-press_releases'
+settings:
+  id: 'views_block:vscpa-press_releases'
+  label: 'Press Releases'
+  provider: views
+  label_display: visible
+  views_label: 'Press Releases'
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1539629349'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1539629349'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /resources/press-room
+    negate: false
+    context_mapping: {  }

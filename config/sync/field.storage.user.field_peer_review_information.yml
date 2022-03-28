@@ -1,0 +1,27 @@
+uuid: de17a9ba-ecef-4b01-9804-5e83269df5f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_peer_review_information
+field_name: field_peer_review_information
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Y'
+      label: 'Yes'
+    -
+      value: 'N'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 1ab5c36e-e81a-4ed8-bda4-a0942a194ab6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_amnet_main_office
+field_name: field_amnet_main_office
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

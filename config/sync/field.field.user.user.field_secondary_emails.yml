@@ -1,0 +1,20 @@
+uuid: 12aff42a-a401-4c1d-a75e-87db6e567ad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_secondary_emails
+  module:
+    - user
+id: user.user.field_secondary_emails
+field_name: field_secondary_emails
+entity_type: user
+bundle: user
+label: 'Secondary Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

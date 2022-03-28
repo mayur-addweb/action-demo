@@ -1,0 +1,19 @@
+uuid: 25bd0e89-1783-4f2e-9739-3be720a3370d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_code
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_session_code
+field_name: field_session_code
+entity_type: event_session
+bundle: default
+label: 'Session code'
+description: 'A three-character code to identify this session within the event.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

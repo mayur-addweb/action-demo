@@ -1,0 +1,28 @@
+uuid: a98b755c-1f70-4de2-954d-1e23e0498873
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_firm_contacts
+    - node.type.person
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_firm_contacts
+field_name: field_firm_contacts
+entity_type: taxonomy_term
+bundle: firm
+label: 'Firm Contacts'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

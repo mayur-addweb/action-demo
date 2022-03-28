@@ -1,0 +1,74 @@
+uuid: 772b1eb1-d046-44a0-92a1-67a704f4d076
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_sidebar
+    - entity_browser.browser.images
+    - field.field.block_content.cta_sidebar.field_background
+    - field.field.block_content.cta_sidebar.field_block_image
+    - field.field.block_content.cta_sidebar.field_body
+    - field.field.block_content.cta_sidebar.field_buttons
+  module:
+    - content_moderation
+    - entity_browser
+    - link_class
+    - text
+id: block_content.cta_sidebar.default
+targetEntityType: block_content
+bundle: cta_sidebar
+mode: default
+content:
+  field_background:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_block_image:
+    weight: 2
+    settings:
+      entity_browser: images
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_buttons:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: select_class
+      link_class_force: ''
+      link_class_select: "btn btn-blue full|Blue Full\nbtn btn-gold full|Gold Full\nbtn btn-green full|Green Full\nbtn btn-purple full|Purple Full\nbtn btn-white full|White Full"
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 5
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden: {  }

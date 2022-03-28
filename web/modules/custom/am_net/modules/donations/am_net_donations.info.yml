@@ -1,0 +1,9 @@
+name: AM.net Donations Module
+type: module
+description: Defines common functionality for VSCPA Donations workflow.
+core: 8.x
+package: VSCPA
+dependencies:
+  - am_net
+  - am_net_user_profile
+  - commerce

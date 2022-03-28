@@ -1,0 +1,30 @@
+uuid: 2a1cd9c7-3f5f-4755-8b09-f709799eac0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_special_needs
+    - taxonomy.vocabulary.special_needs
+  module:
+    - user
+id: user.user.field_special_needs
+field_name: field_special_needs
+entity_type: user
+bundle: user
+label: 'Special Needs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      special_needs: special_needs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

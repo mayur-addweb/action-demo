@@ -1,0 +1,8 @@
+uuid: a710d8e6-d45b-4af3-abb8-636a93e57821
+langcode: en
+status: true
+dependencies: {  }
+name: 'VSCPA Action'
+vid: vscpa_action
+description: ''
+weight: 0

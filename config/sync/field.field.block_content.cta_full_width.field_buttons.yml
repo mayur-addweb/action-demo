@@ -1,0 +1,23 @@
+uuid: 00d9367e-e797-4faf-9111-2bbc6b31b55d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_full_width
+    - field.storage.block_content.field_buttons
+  module:
+    - link
+id: block_content.cta_full_width.field_buttons
+field_name: field_buttons
+entity_type: block_content
+bundle: cta_full_width
+label: Buttons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

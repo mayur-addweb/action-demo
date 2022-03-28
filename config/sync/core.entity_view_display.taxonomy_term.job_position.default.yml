@@ -1,0 +1,23 @@
+uuid: 7734adc5-74f0-40bf-a030-33f7013b75e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.job_position.field_amnet_position_code
+    - taxonomy.vocabulary.job_position
+  module:
+    - text
+id: taxonomy_term.job_position.default
+targetEntityType: taxonomy_term
+bundle: job_position
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_position_code: true

@@ -1,0 +1,43 @@
+uuid: 4d1715ab-28f6-462b-a90f-56e7781efe1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.help_center
+    - field.field.block_content.help_center.field_body
+    - field.field.block_content.help_center.field_help_center_menu
+    - field.field.block_content.help_center.field_image
+    - image.style.help_center
+  module:
+    - image
+    - menu_reference_render
+    - text
+id: block_content.help_center.default
+targetEntityType: block_content
+bundle: help_center
+mode: default
+content:
+  field_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_help_center_menu:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: menu_reference_render
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: help_center
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

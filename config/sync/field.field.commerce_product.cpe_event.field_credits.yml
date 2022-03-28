@@ -1,0 +1,82 @@
+uuid: 6bebf834-0e15-419c-b0af-bea52d896a1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_credits
+    - paragraphs.paragraphs_type.cpe_credit
+  module:
+    - entity_reference_revisions
+id: commerce_product.cpe_event.field_credits
+field_name: field_credits
+entity_type: commerce_product
+bundle: cpe_event
+label: Credits
+description: 'Specific credits by category.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cpe_credit: cpe_credit
+    target_bundles_drag_drop:
+      accordions:
+        weight: 19
+        enabled: false
+      accordion_item:
+        weight: 20
+        enabled: false
+      bp_columns:
+        weight: 21
+        enabled: false
+      column:
+        weight: 22
+        enabled: false
+      cpe_credit:
+        enabled: true
+        weight: 23
+      feat_media:
+        weight: 24
+        enabled: false
+      feat_people:
+        weight: 25
+        enabled: false
+      feat_tabs:
+        weight: 26
+        enabled: false
+      feat_textarea:
+        weight: 27
+        enabled: false
+      item:
+        weight: 28
+        enabled: false
+      pol_contact:
+        weight: 29
+        enabled: false
+      slide:
+        weight: 30
+        enabled: false
+      slideshow:
+        weight: 31
+        enabled: false
+      tabs:
+        weight: 32
+        enabled: false
+      tab_item:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+      timeslot:
+        weight: 35
+        enabled: false
+      timeslot_group:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

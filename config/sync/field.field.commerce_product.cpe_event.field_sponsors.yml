@@ -1,0 +1,21 @@
+uuid: 7c2c74ca-0fd8-4d9a-8367-3cef1e099385
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_sponsors
+  module:
+    - text
+id: commerce_product.cpe_event.field_sponsors
+field_name: field_sponsors
+entity_type: commerce_product
+bundle: cpe_event
+label: Sponsors
+description: 'Field Sponsors: Populate from AM.net''s Event>Marketing>Confirmation tab.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

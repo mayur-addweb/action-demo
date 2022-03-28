@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * VSCPA Utility module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function vscpa_utility_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $current_user = \Drupal::currentUser();
+
+  // Add operation for generating one-time user login links for administrators.
+  if ($entity->getEntityTypeId() === 'user' && $current_user->hasPermission('administer users')) {
+    /** @var \Drupal\User\UserInterface $entity */
+    if (!$entity->hasRole('administrator') && $entity->isActive()) {
+      $operations['vscpa_utility_one_time_login_link'] = [
+        'title' => t('Generate one-time login link'),
+        'url' => Url::fromRoute('vscpa_utility.one_time_login_link', [
+          'user' => $entity->id(),
+        ]),
+        'weight' => 10,
+      ];
+    }
+  }
+
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function vscpa_utility_page_attachments_alter(array &$attachments) {
+  // Remove "Generator" meta tag
+  // See https://drupal.stackexchange.com/a/226781/26548)
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}

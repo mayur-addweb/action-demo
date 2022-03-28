@@ -1,0 +1,19 @@
+uuid: 7b644cd9-d138-4bfd-80df-39acaf3f988b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_alt_title
+    - commerce_product.commerce_product_type.cpe_self_study
+id: commerce_product.cpe_self_study.field_alt_title
+field_name: field_alt_title
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

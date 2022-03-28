@@ -1,0 +1,25 @@
+uuid: ad758a1d-b40c-4669-ba95-f4b1c9a91ca3
+langcode: en
+status: true
+dependencies:
+  config:
+    - ad_entity.ad_entity.ad_bottom_region_desktop
+    - ad_entity.ad_entity.ad_bottom_region_mobile
+    - ad_entity.ad_entity.ad_bottom_region_tablet
+    - ad_entity.ad_entity.ad_top_region_desktop
+id: ad_bottom_region
+label: 'Ad Bottom Region'
+theme_canonical: vscpa_bootstrap
+variants:
+  vscpa_bootstrap:
+    ad_bottom_region_mobile: '["vscpa.xsmall","vscpa.small"]'
+    ad_bottom_region_tablet: '["vscpa.medium"]'
+    ad_top_region_desktop: '["vscpa.large"]'
+    ad_bottom_region_desktop: '["vscpa.xlarge"]'
+  stable: {  }
+  classy: {  }
+  seven: {  }
+  bootstrap: {  }
+fallback:
+  use_base_theme: true
+  use_settings_from: vscpa_bootstrap

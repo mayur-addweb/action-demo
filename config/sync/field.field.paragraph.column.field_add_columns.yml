@@ -1,0 +1,90 @@
+uuid: 525cccaa-c0e2-4a21-91e5-74e1a294c261
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add_columns
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.item
+  module:
+    - entity_reference_revisions
+id: paragraph.column.field_add_columns
+field_name: field_add_columns
+entity_type: paragraph
+bundle: column
+label: 'Add Columns'
+description: 'Add columned items (up to three).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      item: item
+      image: image
+    target_bundles_drag_drop:
+      column:
+        weight: 11
+        enabled: false
+      cpe_credit:
+        weight: 12
+        enabled: false
+      feat_media:
+        weight: 13
+        enabled: false
+      feat_people:
+        weight: 14
+        enabled: false
+      pol_contact:
+        weight: 17
+        enabled: false
+      item:
+        enabled: true
+        weight: 18
+      image:
+        enabled: true
+        weight: 19
+      accordions:
+        weight: 20
+        enabled: false
+      view_embed:
+        weight: 20
+        enabled: false
+      accordion_item:
+        weight: 21
+        enabled: false
+      full_width_cta:
+        weight: 26
+        enabled: false
+      half_width_cta:
+        weight: 28
+        enabled: false
+      half_width_cta_container:
+        weight: 29
+        enabled: false
+      slide:
+        weight: 30
+        enabled: false
+      slideshow:
+        weight: 31
+        enabled: false
+      tabs:
+        weight: 32
+        enabled: false
+      tab_item:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+      timeslot:
+        weight: 35
+        enabled: false
+      timeslot_group:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

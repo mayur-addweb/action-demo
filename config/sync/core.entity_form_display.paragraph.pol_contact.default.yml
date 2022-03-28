@@ -1,0 +1,41 @@
+uuid: 56806016-2a60-4829-9a12-b569326dc657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pol_contact.field_legislator
+    - field.field.paragraph.pol_contact.field_legislator_relates
+    - paragraphs.paragraphs_type.pol_contact
+id: paragraph.pol_contact.default
+targetEntityType: paragraph
+bundle: pol_contact
+mode: default
+content:
+  field_legislator:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_legislator_relates:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,17 @@
+raven:
+  version: '2.24'
+  js:
+    js/raven.js: {}
+  dependencies:
+    - raven/sentry-browser
+    - core/drupalSettings
+sentry-browser:
+  remote: 'https://github.com/getsentry/sentry-javascript'
+  version: 5.18.0
+  license:
+    name: BSD-3-Clause
+    url: 'https://github.com/getsentry/sentry-javascript/blob/master/LICENSE'
+    gpl-compatible: true
+  js:
+    js/sentry-browser/bundle.min.js:
+      minified: true

@@ -1,0 +1,46 @@
+uuid: 905d1676-8b2c-4909-bfd7-765a9c333e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.credit_type.field_amnet_credit_category_code
+    - taxonomy.vocabulary.credit_type
+  module:
+    - path
+    - text
+id: taxonomy_term.credit_type.default
+targetEntityType: taxonomy_term
+bundle: credit_type
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_amnet_credit_category_code:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

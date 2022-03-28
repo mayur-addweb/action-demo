@@ -1,0 +1,19 @@
+uuid: 5cafb59d-2f09-4d46-80b4-744ed9d48448
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amnet_branch_offices
+    - taxonomy.vocabulary.firm
+id: taxonomy_term.firm.field_amnet_branch_offices
+field_name: field_amnet_branch_offices
+entity_type: taxonomy_term
+bundle: firm
+label: 'AM.net Branch Offices'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

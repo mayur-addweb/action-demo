@@ -1,0 +1,28 @@
+uuid: 83f9eb27-7c42-4922-9f62-2e567dde460c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_am_net_sync
+  module:
+    - vscpa_commerce
+id: commerce_order.default.field_am_net_sync
+field_name: field_am_net_sync
+entity_type: commerce_order
+bundle: default
+label: 'AM.net Sync'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    order_items: {  }
+    am_net_sync_action:
+      order_sync_action:
+        order_id: 239777e1-837b-4271-a488-f5844b4ab26c
+    sync_status: 0
+    items: {  }
+default_value_callback: ''
+settings: {  }
+field_type: am_net_order_items

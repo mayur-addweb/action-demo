@@ -1,0 +1,29 @@
+uuid: d60a7068-ec7f-4475-91f3-a879b1dc284d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.registration.session_online.field_order_item
+    - field.field.registration.session_online.field_registration_status
+    - rng.registration_type.session_online
+  module:
+    - content_moderation
+id: registration.session_online.default
+targetEntityType: registration
+bundle: session_online
+mode: default
+content:
+  field_registration_status:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_order_item: true

@@ -1,0 +1,19 @@
+uuid: 548f2b21-0534-47ff-a35e-250582922b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.article_teaser
+id: node.article_teaser.field_summary
+field_name: field_summary
+entity_type: node
+bundle: article_teaser
+label: Summary
+description: 'Article Teaser — Featured Image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

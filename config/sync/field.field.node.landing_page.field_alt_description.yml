@@ -1,0 +1,19 @@
+uuid: ee9f5795-886d-47a2-85fb-fe22193dca74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alt_description
+    - node.type.landing_page
+id: node.landing_page.field_alt_description
+field_name: field_alt_description
+entity_type: node
+bundle: landing_page
+label: 'Alternate Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

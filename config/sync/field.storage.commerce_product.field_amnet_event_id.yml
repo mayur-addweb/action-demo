@@ -1,0 +1,19 @@
+uuid: e538b35a-ea6e-4efb-b97e-56ca60932224
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net
+    - commerce_product
+id: commerce_product.field_amnet_event_id
+field_name: field_amnet_event_id
+entity_type: commerce_product
+type: amnet_event_id
+settings: {  }
+module: am_net
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

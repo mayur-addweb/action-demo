@@ -1,0 +1,193 @@
+a {
+  &.icon-before .glyphicon {
+    margin-right: .25em;
+  }
+
+  &.icon-after .glyphicon {
+    margin-left: .25em;
+  }
+}
+
+.btn {
+  &.icon-before .glyphicon {
+    margin-left: -.25em;
+    margin-right: .25em;
+  }
+
+  &.icon-after .glyphicon {
+    margin-left: .25em;
+    margin-right: -.25em;
+  }
+}
+
+@font-face {
+  font-family: vscpa-icons;
+  font-style: normal;
+  font-weight: normal;
+  src:  url('../fonts/vscpa-icons.eot?ttwxyk');
+  src:  url('../fonts/vscpa-icons.eot?ttwxyk#iefix') format('embedded-opentype'),
+  url('../fonts/vscpa-icons.ttf?ttwxyk') format('truetype'),
+  url('../fonts/vscpa-icons.woff?ttwxyk') format('woff'),
+  url('../fonts/vscpa-icons.svg?ttwxyk#vscpa-icons') format('svg');
+}
+
+[class^='icon-'] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: vscpa-icons !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+[class^='glyphicon'] {
+  font-family: 'Glyphicons Halflings' !important;
+}
+
+.icon-plus_black::before {
+  content: '\e91e';
+}
+
+.icon-arrow::before {
+  content: '\e900';
+}
+
+.icon-arrow-2::before {
+  content: '\e901';
+}
+
+.icon-arrow-3::before {
+  content: '\e902';
+}
+
+.icon-calendar::before {
+  content: '\e903';
+}
+
+.icon-cart::before {
+  content: '\e904';
+}
+
+.icon-check::before {
+  content: '\e905';
+}
+
+.icon-check-circle::before {
+  content: '\e906';
+}
+
+.icon-close::before {
+  content: '\e907';
+}
+
+.icon-close-circle::before {
+  content: '\e908';
+}
+
+.icon-credit-bolt::before {
+  content: '\e909';
+}
+
+.icon-facebook::before {
+  content: '\e90a';
+}
+
+.icon-hourglass::before {
+  content: '\e90b';
+}
+
+.icon-info::before {
+  content: '\e90c';
+}
+
+.icon-instagram::before {
+  content: '\e90d';
+}
+
+.icon-laptop::before {
+  content: '\e90e';
+}
+
+.icon-linkedin::before {
+  content: '\e90f';
+}
+
+.icon-location::before {
+  content: '\e910';
+}
+
+.icon-lock::before {
+  content: '\e911';
+}
+
+.icon-menu::before {
+  content: '\e912';
+}
+
+.icon-play::before {
+  content: '\e913';
+}
+
+.icon-plus::before {
+  content: '\e914';
+}
+
+.icon-presentation::before {
+  content: '\e915';
+}
+
+.icon-search::before {
+  content: '\e916';
+}
+
+.icon-share::before {
+  content: '\e917';
+}
+
+.icon-touch::before {
+  content: '\e918';
+}
+
+.icon-twitter::before {
+  content: '\e919';
+}
+
+.icon-user::before {
+  content: '\e91a';
+}
+
+.icon-video::before {
+  content: '\e91b';
+}
+
+.icon-vscpa-icon::before {
+  content: '\e91c';
+}
+
+.icon-youtube::before {
+  content: '\e91d';
+}
+
+.social-media {
+  margin: 30px 0 0;
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    margin: 15px 0 0;
+    text-align: left;
+  }
+
+  a {
+    &:hover {
+      color: darken($white, 10%);
+      text-decoration: none;
+    }
+
+    span {
+      font-size: 24px;
+    }
+  }
+}

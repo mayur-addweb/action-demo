@@ -1,0 +1,23 @@
+uuid: b710e296-203a-4e26-944a-5d53cd5e604b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.help_center
+    - field.storage.block_content.field_help_center_menu
+id: block_content.help_center.field_help_center_menu
+field_name: field_help_center_menu
+entity_type: block_content
+bundle: help_center
+label: 'Help Center Menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

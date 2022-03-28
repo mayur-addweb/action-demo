@@ -1,0 +1,23 @@
+uuid: 74335c04-ebde-4ece-affe-99bc455bdc5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_amnet_sort_sequence
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.field_amnet_sort_sequence
+field_name: field_amnet_sort_sequence
+entity_type: event_session
+bundle: default
+label: 'AM.net sort sequence'
+description: 'The SortSequence property on AM.net'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

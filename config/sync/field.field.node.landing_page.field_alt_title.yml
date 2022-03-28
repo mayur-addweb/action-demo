@@ -1,0 +1,19 @@
+uuid: 11affa1d-5924-40f7-9928-7160988b6414
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alt_title
+    - node.type.landing_page
+id: node.landing_page.field_alt_title
+field_name: field_alt_title
+entity_type: node
+bundle: landing_page
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

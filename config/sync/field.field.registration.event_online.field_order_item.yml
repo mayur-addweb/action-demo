@@ -1,0 +1,28 @@
+uuid: ca505843-cf2a-4649-a33e-f5ebdb5c89af
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.event_registration
+    - field.storage.registration.field_order_item
+    - rng.registration_type.event_online
+id: registration.event_online.field_order_item
+field_name: field_order_item
+entity_type: registration
+bundle: event_online
+label: 'Order item'
+description: 'The order item that generated this registration.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order_item'
+  handler_settings:
+    target_bundles:
+      event_registration: event_registration
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

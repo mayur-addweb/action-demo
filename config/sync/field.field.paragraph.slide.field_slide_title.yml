@@ -1,0 +1,19 @@
+uuid: c55a43f4-1ee9-4bee-bc6c-5a394e06de22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide_title
+    - paragraphs.paragraphs_type.slide
+id: paragraph.slide.field_slide_title
+field_name: field_slide_title
+entity_type: paragraph
+bundle: slide
+label: 'Slide Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

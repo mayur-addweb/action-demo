@@ -1,0 +1,21 @@
+uuid: 4ebb9247-cc79-4dfd-aeb9-f492b23d2d2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - commerce_product
+    - paragraphs
+id: commerce_product.field_credits
+field_name: field_credits
+entity_type: commerce_product
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

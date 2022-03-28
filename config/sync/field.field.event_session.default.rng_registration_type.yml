@@ -1,0 +1,26 @@
+uuid: 99fd25b7-5824-4e0c-89b3-4a23e0020b77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_registration_type
+    - rng.registration_type.session_in_person
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_registration_type
+field_name: rng_registration_type
+entity_type: event_session
+bundle: default
+label: 'Session registration type'
+description: 'The type of registration to use for this event session.'
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 5b4aa434-875d-485a-8acf-eb101db2c2f5
+default_value_callback: ''
+settings:
+  handler: 'default:registration_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

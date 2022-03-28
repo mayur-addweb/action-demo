@@ -1,0 +1,29 @@
+uuid: b40fa54a-bda4-4d18-8f58-f3057d24bfef
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - block_class
+    - system
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: my-account-menu-flyout
+id: useraccountmenu
+theme: vscpa_bootstrap
+region: menu_flyout
+weight: -5
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

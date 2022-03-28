@@ -1,0 +1,20 @@
+uuid: cc895f65-2bf7-4c7a-8851-c28f369851a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - vscpa_commerce
+id: commerce_order_item.field_sessions_selected
+field_name: field_sessions_selected
+entity_type: commerce_order_item
+type: entity_reference
+settings:
+  target_type: event_session
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

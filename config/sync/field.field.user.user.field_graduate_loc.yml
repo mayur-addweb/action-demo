@@ -1,0 +1,26 @@
+uuid: 405a7ec1-3045-46f6-8b97-17193db9fd36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_graduate_loc
+  module:
+    - user
+id: user.user.field_graduate_loc
+field_name: field_graduate_loc
+entity_type: user
+bundle: user
+label: 'Graduate College or University'
+description: 'Please select "Other" if your institution is not available.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: college_or_university
+      display_name: entity_reference
+      arguments: {  }
+field_type: entity_reference

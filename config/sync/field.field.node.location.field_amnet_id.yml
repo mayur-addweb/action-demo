@@ -1,0 +1,19 @@
+uuid: f3d23902-434f-4823-babe-6def318d56e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amnet_id
+    - node.type.location
+id: node.location.field_amnet_id
+field_name: field_amnet_id
+entity_type: node
+bundle: location
+label: 'AM.net ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

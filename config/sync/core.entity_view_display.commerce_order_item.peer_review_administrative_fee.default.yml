@@ -1,0 +1,37 @@
+uuid: 9f4e5873-d2a7-4548-b763-70b1b6153eba
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.peer_review_administrative_fee
+    - field.field.commerce_order_item.peer_review_administrative_fee.field_peer_review_transaction
+  module:
+    - vscpa_commerce
+id: commerce_order_item.peer_review_administrative_fee.default
+targetEntityType: commerce_order_item
+bundle: peer_review_administrative_fee
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_peer_review_transaction:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: am_net_peer_review_transaction
+    region: content
+hidden:
+  adjustments: true
+  purchased_entity: true
+  quantity: true
+  total_price: true
+  unit_price: true

@@ -1,0 +1,23 @@
+uuid: 5876e6c2-c384-4109-b2b2-5b2bb872cda5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_link
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - link
+id: commerce_product.cpe_self_study.field_course_link
+field_name: field_course_link
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Course Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

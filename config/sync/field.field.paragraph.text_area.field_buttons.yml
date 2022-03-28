@@ -1,0 +1,23 @@
+uuid: 09aeacb3-dd05-4d78-8b8a-3a71a539931b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - link
+id: paragraph.text_area.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: text_area
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

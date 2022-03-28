@@ -1,0 +1,23 @@
+uuid: ab76c8ff-200a-4bac-9137-e7904b8647f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - ad_entity.ad_entity.ad_top_region_desktop
+    - ad_entity.ad_entity.ad_top_region_mobile
+    - ad_entity.ad_entity.ad_top_region_tablet
+id: ad_top_region
+label: 'Ad Top Region'
+theme_canonical: vscpa_bootstrap
+variants:
+  vscpa_bootstrap:
+    ad_top_region_mobile: '["vscpa.xsmall","vscpa.small"]'
+    ad_top_region_tablet: '["vscpa.medium","vscpa.large"]'
+    ad_top_region_desktop: '["vscpa.xlarge"]'
+  stable: {  }
+  classy: {  }
+  seven: {  }
+  bootstrap: {  }
+fallback:
+  use_base_theme: true
+  use_settings_from: vscpa_bootstrap

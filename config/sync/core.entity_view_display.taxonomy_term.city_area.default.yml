@@ -1,0 +1,23 @@
+uuid: c48a4eee-8633-4af1-be25-b11794c3fae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.city_area.field_amnet_code
+    - taxonomy.vocabulary.city_area
+  module:
+    - text
+id: taxonomy_term.city_area.default
+targetEntityType: taxonomy_term
+bundle: city_area
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_code: true

@@ -1,0 +1,20 @@
+uuid: d7a8facc-15ae-4f85-b67a-2fa0da8b1fbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - search_api_exclude
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  search_api_exclude:
+    enabled: 1
+name: Publication
+type: publication
+description: 'Use <i>Publication</i> for articles content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

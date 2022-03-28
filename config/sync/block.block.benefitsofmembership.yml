@@ -1,0 +1,44 @@
+uuid: 3d6ed9c4-9fc2-41a7-9a9c-9e2b09a241f1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_half_width:5de53a7b-36a3-4581-8bfd-54e4df2fc486'
+  module:
+    - block_content
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: benefitsofmembership
+theme: vscpa_bootstrap
+region: homepage
+weight: -28
+provider: null
+plugin: 'block_content:5de53a7b-36a3-4581-8bfd-54e4df2fc486'
+settings:
+  id: 'block_content:5de53a7b-36a3-4581-8bfd-54e4df2fc486'
+  label: 'Benefits of Membership'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1531405657'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1531405657'
+    negate: false
+    context_mapping: {  }

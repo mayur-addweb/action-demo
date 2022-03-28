@@ -1,0 +1,8 @@
+uuid: 46602668-25a7-48eb-96f7-74425f32a944
+langcode: en
+status: true
+dependencies: {  }
+id: date_and_time
+label: 'Date and Time'
+locked: false
+pattern: 'F j, Y | g:i a'

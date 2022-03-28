@@ -1,0 +1,13 @@
+uuid: de196fca-ba6a-4838-b8a8-602d0b5a5581
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_firms
+_core:
+  default_config_hash: 6AGu7JKSUHiOclP5AMfGW8i9cs9jluQrITwWuFGsxEQ
+id: am_net_firms_add_employees_action
+label: 'Add Employees'
+type: user
+plugin: am_net_firms_add_employees_action
+configuration: {  }

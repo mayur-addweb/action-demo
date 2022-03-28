@@ -1,0 +1,21 @@
+uuid: 4ba86066-8507-4c45-afe2-25fb757636f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_amnet_document_id
+field_name: field_amnet_document_id
+entity_type: media
+type: string
+settings:
+  max_length: 40
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

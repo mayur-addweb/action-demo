@@ -1,0 +1,21 @@
+uuid: ac7e4768-24a4-44f0-a98e-bb83d1624ce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_designedfor
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - text
+id: commerce_product.cpe_self_study.field_course_designedfor
+field_name: field_course_designedfor
+entity_type: commerce_product
+bundle: cpe_self_study
+label: 'Designed For'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

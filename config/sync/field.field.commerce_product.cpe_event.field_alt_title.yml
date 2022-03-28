@@ -1,0 +1,19 @@
+uuid: da46616e-33a1-44c4-a0c4-a1c50a4cfe70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_alt_title
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.field_alt_title
+field_name: field_alt_title
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

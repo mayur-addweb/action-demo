@@ -1,0 +1,91 @@
+uuid: 19bff511-a69f-4e19-95f0-6d59ede108d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.restricted_content_search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_alt_description
+    - field.field.node.page.field_alt_title
+    - field.field.node.page.field_amnet_id
+    - field.field.node.page.field_buttons
+    - field.field.node.page.field_categories
+    - field.field.node.page.field_cover_image
+    - field.field.node.page.field_cover_video
+    - field.field.node.page.field_custom
+    - field.field.node.page.field_featurette_bottom
+    - field.field.node.page.field_featurette_top
+    - field.field.node.page.field_field_of_interest
+    - field.field.node.page.field_general_business
+    - field.field.node.page.field_keywords
+    - field.field.node.page.field_memberonly
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_oldpath
+    - field.field.node.page.field_overlay
+    - field.field.node.page.field_position
+    - field.field.node.page.field_related_content
+    - field.field.node.page.field_vscpa_action
+    - node.type.page
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.restricted_content_search_index
+targetEntityType: node
+bundle: page
+mode: restricted_content_search_index
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    region: content
+    settings:
+      trim_length: 20
+      trim_type: words
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  field_cover_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_alt_description: true
+  field_alt_title: true
+  field_amnet_id: true
+  field_buttons: true
+  field_categories: true
+  field_cover_video: true
+  field_custom: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_general_business: true
+  field_keywords: true
+  field_memberonly: true
+  field_meta_tags: true
+  field_oldpath: true
+  field_overlay: true
+  field_position: true
+  field_related_content: true
+  field_vscpa_action: true
+  links: true
+  title_field: true
+  title_teaser: true

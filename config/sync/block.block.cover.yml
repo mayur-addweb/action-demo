@@ -1,0 +1,29 @@
+uuid: 97559324-0410-496a-97ba-4656be369298
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - vscpa_bootstrap
+id: cover
+theme: vscpa_bootstrap
+region: cover
+weight: -12
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: Cover
+  provider: ctools
+  label_display: '0'
+  view_mode: cover
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/user/*"
+    negate: true
+    context_mapping: {  }

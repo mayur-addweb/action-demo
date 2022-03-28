@@ -1,0 +1,54 @@
+<div class="views-element-container form-group">
+  <div class="view view-my-events view-id-my_events">
+    <div class="group group-online">
+      {% if registrations is not empty %}
+        {% for event in registrations %}
+          <div class="views-row" data-begin-date="{{ event.event_begin_date }}" data-end-date="{{ event.event_end_date }}" data-expiry-date="{{ event.expiry_date }}" data-product-id="{{ event.product_id }}" data-event-code="{{ event.event_code }}" data-event-year="{{ event.event_year }}" data-uid="{{ uid }}" data-name-id="{{ am_net_name_id }}" data-registration-date="{{ event.registration_date }}" data-registration-status-code="{{ event.registration_status_code }}" data-division="{{ event.division }}">
+            <h3 class="accent-left group-title">Sessions</h3>
+            {# Render previous sessions group #}
+            {% if event.previous_session_group %}
+              <div class="panel panel-default panel-previous-session-group">
+                <div class="panel-heading panel-previous-session-group-heading" role="tab">
+                  <span class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-previous" aria-expanded="false" aria-controls="collapse-previous">
+                        <h4>Previous Sessions <br><small>Click here to see previous sessions</small></h4>
+                      </a>
+                  </span>
+                </div>
+                <div id="collapse-previous" class="panel-collapse collapse" role="tabpanel" aria-labelledby="header-previous">
+                  <div class="panel-body">
+                    {% include '@am_net_cpe/my-cpe-digital-rewind-sessions.html.twig' with {
+                      "session_group" : event.previous_session_group,
+                      "show_date" : 1,
+                      "show_launch_button" : 1,
+                    } only %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {# Render Active sessions groups #}
+            {% if event.session_group %}
+              {% for session_group in event.session_group %}
+                <div class="session-group card">
+                  <div class="session-group-header">
+                    <h4>{{ event.title }} Day {{ event.days[ loop.index0 ] }}
+                      <br><small>{{ session_group.date }}</small></h4>
+                  </div>
+                  <div class="session-group-panels">
+                    {% include '@am_net_cpe/my-cpe-digital-rewind-sessions.html.twig' with {
+                      "session_group" : session_group,
+                      "show_launch_button" : 1,
+                    } only %}
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <p><strong>You are currently not registered for this event. {% if product_url %}<a href="{{ product_url }}" title="Digital-Rewind event">Click Here</a> to register.{% endif %}</strong></p>
+        <p><a href="/continuing-professional-education/cpe-event-search">Click Here to View our Full Event Catalog</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>

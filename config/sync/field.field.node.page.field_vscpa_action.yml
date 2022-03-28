@@ -1,0 +1,29 @@
+uuid: 8f862578-813a-4754-b8dd-0266fddad2de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vscpa_action
+    - node.type.page
+    - taxonomy.vocabulary.vscpa_action
+id: node.page.field_vscpa_action
+field_name: field_vscpa_action
+entity_type: node
+bundle: page
+label: 'VSCPA Action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vscpa_action: vscpa_action
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

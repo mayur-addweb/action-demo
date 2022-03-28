@@ -1,0 +1,32 @@
+uuid: c89049cb-67bc-4e7a-90d5-34610d21e2f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.membership
+id: commerce_product_variation.membership.default
+targetEntityType: commerce_product_variation
+bundle: membership
+mode: default
+content:
+  list_price:
+    label: above
+    type: commerce_price_default
+    weight: -1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  price: true
+  product_id: true
+  sku: true

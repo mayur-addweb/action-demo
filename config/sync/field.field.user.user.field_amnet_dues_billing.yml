@@ -1,0 +1,20 @@
+uuid: 928854d9-c08d-443b-b716-c48ca88c4c28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_dues_billing
+  module:
+    - user
+id: user.user.field_amnet_dues_billing
+field_name: field_amnet_dues_billing
+entity_type: user
+bundle: user
+label: 'Dues Billings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

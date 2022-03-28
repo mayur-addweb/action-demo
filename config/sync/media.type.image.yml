@@ -1,0 +1,15 @@
+uuid: 5a722818-98fb-4976-b3c6-c25e86eb8993
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: u7OxrscEED35iDR3R0akmw7QNvBSMEPJXFtKP57qBh8
+id: image
+label: Image
+description: 'Use <i>Image</i> to add a locally hosted image file.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

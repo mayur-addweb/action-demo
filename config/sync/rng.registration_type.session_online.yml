@@ -1,0 +1,7 @@
+uuid: 8bc43505-fd9f-4834-858d-ca3bba180d11
+langcode: en
+status: true
+dependencies: {  }
+label: 'Online session'
+id: session_online
+description: 'A registration for an online session.'

@@ -1,0 +1,21 @@
+uuid: 63ef69dd-af61-4236-9e4b-9d83c2eb89ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.field_session_track
+    - vscpa_commerce.event_session_type.default
+  module:
+    - options
+id: event_session.default.field_session_track
+field_name: field_session_track
+entity_type: event_session
+bundle: default
+label: 'Session track'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

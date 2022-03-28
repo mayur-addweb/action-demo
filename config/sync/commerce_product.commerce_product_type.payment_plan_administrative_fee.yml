@@ -1,0 +1,12 @@
+uuid: 7418bd66-a6f6-481e-b76e-93841be22699
+langcode: en
+status: true
+dependencies: {  }
+id: payment_plan_administrative_fee
+label: 'Payment Plan Administrative Fee'
+description: 'A product that allows collecting Dues Payment Plan Administrative Fee Payments: For all payment plans, VSCPA will collect a $12 "payment plan admin fee". We use a special contribution code for this. The contribution code is "PF" this $12 is not broken out across the installment payments, it is collected in full in the initial payment.'
+variationType: payment_plan_administrative_fee
+multipleVariations: true
+injectVariationFields: false
+traits: {  }
+locked: false

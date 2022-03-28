@@ -1,0 +1,21 @@
+uuid: 32e2e0e8-0ab0-4515-95c2-94aaf0f02f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_dues_paid_through
+  module:
+    - datetime
+    - user
+id: user.user.field_amnet_dues_paid_through
+field_name: field_amnet_dues_paid_through
+entity_type: user
+bundle: user
+label: 'Dues Paid Through Date'
+description: 'AM.net Dues Paid Through Date.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

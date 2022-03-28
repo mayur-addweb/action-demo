@@ -1,0 +1,23 @@
+uuid: 97d9838e-f8a5-46bf-bd75-74ef2a325031
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldpath
+    - node.type.location
+  module:
+    - link
+id: node.location.field_oldpath
+field_name: field_oldpath
+entity_type: node
+bundle: location
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

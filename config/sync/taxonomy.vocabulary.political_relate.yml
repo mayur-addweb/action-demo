@@ -1,0 +1,8 @@
+uuid: 2c0a26cf-f315-497a-bf24-dcb9f8ba5fd8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Political Relationship'
+vid: political_relate
+description: ''
+weight: 0

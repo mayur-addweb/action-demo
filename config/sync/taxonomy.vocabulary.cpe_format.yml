@@ -1,0 +1,8 @@
+uuid: 8bf36a9d-1250-4f39-a13f-8e08bea95de2
+langcode: en
+status: true
+dependencies: {  }
+name: 'CPE Format'
+vid: cpe_format
+description: ''
+weight: 0

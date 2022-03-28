@@ -1,0 +1,23 @@
+uuid: 2bd7c3f8-3e42-4ace-87c8-eca610bab62f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.course_level.field_amnet_code
+    - taxonomy.vocabulary.course_level
+  module:
+    - text
+id: taxonomy_term.course_level.default
+targetEntityType: taxonomy_term
+bundle: course_level
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_amnet_code: true

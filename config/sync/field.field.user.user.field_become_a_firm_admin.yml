@@ -1,0 +1,24 @@
+uuid: c698f893-d87a-4130-bee2-8151491aefaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_become_a_firm_admin
+  module:
+    - user
+id: user.user.field_become_a_firm_admin
+field_name: field_become_a_firm_admin
+entity_type: user
+bundle: user
+label: 'Become a firm Admin?'
+description: 'Please allow up to five business days to process your request.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 3d2bf108-d143-4b94-9fad-d64c4ba73717
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_exclude_from_web_catalog
+field_name: field_exclude_from_web_catalog
+entity_type: commerce_product
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 39631b8c-bbb8-4203-a80d-5f1fa07383fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.event_session.rng_registrants_maximum
+    - vscpa_commerce.event_session_type.default
+id: event_session.default.rng_registrants_maximum
+field_name: rng_registrants_maximum
+entity_type: event_session
+bundle: default
+label: 'Maximum registrants'
+description: 'Maximum number of registrants per registration.'
+required: false
+translatable: true
+default_value:
+  -
+    value: -1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,28 @@
+uuid: 6cf35342-dc22-4cb3-bef1-a33a092f1182
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_paypal
+id: amnet_payflow
+label: 'PayFlow (AM.net)'
+weight: null
+plugin: paypal_payflow
+configuration:
+  partner: Verisign
+  vendor: virginia
+  user: virginia
+  password: VscpA2016
+  display_label: 'Credit Card'
+  mode: live
+  payment_method_types:
+    - credit_card
+conditions:
+  -
+    plugin: order_total_price
+    configuration:
+      operator: '>'
+      amount:
+        number: '0.00'
+        currency_code: USD
+conditionOperator: AND

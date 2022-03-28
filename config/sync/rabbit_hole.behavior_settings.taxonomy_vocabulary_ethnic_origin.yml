@@ -1,0 +1,9 @@
+uuid: df42122e-7f71-4552-9798-bf6f9cefc984
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_ethnic_origin
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

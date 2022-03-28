@@ -1,0 +1,44 @@
+uuid: 839c215f-5699-41da-9342-0244b050fa9f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_sidebar:e2f86ebd-ff2e-4d38-8365-371c80cf345e'
+  module:
+    - block_content
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: needhelpfindingcourses
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -29
+provider: null
+plugin: 'block_content:e2f86ebd-ff2e-4d38-8365-371c80cf345e'
+settings:
+  id: 'block_content:e2f86ebd-ff2e-4d38-8365-371c80cf345e'
+  label: 'Need Help Finding Courses?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/sidebar-test\r\n/my-account/my-cpe\r\n/MyCPE\r\n/events/conference/*"
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1528807901'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1528807901'
+    negate: false
+    context_mapping: {  }

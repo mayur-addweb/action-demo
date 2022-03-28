@@ -1,0 +1,25 @@
+uuid: 65574bba-61a3-457e-b807-6c3c938e8c6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_registrants_minimum
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_registrants_minimum
+field_name: rng_registrants_minimum
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Minimum registrants'
+description: 'Minimum number of registrants per registration.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

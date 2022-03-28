@@ -1,0 +1,20 @@
+uuid: 606c8c3a-3605-4f0e-b44f-cfbe7c1f6513
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_undergrad_date
+field_name: field_undergrad_date
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

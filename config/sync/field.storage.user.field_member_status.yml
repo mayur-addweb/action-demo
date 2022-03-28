@@ -1,0 +1,45 @@
+uuid: 87fd0c4a-3116-41fe-b687-4e03336501f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_member_status
+field_name: field_member_status
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: A
+      label: 'Applicant for Membership'
+    -
+      value: D
+      label: Deceased
+    -
+      value: M
+      label: 'Member in Good Standing'
+    -
+      value: 'N'
+      label: Nonmember
+    -
+      value: L
+      label: 'Prospective Member or Member With a Dues Balance'
+    -
+      value: R
+      label: Resigned
+    -
+      value: S
+      label: Suspended
+    -
+      value: T
+      label: Terminated
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,14 @@
+uuid: f78b7c99-06b0-41a2-8481-c8401b6055ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vscpa_administrator
+  module:
+    - user
+id: user_add_role_action.vscpa_administrator
+label: 'Add the VSCPA Administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vscpa_administrator

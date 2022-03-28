@@ -1,0 +1,314 @@
+.emt_employee_membership_qualification {
+  .description-required {
+    .description::after {
+      background-image: url('../images/required.svg');
+      background-size: 10px 7px;
+      content: '';
+      display: inline-block;
+      height: 7px;
+      line-height: 1;
+      width: 10px;
+    }
+  }
+
+  .label-required,
+  .form-item-field-undergrad-loc,
+  .form-item-field-undergrad-date {
+    .control-label::after {
+      background-image: url('../images/required.svg');
+      background-size: 10px 7px;
+      content: '';
+      display: inline-block;
+      height: 7px;
+      line-height: 1;
+      width: 10px;
+    }
+  }
+
+  .fieldset-legend-required {
+    .fieldset-legend::after {
+      background-image: url('../images/required.svg');
+      background-size: 10px 7px;
+      content: '';
+      display: inline-block;
+      height: 7px;
+      line-height: 1;
+      width: 10px;
+    }
+  }
+
+  input[type='checkbox'] {
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+  }
+
+  input[type='radio'] {
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+  }
+
+  .control-label {
+    top: auto;
+  }
+
+  .full-width {
+    .fieldset-legend-wrapper {
+      text-align: left !important;
+      width: 100%;
+    }
+
+    .form-type-radio {
+      display: block !important;
+    }
+
+    .control-label {
+      font-weight: normal !important;
+      text-align: left !important;
+      width: 100%;
+
+      input[type='radio'] {
+        margin-left: 0;
+        padding-left: 0;
+        position: relative;
+      }
+    }
+
+    &.inline-radios {
+      .form-type-radio {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  .inline-radios {
+    .control-label {
+      font-weight: normal !important;
+
+      input[type='radio'] {
+        margin-left: 0;
+        padding-left: 0;
+        position: relative;
+      }
+    }
+  }
+
+  .member-select {
+    .fieldset-legend-wrapper {
+      display: none;
+    }
+  }
+
+  .form-group {
+    &.col-md-8 {
+      @media (min-width: $screen-md) {
+        width: 66.66667%;
+      }
+    }
+  }
+
+  .form-wrapper-left-group {
+    @media (min-width: $screen-md) {
+      float: left;
+      min-height: 1px;
+      padding: 0 15px;
+      position: relative;
+      width: 66.66667%;
+    }
+  }
+
+  .form-wrapper {
+    .form-wrapper-left-group {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.field--widget-am-net-firms-employee-selector {
+  margin: 0;
+
+  .employee_selector_widget {
+    h3 {
+      font-family: $font-family-sans-serif-heading;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
+.find-employee-form {
+  .form-group {
+    border: 1px solid $slate-lightest;
+    clear: both;
+    display: block;
+    padding: 0 15px;
+    position: relative;
+
+    .add-employees-form {
+      .form-group {
+        border: 0;
+      }
+
+      .form-actions {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.page-header-manage-my-firm {
+  margin: 44px 0 10px;
+}
+
+.panel-firm-body {
+  h2,
+  .h2 {
+    font-size: 24px;
+    margin: 4px 0 9px;
+  }
+
+  .contextual-region {
+    display: table;
+  }
+
+  .field--name-field-address,
+  .field--name-field-phone,
+  .field--name-field-fax {
+    display: block;
+    margin-right: 15px;
+    position: relative;
+
+    @media (min-width: $screen-sm) {
+      display: table-cell;
+      margin: 0;
+      padding-right: 15px;
+    }
+  }
+}
+
+.panel-footer {
+  overflow: hidden;
+}
+
+small.line-break {
+  clear: both;
+  display: block;
+  font-size: 16px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.filter-listing-element {
+  clear: both;
+  margin-left: auto;
+  max-width: 330px;
+  text-align: right;
+
+  .form-item {
+    .control-label {
+      float: none;
+      font-size: 14px;
+      padding-right: 0;
+    }
+
+    .col-sm-9 {
+      float: right;
+      width: 180px !important;
+    }
+  }
+}
+
+.firm-summary-info {
+  .list-group-item {
+    h2 {
+      margin: 0 0 8px;
+    }
+
+    .field--name-name {
+      display: block;
+      font-size: 17px;
+      position: relative;
+    }
+  }
+}
+
+.emt-firm-dues {
+  tbody > tr > td {
+    text-align: center;
+    vertical-align: middle;
+
+    .form-type-checkbox {
+      label {
+        top: auto;
+      }
+    }
+  }
+
+  .form-type-number {
+    clear: both;
+    display: block;
+    margin: 0;
+    position: relative;
+
+    .control-label {
+      display: inline-block;
+      float: none;
+      font-size: 16px;
+      height: 32px;
+      margin: 0 4px 0 0;
+      padding: 4px 0 0;
+      position: relative;
+      top: auto;
+      vertical-align: middle;
+      width: auto;
+    }
+
+    .form-control {
+      display: inline-block;
+      float: none;
+      height: 32px;
+      margin: 0 !important;
+      max-width: 100px;
+      padding: 0 0 10px;
+      position: relative;
+      vertical-align: middle;
+      width: auto;
+    }
+  }
+
+  .select-all {
+    &::before {
+      content: 'Select All';
+      display: inline-block;
+      margin: 0 5px 0 0;
+    }
+
+    input {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.path-membership-application-general-information #edit-field-gender--wrapper legend .form-required::after,
+.path-membership-application-general-information #edit-field-ethnic-origin--wrapper legend .form-required::after {
+  background-image: url('../images/required.svg');
+  background-size: 10px 7px;
+  content: '';
+  display: inline-block;
+  height: 7px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 10px;
+}
+
+form .form-group {
+  .form-item-member-dues-information-membership-dues,
+  .form-item-member-dues-information-name {
+    margin: 0;
+  }
+}

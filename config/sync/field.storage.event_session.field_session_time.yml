@@ -1,0 +1,20 @@
+uuid: bcd6358e-d637-496e-a603-7c139d3304bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - vscpa_commerce
+id: event_session.field_session_time
+field_name: field_session_time
+entity_type: event_session
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

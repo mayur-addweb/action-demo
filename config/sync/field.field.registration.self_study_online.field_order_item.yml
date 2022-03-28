@@ -1,0 +1,28 @@
+uuid: 4404d44c-8ed0-43c9-9346-6f723d7485d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.self_study_registration
+    - field.storage.registration.field_order_item
+    - rng.registration_type.self_study_online
+id: registration.self_study_online.field_order_item
+field_name: field_order_item
+entity_type: registration
+bundle: self_study_online
+label: 'Order item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order_item'
+  handler_settings:
+    target_bundles:
+      self_study_registration: self_study_registration
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

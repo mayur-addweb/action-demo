@@ -1,0 +1,23 @@
+uuid: 4d09920c-af90-47fe-aea2-4e2d0482d6d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_centered_content
+    - paragraphs.paragraphs_type.full_width_cta
+id: paragraph.full_width_cta.field_centered_content
+field_name: field_centered_content
+entity_type: paragraph
+bundle: full_width_cta
+label: 'Center Buttons?'
+description: 'Check this box if buttons should appear centered beneath the content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: b15450d4-1009-4701-8fd6-f95957c78ba8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - field.storage.commerce_product.field_credit_hours
+id: commerce_product.cpe_event.field_credit_hours
+field_name: field_credit_hours
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Credit hours'
+description: 'The maximum number of credit hours available from the event''s sessions.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

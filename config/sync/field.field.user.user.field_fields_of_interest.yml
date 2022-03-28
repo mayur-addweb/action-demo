@@ -1,0 +1,30 @@
+uuid: 3ee4a6c4-1ceb-4b92-ae71-3168ee902e90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_fields_of_interest
+    - taxonomy.vocabulary.interest
+  module:
+    - user
+id: user.user.field_fields_of_interest
+field_name: field_fields_of_interest
+entity_type: user
+bundle: user
+label: 'Fields of Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      interest: interest
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

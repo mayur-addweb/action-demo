@@ -1,0 +1,36 @@
+uuid: 4317e8ac-90af-4a60-9ff3-bcccc1a13f2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_receive_calls
+field_name: field_receive_calls
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: CE
+      label: 'Notice of cancellations or important alerts like inclement weather about my event registration'
+    -
+      value: CM
+      label: 'Notice when my membership payment is due'
+    -
+      value: CO
+      label: 'Notice when my credit card used for payments is declined'
+    -
+      value: CL
+      label: 'Notice of important legislative updates or lobbying efforts'
+    -
+      value: CN
+      label: 'Notice of new VSCPA events and programs'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

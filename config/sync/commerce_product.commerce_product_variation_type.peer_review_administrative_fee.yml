@@ -1,0 +1,10 @@
+uuid: 8fbfa9a1-4bdf-4b64-b7c0-56db31576fb9
+langcode: en
+status: true
+dependencies: {  }
+id: peer_review_administrative_fee
+label: 'Peer Review Administrative Fee'
+orderItemType: peer_review_administrative_fee
+generateTitle: false
+traits: {  }
+locked: false

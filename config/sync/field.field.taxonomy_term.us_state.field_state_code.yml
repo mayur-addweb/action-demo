@@ -1,0 +1,19 @@
+uuid: c79de272-4edf-429d-9b67-0907b5b457c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_state_code
+    - taxonomy.vocabulary.us_state
+id: taxonomy_term.us_state.field_state_code
+field_name: field_state_code
+entity_type: taxonomy_term
+bundle: us_state
+label: 'State Code'
+description: 'Provide the US State Code.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

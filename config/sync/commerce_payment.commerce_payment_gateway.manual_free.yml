@@ -1,0 +1,25 @@
+uuid: f80b1fd9-2517-4d0a-879e-a4db396aa5c6
+langcode: en
+status: true
+dependencies: {  }
+id: manual_free
+label: FREE
+weight: null
+plugin: manual
+configuration:
+  instructions:
+    value: ''
+    format: plain_text
+  display_label: FREE
+  mode: n/a
+  payment_method_types:
+    - credit_card
+conditions:
+  -
+    plugin: order_total_price
+    configuration:
+      operator: '=='
+      amount:
+        number: '0.00'
+        currency_code: USD
+conditionOperator: AND

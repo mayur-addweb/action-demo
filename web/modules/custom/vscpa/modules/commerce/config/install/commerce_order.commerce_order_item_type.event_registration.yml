@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: events
+label: 'Event registration'
+id: event_registration
+purchasableEntityType: commerce_product_variation
+orderType: event_registration
+traits: {  }

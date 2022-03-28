@@ -1,0 +1,37 @@
+uuid: ec440cb7-f613-4bf0-871b-72325e15f478
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.memberonly
+  module:
+    - path
+    - text
+id: taxonomy_term.memberonly.default
+targetEntityType: taxonomy_term
+bundle: memberonly
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

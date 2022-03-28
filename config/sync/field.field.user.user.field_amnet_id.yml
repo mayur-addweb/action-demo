@@ -1,0 +1,20 @@
+uuid: e9eaa4e0-7527-42df-944b-cdd54e670bd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_id
+  module:
+    - user
+id: user.user.field_amnet_id
+field_name: field_amnet_id
+entity_type: user
+bundle: user
+label: 'AM.net ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

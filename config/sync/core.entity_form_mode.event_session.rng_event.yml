@@ -1,0 +1,10 @@
+uuid: a2905701-b8fe-4a28-b79d-f9ec0e15f1f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - vscpa_commerce
+id: event_session.rng_event
+label: 'Event Settings'
+targetEntityType: event_session
+cache: true

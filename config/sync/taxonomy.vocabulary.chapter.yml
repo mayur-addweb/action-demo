@@ -1,0 +1,8 @@
+uuid: 0b36776c-40c6-47cd-bcc3-4f7d8ff25603
+langcode: en
+status: true
+dependencies: {  }
+name: Chapter
+vid: chapter
+description: ''
+weight: 0

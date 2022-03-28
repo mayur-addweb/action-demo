@@ -1,0 +1,89 @@
+uuid: ed26cc3a-0aac-4ed8-ab37-72c6240b8007
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.restricted_content_search_index
+    - field.field.node.location.body
+    - field.field.node.location.field_address
+    - field.field.node.location.field_alt_description
+    - field.field.node.location.field_alt_title
+    - field.field.node.location.field_amnet_id
+    - field.field.node.location.field_buttons
+    - field.field.node.location.field_categories
+    - field.field.node.location.field_cover_image
+    - field.field.node.location.field_cover_video
+    - field.field.node.location.field_email
+    - field.field.node.location.field_featurette_bottom
+    - field.field.node.location.field_featurette_top
+    - field.field.node.location.field_field_of_interest
+    - field.field.node.location.field_keywords
+    - field.field.node.location.field_links
+    - field.field.node.location.field_loc_type
+    - field.field.node.location.field_location_images
+    - field.field.node.location.field_memberonly
+    - field.field.node.location.field_oldpath
+    - field.field.node.location.field_overlay
+    - field.field.node.location.field_related_content
+    - node.type.location
+  module:
+    - smart_trim
+    - user
+id: node.location.restricted_content_search_index
+targetEntityType: node
+bundle: location
+mode: restricted_content_search_index
+content:
+  body:
+    type: smart_trim
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 20
+      trim_type: words
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  field_cover_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_address: true
+  field_alt_description: true
+  field_alt_title: true
+  field_amnet_id: true
+  field_buttons: true
+  field_categories: true
+  field_cover_video: true
+  field_email: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_keywords: true
+  field_links: true
+  field_loc_type: true
+  field_location_images: true
+  field_memberonly: true
+  field_oldpath: true
+  field_overlay: true
+  field_related_content: true
+  links: true
+  title_field: true
+  title_teaser: true

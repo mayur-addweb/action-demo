@@ -1,0 +1,39 @@
+uuid: 0e9e411a-a2db-4a3a-80f3-96abb51595a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - am_net_cpe
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: mycpedigitalrewind
+theme: vscpa_bootstrap
+region: content
+weight: -1
+provider: null
+plugin: am_net_cpe_my_cpe_digital_rewind_block
+settings:
+  id: am_net_cpe_my_cpe_digital_rewind_block
+  label: 'My CPE - Digital Rewind'
+  provider: am_net_cpe
+  label_display: '0'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1544548651'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1544548651'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/digital-rewind\r\n/e-summit"
+    negate: false
+    context_mapping: {  }

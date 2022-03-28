@@ -1,0 +1,30 @@
+cancel_confirm:
+  body: "[user:display-name],\r\n\r\nA request to cancel your account has been made at [site:name].\r\n\r\nYou may now cancel your account on [site:url-brief] by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:cancel-url]\r\n\r\nNOTE: The cancellation of your account is not reversible.\r\n\r\nThis link expires in one day and nothing will happen if it is not used.\r\n\r\n--  [site:name] team"
+  subject: 'Account cancellation request for [user:display-name] at [site:name]'
+password_reset:
+  body: "Hello [user:field_givenname] [current-user:field_familyname] -<br><br>\r\nWe received a request to reset your VSCPA.com password. Please click the following button to reset your password. For your security, this button will expire in one day and nothing will happen if it's not used. This button can only be used once and will lead you to a page where you can reset your password.<br><br>\r\n<div><!--[if mso]>\r\n  <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"[user:one-time-login-url]\" style=\"height:40px;v-text-anchor:middle;width:200px;\" arcsize=\"125%\" strokecolor=\"#5b2550\" fillcolor=\"#7d226b\">\r\n    <w:anchorlock/>\r\n    <center style=\"color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:500;\">Reset Your Password</center>\r\n  </v:roundrect>\r\n<![endif]--><a href=\"[user:one-time-login-url]\" style=\"background-color:#7d226b;border:1px solid #5b2550;border-radius:50px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;font-weight:500;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;\" title='Reset Your Password'>Reset Your Password</a></div><br>\r\nIf you did not make this request, feel free to ignore this email or contact us with questions at <a href=\"mailto:vscpa@vscpa.com\">vscpa@vscpa.com</a> or (800) 733-8272. Please do NOT reply to this email, as the address is not monitored.<br><br>\r\nThanks!<br><br>"
+  subject: 'Password Reset Was Requested'
+register_admin_created:
+  body: "[user:display-name],\r\n\r\nA site administrator at [site:name] has created an account for you. You may now log in by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nThis link can only be used once to log in and will lead you to a page where you can set your password.\r\n\r\nAfter setting your password, you will be able to log in at [site:login-url] in the future using:\r\n\r\nusername: [user:name]\r\npassword: Your password\r\n\r\n--  [site:name] team"
+  subject: 'An administrator created an account for you at [site:name]'
+register_no_approval_required:
+  body: "[user:display-name],\r\n\r\nThank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nThis link can only be used once to log in and will lead you to a page where you can set your password.\r\n\r\nAfter setting your password, you will be able to log in at [site:login-url] in the future using:\r\n\r\nusername: [user:name]\r\npassword: Your password\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name]'
+register_pending_approval:
+  body: "[user:display-name],\r\n\r\nThank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another email containing information about how to log in, set your password, and other details.\r\n\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+register_pending_approval_admin:
+  body: "[user:display-name] has applied for an account.\r\n\r\n[user:edit-url]"
+  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+status_activated:
+  body: "[user:display-name],\r\n\r\nYour account at [site:name] has been activated.\r\n\r\nYou may now log in by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nThis link can only be used once to log in and will lead you to a page where you can set your password.\r\n\r\nAfter setting your password, you will be able to log in at [site:login-url] in the future using:\r\n\r\nusername: [user:account-name]\r\npassword: Your password\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name] (approved)'
+status_blocked:
+  body: "[user:display-name],\r\n\r\nYour account on [site:name] has been blocked.\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name] (blocked)'
+status_canceled:
+  body: "[user:display-name],\r\n\r\nYour account on [site:name] has been canceled.\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name] (canceled)'
+langcode: en
+_core:
+  default_config_hash: m4J3ROov32OEquRYGLbx3SpdDGuqx9l_zJtNvihqdCg

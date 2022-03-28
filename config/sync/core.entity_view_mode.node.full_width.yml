@@ -1,0 +1,10 @@
+uuid: d41ec949-1996-4401-adad-768cac81ca55
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.full_width
+label: 'Full Width'
+targetEntityType: node
+cache: true

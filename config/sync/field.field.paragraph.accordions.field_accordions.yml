@@ -1,0 +1,79 @@
+uuid: ea571783-6ffd-4eaf-bb80-c0eb95af9962
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordions
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - entity_reference_revisions
+id: paragraph.accordions.field_accordions
+field_name: field_accordions
+entity_type: paragraph
+bundle: accordions
+label: Accordions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_item: accordion_item
+    target_bundles_drag_drop:
+      accordion_item:
+        enabled: true
+        weight: 18
+      accordions:
+        weight: 19
+        enabled: false
+      bp_columns:
+        weight: 20
+        enabled: false
+      column:
+        weight: 21
+        enabled: false
+      cpe_credit:
+        weight: 22
+        enabled: false
+      feat_media:
+        weight: 23
+        enabled: false
+      feat_people:
+        weight: 24
+        enabled: false
+      feat_tabs:
+        weight: 25
+        enabled: false
+      feat_textarea:
+        weight: 26
+        enabled: false
+      item:
+        weight: 27
+        enabled: false
+      pol_contact:
+        weight: 28
+        enabled: false
+      session:
+        weight: 29
+        enabled: false
+      slide:
+        weight: 30
+        enabled: false
+      slideshow:
+        weight: 31
+        enabled: false
+      tabs:
+        weight: 32
+        enabled: false
+      tab_item:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

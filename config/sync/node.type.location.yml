@@ -1,0 +1,17 @@
+uuid: 144da3af-95c8-4404-81d8-23bdd930f82c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Location
+type: location
+description: 'Use <i>Location</i> to define facilities that can be attached to <i>Events</i>.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

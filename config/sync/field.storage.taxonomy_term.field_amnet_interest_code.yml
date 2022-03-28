@@ -1,0 +1,21 @@
+uuid: 966ee4a5-630c-45f5-ae1a-7fd9c14e1de6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_amnet_interest_code
+field_name: field_amnet_interest_code
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 10
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

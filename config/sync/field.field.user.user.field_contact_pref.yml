@@ -1,0 +1,23 @@
+uuid: ab461cd0-3880-4a74-bad1-c8e3a4159361
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_contact_pref
+  module:
+    - options
+    - user
+id: user.user.field_contact_pref
+field_name: field_contact_pref
+entity_type: user
+bundle: user
+label: 'Where do you prefer to receive general VSCPA mail?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: H
+default_value_callback: ''
+settings: {  }
+field_type: list_string

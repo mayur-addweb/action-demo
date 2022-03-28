@@ -1,0 +1,30 @@
+uuid: 504dd3a6-d0c4-4eef-bc94-9b56ea971409
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.web_experience_custom.field_amnet_code
+    - taxonomy.vocabulary.web_experience_custom
+  module:
+    - text
+id: taxonomy_term.web_experience_custom.default
+targetEntityType: taxonomy_term
+bundle: web_experience_custom
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_amnet_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

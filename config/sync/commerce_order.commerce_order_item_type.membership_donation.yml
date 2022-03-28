@@ -1,0 +1,15 @@
+uuid: 8b120353-7b01-46f9-a75b-b3a607e6f771
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: services
+label: 'Membership donation'
+id: membership_donation
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false

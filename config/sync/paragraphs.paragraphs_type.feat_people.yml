@@ -1,0 +1,9 @@
+uuid: abbe3c81-827b-4ad1-a4e5-7f529225448f
+langcode: en
+status: true
+dependencies: {  }
+id: feat_people
+label: 'People Featurette'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

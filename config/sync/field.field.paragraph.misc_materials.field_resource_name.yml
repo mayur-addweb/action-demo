@@ -1,0 +1,19 @@
+uuid: 82cda443-db16-4a73-84ed-63a8525ae77b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_name
+    - paragraphs.paragraphs_type.misc_materials
+id: paragraph.misc_materials.field_resource_name
+field_name: field_resource_name
+entity_type: paragraph
+bundle: misc_materials
+label: 'Resource Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

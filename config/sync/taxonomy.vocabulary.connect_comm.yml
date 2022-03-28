@@ -1,0 +1,8 @@
+uuid: 7325f990-6abc-492b-9eaf-fa061e068d2c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Connect Email'
+vid: connect_comm
+description: ''
+weight: 0

@@ -1,0 +1,23 @@
+uuid: 74342697-dd15-41ee-98fd-1c60f7b970e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.session_registration
+    - field.storage.commerce_product_variation.field_price_nonmember
+  module:
+    - commerce_price
+id: commerce_product_variation.session_registration.field_price_nonmember
+field_name: field_price_nonmember
+entity_type: commerce_product_variation
+bundle: session_registration
+label: 'Non member price'
+description: 'The price for a non-member to attend this session.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+field_type: commerce_price

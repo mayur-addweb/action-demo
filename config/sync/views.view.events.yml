@@ -1,0 +1,2763 @@
+uuid: 92fd6c0d-e7d4-4951-b835-5702c6d5834c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - commerce_product.commerce_product_type.cpe_self_study
+    - core.entity_view_mode.commerce_product.block
+    - core.entity_view_mode.commerce_product.teaser
+    - field.storage.commerce_product.field_amnet_event_id
+    - field.storage.commerce_product.field_course_prodcode
+    - field.storage.commerce_product.field_search_keywords
+    - taxonomy.vocabulary.course_level
+    - taxonomy.vocabulary.cpe_type
+    - taxonomy.vocabulary.field_of_study
+    - taxonomy.vocabulary.firm
+    - taxonomy.vocabulary.interest
+    - taxonomy.vocabulary.keyword
+    - taxonomy.vocabulary.marketing_keywords
+  module:
+    - am_net
+    - better_exposed_filters
+    - commerce
+    - commerce_product
+    - datetime
+    - geolocation
+    - options
+    - paragraphs
+    - taxonomy
+    - user
+id: events
+label: Events
+module: views
+description: ''
+tag: ''
+base_table: commerce_product_field_data
+base_field: product_id
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'view commerce_product'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: bef
+        options:
+          submit_button: 'Filter Results'
+          reset_button: true
+          reset_button_label: 'Reset Filters'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: false
+              input_required: false
+              text_input_required: 'Select any filter and click on Apply to see results'
+              text_input_required_format: basic_html
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+            sort:
+              plugin_id: default
+              advanced:
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
+            filter:
+              combine:
+                plugin_id: default
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_dates_times_value:
+                plugin_id: bef_datepicker
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_credit_hours_value:
+                plugin_id: default
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_cpe_type_target_id:
+                plugin_id: bef
+                select_all_none: false
+                select_all_none_nested: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All'
+                  sort_options: false
+              field_field_of_study_target_id:
+                plugin_id: bef
+                select_all_none: false
+                select_all_none_nested: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_course_level_target_id:
+                plugin_id: bef
+                select_all_none: false
+                select_all_none_nested: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All'
+                  sort_options: false
+          text_input_required_format: basic_html
+      pager:
+        type: full
+        options:
+          items_per_page: 8
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      style:
+        type: default
+        options:
+          row_class: 'col-xs-12 col-md-6 col-lg-3'
+          default_row_class: true
+          uses_fields: true
+      row:
+        type: 'entity:commerce_product'
+        options:
+          relationship: none
+          view_mode: teaser
+      fields:
+        title:
+          table: commerce_product_field_data
+          field: title
+          id: title
+          entity_type: null
+          entity_field: title
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          value: '1'
+          table: commerce_product_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: commerce_product
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: commerce_product_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            cpe_event: cpe_event
+            cpe_self_study: cpe_self_study
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            hide_single_bundle: true
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: commerce_product
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+        title:
+          id: title
+          table: commerce_product_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            placeholder: 'Search by event title, keyword or course number (#-###)'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: commerce_product
+          entity_field: title
+          plugin_id: string
+        field_credit_amount_value:
+          id: field_credit_amount_value
+          table: paragraph__field_credit_amount
+          field: field_credit_amount_value
+          relationship: field_credits
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_credit_amount_value_op
+            label: 'Credit Amount'
+            description: ''
+            use_operator: false
+            operator: field_credit_amount_value_op
+            identifier: field_credit_amount_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_cpe_type_target_id:
+          id: field_cpe_type_target_id
+          table: commerce_product__field_cpe_type
+          field: field_cpe_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_cpe_type_target_id_op
+            label: 'CPE Type'
+            description: ''
+            use_operator: false
+            operator: field_cpe_type_target_id_op
+            identifier: cpe_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: cpe_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_course_level_target_id:
+          id: field_course_level_target_id
+          table: commerce_product__field_course_level
+          field: field_course_level_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_course_level_target_id_op
+            label: 'Knowledge Level'
+            description: ''
+            use_operator: false
+            operator: field_course_level_target_id_op
+            identifier: field_course_level_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: course_level
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_credit_hours_value:
+          id: field_credit_hours_value
+          table: commerce_product__field_credit_hours
+          field: field_credit_hours_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            use_operator: false
+            operator: field_credit_hours_value_op
+            identifier: field_credit_hours_value
+            label: 'Credit hours (field_credit_hours)'
+            description: null
+            remember: false
+            multiple: false
+            required: false
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+      sorts:
+        field_dates_times_value:
+          id: field_dates_times_value
+          table: commerce_product__field_dates_times
+          field: field_dates_times_value
+          relationship: none
+          group_type: count_distinct
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Date
+          plugin_id: datetime
+          entity_type: commerce_product
+        title:
+          id: title
+          table: commerce_product_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Title
+          entity_type: commerce_product
+          entity_field: title
+          plugin_id: standard
+      title: 'CPE & Event Search'
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships:
+        field_credits:
+          id: field_credits
+          table: commerce_product__field_credits
+          field: field_credits
+          relationship: none
+          group_type: group
+          admin_label: 'field_credits: Paragraph'
+          required: false
+          plugin_id: standard
+      arguments: {  }
+      display_extenders:
+        ajax_history:
+          enable_history: true
+      use_ajax: true
+      group_by: true
+      css_class: events-list-page
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+        - user.permissions
+      tags: {  }
+  events:
+    display_plugin: block
+    id: events
+    display_title: 'CPE & Event Search'
+    position: 1
+    display_options:
+      display_extenders:
+        ajax_history:
+          enable_history: true
+      display_description: ''
+      allow:
+        items_per_page: true
+      group_by: true
+      defaults:
+        group_by: false
+        relationships: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        fields: false
+        use_ajax: false
+        empty: false
+      relationships:
+        field_credits:
+          id: field_credits
+          table: commerce_product__field_credits
+          field: field_credits
+          relationship: none
+          group_type: group
+          admin_label: 'field_credits: Paragraph'
+          required: false
+          plugin_id: standard
+        field_keywords:
+          id: field_keywords
+          table: commerce_product__field_keywords
+          field: field_keywords
+          relationship: none
+          group_type: group
+          admin_label: 'field_keywords: Taxonomy term'
+          required: false
+          plugin_id: standard
+      filters:
+        status:
+          value: '1'
+          table: commerce_product_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: commerce_product
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: commerce_product_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            cpe_event: cpe_event
+            cpe_self_study: cpe_self_study
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            hide_single_bundle: true
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: commerce_product
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            placeholder: 'Search by event title, keyword or course number (#-###)'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title: title
+            field_amnet_event_id: field_amnet_event_id
+            name: name
+            field_course_prodcode: field_course_prodcode
+            field_search_keywords: field_search_keywords
+          plugin_id: combine
+        field_dates_times_value:
+          id: field_dates_times_value
+          table: commerce_product__field_dates_times
+          field: field_dates_times_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_dates_times_value_op
+            label: Date
+            description: ''
+            use_operator: false
+            operator: field_dates_times_value_op
+            identifier: field_dates_times_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            placeholder: ''
+            min_placeholder: 'Select Start Date'
+            max_placeholder: 'Select End Date'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        field_search_index_credit_hours_value:
+          id: field_search_index_credit_hours_value
+          table: commerce_product__field_search_index_credit_hours
+          field: field_search_index_credit_hours_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: regular_expression
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_search_index_credit_hours_value_op
+            label: 'Search index Credit hours (field_search_index_credit_hours)'
+            description: ''
+            use_operator: false
+            operator: field_search_index_credit_hours_value_op
+            identifier: field_search_index_credit_hours_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_field_of_study_target_id:
+          id: field_field_of_study_target_id
+          table: commerce_product__field_field_of_study
+          field: field_field_of_study_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_field_of_study_target_id_op
+            label: 'Field of Study'
+            description: ''
+            use_operator: false
+            operator: field_field_of_study_target_id_op
+            identifier: field_of_study
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: field_of_study
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_course_level_target_id:
+          id: field_course_level_target_id
+          table: commerce_product__field_course_level
+          field: field_course_level_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_course_level_target_id_op
+            label: 'Knowledge Level'
+            description: ''
+            use_operator: false
+            operator: field_course_level_target_id_op
+            identifier: field_course_level_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: course_level
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_exclude_from_web_catalog_value:
+          id: field_exclude_from_web_catalog_value
+          table: commerce_product__field_exclude_from_web_catalog
+          field: field_exclude_from_web_catalog_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '0'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_date_value:
+          id: field_search_index_date_value
+          table: commerce_product__field_search_index_date
+          field: field_search_index_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        field_search_index_attest_compil_value:
+          id: field_search_index_attest_compil_value
+          table: commerce_product__field_search_index_attest_compil
+          field: field_search_index_attest_compil_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Credit type - Attest & Compilation'
+            description: ''
+            use_operator: false
+            operator: field_search_index_attest_compil_value_op
+            identifier: field_search_index_attest_compil_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_cfp_value:
+          id: field_search_index_cfp_value
+          table: commerce_product__field_search_index_cfp
+          field: field_search_index_cfp_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Credit type - CFP'
+            description: ''
+            use_operator: false
+            operator: field_search_index_cfp_value_op
+            identifier: field_search_index_cfp_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_yellow_book_value:
+          id: field_search_index_yellow_book_value
+          table: commerce_product__field_search_index_yellow_book
+          field: field_search_index_yellow_book_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Credit type - Yellow Book'
+            description: ''
+            use_operator: false
+            operator: field_search_index_yellow_book_value_op
+            identifier: field_search_index_yellow_book_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_aicpa_value:
+          id: field_search_index_aicpa_value
+          table: commerce_product__field_search_index_aicpa
+          field: field_search_index_aicpa_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - AICPA'
+            description: ''
+            use_operator: false
+            operator: field_search_index_aicpa_value_op
+            identifier: field_search_index_aicpa_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_free_value:
+          id: field_search_index_free_value
+          table: commerce_product__field_search_index_free
+          field: field_search_index_free_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - Free'
+            description: ''
+            use_operator: false
+            operator: field_search_index_free_value_op
+            identifier: field_search_index_free_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_early_regis_value:
+          id: field_search_index_early_regis_value
+          table: commerce_product__field_search_index_early_regis
+          field: field_search_index_early_regis_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_search_index_early_regis_value_op
+            label: 'Search Index - Early registration'
+            description: ''
+            use_operator: false
+            operator: field_search_index_early_regis_value_op
+            identifier: field_search_index_early_regis_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        field_search_index_keyword_target_id:
+          id: field_search_index_keyword_target_id
+          table: commerce_product__field_search_index_keyword
+          field: field_search_index_keyword_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: marketing_keywords_op
+            label: 'Search Index - Keyword (field_search_index_keyword)'
+            description: ''
+            use_operator: true
+            operator: field_search_index_keyword_target_id_op
+            identifier: marketing_keywords
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: marketing_keywords
+          hierarchy: false
+          error_message: false
+          plugin_id: taxonomy_index_tid
+        field_field_of_interest_target_id:
+          id: field_field_of_interest_target_id
+          table: commerce_product__field_field_of_interest
+          field: field_field_of_interest_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_field_of_interest_target_id_op
+            label: 'Field of Interest'
+            description: ''
+            use_operator: false
+            operator: field_field_of_interest_target_id_op
+            identifier: field_of_interest
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: interest
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_keywords_target_id:
+          id: field_keywords_target_id
+          table: commerce_product__field_keywords
+          field: field_keywords_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_keywords_target_id_op
+            label: Keywords
+            description: ''
+            use_operator: false
+            operator: field_keywords_target_id_op
+            identifier: field_keywords
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: keyword
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_course_vendors_target_id:
+          id: field_course_vendors_target_id
+          table: commerce_product__field_course_vendors
+          field: field_course_vendors_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_course_vendors_target_id_op
+            label: Vendors
+            description: ''
+            use_operator: false
+            operator: field_course_vendors_target_id_op
+            identifier: field_vendors
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: textfield
+          limit: true
+          vid: firm
+          hierarchy: false
+          error_message: false
+          plugin_id: taxonomy_index_tid
+        field_division_value:
+          id: field_division_value
+          table: commerce_product__field_division
+          field: field_division_value
+          relationship: none
+          group_type: group
+          admin_label: Division
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_division_value_op
+            label: Division
+            description: ''
+            use_operator: false
+            operator: field_division_value_op
+            identifier: field_division_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_search_index_geolocation_proximity:
+          id: field_search_index_geolocation_proximity
+          table: commerce_product__field_search_index_geolocation
+          field: field_search_index_geolocation_proximity
+          relationship: none
+          group_type: group
+          admin_label: 'Geolocation Proximity'
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: '0'
+            center: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_search_index_geolocation_proximity_op
+            label: 'Proximity (field_search_index_geolocation)'
+            description: ''
+            use_operator: true
+            operator: field_search_index_geolocation_proximity_op
+            identifier: field_search_index_geolocation_proximity
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          location_input:
+            client_location:
+              weight: 0
+              enable: false
+              location_input_id: client_location
+              settings:
+                auto_submit: false
+                hide_form: false
+            coordinates:
+              enable: true
+              weight: 0
+              location_input_id: coordinates
+            geocoder:
+              weight: 0
+              enable: false
+              location_input_id: geocoder
+            'fixed_value:fixed_value':
+              settings:
+                location_settings:
+                  settings:
+                    latitude: ''
+                    longitude: ''
+                location_plugin_id: fixed_value
+              weight: 0
+              enable: false
+              location_input_id: location_plugins
+            'freeogeoip:freeogeoip':
+              weight: 0
+              enable: false
+              location_input_id: location_plugins
+              settings:
+                location_plugin_id: freeogeoip
+          unit: mi
+          plugin_id: geolocation_filter_proximity
+        field_search_index_online_value:
+          id: field_search_index_online_value
+          table: commerce_product__field_search_index_online
+          field: field_search_index_online_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 2
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - Online'
+            description: ''
+            use_operator: false
+            operator: field_search_index_online_value_op
+            identifier: field_search_index_online_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_in_person_value:
+          id: field_search_index_in_person_value
+          table: commerce_product__field_search_index_in_person
+          field: field_search_index_in_person_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 2
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - In-Person'
+            description: ''
+            use_operator: false
+            operator: field_search_index_in_person_value_op
+            identifier: field_search_index_in_person_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_on_demand_value:
+          id: field_search_index_on_demand_value
+          table: commerce_product__field_search_index_on_demand
+          field: field_search_index_on_demand_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 2
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - On-Demand'
+            description: ''
+            use_operator: false
+            operator: field_search_index_on_demand_value_op
+            identifier: field_search_index_on_demand_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_search_index_is_bundle_value:
+          id: field_search_index_is_bundle_value
+          table: commerce_product__field_search_index_is_bundle
+          field: field_search_index_is_bundle_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Search Index - Is Bundle'
+            description: ''
+            use_operator: false
+            operator: field_search_index_is_bundle_value_op
+            identifier: bundle
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              content_author: '0'
+              store_manager: '0'
+              firm_administrator: '0'
+              member: '0'
+              vscpa_administrator: '0'
+              amnet_agent: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
+      sorts:
+        field_trending_event_value:
+          id: field_trending_event_value
+          table: commerce_product__field_trending_event
+          field: field_trending_event_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        field_search_index_date_value:
+          id: field_search_index_date_value
+          table: commerce_product__field_search_index_date
+          field: field_search_index_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Date
+          granularity: second
+          plugin_id: datetime
+        title:
+          id: title
+          table: commerce_product_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Title
+          entity_type: commerce_product
+          entity_field: title
+          plugin_id: standard
+        field_search_keywords_value:
+          id: field_search_keywords_value
+          table: commerce_product__field_search_keywords
+          field: field_search_keywords_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: true
+          expose:
+            label: Relevance
+          plugin_id: standard
+      fields:
+        title:
+          id: title
+          table: commerce_product_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: null
+          entity_field: title
+          plugin_id: field
+        field_amnet_event_id:
+          id: field_amnet_event_id
+          table: commerce_product__field_amnet_event_id
+          field: field_amnet_event_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: code
+          type: amnet_event_id_default
+          settings: {  }
+          group_column: code
+          group_columns:
+            code: code
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          set_precision: false
+          precision: 0
+          decimal: .
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+          plugin_id: field
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_keywords
+          group_type: count_distinct
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ', '
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: null
+          group_columns: null
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        field_course_prodcode:
+          id: field_course_prodcode
+          table: commerce_product__field_course_prodcode
+          field: field_course_prodcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns:
+            value: value
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_search_keywords:
+          id: field_search_keywords
+          table: commerce_product__field_search_keywords
+          field: field_search_keywords
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns:
+            value: value
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      use_ajax: true
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'Your search criteria returned no results.'
+            format: basic_html
+          plugin_id: text
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+        - user.permissions
+      tags:
+        - 'config:field.storage.commerce_product.field_amnet_event_id'
+        - 'config:field.storage.commerce_product.field_course_prodcode'
+        - 'config:field.storage.commerce_product.field_search_keywords'
+  related_events:
+    display_plugin: block
+    id: related_events
+    display_title: 'Related Events'
+    position: 2
+    display_options:
+      display_extenders:
+        ajax_history:
+          enable_history: true
+      display_description: ''
+      title: 'Related Events'
+      defaults:
+        title: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        relationships: false
+        arguments: false
+        group_by: true
+        header: false
+        exposed_form: false
+        use_ajax: false
+        css_class: false
+      style:
+        type: default
+        options:
+          row_class: 'col-xs-12 col-lg-6'
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:commerce_product'
+        options:
+          relationship: none
+          view_mode: block
+      filters:
+        status:
+          value: '1'
+          table: commerce_product_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: commerce_product
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: commerce_product_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            cpe_event: cpe_event
+            cpe_self_study: cpe_self_study
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            hide_single_bundle: true
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: commerce_product
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+        field_search_index_date_value:
+          id: field_search_index_date_value
+          table: commerce_product__field_search_index_date
+          field: field_search_index_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_dates_times_value:
+          id: field_dates_times_value
+          table: commerce_product__field_dates_times
+          field: field_dates_times_value
+          relationship: none
+          group_type: count_distinct
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Date
+          plugin_id: datetime
+          entity_type: commerce_product
+      pager:
+        type: some
+        options:
+          items_per_page: 4
+          offset: 0
+      relationships:
+        field_cpe_type:
+          id: field_cpe_type
+          table: commerce_product__field_cpe_type
+          field: field_cpe_type
+          relationship: none
+          group_type: group
+          admin_label: term
+          required: true
+          plugin_id: standard
+      arguments:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_cpe_type
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: true
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+          add_table: false
+          require_value: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+        product_id:
+          id: product_id
+          table: commerce_product_field_data
+          field: product_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: product
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: true
+          entity_type: commerce_product
+          entity_field: product_id
+          plugin_id: numeric
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h3 class=\"accent-left purple\" id=\"related\">Related Events</h3>\n<a class=\"btn btn-purple jump\" href=\"/continuing-professional-education/cpe-event-search\">View All Events</a>"
+            format: full_html
+          plugin_id: text
+      exposed_form:
+        type: basic
+        options:
+          submit_button: 'Filter Results'
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      use_ajax: false
+      css_class: related-events
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'url.query_args:sort_by'
+        - user.permissions
+      tags: {  }
+  upcoming_vscpa_events:
+    display_plugin: block
+    id: upcoming_vscpa_events
+    display_title: 'Upcoming VSCPA Events'
+    position: 3
+    display_options:
+      display_extenders:
+        ajax_history:
+          enable_history: true
+      display_description: ''
+      title: 'Upcoming VSCPA Events'
+      defaults:
+        title: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+        sorts: false
+        pager: false
+        relationships: false
+        arguments: false
+        group_by: true
+        header: false
+        exposed_form: false
+        use_ajax: false
+        css_class: false
+      style:
+        type: default
+        options:
+          row_class: 'col-xs-12 col-lg-6'
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:commerce_product'
+        options:
+          relationship: none
+          view_mode: block
+      filters:
+        status:
+          value: '1'
+          table: commerce_product_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: commerce_product
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: commerce_product_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            cpe_event: cpe_event
+            cpe_self_study: cpe_self_study
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            hide_single_bundle: true
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: commerce_product
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_dates_times_value:
+          id: field_dates_times_value
+          table: commerce_product__field_dates_times
+          field: field_dates_times_value
+          relationship: none
+          group_type: count_distinct
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Date
+          plugin_id: datetime
+          entity_type: commerce_product
+      pager:
+        type: some
+        options:
+          items_per_page: 4
+          offset: 0
+      relationships: {  }
+      arguments: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h3 class=\"accent-left blue\">Upcoming VSCPA Events</h3>\n<a class=\"btn btn-blue jump\" href=\"/continuing-professional-education/cpe-event-search\">View All Events</a>"
+            format: full_html
+          plugin_id: text
+      exposed_form:
+        type: basic
+        options:
+          submit_button: 'Filter Results'
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      use_ajax: false
+      css_class: upcoming-vscpa-events
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'url.query_args:sort_by'
+        - user.permissions
+      tags: {  }

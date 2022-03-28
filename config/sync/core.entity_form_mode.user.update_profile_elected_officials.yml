@@ -1,0 +1,10 @@
+uuid: c846ce46-e20a-48ca-81a6-605739ee753a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.update_profile_elected_officials
+label: 'Update Profile - Elected Officials'
+targetEntityType: user
+cache: true

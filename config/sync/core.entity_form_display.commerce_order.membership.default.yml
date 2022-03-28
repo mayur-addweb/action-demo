@@ -1,0 +1,71 @@
+uuid: fdd8c809-6d91-4ced-a92a-585a584ccf88
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.membership
+    - field.field.commerce_order.membership.field_am_net_recurring
+    - field.field.commerce_order.membership.field_am_net_sync
+    - field.field.commerce_order.membership.field_amnet_order_number
+  module:
+    - commerce_order
+    - inline_entity_form
+    - vscpa_commerce
+id: commerce_order.membership.default
+targetEntityType: commerce_order
+bundle: membership
+mode: default
+content:
+  adjustments:
+    type: commerce_adjustment_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  billing_profile:
+    type: commerce_billing_profile
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  cart:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  field_am_net_recurring:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_am_net_sync:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: am_net_order_items
+    region: content
+  order_items:
+    type: inline_entity_form_complex
+    weight: 2
+    settings:
+      override_labels: true
+      label_singular: 'order item'
+      label_plural: 'order items'
+      form_mode: default
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_amnet_order_number: true
+  ip_address: true
+  mail: true
+  order_number: true
+  state: true
+  store_id: true
+  uid: true

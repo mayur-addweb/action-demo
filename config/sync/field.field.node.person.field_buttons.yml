@@ -1,0 +1,23 @@
+uuid: fc3a52e7-c2ea-4687-854e-bf4a766a6c8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_buttons
+    - node.type.person
+  module:
+    - link
+id: node.person.field_buttons
+field_name: field_buttons
+entity_type: node
+bundle: person
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,42 @@
+uuid: a5e4b833-7417-418d-826c-71491a769346
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_vscpa
+  module:
+    - entity_browser_entity_form
+    - views
+name: video
+label: Video
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  3c09f7c4-d200-4c57-9cb5-ca80ad5e48a5:
+    settings:
+      entity_type: media
+      bundle: video
+      form_mode: default
+      submit_text: 'Save New Video'
+    uuid: 3c09f7c4-d200-4c57-9cb5-ca80ad5e48a5
+    weight: -9
+    label: 'Add New Video'
+    id: entity_form
+  05df5bdd-df52-4933-8636-7a4879e847b6:
+    settings:
+      view: media_vscpa
+      view_display: media_videos
+      submit_text: 'Select Video'
+      auto_select: false
+    uuid: 05df5bdd-df52-4933-8636-7a4879e847b6
+    weight: -10
+    label: 'Video Library'
+    id: view

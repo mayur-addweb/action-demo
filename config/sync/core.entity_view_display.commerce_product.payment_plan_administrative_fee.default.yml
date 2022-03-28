@@ -1,0 +1,43 @@
+uuid: 122e1328-2609-47c2-be75-320b5ddd8c0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.payment_plan_administrative_fee
+  module:
+    - commerce_product
+id: commerce_product.payment_plan_administrative_fee.default
+targetEntityType: commerce_product
+bundle: payment_plan_administrative_fee
+mode: default
+content:
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  title_field:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title_teaser:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    weight: 10
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  stores: true
+  uid: true

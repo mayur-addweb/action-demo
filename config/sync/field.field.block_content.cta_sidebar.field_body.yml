@@ -1,0 +1,21 @@
+uuid: c54885fd-b728-4a54-adcd-9d24e472cd82
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_sidebar
+    - field.storage.block_content.field_body
+  module:
+    - text
+id: block_content.cta_sidebar.field_body
+field_name: field_body
+entity_type: block_content
+bundle: cta_sidebar
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

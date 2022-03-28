@@ -1,0 +1,24 @@
+uuid: 4b369bad-5298-4fb9-bb15-62da167780a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_is_aicpa_member
+  module:
+    - user
+id: user.user.field_is_aicpa_member
+field_name: field_is_aicpa_member
+entity_type: user
+bundle: user
+label: 'Is AICPA Member'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

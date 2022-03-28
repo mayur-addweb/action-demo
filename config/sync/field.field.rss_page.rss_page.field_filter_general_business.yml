@@ -1,0 +1,30 @@
+uuid: 3e001592-3a4c-42d6-9b46-3915249203f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.rss_page.field_filter_general_business
+    - taxonomy.vocabulary.general_business
+  module:
+    - rss_list
+id: rss_page.rss_page.field_filter_general_business
+field_name: field_filter_general_business
+entity_type: rss_page
+bundle: rss_page
+label: 'General Business'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:firm_by_address'
+  handler_settings:
+    target_bundles:
+      general_business: general_business
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

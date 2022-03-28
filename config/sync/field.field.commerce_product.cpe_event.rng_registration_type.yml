@@ -1,0 +1,23 @@
+uuid: de52ae4c-a767-4816-8b80-bc9f22d8e03e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.rng_registration_type
+    - commerce_product.commerce_product_type.cpe_event
+id: commerce_product.cpe_event.rng_registration_type
+field_name: rng_registration_type
+entity_type: commerce_product
+bundle: cpe_event
+label: 'Registration type'
+description: 'The type of registration to use for this event.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:registration_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

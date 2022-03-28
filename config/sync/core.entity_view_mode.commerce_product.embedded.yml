@@ -1,0 +1,10 @@
+uuid: 8503f107-8254-49f3-836b-64d83703bad3
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.embedded
+label: Embedded
+targetEntityType: commerce_product
+cache: true

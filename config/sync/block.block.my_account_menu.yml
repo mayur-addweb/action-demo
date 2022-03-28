@@ -1,0 +1,62 @@
+uuid: 25d3de72-f42f-45b1-aff7-59b786f29929
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - am_net_membership
+    - block_class
+    - rng
+    - system
+    - user
+  theme:
+    - vscpa_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'my-account-menu-sidebar clearfix'
+id: my_account_menu
+theme: vscpa_bootstrap
+region: sidebar_top
+weight: -34
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'My Account Menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/account/*\r\n/user/*/edit\r\n/user/*/payment-methods\r\n/user/*/orders\r\n/user/*/edit/become-firm-admin\r\n/user/*/manage-my-firm\r\n/user/*/edit/communications\r\n/user/*/edit/website-account\r\n/user/*/edit/general-member-information\r\n/user/*/edit/elected-officials\r\n/user/*/edit/employment-information\r\n/user/*/manage-my-firm/*/edit-firm-info\r\n/MyCPE\r\n/digital-rewind\r\n/e-summit\r\n/VirtualBIC"
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1523288139'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1523288139'
+    negate: false
+    context_mapping: {  }
+  user_my_account:
+    id: user_my_account
+    my_account: '1'
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

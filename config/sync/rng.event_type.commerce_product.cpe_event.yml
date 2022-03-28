@@ -1,0 +1,20 @@
+uuid: 12d58446-0ff9-4586-903d-7f1be9de1162
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - rng.registrant_type.registrant
+id: commerce_product.cpe_event
+entity_type: commerce_product
+bundle: cpe_event
+mirror_operation_to_event_manage: update
+custom_rules: true
+default_registrant: registrant
+people_types:
+  1:
+    entity_type: user
+    bundle: user
+    create: false
+    existing: true
+    entity_form_mode: default

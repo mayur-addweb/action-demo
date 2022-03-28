@@ -1,0 +1,28 @@
+uuid: 3f0bd7ff-c3e2-47ad-9ba7-0c8cc7a2f7fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.event_registration
+    - field.storage.commerce_order_item.field_sessions_selected
+    - vscpa_commerce.event_session_type.default
+id: commerce_order_item.event_registration.field_sessions_selected
+field_name: field_sessions_selected
+entity_type: commerce_order_item
+bundle: event_registration
+label: 'Sessions selected'
+description: 'Sessions selected for the registration represented by this order item.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:event_session'
+  handler_settings:
+    target_bundles:
+      default: default
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

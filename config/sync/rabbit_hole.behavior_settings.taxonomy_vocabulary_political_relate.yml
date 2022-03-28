@@ -1,0 +1,9 @@
+uuid: 4cf92493-dd08-4968-ae40-a1078f0d87d7
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_vocabulary_political_relate
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

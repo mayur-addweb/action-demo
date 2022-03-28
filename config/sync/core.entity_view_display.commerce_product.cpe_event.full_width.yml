@@ -1,0 +1,251 @@
+uuid: dad56019-2464-4125-8ce8-16f2b93a2ed6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_event
+    - core.entity_view_mode.commerce_product.full_width
+    - field.field.commerce_product.cpe_event.body
+    - field.field.commerce_product.cpe_event.field_acronym
+    - field.field.commerce_product.cpe_event.field_alt_description
+    - field.field.commerce_product.cpe_event.field_alt_title
+    - field.field.commerce_product.cpe_event.field_am_net_adjustment
+    - field.field.commerce_product.cpe_event.field_am_net_deleted
+    - field.field.commerce_product.cpe_event.field_am_net_related_events
+    - field.field.commerce_product.cpe_event.field_amnet_event_id
+    - field.field.commerce_product.cpe_event.field_bundle_items
+    - field.field.commerce_product.cpe_event.field_buttons
+    - field.field.commerce_product.cpe_event.field_categories
+    - field.field.commerce_product.cpe_event.field_city_area
+    - field.field.commerce_product.cpe_event.field_company_code
+    - field.field.commerce_product.cpe_event.field_course_designedfor
+    - field.field.commerce_product.cpe_event.field_course_highlights
+    - field.field.commerce_product.cpe_event.field_course_level
+    - field.field.commerce_product.cpe_event.field_course_link
+    - field.field.commerce_product.cpe_event.field_course_prep
+    - field.field.commerce_product.cpe_event.field_course_prereqs
+    - field.field.commerce_product.cpe_event.field_course_syllabus
+    - field.field.commerce_product.cpe_event.field_course_vendors
+    - field.field.commerce_product.cpe_event.field_courses_objectives
+    - field.field.commerce_product.cpe_event.field_cover_image
+    - field.field.commerce_product.cpe_event.field_cover_video
+    - field.field.commerce_product.cpe_event.field_cpe_format
+    - field.field.commerce_product.cpe_event.field_cpe_type
+    - field.field.commerce_product.cpe_event.field_credit_hours
+    - field.field.commerce_product.cpe_event.field_credits
+    - field.field.commerce_product.cpe_event.field_dates_times
+    - field.field.commerce_product.cpe_event.field_division
+    - field.field.commerce_product.cpe_event.field_electronic_material
+    - field.field.commerce_product.cpe_event.field_event_expiry
+    - field.field.commerce_product.cpe_event.field_event_external
+    - field.field.commerce_product.cpe_event.field_event_timeslot_groups
+    - field.field.commerce_product.cpe_event.field_exclude_from_web_catalog
+    - field.field.commerce_product.cpe_event.field_external_event_codes
+    - field.field.commerce_product.cpe_event.field_featurette_bottom
+    - field.field.commerce_product.cpe_event.field_featurette_top
+    - field.field.commerce_product.cpe_event.field_field_of_interest
+    - field.field.commerce_product.cpe_event.field_field_of_study
+    - field.field.commerce_product.cpe_event.field_firm
+    - field.field.commerce_product.cpe_event.field_keywords
+    - field.field.commerce_product.cpe_event.field_leaders
+    - field.field.commerce_product.cpe_event.field_location
+    - field.field.commerce_product.cpe_event.field_memberonly
+    - field.field.commerce_product.cpe_event.field_oldpath
+    - field.field.commerce_product.cpe_event.field_overlay
+    - field.field.commerce_product.cpe_event.field_related_content
+    - field.field.commerce_product.cpe_event.field_search_index_aicpa
+    - field.field.commerce_product.cpe_event.field_search_index_attest_compil
+    - field.field.commerce_product.cpe_event.field_search_index_cfp
+    - field.field.commerce_product.cpe_event.field_search_index_credit_hours
+    - field.field.commerce_product.cpe_event.field_search_index_date
+    - field.field.commerce_product.cpe_event.field_search_index_early_regis
+    - field.field.commerce_product.cpe_event.field_search_index_free
+    - field.field.commerce_product.cpe_event.field_search_index_geolocation
+    - field.field.commerce_product.cpe_event.field_search_index_in_person
+    - field.field.commerce_product.cpe_event.field_search_index_is_bundle
+    - field.field.commerce_product.cpe_event.field_search_index_is_self_study
+    - field.field.commerce_product.cpe_event.field_search_index_keyword
+    - field.field.commerce_product.cpe_event.field_search_index_on_demand
+    - field.field.commerce_product.cpe_event.field_search_index_online
+    - field.field.commerce_product.cpe_event.field_search_index_rating
+    - field.field.commerce_product.cpe_event.field_search_index_yellow_book
+    - field.field.commerce_product.cpe_event.field_search_keywords
+    - field.field.commerce_product.cpe_event.field_sponsors
+    - field.field.commerce_product.cpe_event.field_trending_event
+    - field.field.commerce_product.cpe_event.rng_capacity
+    - field.field.commerce_product.cpe_event.rng_registrants_duplicate
+    - field.field.commerce_product.cpe_event.rng_registrants_maximum
+    - field.field.commerce_product.cpe_event.rng_registrants_minimum
+    - field.field.commerce_product.cpe_event.rng_registration_groups
+    - field.field.commerce_product.cpe_event.rng_registration_type
+    - field.field.commerce_product.cpe_event.rng_reply_to
+    - field.field.commerce_product.cpe_event.rng_status
+  module:
+    - am_net
+    - commerce_product
+    - datetime_range
+    - smart_trim
+    - text
+id: commerce_product.cpe_event.full_width
+targetEntityType: commerce_product
+bundle: cpe_event
+mode: full_width
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_amnet_event_id:
+    type: amnet_event_id_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_city_area:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_course_designedfor:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 300
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings: {  }
+    type: smart_trim
+    region: content
+  field_course_prereqs:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_credit_hours:
+    type: number_decimal
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 1
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_dates_times:
+    weight: 0
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: day_and_date
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  created: true
+  field_acronym: true
+  field_alt_description: true
+  field_alt_title: true
+  field_am_net_adjustment: true
+  field_am_net_deleted: true
+  field_am_net_related_events: true
+  field_bundle_items: true
+  field_buttons: true
+  field_categories: true
+  field_company_code: true
+  field_course_highlights: true
+  field_course_level: true
+  field_course_link: true
+  field_course_prep: true
+  field_course_syllabus: true
+  field_course_vendors: true
+  field_courses_objectives: true
+  field_cover_image: true
+  field_cover_video: true
+  field_cpe_format: true
+  field_cpe_type: true
+  field_credits: true
+  field_division: true
+  field_electronic_material: true
+  field_event_expiry: true
+  field_event_external: true
+  field_event_timeslot_groups: true
+  field_exclude_from_web_catalog: true
+  field_external_event_codes: true
+  field_featurette_bottom: true
+  field_featurette_top: true
+  field_field_of_interest: true
+  field_field_of_study: true
+  field_firm: true
+  field_keywords: true
+  field_leaders: true
+  field_location: true
+  field_memberonly: true
+  field_oldpath: true
+  field_overlay: true
+  field_related_content: true
+  field_search_index_aicpa: true
+  field_search_index_attest_compil: true
+  field_search_index_cfp: true
+  field_search_index_credit_hours: true
+  field_search_index_date: true
+  field_search_index_early_regis: true
+  field_search_index_free: true
+  field_search_index_geolocation: true
+  field_search_index_in_person: true
+  field_search_index_is_bundle: true
+  field_search_index_is_self_study: true
+  field_search_index_keyword: true
+  field_search_index_on_demand: true
+  field_search_index_online: true
+  field_search_index_rating: true
+  field_search_index_yellow_book: true
+  field_search_keywords: true
+  field_sponsors: true
+  field_trending_event: true
+  links: true
+  rng_capacity: true
+  rng_registrants_duplicate: true
+  rng_registrants_maximum: true
+  rng_registrants_minimum: true
+  rng_registration_groups: true
+  rng_registration_type: true
+  rng_reply_to: true
+  rng_status: true
+  search_api_excerpt: true
+  stores: true
+  title: true
+  title_field: true
+  title_teaser: true
+  uid: true

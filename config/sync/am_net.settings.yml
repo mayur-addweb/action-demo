@@ -1,0 +1,14 @@
+api_prod_base_url: 'https://vacpa_amnetweb.cdscloudhost.net'
+api_dev_base_url: 'https://vacpa_amnetwebtest.cdscloudhost.net'
+api_prod_auth_user: web
+api_prod_auth_key: 7C74D940-4BDD-442B-9E9E-A4375EB3AE85
+api_dev_auth_user: ^UT
+api_dev_auth_key: 3C248D5E-361E-4960-B700-13EE38D505A4
+cron: true
+batch_limit: 100
+connection_environment: production
+_core:
+  default_config_hash: lTed71da5oALdQD5bB61GXViZMs8laWocIdRBtSH7uk
+am_net:
+  settings:
+    cron: 1

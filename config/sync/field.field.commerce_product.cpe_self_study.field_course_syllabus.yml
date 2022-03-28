@@ -1,0 +1,21 @@
+uuid: da90081d-787d-4257-a8ba-5db77ff28371
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_course_syllabus
+    - commerce_product.commerce_product_type.cpe_self_study
+  module:
+    - text
+id: commerce_product.cpe_self_study.field_course_syllabus
+field_name: field_course_syllabus
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Syllabus
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

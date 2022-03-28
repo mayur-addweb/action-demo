@@ -1,0 +1,44 @@
+uuid: 40808c82-642c-4a9c-8a02-ec00048b8efc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_full_width:50674efc-b0b2-43fe-b28c-4c3ef5066d0b'
+  module:
+    - block_content
+    - rng
+    - system
+  theme:
+    - vscpa_bootstrap
+id: continuededucationcourses
+theme: vscpa_bootstrap
+region: homepage
+weight: -26
+provider: null
+plugin: 'block_content:50674efc-b0b2-43fe-b28c-4c3ef5066d0b'
+settings:
+  id: 'block_content:50674efc-b0b2-43fe-b28c-4c3ef5066d0b'
+  label: 'Find a Course'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1531411268'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1531411268'
+    negate: false
+    context_mapping: {  }

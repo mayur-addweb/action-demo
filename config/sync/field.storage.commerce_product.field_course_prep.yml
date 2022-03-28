@@ -1,0 +1,19 @@
+uuid: e42bdcf5-853e-4fa2-982c-b4bd4cc61590
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_course_prep
+field_name: field_course_prep
+entity_type: commerce_product
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

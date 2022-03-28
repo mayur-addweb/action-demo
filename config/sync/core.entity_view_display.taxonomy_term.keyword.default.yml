@@ -1,0 +1,30 @@
+uuid: 1364da04-a508-441d-b7ad-fb4d299688e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.keyword.field_misspellings
+    - taxonomy.vocabulary.keyword
+  module:
+    - text
+id: taxonomy_term.keyword.default
+targetEntityType: taxonomy_term
+bundle: keyword
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_misspellings:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

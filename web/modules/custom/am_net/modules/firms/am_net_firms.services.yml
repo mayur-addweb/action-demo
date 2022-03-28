@@ -1,0 +1,25 @@
+services:
+  am_net_firms.firm_manager:
+    class: Drupal\am_net_firms\FirmManager
+    arguments: []
+
+  am_net_firms.employee_management_tool:
+    class: Drupal\am_net_firms\EmployeeManagementTool
+    arguments: ['@am_net_membership.checker']
+
+  am_net_firms.access_check.firm_admin_status:
+    class: Drupal\am_net_firms\Access\FirmAdminStatusCheck
+    tags:
+      - { name: access_check, applies_to: _user_is_firm_admin }
+    arguments: ['@am_net_firms.employee_management_tool']
+
+  # Auto-complete Route Subscriber.
+  am_net_firms.route_subscriber:
+    class: \Drupal\am_net_firms\Routing\AutocompleteRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  # Entity Auto-complete Matcher.
+  am_net_firms.autocomplete_matcher:
+    class: \Drupal\am_net_firms\EntityAutocompleteMatcher
+    arguments: ['@plugin.manager.entity_reference_selection']

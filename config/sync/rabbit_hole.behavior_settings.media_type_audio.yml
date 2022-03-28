@@ -1,0 +1,9 @@
+uuid: 93f3a599-fa7c-44f5-b06f-9ca7923d7a17
+langcode: en
+status: true
+dependencies: {  }
+id: media_type_audio
+action: page_redirect
+allow_override: 0
+redirect: '[media:field_media_audio_file]'
+redirect_code: 301

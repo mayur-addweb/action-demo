@@ -1,0 +1,22 @@
+services:
+  logger.raven:
+    class: Drupal\raven\Logger\Raven
+    arguments: ['@config.factory', '@logger.log_message_parser', '@module_handler', '%kernel.environment%', '@?current_user', '@?request_stack', '@?settings']
+    tags:
+      - { name: logger }
+
+  raven.csp_subscriber:
+    class: Drupal\raven\EventSubscriber\CspSubscriber
+    arguments:
+      - '@config.factory'
+    tags:
+      - { name: event_subscriber }
+
+  raven.request_subscriber:
+    class: Drupal\raven\EventSubscriber\RequestSubscriber
+    arguments:
+      - '@config.factory'
+    calls:
+      - [setContainer, ['@service_container']]
+    tags:
+      - { name: event_subscriber }

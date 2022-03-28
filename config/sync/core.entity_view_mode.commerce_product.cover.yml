@@ -1,0 +1,10 @@
+uuid: 37213a6a-9b2e-4abe-afd9-cf222e5949d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.cover
+label: Cover
+targetEntityType: commerce_product
+cache: true

@@ -1,0 +1,21 @@
+uuid: e28ff3e1-edcd-4ce2-9922-12d62b8bf458
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_external_product_codes
+field_name: field_external_product_codes
+entity_type: commerce_product
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 17354671-f41b-49da-b10e-031c81d4077f
+langcode: en
+status: true
+dependencies: {  }
+name: Interest
+vid: interest
+description: ''
+weight: 0

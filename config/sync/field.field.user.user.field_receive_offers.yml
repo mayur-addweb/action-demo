@@ -1,0 +1,21 @@
+uuid: c3ee7111-f5f9-4d44-b469-5fd55173ba9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_receive_offers
+  module:
+    - options
+    - user
+id: user.user.field_receive_offers
+field_name: field_receive_offers
+entity_type: user
+bundle: user
+label: 'Would you like to receive mail from VSCPA partners about special offers and discounts?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

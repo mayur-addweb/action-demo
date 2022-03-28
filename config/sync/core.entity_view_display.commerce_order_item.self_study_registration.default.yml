@@ -1,0 +1,26 @@
+uuid: 13a69deb-70be-4869-824a-74f302596842
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.self_study_registration
+    - field.field.commerce_order_item.self_study_registration.field_user
+id: commerce_order_item.self_study_registration.default
+targetEntityType: commerce_order_item
+bundle: self_study_registration
+mode: default
+content:
+  field_user:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  adjustments: true
+  purchased_entity: true
+  quantity: true
+  total_price: true
+  unit_price: true

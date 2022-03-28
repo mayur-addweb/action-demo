@@ -1,0 +1,30 @@
+uuid: ee3050dd-f5d8-4e0d-9a10-e6e7847c71c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video.field_cover_video
+    - media.type.video
+  module:
+    - file
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  field_cover_video:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_media_video_file: true
+  field_media_video_file_1: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

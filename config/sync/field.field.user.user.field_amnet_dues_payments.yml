@@ -1,0 +1,20 @@
+uuid: 0c7754f7-4cc6-4431-8166-a2bd42465b1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_amnet_dues_payments
+  module:
+    - user
+id: user.user.field_amnet_dues_payments
+field_name: field_amnet_dues_payments
+entity_type: user
+bundle: user
+label: 'Dues Payments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

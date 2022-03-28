@@ -1,0 +1,21 @@
+uuid: b5d9a92c-a793-4ea9-8fbf-c92df09626bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.slide
+  module:
+    - options
+id: paragraph.slide.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: slide
+label: Background
+description: 'What color should this slide render as?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

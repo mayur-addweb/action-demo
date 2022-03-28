@@ -1,0 +1,19 @@
+uuid: 68762393-1a0a-4860-a6b0-cc71574e6998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_chapter_link
+    - taxonomy.vocabulary.chapter
+id: taxonomy_term.chapter.field_chapter_link
+field_name: field_chapter_link
+entity_type: taxonomy_term
+bundle: chapter
+label: 'Chapter Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

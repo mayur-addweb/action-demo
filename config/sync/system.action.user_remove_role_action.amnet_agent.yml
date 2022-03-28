@@ -1,0 +1,14 @@
+uuid: bd6b8729-f5fb-4b54-a095-2652771464ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.amnet_agent
+  module:
+    - user
+id: user_remove_role_action.amnet_agent
+label: 'Remove the AMnet agent role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: amnet_agent

@@ -1,0 +1,29 @@
+uuid: a785c611-422f-434b-9a25-81a08f0d494c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_legislator_relates
+    - paragraphs.paragraphs_type.pol_contact
+    - taxonomy.vocabulary.political_relate
+id: paragraph.pol_contact.field_legislator_relates
+field_name: field_legislator_relates
+entity_type: paragraph
+bundle: pol_contact
+label: Relationship
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      political_relate: political_relate
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

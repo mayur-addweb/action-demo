@@ -1,0 +1,8 @@
+uuid: 8a176680-2816-41fa-a8ec-c55273378f79
+langcode: en
+status: true
+dependencies: {  }
+name: 'Member-only content'
+vid: memberonly
+description: ''
+weight: 0

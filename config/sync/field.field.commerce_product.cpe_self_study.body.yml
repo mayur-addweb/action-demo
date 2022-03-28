@@ -1,0 +1,23 @@
+uuid: f21e78d0-0e44-473e-ada4-becb03d93312
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.cpe_self_study
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.cpe_self_study.body
+field_name: body
+entity_type: commerce_product
+bundle: cpe_self_study
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,13 @@
+---
+
+dependencies:
+  - role: ut.common
+    become: yes
+  - role: geerlingguy.php-versions
+    become: yes
+    tags:
+      - php
+  - role: geerlingguy.php
+    become: yes
+    tags:
+      - php
