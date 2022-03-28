@@ -1,22 +1,15 @@
-name: SONAR
-
+name: CI/CD counter app
 on:
-  # Trigger analysis when pushing in master or pull requests, and when creating
-  # a pull request. 
   push:
-    branches:
-      - main
-  pull_request:
-      types: [opened, synchronize, reopened]
+    branches: [ main ]
 
-name: Main Workflow
-  jobs:
-    sonarqube:
-      runs-on: ubuntu-latest
-      steps:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
         with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
