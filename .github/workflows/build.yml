@@ -18,6 +18,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - build:
+           needs: sonarqube
+            name:  Project build & package
 
 
       - name: executing remote ssh commands using key
