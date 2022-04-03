@@ -25,9 +25,9 @@ jobs:
         with:
           host: ${{ secrets.HOSTNAME }}
           username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.STAGE_SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu/srv/www/magento/magento
+            cd /home/ubuntu/action-demo
             git pull origin main
 
 
