@@ -1,0 +1,5 @@
+dev/frontend/node_modules/
+dev/bin/auth.json
+composer.lock
+vendor/
+.php_cs.cache
