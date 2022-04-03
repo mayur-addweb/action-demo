@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - main # or the name of your main branch
+      - main 
 
 jobs:
   build:
@@ -14,7 +14,22 @@ jobs:
         with:
           fetch-depth: 0
       - uses: docker://sonarsource/sonar-scanner-cli:latest
+
+      - name: executing remote ssh commands using key
+        uses: appleboy/ssh-action@master
+
         env:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.STAGE_SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/ubuntu/srv/www/magento/magento
+            git pull origin main
+
+
+
+
