@@ -14,14 +14,14 @@ jobs:
         with:
           fetch-depth: 0
       - uses: docker://sonarsource/sonar-scanner-cli:latest
-
-      - name: executing remote ssh commands using key
-        uses: appleboy/ssh-action@master
-
         env:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+
+      - name: executing remote ssh commands using key
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOSTNAME }}
           username: ${{ secrets.USER_NAME }}
