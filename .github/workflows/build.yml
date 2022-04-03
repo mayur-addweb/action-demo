@@ -14,12 +14,14 @@ jobs:
         with:
           fetch-depth: 0
       - uses: docker://sonarsource/sonar-scanner-cli:latest
-      - name: SonarQube Quality Gate check
-        uses: sonarsource/sonarqube-quality-gate-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarQube Quality Gate check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     
 
