@@ -1,9 +1,0 @@
-name: AM.net Triggers
-type: module
-description: Provides functionality for triggering AM.net syncronization tasks.
-core: 8.x
-package: VSCPA
-dependencies:
- - am_net
- - am_net_cpe
- - vscpa_commerce

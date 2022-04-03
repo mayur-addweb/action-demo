@@ -1,4 +1,0 @@
-services:
-  content_paywall.helper:
-    class: Drupal\content_paywall\ContentPaywallHelper
-    arguments: ['@current_user']

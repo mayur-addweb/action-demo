@@ -1,6 +1,0 @@
-modal_dues_payment_plan_enroll_widget:
-  version: VERSION
-  js:
-    js/modal-dues-payment-plan-widget.js: {}
-  dependencies:
-    - core/jquery

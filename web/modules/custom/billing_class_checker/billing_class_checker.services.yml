@@ -1,5 +1,0 @@
-services:
-  billing_class_checker.dummy_billing_class_checker:
-    class: Drupal\billing_class_checker\BillingClass\DummyBillingClassChecker
-    tags:
-      - { name: am_net_membership.billing_class_checker, priority: 8 }

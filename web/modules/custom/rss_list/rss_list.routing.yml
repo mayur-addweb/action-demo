@@ -1,2 +1,0 @@
-route_callbacks:
-  - '\Drupal\rss_list\Routing\FeedRoutes::routes'

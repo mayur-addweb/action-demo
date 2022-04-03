@@ -1,8 +1,0 @@
-name: AM.net Payments
-type: module
-package: VSCPA
-description: Integrates Commerce Payments with AM.net.
-core: 8.x
-dependencies:
-  - am_net
-  - commerce_payment

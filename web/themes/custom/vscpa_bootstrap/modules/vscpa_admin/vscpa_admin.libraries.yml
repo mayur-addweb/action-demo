@@ -1,4 +1,0 @@
-vscpa_admin:
-  css:
-    theme:
-      scss/admin.css?cache=1234: {}

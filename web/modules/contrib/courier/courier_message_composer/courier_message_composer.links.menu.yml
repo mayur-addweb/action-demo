@@ -1,3 +1,0 @@
-courier_message_composer.channel_list:
-  title: 'Send message'
-  route_name: courier_message_composer.channel_list

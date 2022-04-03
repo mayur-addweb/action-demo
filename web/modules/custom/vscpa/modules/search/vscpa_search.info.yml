@@ -1,5 +1,0 @@
-name: VSCPA Search
-description: Provides search-related functionality for VSCPA.
-package: VSCPA
-type: module
-core: 8.x

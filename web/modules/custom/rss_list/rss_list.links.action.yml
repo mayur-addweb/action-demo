@@ -1,5 +1,0 @@
-entity.rss_page.add_form:
-  route_name: entity.rss_page.add_form
-  title: 'Add RSS Page'
-  appears_on:
-    - entity.rss_page.collection

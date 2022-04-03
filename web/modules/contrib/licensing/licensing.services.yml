@@ -1,8 +1,0 @@
-services:
-  licensing.licensing:
-    class: Drupal\licensing\LicensingService
-    arguments: ["@entity_type.manager", "@logger.channel.licensing"]
-
-  logger.channel.licensing:
-    parent: logger.channel_base
-    arguments: ['licensing']

@@ -1,6 +1,0 @@
-services:
-  vscpa_commerce.commands:
-    class: \Drupal\vscpa_commerce\Commands\Orders
-    arguments: ['@vscpa_commerce.am_net_sync_manager']
-    tags:
-      - { name: drush.command }

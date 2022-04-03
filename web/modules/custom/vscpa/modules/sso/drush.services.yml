@@ -1,6 +1,0 @@
-services:
-  vscpa_sso.commands:
-    class: \Drupal\vscpa_sso\Commands\SingleSingOn
-    arguments: [ '@am_net_cpe.registration_manager', '@gluu.client' ]
-    tags:
-      - { name: drush.command }

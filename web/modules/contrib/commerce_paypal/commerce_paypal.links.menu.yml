@@ -1,4 +1,0 @@
-commerce_paypal.configuration:
-  title: 'Paypal Credit messaging'
-  route_name: 'commerce_paypal.credit_messaging_settings'
-  parent: 'commerce_payment.configuration'

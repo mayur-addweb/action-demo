@@ -1,4 +1,0 @@
-services:
-  vscpa_events.events_helper:
-    class: Drupal\vscpa_events\EventsHelper
-    arguments: ['@entity_type.manager']

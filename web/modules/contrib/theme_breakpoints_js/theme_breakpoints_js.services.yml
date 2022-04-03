@@ -1,4 +1,0 @@
-services:
-  theme_breakpoints_js:
-    class: Drupal\theme_breakpoints_js\ThemeBreakpointsJs
-    arguments: ['@breakpoint.manager', '@theme.manager', '@theme.initialization']

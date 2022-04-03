@@ -1,8 +1,0 @@
-<?php
-
-/**
- * @file
- * Primarily Drupal hooks to manipulate Views Contextual Filters OR.
- *
- * This is the main module file for Views Contextual Filters OR.
- */

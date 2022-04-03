@@ -1,7 +1,0 @@
-name: AM.net Dummy Billing Class Handler Module
-type: module
-description: Defines and Dummy Billing Class Checker functionality that serve as guide for VSCPA Membership dues calculation.
-core: 8.x
-package: VSCPA
-dependencies:
-  - am_net_membership

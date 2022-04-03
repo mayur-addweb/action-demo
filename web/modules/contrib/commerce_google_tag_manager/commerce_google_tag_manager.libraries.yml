@@ -1,8 +1,0 @@
-commerce_google_tag_manager:
-  version: VERSION
-  js:
-    js/commerce_google_tag_manager.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - core/drupalSettings

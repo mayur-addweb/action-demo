@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: event_registration
-label: 'Event registration'
-description: 'A registration for an event.'
-variationType: event_registration
-injectVariationFields: true
-traits: {  }

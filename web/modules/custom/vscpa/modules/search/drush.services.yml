@@ -1,6 +1,0 @@
-services:
-  vscpa_search.commands:
-    class: \Drupal\vscpa_search\Commands\PopulateLatLongOnProducts
-    arguments: []
-    tags:
-      - { name: drush.command }

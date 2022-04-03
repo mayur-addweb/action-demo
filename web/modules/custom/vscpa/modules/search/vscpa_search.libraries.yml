@@ -1,7 +1,0 @@
-datepickers:
-  version: 3.x
-  js:
-    js/bef_datepickers.js: {}
-  dependencies:
-  - core/jquery
-  - core/jquery.ui.slider

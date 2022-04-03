@@ -1,5 +1,0 @@
-courier.template.courier_test_message:
-  type: mapping
-  mapping:
-    message:
-      type: string

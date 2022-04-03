@@ -1,5 +1,0 @@
-name: Field Title
-type: module
-description: "Make Title field accessible through UI"
-core: 8.x
-package: VSCPA

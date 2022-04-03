@@ -1,4 +1,0 @@
-administer am_net:
-  title: 'administer am_net'
-  description: "Access the Association Management System (AMS) AM.net's API Connection configuration options."
-  restrict access: TRUE

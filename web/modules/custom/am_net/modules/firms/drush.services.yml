@@ -1,6 +1,0 @@
-services:
-  am_net_firms.commands:
-    class: \Drupal\am_net_firms\Commands\Firm
-    arguments: ['@am_net_firms.firm_manager']
-    tags:
-      - { name: drush.command }

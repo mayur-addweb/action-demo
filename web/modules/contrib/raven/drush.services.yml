@@ -1,7 +1,0 @@
-services:
-  raven.commands:
-    class: \Drupal\raven\Commands\RavenCommands
-    tags:
-      - { name: drush.command }
-    calls:
-      - [setRavenLogger, ['@logger.raven']]

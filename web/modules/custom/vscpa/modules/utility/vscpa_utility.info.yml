@@ -1,6 +1,0 @@
-name: VSCPA Utilities
-description: Provides utility functionality for VSCPA.
-package: VSCPA
-type: module
-core: 8.x
-dependencies: {  }

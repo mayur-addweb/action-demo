@@ -1,5 +1,0 @@
-name: VSCPA Admin Theme
-type: module
-description: 'Modifies the administrative theme.'
-core: 8.x
-package: VSCPA

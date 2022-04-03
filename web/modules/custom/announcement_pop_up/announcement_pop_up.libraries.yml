@@ -1,7 +1,0 @@
-global:
-  version: 1.x
-  css:
-    theme:
-      css/announcement-pop-up.css: {}
-  js:
-    js/announcement-pop-up.js: {}

@@ -1,6 +1,0 @@
-services:
-  am_net_cpe.commands:
-    class: \Drupal\am_net_cpe\Commands\Cpe
-    arguments: ['@am_net_cpe.product_manager']
-    tags:
-      - { name: drush.command }

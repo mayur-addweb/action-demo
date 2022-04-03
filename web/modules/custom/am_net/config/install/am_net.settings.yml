@@ -1,9 +1,0 @@
-api_prod_base_url: ''
-api_dev_base_url: ''
-api_prod_auth_user: ''
-api_prod_auth_key: ''
-api_dev_auth_user: ''
-api_dev_auth_key: ''
-cron: FALSE
-batch_limit: 100
-connection_environment: 'development'

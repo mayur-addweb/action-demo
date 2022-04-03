@@ -1,4 +1,0 @@
-services:
-  vscpa_content_migration.helper:
-    class: Drupal\vscpa_content_migration\MigrationHelper
-    arguments: []

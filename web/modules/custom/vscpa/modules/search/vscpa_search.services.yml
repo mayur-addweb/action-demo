@@ -1,7 +1,0 @@
-services:
-  vscpa_search.lat_long.helper:
-    class: Drupal\vscpa_search\LongitudeLatitudeHelper
-    arguments: ['@keyvalue.database']
-  vscpa_search.populate_lat_lng_on_products:
-    class: Drupal\vscpa_search\PopulateLatLongOnProducts
-    arguments: ['@keyvalue.database']

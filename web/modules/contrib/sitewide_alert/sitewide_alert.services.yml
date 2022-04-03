@@ -1,5 +1,0 @@
-services:
-  sitewide_alert.route_subscriber:
-    class: Drupal\sitewide_alert\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }

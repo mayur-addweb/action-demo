@@ -1,8 +1,0 @@
-services:
-  logger.channel.am_net_triggers:
-    parent: logger.channel_base
-    arguments: ['am_net_triggers']
-
-  am_net_triggers.sync:
-    class: Drupal\am_net_triggers\SyncManager
-    arguments: ['@am_net.client', '@queue']

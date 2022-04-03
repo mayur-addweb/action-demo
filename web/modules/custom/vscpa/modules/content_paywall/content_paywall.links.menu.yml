@@ -1,5 +1,0 @@
-content_paywall.setting:
-  title: 'Content Paywall'
-  parent: am_net.vscpa_config
-  description: 'Content Paywall'
-  route_name: content_paywall.setting

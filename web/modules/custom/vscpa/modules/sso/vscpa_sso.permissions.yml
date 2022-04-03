@@ -1,4 +1,0 @@
-administer vscpa_sso:
-  title: 'administer vscpa_sso'
-  description: "Access the Gluu Server API Connection configuration options."
-  restrict access: TRUE
