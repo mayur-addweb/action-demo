@@ -3,6 +3,9 @@ name: Build
 on:
   push:
     branches:
+      - main
+  pull_request:
+    branches:
       - main 
 
 jobs:
@@ -18,16 +21,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: SonarQube Quality Gate check
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        timeout-minutes: 5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GTOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  # build:
-  #     needs: sonarqube
-  #     name:  Project build & package
+      # - name: SonarQube Quality Gate check
+      #   uses: sonarsource/sonarqube-quality-gate-action@master
+      #   timeout-minutes: 5
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GTOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
     
 
