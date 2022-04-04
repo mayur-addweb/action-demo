@@ -20,19 +20,21 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarQube Quality Gate check
         uses: sonarsource/sonarqube-quality-gate-action@master
+        # Force to fail step after specific time
         timeout-minutes: 5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: executing remote ssh commands using key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOSTNAME }}
-          username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /home/ubuntu/action-demo
-            git pull origin main
+         
+      # - name: executing remote ssh commands using key
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOSTNAME }}
+      #     username: ${{ secrets.USER_NAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd /home/ubuntu/action-demo
+      #       git pull origin main
 
 
 
