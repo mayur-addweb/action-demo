@@ -18,6 +18,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GTOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: executing remote ssh commands using key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"' > op.txt
+            result=$(cat op.txt)
+
 
       - name: executing remote ssh commands using key
         uses: appleboy/ssh-action@master
