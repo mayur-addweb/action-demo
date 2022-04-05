@@ -9,19 +9,18 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v2
-      #   with:
-      #     fetch-depth: 0
-      # - uses: docker://sonarsource/sonar-scanner-cli:latest
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GTOKEN }}
-      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GTOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-
-      - name: TEST IF PASSED OR FAIL
+      - name: TEST IF SONAR PASS OR  FAIL
         run: |
-            echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
+            echo "result=$(curl -u ${{ secrets.SONAR_UNAME }}:${{ secrets.SONAR_PASS }} http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
 
       - name: ECHO TESTING OUTPUT
         run: echo "${{ env.result }}" 
