@@ -19,18 +19,18 @@ jobs:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
-      - name: TEST IF PASSED OR FAIL
-        run: |
-            echo "result=FAIL" >> $GITHUB_ENV
+      # - name: TEST IF PASSED OR FAIL
+      #   run: |
+      #       echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
 
-      - name: ECHO TESTING
-        run: echo "${{ env.result }}" 
+      # - name: ECHO TESTING
+      #   run: echo "${{ env.result }}" 
 
       - name: PASS
-        if: "${{ env.result }}" == "OK"
-        run: echo "DONE" 
+        if: github.actor == "mayur-addweb"
+        run: echo "MAYUR" 
 
       - name: FAIL
-        if: "${{ env.result }}" == "FAIL"
-        run: echo "NOT DONE" 
+        if: github.actor == "jaimin-addweb"
+        run: echo "JAIMIN" 
            # echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
