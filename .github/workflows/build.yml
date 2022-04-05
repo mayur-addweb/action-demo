@@ -22,7 +22,7 @@ jobs:
       - name: executing remote ssh commands using key
         run: |
             echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
-            result=$(cat op.txt)
+           # result=$(cat op.txt)
 
       - name: ECHO TESTING
         run: echo "${{ env.result }}" 
