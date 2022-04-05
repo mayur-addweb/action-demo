@@ -27,10 +27,10 @@ jobs:
         run: echo "${{ env.result }}" 
 
       - name: PASS
-        if: ${{ env.result }} == 'OK'
+        if: ${{ env.result  == 'OK' }}
         run: echo "MAYUR" 
 
       - name: FAIL
-        if: ${{ env.result }} == 'ERROR'
+        if: ${{ env.result  == 'ERROR' }}
         run: echo "JAIMIN" 
            # echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
