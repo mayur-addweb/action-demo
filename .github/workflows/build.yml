@@ -19,9 +19,9 @@ jobs:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
-      - name: executing remote ssh commands using key
+      - name: TEST IF PASSED OR FAIL
         run: |
-            echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
+            echo "result=FAIL" >> $GITHUB_ENV
 
       - name: ECHO TESTING
         run: echo "${{ env.result }}" 
@@ -29,3 +29,8 @@ jobs:
       - name: executing remote ssh commands using key
         if: ${{ env.result }} == 'OK'
         run: echo "DONE" 
+
+      - name: executing remote ssh commands using key
+        if: ${{ env.result }} == 'FAIL'
+        run: echo "NOT DONE" 
+           # echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
