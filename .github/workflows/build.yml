@@ -9,9 +9,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      # - uses: actions/checkout@v2
+      #   with:
+      #     fetch-depth: 0
       # - uses: docker://sonarsource/sonar-scanner-cli:latest
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GTOKEN }}
@@ -19,18 +19,18 @@ jobs:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
-      # - name: TEST IF PASSED OR FAIL
-      #   run: |
-      #       echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
+      - name: TEST IF PASSED OR FAIL
+        run: |
+            echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
 
-      # - name: ECHO TESTING
-      #   run: echo "${{ env.result }}" 
+      - name: ECHO TESTING OUTPUT
+        run: echo "${{ env.result }}" 
 
       - name: PASS
-        if: github.actor == 'mayur-addweb'
+        if: ${{ env.result }} == 'mayur-addweb'
         run: echo "MAYUR" 
 
       - name: FAIL
-        if: github.actor == 'jaimin-addweb'
+        if: ${{ env.result }} == 'jaimin-addweb'
         run: echo "JAIMIN" 
            # echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
