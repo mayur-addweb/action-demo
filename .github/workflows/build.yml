@@ -26,11 +26,11 @@ jobs:
       - name: ECHO TESTING
         run: echo "${{ env.result }}" 
 
-      - name: executing remote ssh commands using key
+      - name: PASS
         if: ${{ env.result }} == 'OK'
         run: echo "DONE" 
 
-      - name: executing remote ssh commands using key
+      - name: FAIL
         if: ${{ env.result }} == 'FAIL'
         run: echo "NOT DONE" 
            # echo "result=$(curl -u admin:admin@123 http://13.232.220.12:9000/api/qualitygates/project_status?projectKey=action-demo | jq '.projectStatus.status' | tr -d '"')" >> $GITHUB_ENV
